@@ -39,10 +39,7 @@ class Actions:
                             if person.params.department is not None:
                                 # check if place has department defined
                                 if place.params.department is not None:
-                                    if (
-                                        person.params.department
-                                        not in place.params.department
-                                    ):
+                                    if person.params.department not in place.params.department:
                                         continue
 
                     # print("GOTO:", place.params.name)
@@ -108,10 +105,7 @@ class Actions:
                 people_filter = []
                 for p in people:
                     if p.place is not None:
-                        if (
-                            p.place.params.building is None
-                            or p.place.params.building == building
-                        ):
+                        if p.place.params.building is None or p.place.params.building == building:
                             people_filter.append(p)
                 people = people_filter
 

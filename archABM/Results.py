@@ -27,12 +27,7 @@ class Results:
         cwd = os.getcwd()
         now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S-%f")
         self.path = os.path.join(cwd, "results", now)
-        p = (
-            self.config["Options"]
-            .replace({np.nan: None})
-            .set_index("option")["value"]
-            .to_dict()
-        )
+        p = self.config["Options"].replace({np.nan: None}).set_index("option")["value"].to_dict()
         if p["directory"] is not None:
             self.path = os.path.join(cwd, "results", p["directory"], now)
 
@@ -41,10 +36,7 @@ class Results:
 
     def setup_log(self):
         logging.basicConfig(
-            filename=os.path.join(self.path, self.log_name),
-            filemode="w",
-            format="%(message)s",
-            level=logging.INFO,
+            filename=os.path.join(self.path, self.log_name), filemode="w", format="%(message)s", level=logging.INFO,
         )
 
     def open_people(self):
@@ -68,10 +60,7 @@ class Results:
         self.places_file.close()
 
     def save_config(self, config):
-        config_dict = {
-            key: config[key].replace({np.nan: None}).to_dict(orient="records")
-            for key in config.keys()
-        }
+        config_dict = {key: config[key].replace({np.nan: None}).to_dict(orient="records") for key in config.keys()}
         with open(os.path.join(self.path, self.config_name), "w") as f:
             json.dump(config_dict, f)
 

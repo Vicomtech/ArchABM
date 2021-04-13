@@ -35,13 +35,7 @@ PROJECT_URLS = {
 }
 REQUIRES_PYTHON = ">=3.5, <4"
 EXTRAS_REQUIRE = {}
-KEYWORDS = [
-    "agent simulation",
-    "architecture",
-    "building",
-    "workplace",
-    "discrete-event"
-]
+KEYWORDS = ["agent simulation", "architecture", "building", "workplace", "discrete-event"]
 LICENSE = "MIT license"
 TEST_SUITE = "tests"
 REQUIREMENTS = ["simpy", "numpy", "matplotlib", "pandas", "seaborn", "networkx", "igraph", "odfpy"]
@@ -63,13 +57,13 @@ setuptools.setup(
     long_description=README,
     name=NAME,
     package_data={},
-    packages = setuptools.find_packages(),
+    packages=setuptools.find_packages(),
     project_urls=PROJECT_URLS,
     python_requires=REQUIRES_PYTHON,
     setup_requires=SETUP_REQUIREMENTS,
     test_suite=TEST_SUITE,
     tests_require=TEST_REQUIREMENTS,
     url=URL,
-    version = VERSION,
+    version=VERSION,
     zip_safe=False,
 )

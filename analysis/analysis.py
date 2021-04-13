@@ -78,9 +78,7 @@ sns.catplot(x="name", hue="activity", kind="count", data=people, aspect=2)
 # %% Risk per person
 
 plt.figure(figsize=(10, 8))
-sns.lineplot(
-    data=people, x="time", y="risk", hue="department", size="name", legend="full"
-)
+sns.lineplot(data=people, x="time", y="risk", hue="department", size="name", legend="full")
 
 
 # %%

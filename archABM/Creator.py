@@ -77,12 +77,7 @@ class Creator:
         return Actions(self.env, self.db)
 
     def create_options(self):
-        p = (
-            self.config["Options"]
-            .replace({np.nan: None})
-            .set_index("option")["value"]
-            .to_dict()
-        )
+        p = self.config["Options"].replace({np.nan: None}).set_index("option")["value"].to_dict()
         params = Parameters(p)
         options = Options(self.env, self.db, params)
 

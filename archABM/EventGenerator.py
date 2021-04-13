@@ -47,15 +47,13 @@ class EventGenerator:
         # Create event based on selected model
         activity = model.params.activity
         duration = model.duration(now)
-        duration += 0.001
+        # duration += 0.001
         place = self.db.actions.find_place(activity, self.person)
         if place is None:
             return None
         if model.params.collective:
             # print("COLLECTIVE", place.params.name)
-            return self.db.actions.create_collective_event(
-                activity, place, duration, self.person
-            )
+            return self.db.actions.create_collective_event(activity, place, duration, self.person)
         else:
             model.consume()
             return self.db.actions.create_event(activity, place, duration)
