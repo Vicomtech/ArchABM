@@ -1,8 +1,8 @@
 class PlaceFrame:
     header = [
+        "id",
         "time",
         "place",
-        "people",
         "num_people",
         "air_quality",
     ]

@@ -19,7 +19,7 @@ class Person:
 
         self.place = None
         self.risk = 0.0
-        self.status = None
+        self.status = None  # TODO: remove
 
         self.generator = EventGenerator(self, env, db)
 
@@ -66,16 +66,7 @@ class Person:
                 # Save data
                 self.save_person_frame()
 
-            logging.info(
-                "[%.2f] Person %d event %s at place %s for %d minutes"
-                % (
-                    self.env.now,
-                    self.id,
-                    self.activity,
-                    self.place.params.name,
-                    self.duration,
-                )
-            )
+            logging.info("[%.2f] Person %d event %s at place %s for %d minutes" % (self.env.now, self.id, self.activity, self.place.params.name, self.duration,))
 
             self.event = None
             # print("DOING", self.id, self.activity, self.duration)
@@ -97,9 +88,7 @@ class Person:
     def assign_event(self, event):
         if self.current_process is not None and not self.current_process.triggered:
             self.current_process.interrupt("Need to go!")
-            logging.info(
-                "[%.2f] Person %d interrupted current event" % (self.env.now, self.id)
-            )
+            logging.info("[%.2f] Person %d interrupted current event" % (self.env.now, self.id))
         self.event = event
         self.generator.consume_activity(event.activity)
 
@@ -107,10 +96,10 @@ class Person:
         self.risk += risk
 
     def save_person_frame(self):
+        self.person_frame.set("id", self.db.id)
         self.person_frame.set("time", self.env.now, 0)
         self.person_frame.set("person", self.id)
         self.person_frame.set("place", self.place.id)
         self.person_frame.set("activity", self.activity)
-        self.person_frame.set("status", self.status)
         self.person_frame.set("risk", self.risk)
         self.db.results.add_person(self.person_frame)

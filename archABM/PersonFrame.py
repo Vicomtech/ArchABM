@@ -1,5 +1,5 @@
 class PersonFrame:
-    header = ["time", "person", "place", "activity", "status", "risk"]
+    header = ["id", "time", "person", "place", "activity", "risk"]
 
     def __init__(self):
         self.store = dict.fromkeys(PersonFrame.header, "")
