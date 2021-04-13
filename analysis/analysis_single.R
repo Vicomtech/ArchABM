@@ -49,7 +49,7 @@ pdf(file.path(experiment, "results.pdf"), 10, 7)
 # Count: number events at each place
 places %>% 
   dplyr::group_by(name, activity) %>% 
-  dplyr::summarise(num_events=dplyr::n()) %>% 
+  dplyr::summarise(num_events=dplyr::n(), .groups = "keep") %>% 
   dplyr::ungroup() %>% 
   ggplot2::ggplot()+
   ggplot2::geom_col(ggplot2::aes(x=name, y=num_events, fill=activity), alpha=0.9, width=0.6)+
@@ -191,7 +191,7 @@ people %>%
 people %>% 
   dplyr::group_by(name, department) %>% 
   dplyr::arrange(time) %>% 
-  dplyr::summarise(final_risk = dplyr::last(risk)) %>% 
+  dplyr::summarise(final_risk = dplyr::last(risk), .groups = "keep") %>% 
   dplyr::ungroup() %>% 
   ggplot2::ggplot()+
   ggplot2::geom_boxplot(ggplot2::aes(x=department, y=final_risk))+
@@ -203,7 +203,7 @@ people %>%
 people %>% 
   dplyr::group_by(name, building) %>% 
   dplyr::arrange(time) %>% 
-  dplyr::summarise(final_risk = dplyr::last(risk)) %>% 
+  dplyr::summarise(final_risk = dplyr::last(risk), .groups = "keep") %>% 
   dplyr::ungroup() %>% 
   ggplot2::ggplot()+
   ggplot2::geom_boxplot(ggplot2::aes(x=building, y=final_risk))+
@@ -294,7 +294,7 @@ places %>%
   ggridges::geom_density_ridges(ggplot2::aes(x=num_people, y=name, fill=activity), 
                                 rel_min_height = 0.05, scale=2, bandwidth=1, color="black", alpha=0.6, na.rm=T)+
   ggplot2::geom_point(data = places_info, ggplot2::aes(x=capacity, y=name),
-                      shape=124, size=5, color="red")+
+                      shape=124, size=5, color="red", na.rm=T)+
   ggplot2::scale_fill_manual(values=palette)+
   ggplot2::theme_bw()+
   ggplot2::ggtitle("Histogram: number of people per place",
@@ -351,53 +351,9 @@ places %>%
 #   ggplot2::theme_bw()
 
 
+# -------------------------------------------------------------------------
 
 dev.off()
-
-# GRAPH -------------------------------------------------------------------
-
-blacklist <- c("home")
-blacklist <- c()
-
-nodes <- places_info %>% 
-  dplyr::filter(!(activity %in% blacklist)) %>% 
-  merge(data.frame(activity=names(palette), color=palette, row.names = NULL), by="activity") %>%  
-  dplyr::rename(id=place, label=name, group=activity, value=area) 
-
-edges <- people %>% 
-  dplyr::filter(!(activity %in% blacklist)) %>% 
-  dplyr::group_by(person) %>% 
-  dplyr::arrange(person, time) %>% 
-  dplyr::mutate(
-    from = place,
-    to = dplyr::lead(place)
-  ) %>% 
-  dplyr::ungroup() %>% 
-  na.omit() %>% 
-  dplyr::group_by(from, to) %>% 
-  dplyr::mutate(weight=dplyr::n()) %>% 
-  dplyr::ungroup() %>% 
-  dplyr::filter(from != to) %>% 
-  dplyr::distinct(from, to, weight) %>%
-  dplyr::rename(from=from, to=to, width=weight)
-
-
-visNetwork::visNetwork(nodes, edges, width="100%", height = "800",
-                       main = list(text="Interaction Graph", 
-                                   style="font-family:Roboto;font-size:24px;text-align:center;")
-) %>% 
-  visNetwork::visNodes(shape="square", font=list(face="Roboto", size=30), 
-                       scaling=list(min=10, max=40)) %>%
-  visNetwork::visEdges(smooth=T, color=list(color="#848484", opacity=0.1)) %>%
-  visNetwork::visPhysics(solver = "forceAtlas2Based", stabilization=T, minVelocity=3) %>%
-  visNetwork::visInteraction(dragView = T, hideEdgesOnDrag = F, hover = T) %>% 
-  # visNetwork::visIgraphLayout(layout = "layout_nicely") %>%
-  # visNetwork::visLegend(position="right", zoom=F) %>% 
-  visNetwork::visOptions(highlightNearest = list(enabled=T, degree=0, hover=T, 
-                                                 hideColor="rgba(0,0,0,0)", labelOnly=T)) %>% 
-  visNetwork::visLayout(randomSeed = 0) #%>% 
-# visNetwork::visSave(file = "interaction.html", selfcontained = F)
-# visNetwork::visSave(file = file.path(experiment, "interaction.html"), selfcontained = T)
 
 
 
