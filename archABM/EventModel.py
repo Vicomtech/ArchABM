@@ -26,8 +26,11 @@ class EventModel:
 
     def get_noise(self):
         if self.noise is None:
-            m = 30  # minutes
-            self.noise = random.randrange(m)  # minutes
+            m = 15  # minutes
+            if m == 0:
+                self.noise = 0
+            else:
+                self.noise = random.randrange(m)  # minutes
         return self.noise
 
     def convert_schedule(self):
@@ -62,6 +65,7 @@ class EventModel:
             noise = self.get_noise()  # minutes
             if a - noise <= now <= b + noise and estimated > b + noise:
                 duration = b + noise - now
+                break
         return duration
 
     def priority(self):
@@ -95,6 +99,7 @@ class EventModel:
             noise = self.get_noise()  # minutes
             if a - noise <= now <= b + noise:
                 p = self.priority()
+                break
 
         return p
 
