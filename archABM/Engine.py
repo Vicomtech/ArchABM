@@ -11,8 +11,22 @@ from .Results import Results
 class Engine:
     def __init__(self, config):
         self.config = config
+        self.preprocess()
+
         self.db = Database()
         self.db.results = Results(self.config)
+
+    def preprocess(self):
+        people = []
+        cont = 0
+        for p in self.config["people"]:
+            num_people = p.pop("num_people")
+            for i in range(num_people):
+                p["name"] = "person" + str(cont)
+                people.append(p.copy())
+                cont += 1
+        self.config["people"] = people
+
 
     def setup(self):
         self.env = simpy.Environment()
@@ -24,6 +38,7 @@ class Engine:
         self.db.places = god.create_places()
         self.db.actions = god.create_actions()
         self.db.people = god.create_people()
+        return
 
     def run(self, until, num=1):
         # print("Simulation Started")
