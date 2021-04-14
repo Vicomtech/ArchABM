@@ -97,7 +97,7 @@ class Person:
 
     def save_person_frame(self):
         # self.person_frame.reset()
-        self.person_frame.set("id", self.db.id)
+        self.person_frame.set("run", self.db.run)
         self.person_frame.set("time", self.env.now, 0)
         self.person_frame.set("person", self.id)
         self.person_frame.set("place", self.place.id)
