@@ -6,7 +6,7 @@ class Database:
         self.actions = None
         self.options = None
 
-        self.id = -1
+        self.run = -1
 
     def next(self):
-        self.id += 1
+        self.run += 1
