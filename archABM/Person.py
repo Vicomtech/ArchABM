@@ -96,10 +96,11 @@ class Person:
         self.risk += risk
 
     def save_person_frame(self):
+        # self.person_frame.reset()
         self.person_frame.set("id", self.db.id)
         self.person_frame.set("time", self.env.now, 0)
         self.person_frame.set("person", self.id)
         self.person_frame.set("place", self.place.id)
         self.person_frame.set("activity", self.activity)
         self.person_frame.set("risk", self.risk)
-        self.db.results.add_person(self.person_frame)
+        self.db.results.write_person(self.person_frame)
