@@ -2,6 +2,9 @@ class PersonFrame:
     header = ["id", "time", "person", "place", "activity", "risk"]
 
     def __init__(self):
+        self.reset()
+
+    def reset(self):
         self.store = dict.fromkeys(PersonFrame.header, "")
 
     @staticmethod
@@ -12,20 +15,20 @@ class PersonFrame:
         return ",".join(map(str, self.store.values())) + "\n"
 
     def set(self, key, value, digits=2):
-        if key in self.store.keys():
-            if isinstance(value, bool):
+        if key in PersonFrame.header:
+            typ = type(value)
+            if typ == bool:
                 value = int(value)
-                value = str(value)
-            elif isinstance(value, int):
-                value = str(value)
-            elif isinstance(value, float):
+            elif typ == int:
+                pass
+            elif typ == float:
                 if digits == 0:
                     value = int(value)
                 else:
                     value = round(value, digits)
-                value = str(value)
-            elif isinstance(value, list):
+            elif typ == list:
                 value = ";".join(map(str, value))
             self.store[key] = value
         else:
             raise BaseException
+
