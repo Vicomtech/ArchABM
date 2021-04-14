@@ -8,14 +8,20 @@ class Actions:
         self.env = env
         self.db = db
 
+        self.flag = None
+
     def find_place(self, activity, person):
         places = self.db.places
+        if self.flag is None:
+            random.shuffle(places)
+            self.flag = 0
         # print("FIND PLACE FOR", activity, person.params.name)
         # if person is None:
         #     person = np.random.choice(self.db.people, size=None, replace=None).tolist()
         #     places = [p for p in places if p.event.params.shared] # TODO: REVIEW THIS PLEASE
         # for place in np.random.permutation(places):
-        for place in random.sample(places, k=len(places)):
+        # for place in random.sample(places, k=len(places)):
+        for place in places:
             if place.params.activity == activity:
                 # if person.place is not None:
                 #     print("FROM: ", person.place.params.name, "TO: ", place.params.name)
@@ -119,11 +125,12 @@ class Actions:
                         people_filter.append(p)
                 people = people_filter
 
-        people = [p for p in people if p.generator.valid_activity(activity)]
         if len(people) > 1:
             num_people = place.people_attending()
             num_people = min(len(people), num_people)
-            people = np.random.choice(people, size=num_people, replace=None).tolist()
+            people = random.sample(people, k=num_people)
+            people = [p for p in people if p.generator.valid_activity(activity)]
+            # people = np.random.choice(people, size=num_people, replace=None).tolist()
         # always add invoking person to the people
         if person not in people:
             people.append(person)
