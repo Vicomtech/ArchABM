@@ -18,11 +18,11 @@ config <- jsonlite::fromJSON(config_file)
 places <- read.csv(places_file)
 people <- read.csv(people_file)
 
-places_info <- config$Places %>% 
+places_info <- config$places %>% 
   tibble::rowid_to_column(var = "place") %>% 
   dplyr::mutate(place = place-1)
 
-people_info <- config$People %>% 
+people_info <- config$people %>% 
   tibble::rowid_to_column(var = "person") %>% 
   dplyr::mutate(person = person-1)
 
@@ -61,7 +61,7 @@ places %>%
   ggplot2::labs(x="Place", y="# Events", fill="Activity")
 
 people %>% 
-  merge(config$Events, by="activity") %>% 
+  merge(config$events, by="activity") %>% 
   dplyr::add_count(name, activity, name = "count") %>% 
   # dplyr::mutate(repeat_max = ifelse(is.na(repeat_max), max(count), repeat_max)) %>% 
   ggplot2::ggplot()+
@@ -85,7 +85,7 @@ people %>%
 
 
 people %>% 
-  merge(config$Events, by="activity") %>%
+  merge(config$events, by="activity") %>%
   dplyr::group_by(name) %>% 
   dplyr::arrange(time) %>% 
   dplyr::mutate(elapsed = dplyr::lead(time)-time) %>% 
