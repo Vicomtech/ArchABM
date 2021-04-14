@@ -28,7 +28,7 @@ for p in config["places"]:
 
 # FROM JSON
 import json
-with open("example.json", "r") as f:
+with open("data/example.json", "r") as f:
     config = json.load(f)
 
 # preprocess config
