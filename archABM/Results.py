@@ -20,10 +20,10 @@ class Results:
         self.save_log = False
         self.save_config = True
         self.save_csv = True
-        self.save_json = False
+        self.save_json = True
         self.return_json = True
+
         self.results = None
-        self.directory = None
 
         if self.save_log or self.save_config or self.save_csv or self.save_json:
             self.mkpath()
@@ -32,7 +32,7 @@ class Results:
         if self.save_log:
             self.setup_log()
         if self.save_config:
-            self.write_config(config)
+            self.write_config()
         if self.save_csv:
             self.open_people_csv()
             self.open_places_csv()
@@ -44,11 +44,11 @@ class Results:
     def mkpath(self):
         cwd = os.getcwd()
         now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S-%f")
-        self.path = os.path.join(cwd, "results", now)
-        # TODO: review directory option
-        # p = self.config["Options"].replace({np.nan: None}).set_index("option")["value"].to_dict()
-        # if p["directory"] is not None:
-        #     self.path = os.path.join(cwd, "results", p["directory"], now)
+        folder = "results"
+        self.path = os.path.join(cwd, folder, now)
+        directory = self.config["options"]["directory"]
+        if directory is not None:
+            self.path = os.path.join(cwd, folder, directory, now)
 
     def mkdir(self):
         os.makedirs(self.path)
@@ -106,10 +106,9 @@ class Results:
             for key, value in place.store.items():
                 self.results[self.places_name][key].append(value)
 
-    def write_config(self, config):
-        config_dict = {key: config[key].replace({np.nan: None}).to_dict(orient="records") for key in config.keys()}
+    def write_config(self):
         with open(os.path.join(self.path, self.config_name + '.json'), "w") as f:
-            json.dump(config_dict, f)
+            json.dump(self.config, f)
 
     def done(self):
         if self.save_csv:
