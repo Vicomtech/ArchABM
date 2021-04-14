@@ -9,6 +9,8 @@ config = pd.read_excel(io="data/config.ods", sheet_name=None)
 
 simulation = Engine(config)
 start_time = time.time()
-simulation.run(1440, 10)
+results = simulation.run(1440, 20) # 1440
 end_time = time.time()
 print("time elapsed: %f" % (end_time - start_time))
+
+# print(results)
