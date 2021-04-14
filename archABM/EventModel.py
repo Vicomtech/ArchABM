@@ -6,9 +6,6 @@ import random
 
 
 class EventModel:
-    # def __init__(
-    #     self, activity, schedule, repeat_min, repeat_max, duration_min, duration_max
-    # ):
     def __init__(self, params):
         self.params = params
         # self.activity = activity
@@ -18,7 +15,7 @@ class EventModel:
         # self.duration_min = duration_min  # minutes
         # self.duration_max = duration_max  # minutes
 
-        self.convert_schedule()
+        # self.convert_schedule()
         self.reset()
 
         # self.count = 0
