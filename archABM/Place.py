@@ -44,11 +44,11 @@ class Place:
             self.propagation_model.start(total_mask_efficiency, room_ventilation_rate, room_area, room_height)
 
     def convert_params(self):
-        if self.params.department is not None:
-            if "," in self.params.department:
-                self.params.department = self.params.department.split(",")
-            else:
-                self.params.department = [self.params.department]
+        # if self.params.department is not None:
+        #     if "," in self.params.department:
+        #         self.params.department = self.params.department.split(",")
+        #     else:
+        #         self.params.department = [self.params.department]
         if self.params.capacity is not None:
             self.params.capacity = int(self.params.capacity)
         else:
@@ -136,14 +136,14 @@ class Place:
         if self.full():
             return 0
         # print("ATTENDING", self.params.name, self.params.capacity, self.num_people)
-        return random.randrange(self.params.capacity - self.num_people)
+        return random.randrange(int(self.params.capacity - self.num_people))
 
     def full(self):
         return self.params.capacity == self.num_people
 
     def save_place_frame(self):
         # self.place_frame.reset()
-        self.place_frame.set("id", self.db.id)
+        self.place_frame.set("run", self.db.run)
         self.place_frame.set("time", self.env.now, 0)
         self.place_frame.set("place", self.id)
         self.place_frame.set("num_people", self.num_people)
