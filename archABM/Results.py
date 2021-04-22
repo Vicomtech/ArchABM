@@ -13,6 +13,7 @@ class Results:
         self.places_name = "places"
         self.results_name = "results"
         self.config_name = "config"
+        self.output_name = "raw_results"
         self.log_name = "app.log"
 
         self.config = config
@@ -23,7 +24,7 @@ class Results:
         self.save_json = True
         self.return_json = True
 
-        self.results = None
+        self.output = None
 
         if self.save_log or self.save_config or self.save_csv or self.save_json:
             self.mkpath()
@@ -73,18 +74,22 @@ class Results:
         self.places_csv.close()
 
     def open_json(self):
-        self.results_json = open(os.path.join(self.path, self.results_name + ".json"), "w")
+        self.output_json = open(os.path.join(self.path, self.output_name + ".json"), "w")
         
     def write_json(self):
-        json.dump(self.results, self.results_json)
+        json.dump(self.output, self.output_json)
 
     def close_json(self):
-        self.results_json.close()
+        self.output_json.close()
 
     def init_results(self):
+        self.output = {}
         self.results = dict.fromkeys([self.people_name, self.places_name], {})
         self.results[self.people_name] = dict.fromkeys(PersonFrame.header)
         self.results[self.places_name] = dict.fromkeys(PlaceFrame.header)
+        
+        self.output[self.config_name] = self.config
+        self.output[self.results_name] = self.results
 
         for key in PersonFrame.header:
             self.results[self.people_name][key] = []
