@@ -18,6 +18,11 @@ config <- jsonlite::fromJSON(config_file)
 places <- read.csv(places_file)
 people <- read.csv(people_file)
 
+
+events_info <- config$events %>% 
+  tibble::rowid_to_column(var = "event") %>% 
+  dplyr::mutate(event = event-1)
+
 places_info <- config$places %>% 
   tibble::rowid_to_column(var = "place") %>% 
   dplyr::mutate(place = place-1)
@@ -28,6 +33,7 @@ people_info <- config$people %>%
 
 places <- merge(places, places_info, by = "place", sort = F)
 people <- merge(people, people_info, by = "person", sort=F)
+people <- merge(people, events_info, by = "event", sort=F)
 
 # COLOR PALETTE
 values <- places_info$activity %>% unique() %>% sort()
@@ -61,7 +67,7 @@ places %>%
   ggplot2::labs(x="Place", y="# Events", fill="Activity")
 
 people %>% 
-  merge(config$events, by="activity") %>% 
+  # merge(config$events, by="activity") %>% 
   dplyr::add_count(name, activity, name = "count") %>% 
   # dplyr::mutate(repeat_max = ifelse(is.na(repeat_max), max(count), repeat_max)) %>% 
   ggplot2::ggplot()+
@@ -85,7 +91,6 @@ people %>%
 
 
 people %>% 
-  merge(config$events, by="activity") %>%
   dplyr::group_by(name) %>% 
   dplyr::arrange(time) %>% 
   dplyr::mutate(elapsed = dplyr::lead(time)-time) %>% 
