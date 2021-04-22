@@ -48,8 +48,9 @@ class Person:
             # Generate Event
             while self.event is None:
                 self.event = self.generator.generate(self.env.now)
-            self.activity = self.event.activity
+            self.model = self.event.model
             self.duration = self.event.duration
+            activity = self.model.params.activity
 
             # print(self.event, self.event.place, self.place, self.event.place.full())
 
@@ -66,7 +67,7 @@ class Person:
                 # Save data
                 self.save_person_frame()
 
-            logging.info("[%.2f] Person %d event %s at place %s for %d minutes" % (self.env.now, self.id, self.activity, self.place.params.name, self.duration,))
+            logging.info("[%.2f] Person %d event %s at place %s for %d minutes" % (self.env.now, self.id, self.model.params.activity, self.place.params.name, self.duration,))
 
             self.event = None
             # print("DOING", self.id, self.activity, self.duration)
@@ -90,7 +91,7 @@ class Person:
             self.current_process.interrupt("Need to go!")
             logging.info("[%.2f] Person %d interrupted current event" % (self.env.now, self.id))
         self.event = event
-        self.generator.consume_activity(event.activity)
+        self.generator.consume_activity(event.model)
 
     def update_risk(self, risk):
         self.risk += risk
@@ -101,6 +102,6 @@ class Person:
         self.person_frame.set("time", self.env.now, 0)
         self.person_frame.set("person", self.id)
         self.person_frame.set("place", self.place.id)
-        self.person_frame.set("activity", self.activity)
+        self.person_frame.set("event", self.model.id)
         self.person_frame.set("risk", self.risk)
         self.db.results.write_person(self.person_frame)
