@@ -1,5 +1,5 @@
 class PersonFrame:
-    header = ["run", "time", "person", "place", "activity", "risk"]
+    header = ["run", "time", "person", "place", "event", "risk"]
 
     def __init__(self):
         self.reset()
