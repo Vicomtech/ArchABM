@@ -10,19 +10,19 @@ class Actions:
 
         self.flag = None
 
-    def find_place(self, activity, person):
+    def find_place(self, model, person):
         places = self.db.places
         if self.flag is None:
             random.shuffle(places)
             self.flag = 0
-        # print("FIND PLACE FOR", activity, person.params.name)
+        # print("FIND PLACE FOR", model.params.activity, person.params.name)
         # if person is None:
         #     person = np.random.choice(self.db.people, size=None, replace=None).tolist()
         #     places = [p for p in places if p.event.params.shared] # TODO: REVIEW THIS PLEASE
         # for place in np.random.permutation(places):
         # for place in random.sample(places, k=len(places)):
         for place in places:
-            if place.params.activity == activity:
+            if place.params.activity == model.params.activity:
                 # if person.place is not None:
                 #     print("FROM: ", person.place.params.name, "TO: ", place.params.name)
                 # check if place is allowed and not full
@@ -53,13 +53,14 @@ class Actions:
         # print("NOT PLACE", activity, person.params.name)
         return None
 
-    def create_event(self, activity, place, duration):
-        return Event(activity, place, duration)
+    def create_event(self, model, place, duration):
+        return Event(model, place, duration)
 
     def assign_event(self, event, people):
         for person in people:
             person.assign_event(event)
 
+    # TODO: remove method
     def create_random_event(self, when):
         # wait until start of event
         yield self.env.timeout(when)
@@ -80,6 +81,7 @@ class Actions:
         # print(len(people), event.activity, event.duration, event.place)
         self.assign_event(event, people)
 
+    # TODO: remove method
     def go_home(self, activity, duration):
         activity = "home"
         duration = 1e4
@@ -88,6 +90,7 @@ class Actions:
         event = self.create_event(activity, duration)
         self.assign_event(event, people)
 
+    # TODO: remove method
     def create_meeting(self, duration):
         activity = "meeting"
         duration = 30
@@ -97,10 +100,10 @@ class Actions:
         # we can give more weight to different profiles
         # for example, that DARs are always present on meetings
 
-    def create_collective_event(self, activity, place, duration, person):
+    def create_collective_event(self, model, place, duration, person):
 
         # create event
-        event = self.create_event(activity, place, duration)
+        event = self.create_event(model, place, duration)
 
         # select people
         people = self.db.people
@@ -129,7 +132,7 @@ class Actions:
             num_people = place.people_attending()
             num_people = min(len(people), num_people)
             people = random.sample(people, k=num_people)
-            people = [p for p in people if p.generator.valid_activity(activity)]
+            people = [p for p in people if p.generator.valid_activity(model)]
             # people = np.random.choice(people, size=num_people, replace=None).tolist()
         # always add invoking person to the people
         if person not in people:
