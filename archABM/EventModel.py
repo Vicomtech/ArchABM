@@ -6,7 +6,12 @@ import random
 
 
 class EventModel:
+    id = -1
+
     def __init__(self, params):
+        self.next()
+        self.id = EventModel.id
+
         self.params = params
         # self.activity = activity
         # self.schedule = ast.literal_eval(schedule)  # hours
@@ -16,10 +21,17 @@ class EventModel:
         # self.duration_max = duration_max  # minutes
 
         # self.convert_schedule()
-        self.reset()
+        self.reset_count()
 
         # self.count = 0
         self.noise = None
+
+    @classmethod
+    def reset(cls):
+        EventModel.id = -1
+
+    def next(self):
+        EventModel.id += 1
 
     def get_noise(self):
         if self.noise is None:
@@ -34,7 +46,7 @@ class EventModel:
         self.params.schedule = ast.literal_eval(self.params.schedule)  # hours
         self.params.schedule = [[s[0] * 60, s[1] * 60] for s in self.params.schedule]  # minutes
 
-    def reset(self):
+    def reset_count(self):
         # if self.params.repeat_max is None:
         #     self.params.repeat_max = 1000
         # if self.params.repeat_min == self.params.repeat_max:
@@ -46,7 +58,7 @@ class EventModel:
         self.count = 0
 
     def new(self):
-        self.reset()
+        self.reset_count()
         return copy.copy(self)
 
     def duration(self, now):
