@@ -46,24 +46,37 @@ class EventGenerator:
 
         # Create event based on selected model
         activity = model.params.activity
+        # activity = model
         duration = model.duration(now)
         # duration += 0.001
-        place = self.db.actions.find_place(activity, self.person)
+        place = self.db.actions.find_place(model, self.person)
         if place is None:
             return None
         if model.params.collective:
             # print("COLLECTIVE", place.params.name)
-            return self.db.actions.create_collective_event(activity, place, duration, self.person)
+            return self.db.actions.create_collective_event(model, place, duration, self.person)
         else:
             model.consume()
-            return self.db.actions.create_event(activity, place, duration)
+            return self.db.actions.create_event(model, place, duration)
 
-    def consume_activity(self, activity):
+    # def consume_activity(self, model):
+    #     model.consume()
+    def consume_activity(self, model):
         for m in self.models:
-            if m.params.activity == activity:
+            if m.params.activity == model.params.activity:
                 m.consume()
+    # def consume_activity(self, activity):
+    #     for m in self.models:
+    #         if m.params.activity == activity:
+    #             m.consume()
 
-    def valid_activity(self, activity):
+    # def valid_activity(self, model):
+    #     model.consume()
+    def valid_activity(self, model):
         for m in self.models:
-            if m.params.activity == activity:
+            if m.params.activity == model.params.activity:
                 return m.valid()
+    # def valid_activity(self, activity):
+    #     for m in self.models:
+    #         if m.params.activity == activity:
+    #             return m.valid()
