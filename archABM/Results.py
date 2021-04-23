@@ -74,7 +74,7 @@ class Results:
 
     def open_json(self):
         self.output_json = open(os.path.join(self.path, self.output_name + ".json"), "w")
-        
+
     def write_json(self):
         json.dump(self.output, self.output_json)
 
@@ -86,7 +86,7 @@ class Results:
         self.results = dict.fromkeys([self.people_name, self.places_name], {})
         self.results[self.people_name] = dict.fromkeys(PersonFrame.header)
         self.results[self.places_name] = dict.fromkeys(PlaceFrame.header)
-        
+
         self.output[self.config_name] = self.config
         self.output[self.results_name] = self.results
 
@@ -94,7 +94,7 @@ class Results:
             self.results[self.people_name][key] = []
         for key in PlaceFrame.header:
             self.results[self.places_name][key] = []
-        
+
     def write_person(self, person):
         if self.save_csv:
             self.people_csv.write(person.get_data())
@@ -111,7 +111,7 @@ class Results:
                 self.results[self.places_name][key].append(value)
 
     def write_config(self):
-        with open(os.path.join(self.path, self.config_name + '.json'), "w") as f:
+        with open(os.path.join(self.path, self.config_name + ".json"), "w") as f:
             json.dump(self.config, f)
 
     def done(self):
@@ -123,4 +123,3 @@ class Results:
             self.close_json()
         if self.return_output:
             return self.output
-

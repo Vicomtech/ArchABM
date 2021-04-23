@@ -5,6 +5,7 @@ from .Parameters import Parameters
 from .Actions import Actions
 from .Options import Options
 
+
 class Creator:
     def __init__(self, env, config, db):
         self.env = env
@@ -51,5 +52,3 @@ class Creator:
             people.append(person)
 
         return people
-
-

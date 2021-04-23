@@ -65,6 +65,7 @@ class EventGenerator:
         for m in self.models:
             if m.params.activity == model.params.activity:
                 m.consume()
+
     # def consume_activity(self, activity):
     #     for m in self.models:
     #         if m.params.activity == activity:
@@ -76,6 +77,7 @@ class EventGenerator:
         for m in self.models:
             if m.params.activity == model.params.activity:
                 return m.valid()
+
     # def valid_activity(self, activity):
     #     for m in self.models:
     #         if m.params.activity == activity:

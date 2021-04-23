@@ -27,7 +27,6 @@ class Engine:
                 cont += 1
         self.config["people"] = people
 
-
     def setup(self):
         self.env = simpy.Environment()
         self.db.next()
