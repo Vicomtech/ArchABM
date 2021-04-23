@@ -2,7 +2,6 @@ import os
 import datetime
 import json
 import logging
-import numpy as np
 from .PlaceFrame import PlaceFrame
 from .PersonFrame import PersonFrame
 
