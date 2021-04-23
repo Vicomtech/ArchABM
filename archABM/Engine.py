@@ -40,7 +40,9 @@ class Engine:
         self.db.people = god.create_people()
         return
 
-    def run(self, until, num=None):
+    def run(self, until=None, num=None):
+        if until is None:
+            until = 1440
         if num is None:
             num = self.config["options"]["number_runs"]
         # print("Simulation Started")
