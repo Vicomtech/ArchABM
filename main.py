@@ -40,7 +40,7 @@ from archABM.Engine import Engine
 
 simulation = Engine(config)
 start_time = time.time()
-results = simulation.run(1440, 1)
+results = simulation.run(1440)
 end_time = time.time()
 print("time elapsed: %f" % (end_time - start_time))
 
