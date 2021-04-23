@@ -18,10 +18,10 @@ class Results:
         self.config = config
 
         self.save_log = False
-        self.save_config = True
-        self.save_csv = True
-        self.save_json = True
-        self.return_json = True
+        self.save_config = False
+        self.save_csv = False
+        self.save_json = False
+        self.return_output = True
 
         self.output = None
 
@@ -38,7 +38,7 @@ class Results:
             self.open_places_csv()
         if self.save_json:
             self.open_json()
-        if self.return_json or self.save_json:
+        if self.return_output or self.save_json:
             self.init_results()
 
     def mkpath(self):
@@ -98,14 +98,14 @@ class Results:
     def write_person(self, person):
         if self.save_csv:
             self.people_csv.write(person.get_data())
-        if self.save_json or self.return_json:
+        if self.save_json or self.return_output:
             for key, value in person.store.items():
                 self.results[self.people_name][key].append(value)
 
     def write_place(self, place):
         if self.save_csv:
             self.places_csv.write(place.get_data())
-        if self.save_json or self.return_json:
+        if self.save_json or self.return_output:
             pass
             for key, value in place.store.items():
                 self.results[self.places_name][key].append(value)
@@ -121,6 +121,6 @@ class Results:
         if self.save_json:
             self.write_json()
             self.close_json()
-        if self.return_json:
-            return self.results
+        if self.return_output:
+            return self.output
 
