@@ -40,8 +40,9 @@ class Engine:
         self.db.people = god.create_people()
         return
 
-    def run(self, until, num=1):
-        num = self.config["options"]["number_runs"]
+    def run(self, until, num=None):
+        if num is None:
+            num = self.config["options"]["number_runs"]
         # print("Simulation Started")
         with tqdm(total=num) as pbar:
             for i in range(num):
