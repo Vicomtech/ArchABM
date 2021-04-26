@@ -14,6 +14,7 @@ class Creator:
 
         Person.reset()
         Place.reset()
+        EventModel.reset()
 
     def create_options(self):
         p = self.config["options"]
