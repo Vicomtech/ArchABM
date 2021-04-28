@@ -17,6 +17,7 @@ class Results:
 
         self.config = config
 
+        self.log = False
         self.save_log = False
         self.save_config = False
         self.save_csv = False
@@ -29,8 +30,7 @@ class Results:
             self.mkpath()
             self.mkdir()
 
-        if self.save_log:
-            self.setup_log()
+        self.setup_log()
         if self.save_config:
             self.write_config()
         if self.save_csv:
@@ -54,9 +54,14 @@ class Results:
         os.makedirs(self.path)
 
     def setup_log(self):
-        logging.basicConfig(
-            filename=os.path.join(self.path, self.log_name), filemode="w", format="%(message)s", level=logging.INFO,
-        )
+        if self.save_log:
+            logging.basicConfig(
+                filename=os.path.join(self.path, self.log_name), filemode="w", format="%(message)s", level=logging.INFO,
+            )
+        elif self.log:
+            logging.basicConfig(format="%(message)s", level=logging.INFO)
+        else:
+            logging.disable(logging.INFO)
 
     def open_people_csv(self):
         self.people_csv = open(os.path.join(self.path, self.people_name + ".csv"), "a")
