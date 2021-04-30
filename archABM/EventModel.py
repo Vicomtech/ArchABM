@@ -72,7 +72,7 @@ class EventModel:
             # if a <= now <= b and estimated > b:
             #     duration = b - now
             noise = self.get_noise()  # minutes
-            if a - noise <= now <= b + noise and estimated > b + noise:
+            if a - noise < now < b + noise and estimated > b + noise:
                 duration = b + noise - now
                 break
         return duration
@@ -106,7 +106,7 @@ class EventModel:
         for interval in self.params.schedule:
             a, b = interval
             noise = self.get_noise()  # minutes
-            if a - noise <= now <= b + noise:
+            if a - noise < now < b + noise:
                 p = self.priority()
                 break
 
