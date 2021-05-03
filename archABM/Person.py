@@ -68,7 +68,7 @@ class Person:
                             
                 # Save data
                 elapsed = self.env.now - self.last_updated
-                if elapsed > 0:
+                if elapsed > 0 or cont == 0:
                     self.save_person_frame()
             
 
