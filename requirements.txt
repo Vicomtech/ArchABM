@@ -1,9 +1,2 @@
 simpy
-numpy
-matplotlib
-pandas
-seaborn
-networkx
-igraph
-odfpy
 tqdm

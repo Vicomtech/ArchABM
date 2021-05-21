@@ -31,5 +31,3 @@ class PlaceFrame:
             self.store[key] = value
         else:
             raise BaseException
-
-

@@ -2,7 +2,6 @@ import os
 import datetime
 import json
 import logging
-import numpy as np
 from .PlaceFrame import PlaceFrame
 from .PersonFrame import PersonFrame
 
@@ -18,11 +17,12 @@ class Results:
 
         self.config = config
 
+        self.log = False
         self.save_log = False
-        self.save_config = True
-        self.save_csv = True
-        self.save_json = True
-        self.return_json = True
+        self.save_config = False
+        self.save_csv = False
+        self.save_json = False
+        self.return_output = True
 
         self.output = None
 
@@ -30,8 +30,7 @@ class Results:
             self.mkpath()
             self.mkdir()
 
-        if self.save_log:
-            self.setup_log()
+        self.setup_log()
         if self.save_config:
             self.write_config()
         if self.save_csv:
@@ -39,7 +38,7 @@ class Results:
             self.open_places_csv()
         if self.save_json:
             self.open_json()
-        if self.return_json or self.save_json:
+        if self.return_output or self.save_json:
             self.init_results()
 
     def mkpath(self):
@@ -55,9 +54,14 @@ class Results:
         os.makedirs(self.path)
 
     def setup_log(self):
-        logging.basicConfig(
-            filename=os.path.join(self.path, self.log_name), filemode="w", format="%(message)s", level=logging.INFO,
-        )
+        if self.save_log:
+            logging.basicConfig(
+                filename=os.path.join(self.path, self.log_name), filemode="w", format="%(message)s", level=logging.INFO,
+            )
+        elif self.log:
+            logging.basicConfig(format="%(message)s", level=logging.INFO)
+        else:
+            logging.disable(logging.INFO)
 
     def open_people_csv(self):
         self.people_csv = open(os.path.join(self.path, self.people_name + ".csv"), "a")
@@ -75,7 +79,7 @@ class Results:
 
     def open_json(self):
         self.output_json = open(os.path.join(self.path, self.output_name + ".json"), "w")
-        
+
     def write_json(self):
         json.dump(self.output, self.output_json)
 
@@ -87,7 +91,7 @@ class Results:
         self.results = dict.fromkeys([self.people_name, self.places_name], {})
         self.results[self.people_name] = dict.fromkeys(PersonFrame.header)
         self.results[self.places_name] = dict.fromkeys(PlaceFrame.header)
-        
+
         self.output[self.config_name] = self.config
         self.output[self.results_name] = self.results
 
@@ -95,24 +99,24 @@ class Results:
             self.results[self.people_name][key] = []
         for key in PlaceFrame.header:
             self.results[self.places_name][key] = []
-        
+
     def write_person(self, person):
         if self.save_csv:
             self.people_csv.write(person.get_data())
-        if self.save_json or self.return_json:
+        if self.save_json or self.return_output:
             for key, value in person.store.items():
                 self.results[self.people_name][key].append(value)
 
     def write_place(self, place):
         if self.save_csv:
             self.places_csv.write(place.get_data())
-        if self.save_json or self.return_json:
+        if self.save_json or self.return_output:
             pass
             for key, value in place.store.items():
                 self.results[self.places_name][key].append(value)
 
     def write_config(self):
-        with open(os.path.join(self.path, self.config_name + '.json'), "w") as f:
+        with open(os.path.join(self.path, self.config_name + ".json"), "w") as f:
             json.dump(self.config, f)
 
     def done(self):
@@ -122,6 +126,5 @@ class Results:
         if self.save_json:
             self.write_json()
             self.close_json()
-        if self.return_json:
-            return self.results
-
+        if self.return_output:
+            return self.output

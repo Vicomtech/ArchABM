@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 import ast
 import copy
 import logging
@@ -67,13 +67,13 @@ class EventModel:
         # )
         duration = random.randint(self.params.duration_min, self.params.duration_max)
         estimated = now + duration
+        noise = self.get_noise()  # minutes
         for interval in self.params.schedule:
             a, b = interval
             # if a <= now <= b and estimated > b:
             #     duration = b - now
-            noise = self.get_noise()  # minutes
             if a - noise <= now <= b + noise and estimated > b + noise:
-                duration = b + noise - now
+                duration = b + noise - now + 1
                 break
         return duration
 
@@ -103,9 +103,9 @@ class EventModel:
         if self.count == self.params.repeat_max:
             return 0.0
 
+        noise = self.get_noise()  # minutes
         for interval in self.params.schedule:
             a, b = interval
-            noise = self.get_noise()  # minutes
             if a - noise <= now <= b + noise:
                 p = self.priority()
                 break

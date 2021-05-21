@@ -1,7 +1,8 @@
 from .Event import Event
-import numpy as np
-import random
 
+# import numpy as np
+import random
+import logging
 
 class Actions:
     def __init__(self, env, db):
@@ -137,6 +138,9 @@ class Actions:
         # always add invoking person to the people
         if person not in people:
             people.append(person)
+
+        logging.info("[%.2f] Person %d invoked collective event %s at place %s for %d minutes for %d people" % (self.env.now, person.id, model.params.activity, place.params.name, duration, len(people)))
+
         # print(
         #     "Action",
         #     round(self.env.now),

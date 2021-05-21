@@ -26,6 +26,8 @@ class Person:
         self.person_frame = PersonFrame()
         self.current_process = None
         self.event = None
+        self.last_updated = 0
+
 
     @classmethod
     def reset(cls):
@@ -63,14 +65,18 @@ class Person:
                 # Add to new place
                 self.place = self.event.place
                 self.place.add_person(self)
-
+                            
                 # Save data
-                self.save_person_frame()
+                elapsed = self.env.now - self.last_updated
+                if elapsed > 0 or cont == 0:
+                    self.save_person_frame()
+            
 
             logging.info("[%.2f] Person %d event %s at place %s for %d minutes" % (self.env.now, self.id, self.model.params.activity, self.place.params.name, self.duration,))
 
             self.event = None
             # print("DOING", self.id, self.activity, self.duration)
+            self.last_updated = self.env.now
             self.current_process = self.env.process(self.wait())
             yield self.current_process
             # print("#####", self.id, self.activity, self.duration)

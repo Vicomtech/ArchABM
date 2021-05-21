@@ -31,4 +31,3 @@ class PersonFrame:
             self.store[key] = value
         else:
             raise BaseException
-

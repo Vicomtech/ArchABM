@@ -5,6 +5,7 @@ from .Parameters import Parameters
 from .Actions import Actions
 from .Options import Options
 
+
 class Creator:
     def __init__(self, env, config, db):
         self.env = env
@@ -13,6 +14,7 @@ class Creator:
 
         Person.reset()
         Place.reset()
+        EventModel.reset()
 
     def create_options(self):
         p = self.config["options"]
@@ -51,5 +53,3 @@ class Creator:
             people.append(person)
 
         return people
-
-

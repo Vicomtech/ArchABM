@@ -27,7 +27,6 @@ class Engine:
                 cont += 1
         self.config["people"] = people
 
-
     def setup(self):
         self.env = simpy.Environment()
         self.db.next()
@@ -40,8 +39,11 @@ class Engine:
         self.db.people = god.create_people()
         return
 
-    def run(self, until, num=1):
-        num = self.config["options"]["number_runs"]
+    def run(self, until=None, num=None):
+        if until is None:
+            until = 1440
+        if num is None:
+            num = self.config["options"]["number_runs"]
         # print("Simulation Started")
         with tqdm(total=num) as pbar:
             for i in range(num):
