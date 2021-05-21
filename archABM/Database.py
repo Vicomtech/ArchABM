@@ -1,5 +1,5 @@
 class Database:
-    def __init__(self):
+    def __init__(self) -> None:
         self.events = []
         self.places = []
         self.people = []
@@ -8,5 +8,5 @@ class Database:
 
         self.run = -1
 
-    def next(self):
+    def next(self) -> None:
         self.run += 1

@@ -1,11 +1,10 @@
-# import numpy as np
 import random
-from .Event import Event
+from simpy import Environment
+from .Database import Database
 
 
 class EventGenerator:
-    def __init__(self, person, env, db):
-        self.person = person
+    def __init__(self, env: Environment, db: Database):
         self.env = env
         self.db = db
 
@@ -20,7 +19,7 @@ class EventGenerator:
 
         self.activities = [m.params.activity for m in self.models]
 
-    def generate(self, now):
+    def generate(self, now, person):
         # Get probabilities for each model event
         num_people = len(self.db.people)
         p = [m.probability(now) for m in self.models]
@@ -49,12 +48,14 @@ class EventGenerator:
         # activity = model
         duration = model.duration(now)
         # duration += 0.001
-        place = self.db.actions.find_place(model, self.person)
+        place = self.db.actions.find_place(model, person)
         if place is None:
             return None
         if model.params.collective:
             # print("COLLECTIVE", place.params.name)
-            return self.db.actions.create_collective_event(model, place, duration, self.person)
+            return self.db.actions.create_collective_event(
+                model, place, duration, person
+            )
         else:
             model.consume()
             return self.db.actions.create_event(model, place, duration)

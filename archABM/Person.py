@@ -1,55 +1,51 @@
 import logging
+
+from simpy import Environment, Interrupt
+from .Event import Event
+from .Database import Database
+from .Parameters import Parameters
 from .EventGenerator import EventGenerator
 from .PersonFrame import PersonFrame
-import simpy
-import copy
 
 
 class Person:
     id = -1
 
-    def __init__(self, env, db, params):
+    def __init__(self, env: Environment, db: Database, params: Parameters) -> None:
         self.next()
         self.id = Person.id
 
         self.env = env
         self.db = db
-
         self.params = params
 
-        self.place = None
-        self.risk = 0.0
-        self.status = None  # TODO: remove
-
-        self.generator = EventGenerator(self, env, db)
-
-        self.person_frame = PersonFrame()
+        self.generator = EventGenerator(env, db)
         self.current_process = None
+        self.place = None
         self.event = None
+        self.risk = 0.0
         self.last_updated = 0
 
+        self.person_frame = PersonFrame()
 
     @classmethod
-    def reset(cls):
+    def reset(cls) -> None:
         Person.id = -1
 
-    def next(self):
+    def next(self) -> None:
         Person.id += 1
 
-    def start(self):
+    def start(self) -> None:
         logging.info("[%.2f] Person %d starting up" % (self.env.now, self.id))
         self.env.process(self.process())
 
-        #     self.event = task.event
-        #     yield self.env.timeout(task.duration)
-
-    def process(self):
+    def process(self) -> None:
         cont = 0
         cont_max = 1000
         while True:
             # Generate Event
             while self.event is None:
-                self.event = self.generator.generate(self.env.now)
+                self.event = self.generator.generate(self.env.now, self)
             self.model = self.event.model
             self.duration = self.event.duration
             activity = self.model.params.activity
@@ -65,14 +61,22 @@ class Person:
                 # Add to new place
                 self.place = self.event.place
                 self.place.add_person(self)
-                            
-                # Save data
+
+                # Save data (if first event or elapsed time > 0)
                 elapsed = self.env.now - self.last_updated
                 if elapsed > 0 or cont == 0:
                     self.save_person_frame()
-            
 
-            logging.info("[%.2f] Person %d event %s at place %s for %d minutes" % (self.env.now, self.id, self.model.params.activity, self.place.params.name, self.duration,))
+            logging.info(
+                "[%.2f] Person %d event %s at place %s for %d minutes"
+                % (
+                    self.env.now,
+                    self.id,
+                    self.model.params.activity,
+                    self.place.params.name,
+                    self.duration,
+                )
+            )
 
             self.event = None
             # print("DOING", self.id, self.activity, self.duration)
@@ -85,24 +89,26 @@ class Person:
             if cont > cont_max:
                 break
 
-    def wait(self):
+    def wait(self) -> None:
         try:
             yield self.env.timeout(self.duration)
-        except simpy.Interrupt:
+        except Interrupt:
             # print("interrupted")
             pass
 
-    def assign_event(self, event):
+    def assign_event(self, event: Event) -> None:
         if self.current_process is not None and not self.current_process.triggered:
             self.current_process.interrupt("Need to go!")
-            logging.info("[%.2f] Person %d interrupted current event" % (self.env.now, self.id))
+            logging.info(
+                "[%.2f] Person %d interrupted current event" % (self.env.now, self.id)
+            )
         self.event = event
         self.generator.consume_activity(event.model)
 
-    def update_risk(self, risk):
+    def update_risk(self, risk: float) -> None:
         self.risk += risk
 
-    def save_person_frame(self):
+    def save_person_frame(self) -> None:
         # self.person_frame.reset()
         self.person_frame.set("run", self.db.run)
         self.person_frame.set("time", self.env.now, 0)

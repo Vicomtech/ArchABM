@@ -1,13 +1,16 @@
+from simpy import Environment
 from .EventModel import EventModel
 from .Place import Place
 from .Person import Person
 from .Parameters import Parameters
 from .Actions import Actions
 from .Options import Options
+from .Database import Database
+from typing import List
 
 
 class Creator:
-    def __init__(self, env, config, db):
+    def __init__(self, env: Environment, config: dict, db: Database) -> None:
         self.env = env
         self.config = config
         self.db = db
@@ -16,14 +19,14 @@ class Creator:
         Place.reset()
         EventModel.reset()
 
-    def create_options(self):
+    def create_options(self) -> Options:
         p = self.config["options"]
         params = Parameters(p)
         options = Options(self.env, self.db, params)
 
         return options
 
-    def create_events(self):
+    def create_events(self) -> List[EventModel]:
         events = []
         for e in self.config["events"]:
             params = Parameters(e)
@@ -32,7 +35,7 @@ class Creator:
 
         return events
 
-    def create_places(self):
+    def create_places(self) -> List[Place]:
         places = []
         for p in self.config["places"]:
             params = Parameters(p)
@@ -41,10 +44,10 @@ class Creator:
 
         return places
 
-    def create_actions(self):
+    def create_actions(self) -> Actions:
         return Actions(self.env, self.db)
 
-    def create_people(self):
+    def create_people(self) -> List[Person]:
         people = []
         for p in self.config["people"]:
             params = Parameters(p)

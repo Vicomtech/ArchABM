@@ -1,20 +1,20 @@
 class PersonFrame:
     header = ["run", "time", "person", "place", "event", "risk"]
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.reset()
 
-    def reset(self):
+    def reset(self) -> None:
         self.store = dict.fromkeys(PersonFrame.header, "")
 
     @staticmethod
-    def get_header():
+    def get_header() -> str:
         return ",".join(PersonFrame.header) + "\n"
 
-    def get_data(self):
+    def get_data(self) -> str:
         return ",".join(map(str, self.store.values())) + "\n"
 
-    def set(self, key, value, digits=2):
+    def set(self, key: str, value, digits: int = 2) -> None:
         if key in PersonFrame.header:
             typ = type(value)
             if typ == bool:

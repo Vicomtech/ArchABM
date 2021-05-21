@@ -1,34 +1,31 @@
-import simpy
-import logging
+from simpy import Environment
 from tqdm import tqdm
-
 from .Creator import Creator
 from .Database import Database
-from .Actions import Actions
 from .Results import Results
 
 
 class Engine:
-    def __init__(self, config):
+    def __init__(self, config: dict) -> None:
         self.config = config
         self.preprocess()
 
         self.db = Database()
         self.db.results = Results(self.config)
 
-    def preprocess(self):
+    def preprocess(self) -> None:
         people = []
         cont = 0
-        for p in self.config["people"]:
-            num_people = p.pop("num_people")
+        for person in self.config["people"]:
+            num_people = person.pop("num_people")
             for i in range(num_people):
-                p["name"] = "person" + str(cont)
-                people.append(p.copy())
+                person["name"] = "person" + str(cont)
+                people.append(person.copy())
                 cont += 1
         self.config["people"] = people
 
-    def setup(self):
-        self.env = simpy.Environment()
+    def setup(self) -> None:
+        self.env = Environment()
         self.db.next()
 
         god = Creator(self.env, self.config, self.db)
@@ -37,18 +34,16 @@ class Engine:
         self.db.places = god.create_places()
         self.db.actions = god.create_actions()
         self.db.people = god.create_people()
-        return
 
-    def run(self, until=None, num=None):
+    def run(self, until: int = None, number_runs: int = None):
         if until is None:
             until = 1440
-        if num is None:
-            num = self.config["options"]["number_runs"]
-        # print("Simulation Started")
-        with tqdm(total=num) as pbar:
-            for i in range(num):
+        if number_runs is None:
+            number_runs = self.config["options"]["number_runs"]
+
+        with tqdm(total=number_runs) as pbar:
+            for i in range(number_runs):
                 self.setup()
                 self.env.run(until)
                 pbar.update(1)
-        # print("Simulation Finished")
         return self.db.results.done()

@@ -1,14 +1,12 @@
-# import numpy as np
 import ast
 import copy
-import logging
 import random
 
 
 class EventModel:
     id = -1
 
-    def __init__(self, params):
+    def __init__(self, params) -> None:
         self.next()
         self.id = EventModel.id
 
@@ -27,13 +25,13 @@ class EventModel:
         self.noise = None
 
     @classmethod
-    def reset(cls):
+    def reset(cls) -> None:
         EventModel.id = -1
 
-    def next(self):
+    def next(self) -> None:
         EventModel.id += 1
 
-    def get_noise(self):
+    def get_noise(self) -> int:
         if self.noise is None:
             m = 15  # minutes
             if m == 0:
@@ -42,11 +40,13 @@ class EventModel:
                 self.noise = random.randrange(m)  # minutes
         return self.noise
 
-    def convert_schedule(self):
+    def convert_schedule(self) -> None:
         self.params.schedule = ast.literal_eval(self.params.schedule)  # hours
-        self.params.schedule = [[s[0] * 60, s[1] * 60] for s in self.params.schedule]  # minutes
+        self.params.schedule = [
+            [s[0] * 60, s[1] * 60] for s in self.params.schedule
+        ]  # minutes
 
-    def reset_count(self):
+    def reset_count(self) -> None:
         # if self.params.repeat_max is None:
         #     self.params.repeat_max = 1000
         # if self.params.repeat_min == self.params.repeat_max:
@@ -61,7 +61,7 @@ class EventModel:
         self.reset_count()
         return copy.copy(self)
 
-    def duration(self, now):
+    def duration(self, now) -> int:
         # duration = np.random.random_integers(
         #     self.params.duration_min, self.params.duration_max
         # )
@@ -77,7 +77,7 @@ class EventModel:
                 break
         return duration
 
-    def priority(self):
+    def priority(self) -> float:
         alpha = 0.5
         if self.params.repeat_max is None:
             return random.uniform(0.0, 1.0)
@@ -87,7 +87,11 @@ class EventModel:
             return 1 - (1 - alpha) * self.count / self.params.repeat_min
         if self.params.repeat_min == self.params.repeat_max:
             return alpha
-        return alpha * (self.params.repeat_max - self.count) / (self.params.repeat_max - self.params.repeat_min)
+        return (
+            alpha
+            * (self.params.repeat_max - self.count)
+            / (self.params.repeat_max - self.params.repeat_min)
+        )
 
         # if self.target == 0:
         #     return 0.0
@@ -95,7 +99,7 @@ class EventModel:
         #     return 1.0
         # return (self.target - self.count) / self.target
 
-    def probability(self, now):
+    def probability(self, now: int) -> float:
         p = 0.0
         # if self.count == self.target:
         #     return p
