@@ -1,12 +1,16 @@
+
+from jsonschema import validate
 from simpy import Environment
 from tqdm import tqdm
 from .Creator import Creator
 from .Database import Database
 from .Results import Results
-
+from .Schema import schema
 
 class Engine:
     def __init__(self, config: dict) -> None:
+        validate(instance = config, schema = schema)
+        
         self.config = config
         self.preprocess()
 
@@ -30,6 +34,7 @@ class Engine:
 
         god = Creator(self.env, self.config, self.db)
         self.db.options = god.create_options()
+        self.db.model = god.create_model()
         self.db.events = god.create_events()
         self.db.places = god.create_places()
         self.db.actions = god.create_actions()
