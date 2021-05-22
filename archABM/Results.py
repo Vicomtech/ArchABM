@@ -48,9 +48,10 @@ class Results:
         now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S-%f")
         folder = "results"
         self.path = os.path.join(cwd, folder, now)
-        directory = self.config["options"]["directory"]
-        if directory is not None:
-            self.path = os.path.join(cwd, folder, directory, now)
+        if "directory" in self.config["options"]:
+            directory = self.config["options"]["directory"]
+            if directory is not None:
+                self.path = os.path.join(cwd, folder, directory, now)
 
     def mkdir(self) -> None:
         os.makedirs(self.path)
