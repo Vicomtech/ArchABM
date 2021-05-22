@@ -130,6 +130,7 @@
             "area": null,
             "height": null,
             "capacity": null,
+            "ventilation": null,
             "allow": true
         },
         {
@@ -140,6 +141,7 @@
             "area": 40.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -150,6 +152,7 @@
             "area": 80.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -160,6 +163,7 @@
             "area": 40.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -170,6 +174,7 @@
             "area": 50.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -180,6 +185,7 @@
             "area": 60.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -190,6 +196,7 @@
             "area": 40.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -200,6 +207,7 @@
             "area": 40.0,
             "height": 3.0,
             "capacity": 50.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -210,6 +218,7 @@
             "area": 30.0,
             "height": 3.0,
             "capacity": 10.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -220,6 +229,7 @@
             "area": 40.0,
             "height": 3.0,
             "capacity": 10.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -230,6 +240,7 @@
             "area": 20.0,
             "height": 3.0,
             "capacity": 20.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -240,6 +251,7 @@
             "area": 20.0,
             "height": 3.0,
             "capacity": 10.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -250,6 +262,7 @@
             "area": 20.0,
             "height": 3.0,
             "capacity": 8.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -260,6 +273,7 @@
             "area": 30.0,
             "height": 3.0,
             "capacity": 80.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -270,6 +284,7 @@
             "area": 30.0,
             "height": 3.0,
             "capacity": 80.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -280,6 +295,7 @@
             "area": 15.0,
             "height": 3.0,
             "capacity": 10.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -290,6 +306,7 @@
             "area": 15.0,
             "height": 3.0,
             "capacity": 10.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -300,6 +317,7 @@
             "area": 20.0,
             "height": 3.0,
             "capacity": 4.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -310,6 +328,7 @@
             "area": 10.0,
             "height": 3.0,
             "capacity": 4.0,
+            "ventilation": 3,
             "allow": true
         },
         {
@@ -320,16 +339,34 @@
             "area": 20.0,
             "height": 3.0,
             "capacity": 4.0,
+            "ventilation": 3,
             "allow": true
         }
     ],
     "options": {
         "movement_buildings": true,
         "movement_department": true,
-        "contagious_people": 0.0,
-        "number_runs": 2,
-        "mask_efficiency": 0.5,
-        "room_ventilation": 0.3,
-        "directory": null
+        "number_runs": 1,
+        "directory": null,
+        "model": "MaxPlanck",
+        "model_parameters": {
+            "MaxPlanck": {
+                "RNA_D50": 316,
+                "deposition_rate": 0.5,
+                "emission_breathing": 0.06,
+                "emission_speaking": 0.6,
+                "speaking_breathing_ratio": 0.1,
+                "respiratory_rate": 10,
+                "RNA_concentration": 5e8,
+                "aerosol_diameter": 5,
+                "virus_lifetime": 1.7
+            },
+            "MIT": {
+                "RNA_D50": 316
+            },
+            "Colorado": {
+                "RNA_D50": 316
+            }
+        }
     }
 }
