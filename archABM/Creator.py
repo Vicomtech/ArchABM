@@ -56,3 +56,19 @@ class Creator:
             people.append(person)
 
         return people
+
+    def create_model(self):
+        options = self.config["options"]
+        selection = options["model"]
+        params = Parameters(options["model_parameters"][selection])
+        if selection == "MaxPlanck":
+            from .AerosolModelMaxPlanck import AerosolModelMaxPlanck
+            model = AerosolModelMaxPlanck(params)
+        elif selection == "MIT":
+            from .AerosolModelMIT import AerosolModelMIT
+            model = AerosolModelMIT(params)
+        elif selection == "Colorado":
+            from .AerosolModelColorado import AerosolModelColorado
+            model = AerosolModelColorado(params)
+
+        return model
