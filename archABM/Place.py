@@ -1,12 +1,15 @@
 import random
-from .PlaceFrame import PlaceFrame
-from .PropagationModel import PropagationModel
 
+from simpy import Environment
+from .PropagationModel import PropagationModel
+from .Database import Database
+from .Parameters import Parameters
+from .PlaceFrame import PlaceFrame
 
 class Place:
     id = -1
 
-    def __init__(self, env, db, params):
+    def __init__(self, env: Environment, db: Database, params: Parameters) -> None:
         self.next()
         self.id = Place.id
 
@@ -27,23 +30,23 @@ class Place:
         self.place_frame = PlaceFrame()
 
     @classmethod
-    def reset(cls):
+    def reset(cls) -> None:
         Place.id = -1
 
-    def next(self):
+    def next(self) -> None:
         Place.id += 1
 
-    def init_propagation_model(self):
+    def init_propagation_model(self) -> None:
         if self.event.params.shared:
             self.propagation_model = PropagationModel()
 
             total_mask_efficiency = self.event.params.mask_efficiency
-            room_ventilation_rate = self.db.options.params.room_ventilation
+            room_ventilation_rate = self.params.ventilation
             room_area = self.params.area
             room_height = self.params.height
             self.propagation_model.start(total_mask_efficiency, room_ventilation_rate, room_area, room_height)
 
-    def convert_params(self):
+    def convert_params(self) -> None:
         # if self.params.department is not None:
         #     if "," in self.params.department:
         #         self.params.department = self.params.department.split(",")
@@ -54,7 +57,7 @@ class Place:
         else:
             self.params.capacity = 1000
 
-    def get_event(self):
+    def get_event(self) -> None:
         for e in self.db.events:
             if e.params.activity == self.params.activity:
                 return e
@@ -77,7 +80,7 @@ class Place:
         # save frame
         self.save_place_frame()
 
-    def remove_person(self, person):
+    def remove_person(self, person) -> None:
         # register time
         self.times[person.id]["t2"] = self.env.now
         elapsed = self.times[person.id]["t2"] - self.times[person.id]["t1"]
@@ -94,7 +97,7 @@ class Place:
         # save frame
         self.save_place_frame()
 
-    def update_air(self):
+    def update_air(self) -> None:
         if self.event.params.shared:
             elapsed = self.env.now - self.last_updated
             num_people = self.num_people
@@ -125,23 +128,23 @@ class Place:
                 self.air_quality -= dosis_infectious
                 # self.air_quality -= ratio_pollution * num_people * elapsed
             else:
-                self.air_quality += self.db.options.params.room_ventilation * elapsed
+                self.air_quality += self.params.ventilation * elapsed
             # TODO: saturate air quality DONE
             self.air_quality = min(100, max(0, self.air_quality))
 
             # print(self.id, elapsed, num_people, self.air_quality)
         self.last_updated = self.env.now
 
-    def people_attending(self):
+    def people_attending(self) -> int:
         if self.full():
             return 0
         # print("ATTENDING", self.params.name, self.params.capacity, self.num_people)
         return random.randrange(int(self.params.capacity - self.num_people))
 
-    def full(self):
+    def full(self) -> bool:
         return self.params.capacity == self.num_people
 
-    def save_place_frame(self):
+    def save_place_frame(self) -> None:
         # self.place_frame.reset()
         self.place_frame.set("run", self.db.run)
         self.place_frame.set("time", self.env.now, 0)
