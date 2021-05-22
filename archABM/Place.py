@@ -26,7 +26,8 @@ class Place:
         self.last_updated = 0
 
         self.event = self.get_event()
-        self.init_propagation_model()
+        # self.init_propagation_model()
+        # self.aerosol_model = self.db.model
         self.place_frame = PlaceFrame()
 
     @classmethod
@@ -36,15 +37,16 @@ class Place:
     def next(self) -> None:
         Place.id += 1
 
-    def init_propagation_model(self) -> None:
-        if self.event.params.shared:
-            self.propagation_model = PropagationModel()
+    # def init_propagation_model(self) -> None:
+    #     if self.event.params.shared:
 
-            total_mask_efficiency = self.event.params.mask_efficiency
-            room_ventilation_rate = self.params.ventilation
-            room_area = self.params.area
-            room_height = self.params.height
-            self.propagation_model.start(total_mask_efficiency, room_ventilation_rate, room_area, room_height)
+    #         self.propagation_model = PropagationModel()
+
+    #         total_mask_efficiency = self.event.params.mask_efficiency
+    #         room_ventilation_rate = self.params.ventilation
+    #         room_area = self.params.area
+    #         room_height = self.params.height
+    #         self.propagation_model.start(total_mask_efficiency, room_ventilation_rate, room_area, room_height)
 
     def convert_params(self) -> None:
         # if self.params.department is not None:
@@ -116,16 +118,29 @@ class Place:
             # )
             susceptible_people = num_people
             time_in_room_h = elapsed / 60
-            (dosis_six_hours, dosis_infectious, individual_infection_risk, risk_one_person,) = self.propagation_model.get_risk_optimized(susceptible_people, time_in_room_h)
-
+            # (dosis_six_hours, dosis_infectious, individual_infection_risk, risk_one_person,) = self.propagation_model.get_risk_optimized(susceptible_people, time_in_room_h)
+            inputs = Parameters({
+                "room_area": self.params.area,
+                "room_height": self.params.height,
+                "room_ventilation_rate": self.params.ventilation,
+                "mask_efficiency": self.event.params.mask_efficiency,
+                "time_in_room_h": time_in_room_h,
+                "susceptible_people": susceptible_people
+            })
+                #         total_mask_efficiency = self.event.params.mask_efficiency
+    #         room_ventilation_rate = self.params.ventilation
+    #         room_height = self.params.height
+            place_risk, person_risk = self.db.model.get_risk(inputs)
             # if elapsed > 0:
             #     print(
             #         "AIR: ", num_people, round(elapsed), dosis_infectious, risk_one_person
             #     )
             for p in self.people:
-                p.update_risk(risk_one_person)
+                # p.update_risk(risk_one_person)
+                p.update_risk(person_risk)
             if num_people > 0:
-                self.air_quality -= dosis_infectious
+                self.air_quality -= place_risk
+                # self.air_quality -= dosis_infectious
                 # self.air_quality -= ratio_pollution * num_people * elapsed
             else:
                 self.air_quality += self.params.ventilation * elapsed
