@@ -68,5 +68,7 @@ jobs:
     
     - name: Release
       uses: softprops/action-gh-release@v1
+      with:
+        name: ArchABM-${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
