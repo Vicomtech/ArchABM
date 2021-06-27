@@ -7,6 +7,7 @@ from .Database import Database
 from .Results import Results
 from .Schema import schema
 
+
 class Engine:
     def __init__(self, config: dict) -> None:
         validate(instance = config, schema = schema)
@@ -17,7 +18,16 @@ class Engine:
         self.db = Database()
         self.db.results = Results(self.config)
 
+
     def preprocess(self) -> None:
+        num_people = 0
+        for person in self.config["people"]:
+            num_people += person["num_people"]
+
+        for place in self.config["places"]:
+            if place["capacity"] is None:
+                place["capacity"] = num_people+1
+
         people = []
         cont = 0
         for person in self.config["people"]:

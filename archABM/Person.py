@@ -53,7 +53,7 @@ class Person:
             # print(self.event, self.event.place, self.place, self.event.place.full())
 
             # Move from current place to new one
-            if self.place != self.event.place and not self.event.place.full():
+            if self.event is not None and self.place != self.event.place and not self.event.place.full():
                 # Remove from current place
                 if self.place is not None:
                     self.place.remove_person(self)
