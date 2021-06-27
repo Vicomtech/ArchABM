@@ -120,7 +120,8 @@ class Actions:
                 place.params.name,
                 duration,
                 len(people),
-            )
+            ) +
+            str([p.id for p in people])
         )
 
         # print(
