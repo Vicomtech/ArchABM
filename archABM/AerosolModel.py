@@ -12,5 +12,8 @@ class AerosolModel:
 
         Args:
             inputs (Parameters): dictionary of model inputs
+
+        Returns:
+            place air contamination, person infection risk
         """
         pass
