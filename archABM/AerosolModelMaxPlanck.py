@@ -3,7 +3,10 @@ from .AerosolModel import AerosolModel
 import math
 
 class AerosolModelMaxPlanck(AerosolModel):
-    """Aerosol transmission estimator"""
+    """
+    Aerosol transmission estimator
+    
+    """
     name: "MaxPlanck"
 
     def __init__(self, params):
@@ -28,6 +31,15 @@ class AerosolModelMaxPlanck(AerosolModel):
 
         dosis_infectious = RNA_dosis / (inputs.room_ventilation_rate + 1 / params.virus_lifetime) * (1 - inputs.mask_efficiency) * inputs.time_in_room_h
         risk_one_person = (1 - ((1 - infection_probability) ** dosis_infectious) ** inputs.susceptible_people) * 100
-        
-        return dosis_infectious, risk_one_person
+
+
+        # Return results
+        dosis_min, dosis_max = 0, 1
+        co2_min, co2_max = 0, 80
+        co2_dosis = (dosis_infectious - dosis_min)/(dosis_max - dosis_min) * (co2_max-co2_min) + co2_min
+
+        air_contamination = co2_dosis
+        infection_risk = risk_one_person
+
+        return air_contamination, infection_risk
         
