@@ -18,15 +18,6 @@ class AerosolModelMIT(AerosolModel):
 
         params = self.params
 
-        inputs = Parameters({
-            "room_area": self.params.area,
-            "room_height": self.params.height,
-            "room_ventilation_rate": self.params.ventilation,
-            "mask_efficiency": self.event.params.mask_efficiency,
-            "time_in_room_h": time_in_room_h,
-            "susceptible_people": susceptible_people
-        })
-
         area = inputs.room_area
         height = inputs.room_height
         volume = area * height
@@ -60,23 +51,41 @@ class AerosolModelMIT(AerosolModel):
 
         mask_passage_probability = 1 - inputs.mask_efficiency # 0.145
         transmission_rate = (breathing_rate * mask_passage_probability)**2*infectiousness*transmissibility/(volume*relaxation_rate)
-        risk_tolerance = 0.1
 
+        # if risk tolerance is fixed
+        # risk_tolerance = 0.1
+        # exposure_time = inputs.time_in_room_h # 10
+        # maximum_occupancy_transient = 1 + risk_tolerance * (1 + 1/(relaxation_rate*exposure_time)) / (transmission_rate * exposure_time)
+        # maximum_occupancy_steady = 1 + risk_tolerance / (transmission_rate * exposure_time)
+
+        # occupancy = inputs.susceptible_people
+        # maximum_exposure_time_steady = risk_tolerance / (occupancy - 1) / transmission_rate
+        # maximum_exposure_time_transient = maximum_exposure_time_steady * (1 + math.sqrt(1 + 4/(relaxation_rate*maximum_exposure_time_steady) )) / 2
+
+        # background_co2 = params.background_co2 # 410
+        # average_co2 = params.average_co2 # 700
+        # maximum_exposure_time_co2 = risk_tolerance * 38000 * relaxation_rate / \
+        #     ((average_co2 - background_co2) * breathing_rate * infectiousness * \
+        #     transmissibility * mask_passage_probability * mask_passage_probability * ventilation )
+
+        # co2_concentration = background_co2 + risk_tolerance * 38000 * relaxation_rate / (exposure_time * breathing_rate * infectiousness * transmissibility * mask_passage_probability * mask_passage_probability * ventilation)
+
+        # if exposure time and occupancy is fixed
         exposure_time = inputs.time_in_room_h # 10
-        maximum_occupancy_transient = 1 + risk_tolerance * (1 + 1/(relaxation_rate*exposure_time)) / (transmission_rate * exposure_time)
-        maximum_occupancy_steady = 1 + risk_tolerance / (transmission_rate * exposure_time)
-
         occupancy = inputs.susceptible_people
-        maximum_exposure_time_steady = risk_tolerance / (occupancy - 1) / transmission_rate
-        maximum_exposure_time_transient = maximum_exposure_time_steady * (1 + math.sqrt(1 + 4/(relaxation_rate*maximum_exposure_time_steady) )) / 2
+        risk_tolerance_steady = (occupancy-1) * transmission_rate * exposure_time
+        risk_tolerance_transient = risk_tolerance_steady / (1 + 1/(relaxation_rate*exposure_time))
 
-        background_co2 = inputs.background_co2 # 410
-        average_co2 = params.average_co2 # 700
-        maximum_exposure_time_co2 = risk_tolerance * 38000 * relaxation_rate / \
-            ((average_co2 - background_co2) * breathing_rate * infectiousness * \
-            transmissibility * mask_passage_probability * mask_passage_probability * ventilation )
+        background_co2 = params.background_co2 # 410
+        co2_concentration = background_co2 + risk_tolerance_steady * 38000 * relaxation_rate / (exposure_time * breathing_rate * infectiousness * transmissibility * mask_passage_probability * mask_passage_probability * ventilation)
 
-        co2_concentration = background_co2 + risk_tolerance * 38000 * relaxation_rate / (exposure_time * breathing_rate * infectiousness * transmissibility * mask_passage_probability * mask_passage_probability * ventilation)
+        # Return results
+        air_contamination = co2_concentration-background_co2
+        infection_risk = risk_tolerance_steady
+
+        print("hey", risk_tolerance_steady, relaxation_rate, exposure_time, breathing_rate, infectiousness, transmissibility, mask_passage_probability, ventilation)
+
+        return air_contamination, infection_risk
 
 
 
