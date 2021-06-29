@@ -44,8 +44,14 @@ class Person:
         cont_max = 1000
         while True:
             # Generate Event
+            k = 0
             while self.event is None:
                 self.event = self.generator.generate(self.env.now, self)
+                k += 1
+                if k > 3:
+                    duration = self.model.duration(self.env.now)
+                    self.event = Event(self.model, self.place, duration)
+                    break
             self.model = self.event.model
             self.duration = self.event.duration
             activity = self.model.params.activity
@@ -53,7 +59,7 @@ class Person:
             # print(self.event, self.event.place, self.place, self.event.place.full())
 
             # Move from current place to new one
-            if self.event is not None and self.place != self.event.place and not self.event.place.full():
+            if self.event is not None and self.event.place is not None and self.place != self.event.place and not self.event.place.full():
                 # Remove from current place
                 if self.place is not None:
                     self.place.remove_person(self)
@@ -67,16 +73,16 @@ class Person:
                 if elapsed > 0 or cont == 0:
                     self.save_person_frame()
 
-            logging.info(
-                "[%.2f] Person %d event %s at place %s for %d minutes"
-                % (
-                    self.env.now,
-                    self.id,
-                    self.model.params.activity,
-                    self.place.params.name,
-                    self.duration,
+                logging.info(
+                    "[%.2f] Person %d event %s at place %s for %d minutes"
+                    % (
+                        self.env.now,
+                        self.id,
+                        self.model.params.activity,
+                        self.place.params.name,
+                        self.duration,
+                    )
                 )
-            )
 
             self.event = None
             # print("DOING", self.id, self.activity, self.duration)
