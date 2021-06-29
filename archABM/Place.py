@@ -22,7 +22,8 @@ class Place:
         self.num_people = 0
         self.times = {}
 
-        self.air_quality = 100
+        self.air_quality_baseline = self.db.model.params.background_co2 # 100.0 TODO: review
+        self.air_quality = self.air_quality_baseline
         self.last_updated = 0
 
         self.event = self.get_event()
@@ -57,7 +58,7 @@ class Place:
         if self.params.capacity is not None:
             self.params.capacity = int(self.params.capacity)
         else:
-            self.params.capacity = 1000
+            self.params.capacity = 1000 # TODO: setup maximum capacity DONE
 
     def get_event(self) -> None:
         for e in self.db.events:
@@ -100,8 +101,8 @@ class Place:
         self.save_place_frame()
 
     def update_air(self) -> None:
-        if self.event.params.shared:
-            elapsed = self.env.now - self.last_updated
+        elapsed = self.env.now - self.last_updated
+        if self.event.params.shared and elapsed > 0:
             num_people = self.num_people
             ratio_ventilation = 0.05
             ratio_pollution = 0.05
@@ -127,10 +128,14 @@ class Place:
                 "time_in_room_h": time_in_room_h,
                 "susceptible_people": susceptible_people
             })
-                #         total_mask_efficiency = self.event.params.mask_efficiency
+
+
+    #         total_mask_efficiency = self.event.params.mask_efficiency
     #         room_ventilation_rate = self.params.ventilation
     #         room_height = self.params.height
             place_risk, person_risk = self.db.model.get_risk(inputs)
+            if self.id == 1:
+                print(place_risk, person_risk, self.air_quality)
             # if elapsed > 0:
             #     print(
             #         "AIR: ", num_people, round(elapsed), dosis_infectious, risk_one_person
@@ -139,13 +144,14 @@ class Place:
                 # p.update_risk(risk_one_person)
                 p.update_risk(person_risk)
             if num_people > 0:
-                self.air_quality -= place_risk
+                self.air_quality += place_risk
                 # self.air_quality -= dosis_infectious
                 # self.air_quality -= ratio_pollution * num_people * elapsed
             else:
-                self.air_quality += self.params.ventilation * elapsed
-            # TODO: saturate air quality DONE
-            self.air_quality = min(100, max(0, self.air_quality))
+                self.air_quality -= 3* self.params.ventilation * elapsed # TODO: https://www.researchgate.net/publication/221932157_Ventilation_Efficiency_and_Carbon_Dioxide_CO2_Concentration
+            # TODO: saturate air quality based on CO2?  
+            # self.air_quality = min(100, max(0, self.air_quality))
+            self.air_quality = max(self.air_quality_baseline, self.air_quality)
 
             # print(self.id, elapsed, num_people, self.air_quality)
         self.last_updated = self.env.now
@@ -165,5 +171,5 @@ class Place:
         self.place_frame.set("time", self.env.now, 0)
         self.place_frame.set("place", self.id)
         self.place_frame.set("num_people", self.num_people)
-        self.place_frame.set("air_quality", self.air_quality, 0)
+        self.place_frame.set("air_quality", self.air_quality, 2)
         self.db.results.write_place(self.place_frame)
