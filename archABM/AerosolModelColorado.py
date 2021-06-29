@@ -6,23 +6,6 @@ class AerosolModelColorado(AerosolModel):
 
     def __init__(self, params):
         self.params = params
-
-
-    def get_person_risk(self, params):
-        """Calculate the transmission risk of an individual in a room"
-
-        Args:
-            params (Parameters): dictionary of model parameters
-        """
-        pass
-
-    def get_place_risk(self, params):
-        """Calculate the risk in air quality of a place
-
-        Args:
-            params (Parameters): dictionary of model parameters
-        """
-        pass
         
     def get_risk(self, inputs):
         """Calculate the transmission risk of an individual in a room 
@@ -34,50 +17,59 @@ class AerosolModelColorado(AerosolModel):
 
         params = self.params
 
-        length = 8
-        width = 6
-        height = 3
-        area = width * length
+        inputs = Parameters({
+            "room_area": self.params.area,
+            "room_height": self.params.height,
+            "room_ventilation_rate": self.params.ventilation,
+            "mask_efficiency": self.event.params.mask_efficiency,
+            "time_in_room_h": time_in_room_h,
+            "susceptible_people": susceptible_people
+        })
+
+        # length = 8
+        # width = 6
+        height = inputs.room_height
+        area = inputs.room_area # width * length
         volume = width * length * height
 
-        pressure = 0.95
-        temperature = 20
-        relative_humidity = 50
-        background_co2 = 415
+        pressure = params.pressure # 0.95
+        temperature = params.temperature # 20
+        relative_humidity = params.relative_humidity # 50
+        background_co2 = inputs.background_co2 # 415
 
-        event_duration = 50 / 60 # h
-        num_people = 10
+        event_duration = inputs.time_in_room_h # 50 / 60 # h
+        num_people = inputs.susceptible_people
 
-        repetitions = 180
-        ventilation = 3
-        decay_rate = 0.62
-        deposition_rate = 0.3
-        additional_measures = 0
+        repetitions = 1 # TODO: review 180
+        ventilation = inputs.room_ventilation_rate # 3
+        decay_rate = params.decay_rate # 0.62
+        deposition_rate = params.deposition_rate # 0.3
+        additional_measures = params.additional_measures # 0
 
         loss_rate = ventilation + decay_rate + deposition_rate + additional_measures
 
         ventilation_person = volume * (ventilation + additional_measures) * 1000 / 3600 / num_people
 
-        infective_people = 1
-        fraction_immune = 0
+        infective_people = 1 # TODO: review 1
+        fraction_immune = params.fraction_immune # 0
         susceptible_people = (num_people - infective_people) * (1 - fraction_immune)
 
-        density_area_person = area / (0.305**2) / num_people
+        density_area_person = area / num_people
         density_people_area = num_people / area
         density_volume_person = volume / num_people
 
-        breathing_rate = 0.52
+        breathing_rate = params.breathing_rate # 0.52
         breathing_rate_relative = breathing_rate / (0.0048*60)
-        emission_co2_person = 0.005
+        emission_co2_person = params.emission_co2_person # 0.005
         emission_co2 = emission_co2_person * num_people / pressure * (273.15 + temperature) / 273.15
 
-        quanta_exhalation = 25
-        quanta_enhancement = 1
+        quanta_exhalation = params.quanta_exhalation # 25
+        quanta_enhancement = params.quanta_enhancement # 1
         quanta_exhalation_relative = quanta_exhalation / 2
 
-        mask_efficiency_exhalation = 50 / 100
-        mask_efficiency_inhalation = 30 / 100
-        people_with_masks = 100 / 100
+        mask_efficiency_exhalation = inputs.mask_efficiency # 50 / 100
+        mask_efficiency_inhalation = inputs.mask_efficiency # 30 / 100
+        people_with_masks = params.people_with_masks # 100 / 100
 
         probability_infective = 0.20 / 100
         hospitalization_rate = 20 / 100
@@ -107,6 +99,7 @@ class AerosolModelColorado(AerosolModel):
         co2_inhale_ppm = (co2_mixing_ratio - background_co2) * event_duration * 0.01 / probability_infection + background_co2
 
 
+        return 
 
 
         
