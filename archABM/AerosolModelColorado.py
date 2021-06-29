@@ -17,28 +17,19 @@ class AerosolModelColorado(AerosolModel):
 
         params = self.params
 
-        inputs = Parameters({
-            "room_area": self.params.area,
-            "room_height": self.params.height,
-            "room_ventilation_rate": self.params.ventilation,
-            "mask_efficiency": self.event.params.mask_efficiency,
-            "time_in_room_h": time_in_room_h,
-            "susceptible_people": susceptible_people
-        })
-
         # length = 8
         # width = 6
         height = inputs.room_height
         area = inputs.room_area # width * length
-        volume = width * length * height
+        volume = area * height
 
         pressure = params.pressure # 0.95
         temperature = params.temperature # 20
         relative_humidity = params.relative_humidity # 50
-        background_co2 = inputs.background_co2 # 415
+        background_co2 = params.background_co2 # 415
 
         event_duration = inputs.time_in_room_h # 50 / 60 # h
-        num_people = inputs.susceptible_people
+        num_people = max(1, inputs.susceptible_people)
 
         repetitions = 1 # TODO: review 180
         ventilation = inputs.room_ventilation_rate # 3
@@ -53,6 +44,7 @@ class AerosolModelColorado(AerosolModel):
         infective_people = 1 # TODO: review 1
         fraction_immune = params.fraction_immune # 0
         susceptible_people = (num_people - infective_people) * (1 - fraction_immune)
+        susceptible_people = max(1, susceptible_people)
 
         density_area_person = area / num_people
         density_people_area = num_people / area
@@ -99,7 +91,12 @@ class AerosolModelColorado(AerosolModel):
         co2_inhale_ppm = (co2_mixing_ratio - background_co2) * event_duration * 0.01 / probability_infection + background_co2
 
 
-        return 
+        # Return results
+        air_contamination = co2_mixing_ratio - background_co2
+        infection_risk = infection_risk
+
+        return air_contamination, infection_risk
+
 
 
         
