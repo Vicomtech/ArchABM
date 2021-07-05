@@ -23,7 +23,10 @@ class Person:
         self.current_process = None
         self.place = None
         self.event = None
+        self.status = 0 # 0: susceptible, 1: infective
+
         self.risk = 0.0
+        self.CO2_level = 0.0
         self.last_updated = 0
 
         self.person_frame = PersonFrame()
@@ -114,6 +117,9 @@ class Person:
     def update_risk(self, risk: float) -> None:
         self.risk += risk
 
+    def update_CO2(self, CO2_level: float) -> None:
+        self.CO2_level += CO2_level
+
     def save_person_frame(self) -> None:
         # self.person_frame.reset()
         self.person_frame.set("run", self.db.run)
@@ -121,5 +127,6 @@ class Person:
         self.person_frame.set("person", self.id)
         self.person_frame.set("place", self.place.id)
         self.person_frame.set("event", self.model.id)
-        self.person_frame.set("risk", self.risk)
+        self.person_frame.set("CO2_level", self.CO2_level)
+        self.person_frame.set("infection_risk", self.risk)
         self.db.results.write_person(self.person_frame)
