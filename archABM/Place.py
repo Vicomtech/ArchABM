@@ -20,10 +20,13 @@ class Place:
 
         self.people = []
         self.num_people = 0
+        self.infective_people = 0
         self.times = {}
 
-        self.air_quality_baseline = self.db.model.params.background_co2 # 100.0 TODO: review
-        self.air_quality = self.air_quality_baseline
+        self.k = 0
+        self.CO2_baseline = self.db.model.params.CO2_background # 100.0 TODO: review
+        self.CO2_level = self.CO2_baseline
+        self.infection_risk = 0.0
         self.last_updated = 0
 
         self.event = self.get_event()
@@ -73,6 +76,7 @@ class Place:
         # add to list
         self.people.append(person)
         self.num_people += 1
+        self.infective_people += person.status
         # print("PLACE ADD", self.id, self.num_people)
 
         # register time
@@ -95,6 +99,7 @@ class Place:
         # remove from list
         self.people.remove(person)
         self.num_people -= 1
+        self.infective_people -= person.status
         # print("PLACE DEL", self.id, self.num_people)
 
         # save frame
@@ -103,55 +108,31 @@ class Place:
     def update_air(self) -> None:
         elapsed = self.env.now - self.last_updated
         if self.event.params.shared and elapsed > 0:
-            num_people = self.num_people
-            ratio_ventilation = 0.05
-            ratio_pollution = 0.05
-
-            # (dosis_six_hours, dosis_infectious, individual_infection_risk, risk_one_person,) = self.propagation_model.get_risk(
-            #     num_people,
-            #     # self.db.options.params.mask_efficiency,  # TODO: change this with self.event.params.mask_efficiency DONE
-            #     self.event.params.mask_efficiency,
-            #     self.db.options.params.room_ventilation,
-            #     self.params.area,
-            #     self.params.height,
-            #     elapsed / 60,
-            #     # self.air_quality # TODO: take into account previous air quality
-            # )
-            susceptible_people = num_people
-            time_in_room_h = elapsed / 60
-            # (dosis_six_hours, dosis_infectious, individual_infection_risk, risk_one_person,) = self.propagation_model.get_risk_optimized(susceptible_people, time_in_room_h)
             inputs = Parameters({
                 "room_area": self.params.area,
                 "room_height": self.params.height,
                 "room_ventilation_rate": self.params.ventilation,
                 "mask_efficiency": self.event.params.mask_efficiency,
-                "time_in_room_h": time_in_room_h,
-                "susceptible_people": susceptible_people
+                "event_duration": elapsed / 60,
+                "num_people": self.num_people,
+                "infective_people": self.infective_people,
+                "CO2_level": self.CO2_level
             })
+            CO2_delta, infection_risk = self.db.model.get_risk(inputs)
 
+            # UPDATE PLACE
+            self.CO2_level += CO2_delta
+            self.infection_risk += infection_risk
 
-    #         total_mask_efficiency = self.event.params.mask_efficiency
-    #         room_ventilation_rate = self.params.ventilation
-    #         room_height = self.params.height
-            place_risk, person_risk = self.db.model.get_risk(inputs)
-            if self.id == 1:
-                print(place_risk, person_risk, self.air_quality)
-            # if elapsed > 0:
-            #     print(
-            #         "AIR: ", num_people, round(elapsed), dosis_infectious, risk_one_person
-            #     )
+            # UPDATE PEOPLE
             for p in self.people:
                 # p.update_risk(risk_one_person)
-                p.update_risk(person_risk)
-            if num_people > 0:
-                self.air_quality += place_risk
-                # self.air_quality -= dosis_infectious
-                # self.air_quality -= ratio_pollution * num_people * elapsed
-            else:
-                self.air_quality -= 3* self.params.ventilation * elapsed # TODO: https://www.researchgate.net/publication/221932157_Ventilation_Efficiency_and_Carbon_Dioxide_CO2_Concentration
-            # TODO: saturate air quality based on CO2?  
+                p.update_risk(infection_risk)
+                # TODO: save also person risk per place
+                p.update_CO2(self.CO2_level)
+            # TODO: saturate air quality based on CO2? => NOT NECESSARY ANYMORE
             # self.air_quality = min(100, max(0, self.air_quality))
-            self.air_quality = max(self.air_quality_baseline, self.air_quality)
+            # self.air_quality = max(self.air_quality_baseline, self.air_quality)
 
             # print(self.id, elapsed, num_people, self.air_quality)
         self.last_updated = self.env.now
@@ -171,5 +152,6 @@ class Place:
         self.place_frame.set("time", self.env.now, 0)
         self.place_frame.set("place", self.id)
         self.place_frame.set("num_people", self.num_people)
-        self.place_frame.set("air_quality", self.air_quality, 2)
+        self.place_frame.set("CO2_level", self.CO2_level, 2)
+        self.place_frame.set("infection_risk", self.infection_risk, 3)
         self.db.results.write_place(self.place_frame)
