@@ -30,7 +30,7 @@ class AerosolModelMaxPlanck(AerosolModel):
         RNA_dosis = params.respiratory_rate * 60 * RNA_concentration * params.deposition_rate
 
         dosis_infectious = RNA_dosis / (inputs.room_ventilation_rate + 1 / params.virus_lifetime) * (1 - inputs.mask_efficiency) * inputs.time_in_room_h
-        risk_one_person = (1 - ((1 - infection_probability) ** dosis_infectious) ** inputs.susceptible_people) * 100
+        risk_one_person = (1 - ((1 - infection_probability) ** dosis_infectious) ** inputs.num_people) * 100
 
 
         # Return results

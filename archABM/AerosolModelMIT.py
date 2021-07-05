@@ -58,7 +58,7 @@ class AerosolModelMIT(AerosolModel):
         # maximum_occupancy_transient = 1 + risk_tolerance * (1 + 1/(relaxation_rate*exposure_time)) / (transmission_rate * exposure_time)
         # maximum_occupancy_steady = 1 + risk_tolerance / (transmission_rate * exposure_time)
 
-        # occupancy = inputs.susceptible_people
+        # occupancy = inputs.num_people
         # maximum_exposure_time_steady = risk_tolerance / (occupancy - 1) / transmission_rate
         # maximum_exposure_time_transient = maximum_exposure_time_steady * (1 + math.sqrt(1 + 4/(relaxation_rate*maximum_exposure_time_steady) )) / 2
 
@@ -72,7 +72,7 @@ class AerosolModelMIT(AerosolModel):
 
         # if exposure time and occupancy is fixed
         exposure_time = inputs.time_in_room_h # 10
-        occupancy = inputs.susceptible_people
+        occupancy = inputs.num_people
         risk_tolerance_steady = (occupancy-1) * transmission_rate * exposure_time
         risk_tolerance_transient = risk_tolerance_steady / (1 + 1/(relaxation_rate*exposure_time))
 
