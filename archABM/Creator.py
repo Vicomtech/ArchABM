@@ -7,6 +7,7 @@ from .Actions import Actions
 from .Options import Options
 from .Database import Database
 from typing import List
+from random import sample
 
 
 class Creator:
@@ -54,6 +55,11 @@ class Creator:
             person = Person(self.env, self.db, params)
             person.start()
             people.append(person)
+
+        num_infected = self.config["options"]["number_infected"]
+        num_infected = min(num_infected, len(people))
+        for p in sample(people, num_infected):
+            p.status = 1
 
         return people
 
