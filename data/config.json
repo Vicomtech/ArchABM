@@ -347,6 +347,7 @@
         "movement_buildings": true,
         "movement_department": true,
         "number_runs": 1,
+        "number_infected": 50,
         "directory": null,
         "model": "Colorado",
         "model_parameters": {
@@ -360,7 +361,7 @@
                 "RNA_concentration": 5e8,
                 "aerosol_diameter": 5,
                 "virus_lifetime": 1.7,
-                "background_co2": 410
+                "CO2_background": 410
             },
             "MIT": {
                 "filtration_efficiency": 0.01,
@@ -370,19 +371,22 @@
                 "infectiousness": 72,
                 "deactivation_rate": 0.3,
                 "transmissibility": 1,
-                "background_co2": 410
+                "CO2_background": 410
             },
             "Colorado": {
                 "pressure": 0.95,
                 "temperature": 20,
-                "relative_humidity": 50,
-                "background_co2": 415,
+                "CO2_background": 415,
                 "decay_rate": 0.62,
                 "deposition_rate": 0.3,
-                "additional_measures": 0,
+                "hepa_flow_rate": 0.0,
+                "recirculated_flow_rate": 300,
+                "filter_efficiency": 0.20,
+                "ducts_removal": 0.10,
+                "other_removal": 0.00,
                 "fraction_immune": 0,
                 "breathing_rate": 0.52,
-                "emission_co2_person": 0.005,
+                "CO2_emission_person": 0.005,
                 "quanta_exhalation": 25,
                 "quanta_enhancement": 1,
                 "people_with_masks": 1
