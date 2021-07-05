@@ -1,5 +1,5 @@
 class PlaceFrame:
-    header = ["run", "time", "place", "num_people", "air_quality"]
+    header = ["run", "time", "place", "num_people", "CO2_level", "infection_risk"]
 
     def __init__(self) -> None:
         self.reset()
