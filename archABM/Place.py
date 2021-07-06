@@ -23,9 +23,9 @@ class Place:
         self.infective_people = 0
         self.times = {}
 
-        self.k = 0
         self.CO2_baseline = self.db.model.params.CO2_background # 100.0 TODO: review
         self.CO2_level = self.CO2_baseline
+        self.elapsed = 0.0
         self.infection_risk = 0.0
         self.last_updated = 0
 
@@ -118,18 +118,18 @@ class Place:
                 "infective_people": self.infective_people,
                 "CO2_level": self.CO2_level
             })
-            CO2_delta, infection_risk = self.db.model.get_risk(inputs)
+            CO2_level, infection_risk = self.db.model.get_risk(inputs)
 
             # UPDATE PLACE
-            self.CO2_level += CO2_delta
-            self.infection_risk += infection_risk
+            self.CO2_level = CO2_level
+            self.elapsed += elapsed
+            self.infection_risk += elapsed * (infection_risk - self.infection_risk) / self.elapsed
 
             # UPDATE PEOPLE
             for p in self.people:
                 # p.update_risk(risk_one_person)
-                p.update_risk(infection_risk)
+                p.update(elapsed, infection_risk, CO2_level)
                 # TODO: save also person risk per place
-                p.update_CO2(self.CO2_level)
             # TODO: saturate air quality based on CO2? => NOT NECESSARY ANYMORE
             # self.air_quality = min(100, max(0, self.air_quality))
             # self.air_quality = max(self.air_quality_baseline, self.air_quality)
@@ -153,5 +153,5 @@ class Place:
         self.place_frame.set("place", self.id)
         self.place_frame.set("num_people", self.num_people)
         self.place_frame.set("CO2_level", self.CO2_level, 2)
-        self.place_frame.set("infection_risk", self.infection_risk, 3)
+        self.place_frame.set("infection_risk", self.infection_risk, 4)
         self.db.results.write_place(self.place_frame)
