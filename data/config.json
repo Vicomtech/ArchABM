@@ -89,37 +89,37 @@
     "people": [{
             "department": "department1",
             "building": "building1",
-            "num_people": 30
+            "num_people": 20
         },
         {
             "department": "department2",
             "building": "building1",
-            "num_people": 30
+            "num_people": 20
         },
         {
             "department": "department3",
             "building": "building1",
-            "num_people": 30
+            "num_people": 20
         },
         {
             "department": "department4",
             "building": "building2",
-            "num_people": 30
+            "num_people": 20
         },
         {
             "department": "department5",
             "building": "building2",
-            "num_people": 30
+            "num_people": 20
         },
         {
             "department": "department6",
             "building": "building2",
-            "num_people": 30
+            "num_people": 20
         },
         {
             "department": "department7",
             "building": "building2",
-            "num_people": 30
+            "num_people": 20
         }
     ],
     "places": [{
@@ -138,7 +138,7 @@
             "activity": "work",
             "building": "building1",
             "department": ["department1"],
-            "area": 40.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -149,7 +149,7 @@
             "activity": "work",
             "building": "building1",
             "department": ["department2"],
-            "area": 80.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -160,7 +160,7 @@
             "activity": "work",
             "building": "building1",
             "department": ["department3"],
-            "area": 40.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -171,7 +171,7 @@
             "activity": "work",
             "building": "building2",
             "department": ["department4"],
-            "area": 50.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -182,7 +182,7 @@
             "activity": "work",
             "building": "building2",
             "department": ["department5"],
-            "area": 60.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -193,7 +193,7 @@
             "activity": "work",
             "building": "building2",
             "department": ["department6"],
-            "area": 40.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -204,7 +204,7 @@
             "activity": "work",
             "building": "building2",
             "department": ["department7"],
-            "area": 40.0,
+            "area": 300.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
@@ -237,9 +237,9 @@
             "activity": "meeting",
             "building": "building2",
             "department": null,
-            "area": 20.0,
+            "area": 30.0,
             "height": 3.0,
-            "capacity": 20,
+            "capacity": 10,
             "ventilation": 3,
             "allow": true
         },
@@ -270,7 +270,7 @@
             "activity": "lunch",
             "building": "building1",
             "department": ["department1", "department2", "department7"],
-            "area": 30.0,
+            "area": 400.0,
             "height": 3.0,
             "capacity": 80,
             "ventilation": 3,
@@ -281,7 +281,7 @@
             "activity": "lunch",
             "building": "building2",
             "department": ["department3", "department4", "department5", "department6"],
-            "area": 30.0,
+            "area": 400.0,
             "height": 3.0,
             "capacity": 80,
             "ventilation": 3,
@@ -292,7 +292,7 @@
             "activity": "coffee",
             "building": "building1",
             "department": ["department1", "department2", "department7"],
-            "area": 15.0,
+            "area": 25.0,
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
@@ -303,7 +303,7 @@
             "activity": "coffee",
             "building": "building2",
             "department": ["department3", "department4", "department5", "department6"],
-            "area": 15.0,
+            "area": 25.0,
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
@@ -345,9 +345,9 @@
     ],
     "options": {
         "movement_buildings": true,
-        "movement_department": true,
+        "movement_department": false,
         "number_runs": 1,
-        "number_infected": 50,
+        "number_infected": 0.05,
         "directory": null,
         "model": "Colorado",
         "model_parameters": {
@@ -389,7 +389,7 @@
                 "CO2_emission_person": 0.005,
                 "quanta_exhalation": 25,
                 "quanta_enhancement": 1,
-                "people_with_masks": 1
+                "people_with_masks": 1.00
             }
         }
     }
