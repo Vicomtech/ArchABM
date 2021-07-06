@@ -23,7 +23,7 @@ class Place:
         self.infective_people = 0
         self.times = {}
 
-        self.CO2_baseline = self.db.model.params.CO2_background # 100.0 TODO: review
+        self.CO2_baseline = self.db.model.params.CO2_background
         self.CO2_level = self.CO2_baseline
         self.elapsed = 0.0
         self.infection_risk = 0.0
@@ -127,14 +127,7 @@ class Place:
 
             # UPDATE PEOPLE
             for p in self.people:
-                # p.update_risk(risk_one_person)
                 p.update(elapsed, infection_risk, CO2_level)
-                # TODO: save also person risk per place
-            # TODO: saturate air quality based on CO2? => NOT NECESSARY ANYMORE
-            # self.air_quality = min(100, max(0, self.air_quality))
-            # self.air_quality = max(self.air_quality_baseline, self.air_quality)
-
-            # print(self.id, elapsed, num_people, self.air_quality)
         self.last_updated = self.env.now
 
     def people_attending(self) -> int:
