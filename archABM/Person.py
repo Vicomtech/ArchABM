@@ -23,9 +23,10 @@ class Person:
         self.current_process = None
         self.place = None
         self.event = None
+        
         self.status = 0 # 0: susceptible, 1: infective
-
-        self.risk = 0.0
+        self.elapsed = 0.0
+        self.infection_risk = 0.0
         self.CO2_level = 0.0
         self.last_updated = 0
 
@@ -114,11 +115,11 @@ class Person:
         self.event = event
         self.generator.consume_activity(event.model)
 
-    def update_risk(self, risk: float) -> None:
-        self.risk += risk
-
-    def update_CO2(self, CO2_level: float) -> None:
-        self.CO2_level += CO2_level
+    def update(self, elapsed: float, infection_risk: float, CO2_level: float) -> None:
+        self.elapsed += elapsed
+        # self.infection_risk += elapsed * (infection_risk - self.infection_risk) / self.elapsed
+        self.infection_risk += infection_risk
+        self.CO2_level += elapsed * (CO2_level - self.CO2_level) / self.elapsed
 
     def save_person_frame(self) -> None:
         # self.person_frame.reset()
@@ -127,6 +128,6 @@ class Person:
         self.person_frame.set("person", self.id)
         self.person_frame.set("place", self.place.id)
         self.person_frame.set("event", self.model.id)
-        self.person_frame.set("CO2_level", self.CO2_level)
-        self.person_frame.set("infection_risk", self.risk)
+        self.person_frame.set("CO2_level", self.CO2_level, 2)
+        self.person_frame.set("infection_risk", self.infection_risk, 6)
         self.db.results.write_person(self.person_frame)
