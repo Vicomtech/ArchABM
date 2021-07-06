@@ -56,8 +56,8 @@ class Creator:
             person.start()
             people.append(person)
 
-        num_infected = self.config["options"]["number_infected"]
-        num_infected = min(num_infected, len(people))
+        num_people = len(people)
+        num_infected = int(min(1, self.config["options"]["number_infected"]) * num_people)
         for p in sample(people, num_infected):
             p.status = 1
 
