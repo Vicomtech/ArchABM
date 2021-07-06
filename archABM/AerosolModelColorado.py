@@ -39,7 +39,7 @@ class AerosolModelColorado(AerosolModel):
         hepa_flow_rate = params.hepa_flow_rate
         hepa_removal = hepa_flow_rate * volume
 
-        recirculated_flow_rate = params.recirculated_flow_rate 
+        recirculated_flow_rate = params.recirculated_flow_rate # TODO: move per place 
         filter_efficiency = params.filter_efficiency
         ducts_removal = params.ducts_removal
         other_removal = params.other_removal
@@ -52,7 +52,7 @@ class AerosolModelColorado(AerosolModel):
         # ventilation_person = volume * (ventilation + additional_measures) * 1000 / 3600 / num_people
 
         num_people = inputs.num_people
-        infective_people = inputs.infective_people # TODO: review 1
+        infective_people = inputs.infective_people # 1
         fraction_immune = params.fraction_immune # 0
         susceptible_people = (num_people - infective_people) * (1 - fraction_immune)
 
@@ -96,20 +96,19 @@ class AerosolModelColorado(AerosolModel):
                 (1 - (1 - math.exp(- loss_rate * event_duration))/(loss_rate*event_duration))
             infection_risk_relative = infection_risk / susceptible_people
 
-        if num_people == 0:
-            CO2_mixing_ratio = CO2_background + math.exp(-ventilation * event_duration) * (inputs.CO2_level - CO2_background)
-            CO2_mixing_ratio_delta = CO2_mixing_ratio - inputs.CO2_level
-        else:
-            CO2_mixing_ratio = (CO2_emission * 3.6 / ventilation / volume * \
-                (1- (1/ventilation/event_duration) * (1 - math.exp(- ventilation * event_duration)))) * 1e6 + CO2_background
-            CO2_mixing_ratio_delta = CO2_mixing_ratio - CO2_background
-            CO2_concentration = CO2_mixing_ratio_delta * 40.9 / 1e6 * 44 * 298 / (273.15 + temperature)*pressure
-            CO2_reinhaled_grams = CO2_concentration * breathing_rate * event_duration
-            CO2_reinhaled_ppm = CO2_mixing_ratio_delta * event_duration
-            # CO2_probability_infection_=  CO2_reinhaled_ppm / 1e4 / probability_infection
+       
+        CO2_mixing_ratio = (CO2_emission * 3.6 / ventilation / volume * \
+            (1- (1/ventilation/event_duration) * (1 - math.exp(- ventilation * event_duration)))) * 1e6 + \
+            math.exp(-ventilation * event_duration) * (inputs.CO2_level - CO2_background) + \
+            CO2_background
+        CO2_mixing_ratio_delta = CO2_mixing_ratio - inputs.CO2_level
+        CO2_concentration = CO2_mixing_ratio_delta * 40.9 / 1e6 * 44 * 298 / (273.15 + temperature)*pressure
+        CO2_reinhaled_grams = CO2_concentration * breathing_rate * event_duration
+        CO2_reinhaled_ppm = CO2_mixing_ratio_delta * event_duration
+        # CO2_probability_infection_=  CO2_reinhaled_ppm / 1e4 / probability_infection
         # CO2_inhale_ppm = CO2_mixing_ratio_delta * event_duration * 0.01 / probability_infection + CO2_background
 
-        return CO2_mixing_ratio_delta, infection_risk
+        return CO2_mixing_ratio, infection_risk
 
 
 
