@@ -1,11 +1,12 @@
 import logging
 
 from simpy import Environment, Interrupt
-from .Event import Event
+
 from .Database import Database
-from .Parameters import Parameters
+from .Event import Event
 from .EventGenerator import EventGenerator
-from .PersonFrame import PersonFrame
+from .Parameters import Parameters
+from .SnapshotPerson import SnapshotPerson
 
 
 class Person:
@@ -23,20 +24,23 @@ class Person:
         self.current_process = None
         self.place = None
         self.event = None
-        
-        self.status = 0 # 0: susceptible, 1: infective
+        self.model = None
+        self.duration = None
+
+        self.status = 0  # 0: susceptible, 1: infective
         self.elapsed = 0.0
         self.infection_risk = 0.0
         self.CO2_level = 0.0
         self.last_updated = 0
 
-        self.person_frame = PersonFrame()
+        self.snapshot = SnapshotPerson()
 
     @classmethod
     def reset(cls) -> None:
         Person.id = -1
 
-    def next(self) -> None:
+    @staticmethod
+    def next() -> None:
         Person.id += 1
 
     def start(self) -> None:
@@ -44,15 +48,17 @@ class Person:
         self.env.process(self.process())
 
     def process(self) -> None:
-        cont = 0
-        cont_max = 1000
+        cont_event = 0
+        cont_event_max = 1000  # TODO: review maximum allowed number of events per person
         while True:
-            # Generate Event
-            k = 0
-            while self.event is None:
+            # generate event
+            cont_generator = 0
+            cont_generator_max = 3
+            while self.event is None:  # TODO: review maximum allowed number of events per person
                 self.event = self.generator.generate(self.env.now, self)
-                k += 1
-                if k > 3:
+                cont_generator += 1
+                # if exceeded, generate random event
+                if cont_generator > cont_generator_max:
                     duration = self.model.duration(self.env.now)
                     self.event = Event(self.model, self.place, duration)
                     break
@@ -60,74 +66,64 @@ class Person:
             self.duration = self.event.duration
             activity = self.model.params.activity
 
-            # print(self.event, self.event.place, self.place, self.event.place.full())
-
-            # Move from current place to new one
+            # move from current place to new one
+            # TODO: review if we want to save only new places or all of them
             if self.event is not None and self.event.place is not None and self.place != self.event.place and not self.event.place.full():
-                # Remove from current place
+                # remove from current place
                 if self.place is not None:
                     self.place.remove_person(self)
 
-                # Add to new place
+                # add to new place
                 self.place = self.event.place
                 self.place.add_person(self)
 
-                # Save data (if first event or elapsed time > 0)
+                # save data (if first event or elapsed time > 0)
                 elapsed = self.env.now - self.last_updated
-                if elapsed > 0 or cont == 0:
-                    self.save_person_frame()
+                if elapsed > 0 or cont_event == 0:
+                    self.save_snapshot()
+                    pass
 
-                logging.info(
-                    "[%.2f] Person %d event %s at place %s for %d minutes"
-                    % (
-                        self.env.now,
-                        self.id,
-                        self.model.params.activity,
-                        self.place.params.name,
-                        self.duration,
-                    )
-                )
+                logging.info("[%.2f] Person %d event %s at place %s for %d minutes" % (
+                    self.env.now, self.id, self.model.params.activity, self.place.params.name, self.duration,))
 
             self.event = None
-            # print("DOING", self.id, self.activity, self.duration)
             self.last_updated = self.env.now
             self.current_process = self.env.process(self.wait())
             yield self.current_process
-            # print("#####", self.id, self.activity, self.duration)
 
-            cont += 1
-            if cont > cont_max:
+            cont_event += 1
+            if cont_event > cont_event_max:
                 break
 
     def wait(self) -> None:
         try:
             yield self.env.timeout(self.duration)
         except Interrupt:
+            # TODO: review this exception
             # print("interrupted")
             pass
 
     def assign_event(self, event: Event) -> None:
         if self.current_process is not None and not self.current_process.triggered:
             self.current_process.interrupt("Need to go!")
-            logging.info(
-                "[%.2f] Person %d interrupted current event" % (self.env.now, self.id)
-            )
+            logging.info("[%.2f] Person %d interrupted current event" % (self.env.now, self.id))
         self.event = event
         self.generator.consume_activity(event.model)
 
+    # TODO: review if we need to update the risk of infected people as well
+    # TODO: review infection risk metric: average vs cumulative
     def update(self, elapsed: float, infection_risk: float, CO2_level: float) -> None:
         self.elapsed += elapsed
         # self.infection_risk += elapsed * (infection_risk - self.infection_risk) / self.elapsed
         self.infection_risk += infection_risk
         self.CO2_level += elapsed * (CO2_level - self.CO2_level) / self.elapsed
 
-    def save_person_frame(self) -> None:
-        # self.person_frame.reset()
-        self.person_frame.set("run", self.db.run)
-        self.person_frame.set("time", self.env.now, 0)
-        self.person_frame.set("person", self.id)
-        self.person_frame.set("place", self.place.id)
-        self.person_frame.set("event", self.model.id)
-        self.person_frame.set("CO2_level", self.CO2_level, 2)
-        self.person_frame.set("infection_risk", self.infection_risk, 6)
-        self.db.results.write_person(self.person_frame)
+    def save_snapshot(self) -> None:
+        self.snapshot.set("run", self.db.run)
+        self.snapshot.set("time", self.env.now, 0)
+        self.snapshot.set("person", self.id)
+        self.snapshot.set("place", self.place.id)
+        self.snapshot.set("event", self.model.id)
+        self.snapshot.set("CO2_level", self.CO2_level, 2)
+        self.snapshot.set("infection_risk", self.infection_risk, 6)
+        self.db.results.write_person(self.snapshot)
