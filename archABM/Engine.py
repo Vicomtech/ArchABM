@@ -1,7 +1,7 @@
-
 from jsonschema import validate
 from simpy import Environment
 from tqdm import tqdm
+
 from .Creator import Creator
 from .Database import Database
 from .Results import Results
@@ -9,15 +9,15 @@ from .Schema import schema
 
 
 class Engine:
+
     def __init__(self, config: dict) -> None:
-        validate(instance = config, schema = schema)
-        
+        validate(instance=config, schema=schema)
+
         self.config = config
         self.preprocess()
 
         self.db = Database()
         self.db.results = Results(self.config)
-
 
     def preprocess(self) -> None:
         num_people = 0
@@ -26,7 +26,7 @@ class Engine:
 
         for place in self.config["places"]:
             if place["capacity"] is None:
-                place["capacity"] = num_people+1
+                place["capacity"] = num_people + 1
 
         people = []
         cont = 0
