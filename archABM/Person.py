@@ -68,7 +68,8 @@ class Person:
 
             # move from current place to new one
             # TODO: review if we want to save only new places or all of them
-            if self.event is not None and self.event.place is not None and self.place != self.event.place and not self.event.place.full():
+            # if self.event is not None and self.event.place is not None and self.place != self.event.place and not self.event.place.full():
+            if self.event is not None and self.event.place is not None and not self.event.place.full():
                 # remove from current place
                 if self.place is not None:
                     self.place.remove_person(self)
@@ -77,7 +78,7 @@ class Person:
                 self.place = self.event.place
                 self.place.add_person(self)
 
-                # save data (if first event or elapsed time > 0)
+                # save snapshot (if first event or elapsed time > 0)
                 elapsed = self.env.now - self.last_updated
                 if elapsed > 0 or cont_event == 0:
                     self.save_snapshot()
@@ -122,6 +123,7 @@ class Person:
         self.snapshot.set("run", self.db.run)
         self.snapshot.set("time", self.env.now, 0)
         self.snapshot.set("person", self.id)
+        self.snapshot.set("status", self.status)
         self.snapshot.set("place", self.place.id)
         self.snapshot.set("event", self.model.id)
         self.snapshot.set("CO2_level", self.CO2_level, 2)
