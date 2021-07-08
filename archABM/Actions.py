@@ -91,11 +91,7 @@ class Actions:
             num_people = place.people_attending()
             num_people = min(len(people), num_people)
             people = random.sample(people, k=num_people)
-            people = [p for p in people if p.generator.valid_activity(model)]
-
-        # always add invoking person to the people
-        if person not in people:
-            people.append(person)
+            people = [p for p in people if p.generator.valid_activity(model) and p.model != model]
 
         logging.info(
             "[%.2f] Person %d invoked collective event %s at place %s for %d minutes for %d people"
@@ -103,4 +99,4 @@ class Actions:
         )
 
         self.assign_event(event, people)
-        return None
+        return event
