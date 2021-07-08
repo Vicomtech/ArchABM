@@ -40,7 +40,7 @@ class AerosolModelColorado(AerosolModel):
         hepa_flow_rate = params.hepa_flow_rate
         hepa_removal = hepa_flow_rate * volume
 
-        recirculated_flow_rate = params.recirculated_flow_rate  # TODO: move per place
+        recirculated_flow_rate = inputs.recirculated_flow_rate  # TODO: move per place DONE
         filter_efficiency = params.filter_efficiency
         ducts_removal = params.ducts_removal
         other_removal = params.other_removal
@@ -101,6 +101,7 @@ class AerosolModelColorado(AerosolModel):
                 * (1 - (1 - math.exp(-loss_rate * event_duration)) / (loss_rate * event_duration))
             )
             infection_risk_relative = infection_risk / susceptible_people
+            #infection_risk = (1 - math.exp(-infection_risk_relative))*susceptible_people # TODO: review Taylor approximation
 
         CO2_mixing_ratio = (
             (CO2_emission * 3.6 / ventilation / volume * (1 - (1 / ventilation / event_duration) * (1 - math.exp(-ventilation * event_duration)))) * 1e6
