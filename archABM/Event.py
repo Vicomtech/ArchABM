@@ -1,5 +1,5 @@
-from .Place import Place
 from .EventModel import EventModel
+from .Place import Place
 
 
 class Event:

@@ -1,6 +1,6 @@
-
 class AerosolModel:
     """Aerosol transmission estimator"""
+
     name: None
 
     def __init__(self, params):

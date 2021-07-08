@@ -1,13 +1,15 @@
-from simpy import Environment
-from .EventModel import EventModel
-from .Place import Place
-from .Person import Person
-from .Parameters import Parameters
-from .Actions import Actions
-from .Options import Options
-from .Database import Database
-from typing import List
 from random import sample
+from typing import List
+
+from simpy import Environment
+
+from .Actions import Actions
+from .Database import Database
+from .EventModel import EventModel
+from .Options import Options
+from .Parameters import Parameters
+from .Person import Person
+from .Place import Place
 
 
 class Creator:
@@ -67,14 +69,18 @@ class Creator:
         options = self.config["options"]
         selection = options["model"]
         params = Parameters(options["model_parameters"][selection])
+        model = None
         if selection == "MaxPlanck":
             from .AerosolModelMaxPlanck import AerosolModelMaxPlanck
+
             model = AerosolModelMaxPlanck(params)
         elif selection == "MIT":
             from .AerosolModelMIT import AerosolModelMIT
+
             model = AerosolModelMIT(params)
         elif selection == "Colorado":
             from .AerosolModelColorado import AerosolModelColorado
+
             model = AerosolModelColorado(params)
 
         return model
