@@ -86,42 +86,6 @@
             "allow": true
         }
     ],
-    "people": [{
-            "department": "department1",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department2",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department3",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department4",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department5",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department6",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department7",
-            "building": "building2",
-            "num_people": 20
-        }
-    ],
     "places": [{
             "name": "home",
             "activity": "home",
@@ -343,10 +307,46 @@
             "allow": true
         }
     ],
+    "people": [{
+            "department": "department1",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department2",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department3",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department4",
+            "building": "building2",
+            "num_people": 20
+        },
+        {
+            "department": "department5",
+            "building": "building2",
+            "num_people": 20
+        },
+        {
+            "department": "department6",
+            "building": "building2",
+            "num_people": 20
+        },
+        {
+            "department": "department7",
+            "building": "building2",
+            "num_people": 20
+        }
+    ],
     "options": {
         "movement_buildings": true,
         "movement_department": false,
-        "number_runs": 1,
+        "number_runs": 2,
         "number_infected": 0.05,
         "directory": null,
         "model": "Colorado",
