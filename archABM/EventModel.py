@@ -1,4 +1,3 @@
-import ast
 import copy
 import random
 
@@ -11,74 +10,43 @@ class EventModel:
         self.id = EventModel.id
 
         self.params = params
-        # self.activity = activity
-        # self.schedule = ast.literal_eval(schedule)  # hours
-        # self.repeat_min = repeat_min
-        # self.repeat_max = repeat_max
-        # self.duration_min = duration_min  # minutes
-        # self.duration_max = duration_max  # minutes
-
-        # self.convert_schedule()
-        self.reset_count()
-
-        # self.count = 0
+        self.count = 0
         self.noise = None
 
     @classmethod
     def reset(cls) -> None:
         EventModel.id = -1
 
-    def next(self) -> None:
+    @staticmethod
+    def next() -> None:
         EventModel.id += 1
 
     def get_noise(self) -> int:
         if self.noise is None:
-            m = 15  # minutes
+            m = 15  # minutes # TODO: review hardcoded value
             if m == 0:
                 self.noise = 0
             else:
                 self.noise = random.randrange(m)  # minutes
         return self.noise
 
-    def convert_schedule(self) -> None:
-        self.params.schedule = ast.literal_eval(self.params.schedule)  # hours
-        self.params.schedule = [
-            [s[0] * 60, s[1] * 60] for s in self.params.schedule
-        ]  # minutes
-
-    def reset_count(self) -> None:
-        # if self.params.repeat_max is None:
-        #     self.params.repeat_max = 1000
-        # if self.params.repeat_min == self.params.repeat_max:
-        #     self.target = self.params.repeat_min
-        # else:
-        #     self.target = np.random.randint(
-        #         self.params.repeat_min, self.params.repeat_max
-        #     )
-        self.count = 0
-
     def new(self):
         self.reset_count()
         return copy.copy(self)
 
     def duration(self, now) -> int:
-        # duration = np.random.random_integers(
-        #     self.params.duration_min, self.params.duration_max
-        # )
         duration = random.randint(self.params.duration_min, self.params.duration_max)
         estimated = now + duration
         noise = self.get_noise()  # minutes
         for interval in self.params.schedule:
             a, b = interval
-            # if a <= now <= b and estimated > b:
-            #     duration = b - now
-            if a - noise <= now <= b + noise and estimated > b + noise:
+            if a - noise <= now <= b + noise < estimated:
                 duration = b + noise - now + 1
                 break
         return duration
 
     def priority(self) -> float:
-        alpha = 0.5
+        alpha = 0.5  # TODO: review hardcoded value
         if self.params.repeat_max is None:
             return random.uniform(0.0, 1.0)
         if self.count == self.params.repeat_max:
@@ -87,11 +55,7 @@ class EventModel:
             return 1 - (1 - alpha) * self.count / self.params.repeat_min
         if self.params.repeat_min == self.params.repeat_max:
             return alpha
-        return (
-            alpha
-            * (self.params.repeat_max - self.count)
-            / (self.params.repeat_max - self.params.repeat_min)
-        )
+        return alpha * (self.params.repeat_max - self.count) / (self.params.repeat_max - self.params.repeat_min)
 
         # if self.target == 0:
         #     return 0.0
@@ -116,16 +80,15 @@ class EventModel:
 
         return p
 
-    def valid(self):
+    def valid(self) -> bool:
         if self.params.repeat_max is None:
             return True
         return self.count < self.params.repeat_max
-        # return self.count < self.target
 
-    def consume(self):
+    def consume(self) -> None:
         self.count += 1
         # logging.info("Event %s repeated %d out of %d" %
         # (self.name, self.count, self.target))
 
-    def supply(self):
+    def supply(self) -> None:
         self.count -= 1
