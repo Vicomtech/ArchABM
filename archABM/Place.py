@@ -55,8 +55,8 @@ class Place:
         self.num_people += 1
         self.infective_people += person.status
 
-        # save frame
-        self.save_place_frame()
+        # save snapshot
+        self.save_snapshot()
 
     def remove_person(self, person) -> None:
         # update air quality
@@ -67,8 +67,8 @@ class Place:
         self.num_people -= 1
         self.infective_people -= person.status
 
-        # save frame
-        self.save_place_frame()
+        # save snapshot
+        self.save_snapshot()
 
     def update_air(self) -> None:
         elapsed = self.env.now - self.last_updated
@@ -78,6 +78,7 @@ class Place:
                     "room_area": self.params.area,
                     "room_height": self.params.height,
                     "room_ventilation_rate": self.params.ventilation,
+                    "recirculated_flow_rate": self.params.recirculated_flow_rate,
                     "mask_efficiency": self.event.params.mask_efficiency,
                     "event_duration": elapsed / 60,
                     "num_people": self.num_people,
@@ -105,7 +106,7 @@ class Place:
     def full(self) -> bool:
         return self.params.capacity == self.num_people
 
-    def save_place_frame(self) -> None:
+    def save_snapshot(self) -> None:
         self.snapshot.set("run", self.db.run)
         self.snapshot.set("time", self.env.now, 0)
         self.snapshot.set("place", self.id)
