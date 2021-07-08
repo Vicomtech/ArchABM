@@ -1,6 +1,6 @@
 # ArchABM
 
-Agent-based model for pandemic risk assessment in architectural spaces.
+Agent-based model for air quality and pandemic risk assessment in architectural spaces.
 
 ## Installation
 
