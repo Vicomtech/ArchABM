@@ -31,7 +31,8 @@ class EventModel:
         return self.noise
 
     def new(self):
-        self.reset_count()
+        self.count = 0
+        self.noise = None
         return copy.copy(self)
 
     def duration(self, now) -> int:
