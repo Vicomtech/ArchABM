@@ -86,7 +86,7 @@ class AerosolModelColorado(AerosolModel):
         # probability_hospitalization = probability_infection * hospitalization_rate
         # probability_death = probability_infection * death_rate
 
-        if susceptible_people == 0:
+        if susceptible_people == 0 or infective_people == 0:
             infection_risk = 0.0
             infection_risk_relative = 0.0
         else:
