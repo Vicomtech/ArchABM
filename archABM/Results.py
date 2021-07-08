@@ -1,15 +1,17 @@
-import os
 import datetime
 import json
 import logging
-from .Place import Place
+import os
+
 from .Person import Person
-from .PlaceFrame import PlaceFrame
-from .PersonFrame import PersonFrame
+from .Place import Place
+from .SnapshotPerson import SnapshotPerson
+from .SnapshotPlace import SnapshotPlace
 
 
 class Results:
     def __init__(self, config: dict) -> None:
+        # TODO: review hardcoded names
         self.people_name = "people"
         self.places_name = "places"
         self.results_name = "results"
@@ -20,7 +22,7 @@ class Results:
         self.config = config
 
         self.log = False
-        self.save_log = False
+        self.save_log = True
         self.save_config = True
         self.save_csv = True
         self.save_json = True
@@ -59,10 +61,7 @@ class Results:
     def setup_log(self) -> None:
         if self.save_log:
             logging.basicConfig(
-                filename=os.path.join(self.path, self.log_name),
-                filemode="w",
-                format="%(message)s",
-                level=logging.INFO,
+                filename=os.path.join(self.path, self.log_name), filemode="w", format="%(message)s", level=logging.INFO,
             )
         elif self.log:
             logging.basicConfig(format="%(message)s", level=logging.INFO)
@@ -71,22 +70,20 @@ class Results:
 
     def open_people_csv(self) -> None:
         self.people_csv = open(os.path.join(self.path, self.people_name + ".csv"), "a")
-        self.people_csv.write(PersonFrame.get_header())
+        self.people_csv.write(SnapshotPerson.get_header())
 
     def close_people_csv(self) -> None:
         self.people_csv.close()
 
     def open_places_csv(self) -> None:
         self.places_csv = open(os.path.join(self.path, self.places_name + ".csv"), "a")
-        self.places_csv.write(PlaceFrame.get_header())
+        self.places_csv.write(SnapshotPlace.get_header())
 
     def close_places_csv(self) -> None:
         self.places_csv.close()
 
     def open_json(self) -> None:
-        self.output_json = open(
-            os.path.join(self.path, self.output_name + ".json"), "w"
-        )
+        self.output_json = open(os.path.join(self.path, self.output_name + ".json"), "w")
 
     def write_json(self) -> None:
         json.dump(self.output, self.output_json)
@@ -97,15 +94,15 @@ class Results:
     def init_results(self) -> None:
         self.output = {}
         self.results = dict.fromkeys([self.people_name, self.places_name], {})
-        self.results[self.people_name] = dict.fromkeys(PersonFrame.header)
-        self.results[self.places_name] = dict.fromkeys(PlaceFrame.header)
+        self.results[self.people_name] = dict.fromkeys(SnapshotPerson.header)
+        self.results[self.places_name] = dict.fromkeys(SnapshotPlace.header)
 
         self.output[self.config_name] = self.config
         self.output[self.results_name] = self.results
 
-        for key in PersonFrame.header:
+        for key in SnapshotPerson.header:
             self.results[self.people_name][key] = []
-        for key in PlaceFrame.header:
+        for key in SnapshotPlace.header:
             self.results[self.places_name][key] = []
 
     def write_person(self, person: Person) -> None:
