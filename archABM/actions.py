@@ -5,7 +5,7 @@ from typing import List
 from simpy import Environment
 
 from .database import Database
-from .Event import Event
+from .event import Event
 from .event_model import EventModel
 from .person import Person
 from .place import Place

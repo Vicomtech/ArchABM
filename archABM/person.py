@@ -3,7 +3,7 @@ import logging
 from simpy import Environment, Interrupt
 
 from .database import Database
-from .Event import Event
+from .event import Event
 from .event_generator import EventGenerator
 from .parameters import Parameters
 from .snapshot_person import SnapshotPerson

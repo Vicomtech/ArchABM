@@ -6,7 +6,7 @@ from simpy import Environment
 from .actions import Actions
 from .database import Database
 from .event_model import EventModel
-from .Options import Options
+from .options import Options
 from .parameters import Parameters
 from .person import Person
 from .place import Place
