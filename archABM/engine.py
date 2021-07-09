@@ -2,10 +2,10 @@ from jsonschema import validate
 from simpy import Environment
 from tqdm import tqdm
 
-from .Creator import Creator
-from .Database import Database
-from .Results import Results
-from .Schema import schema
+from .creator import Creator
+from .database import Database
+from .results import Results
+from .schema import schema
 
 
 class Engine:

@@ -4,11 +4,11 @@ from typing import List
 
 from simpy import Environment
 
-from .Database import Database
+from .database import Database
 from .Event import Event
-from .EventModel import EventModel
-from .Person import Person
-from .Place import Place
+from .event_model import EventModel
+from .person import Person
+from .place import Place
 
 
 class Actions:

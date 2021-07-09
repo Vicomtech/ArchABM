@@ -1,5 +1,8 @@
 class Snapshot:
-    header = []
+    """This class helps in the storage of an agent's state at a given time
+    """
+    header: list
+    store: dict
 
     def __init__(self, header) -> None:
         self.header = header

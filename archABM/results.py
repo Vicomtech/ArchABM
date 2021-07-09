@@ -3,10 +3,10 @@ import json
 import logging
 import os
 
-from .Person import Person
-from .Place import Place
-from .SnapshotPerson import SnapshotPerson
-from .SnapshotPlace import SnapshotPlace
+from .person import Person
+from .place import Place
+from .snapshot_person import SnapshotPerson
+from .snapshot_place import SnapshotPlace
 
 
 class Results:

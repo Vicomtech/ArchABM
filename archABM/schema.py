@@ -1,3 +1,4 @@
+# TODO: review schema
 schema = {
     "type": "object",
     "properties": {

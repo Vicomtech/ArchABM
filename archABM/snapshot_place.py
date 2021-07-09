@@ -1,4 +1,4 @@
-from .Snapshot import Snapshot
+from .snapshot import Snapshot
 
 
 class SnapshotPlace(Snapshot):

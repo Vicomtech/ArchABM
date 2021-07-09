@@ -2,11 +2,11 @@ import logging
 
 from simpy import Environment, Interrupt
 
-from .Database import Database
+from .database import Database
 from .Event import Event
-from .EventGenerator import EventGenerator
-from .Parameters import Parameters
-from .SnapshotPerson import SnapshotPerson
+from .event_generator import EventGenerator
+from .parameters import Parameters
+from .snapshot_person import SnapshotPerson
 
 
 class Person:

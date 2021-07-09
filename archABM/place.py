@@ -2,9 +2,9 @@ from random import randrange
 
 from simpy import Environment
 
-from .Database import Database
-from .Parameters import Parameters
-from .SnapshotPlace import SnapshotPlace
+from .database import Database
+from .parameters import Parameters
+from .snapshot_place import SnapshotPlace
 
 
 class Place:

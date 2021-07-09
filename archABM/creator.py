@@ -3,13 +3,13 @@ from typing import List
 
 from simpy import Environment
 
-from .Actions import Actions
-from .Database import Database
-from .EventModel import EventModel
+from .actions import Actions
+from .database import Database
+from .event_model import EventModel
 from .Options import Options
-from .Parameters import Parameters
-from .Person import Person
-from .Place import Place
+from .parameters import Parameters
+from .person import Person
+from .place import Place
 
 
 class Creator:
@@ -71,15 +71,15 @@ class Creator:
         params = Parameters(options["model_parameters"][selection])
         model = None
         if selection == "MaxPlanck":
-            from .AerosolModelMaxPlanck import AerosolModelMaxPlanck
+            from .aerosol_model_maxplanck import AerosolModelMaxPlanck
 
             model = AerosolModelMaxPlanck(params)
         elif selection == "MIT":
-            from .AerosolModelMIT import AerosolModelMIT
+            from .aerosol_model_mit import AerosolModelMIT
 
             model = AerosolModelMIT(params)
         elif selection == "Colorado":
-            from .AerosolModelColorado import AerosolModelColorado
+            from .aerosol_model_colorado import AerosolModelColorado
 
             model = AerosolModelColorado(params)
 

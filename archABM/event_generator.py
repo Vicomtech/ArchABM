@@ -2,7 +2,7 @@ import random
 
 from simpy import Environment
 
-from .Database import Database
+from .database import Database
 
 
 class EventGenerator:

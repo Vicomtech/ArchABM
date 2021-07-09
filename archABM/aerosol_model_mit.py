@@ -1,4 +1,4 @@
-from .AerosolModel import AerosolModel
+from .aerosol_model import AerosolModel
 
 
 class AerosolModelMIT(AerosolModel):
