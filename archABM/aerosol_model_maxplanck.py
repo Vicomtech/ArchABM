@@ -1,26 +1,39 @@
 import math
+from typing import Tuple
 
+from .parameters import Parameters
 from .aerosol_model import AerosolModel
 
-
 class AerosolModelMaxPlanck(AerosolModel):
-    """
-    Aerosol transmission estimator
+    """Aerosol transmission estimator
+    
+    Model Calculations of Aerosol Transmission and Infection Risk of COVID-19 in Indoor Environments :cite:`ijerph17218114`
+
+    An adjustable algorithm to estimate the infection risk for different indoor environments, 
+    constrained by published data of human aerosol emissions, SARS-CoV-2 viral loads, infective dose and other parameters. 
+    Evaluates typical indoor settings such as an office, a classroom, choir practice, and a reception/party. 
+
+    The model includes a number of modifiable environmental factors that represent relevant physiological parameters and environmental conditions. 
+    For simplicity, all subjects are assumed to be equal in terms of breathing, speaking and susceptibility to infection. 
+    The model parameters can be easily adjusted to account for different environmental conditions and activities. 
     
     """
 
-    name: "MaxPlanck"
+    name: str = "MaxPlanck"
 
     def __init__(self, params):
         super().__init__(params)
         self.params = params
 
-    def get_risk(self, inputs):
-        """Calculate the transmission risk of an individual in a room 
-        and the dosis thrown into the air.
+    def get_risk(self, inputs: Parameters) -> Tuple[float, float]:
+        """Calculate the infection risk of an individual in a room 
+        and the CO\ :sub:`2` thrown into the air.
 
         Args:
-            inputs (Parameters): dictionary of model inputs
+            inputs (Parameters): model parameters 
+
+        Returns:
+            Tuple[float, float]: CO\ :sub:`2` concentration (ppm), and infection risk probability
         """
         params = self.params
         # inputs: room_area, room_height, room_ventilation_rate, mask_efficiency, time_in_room_h, susceptible_people

@@ -1,21 +1,34 @@
+from typing import Tuple
+from .parameters import Parameters
 from .aerosol_model import AerosolModel
 
-
 class AerosolModelMIT(AerosolModel):
-    """Aerosol transmission estimator"""
+    """Aerosol transmission estimator
+    
+    MIT COVID-19 Indoor Safety Guideline :cite:`Bazante2018995118,Bazant2021.04.04.21254903,Risbeck2021.06.21.21259287`
+
+    Theoretical model that quantifies the extent to which transmission risk is reduced in large rooms
+    with high air exchange rates, increased for more vigorous respiratory activities, and dramatically reduced by the use of face masks. 
+    Consideration of a number of outbreaks yields self-consistent estimates for the infectiousness of the new coronavirus.
+    
+    """
+
+    name: str = "MIT"
 
     def __init__(self, params):
         super().__init__(params)
         self.params = params
 
-    def get_risk(self, inputs):
-        """Calculate the transmission risk of an individual in a room 
-        and the dosis thrown into the air.
+    def get_risk(self, inputs: Parameters) -> Tuple[float, float]:
+        """Calculate the infection risk of an individual in a room 
+        and the CO\ :sub:`2` thrown into the air.
 
         Args:
-            inputs (Parameters): dictionary of model inputs
-        """
+            inputs (Parameters): model parameters 
 
+        Returns:
+            Tuple[float, float]: CO\ :sub:`2` concentration (ppm), and infection risk probability
+        """
         params = self.params
 
         area = inputs.room_area

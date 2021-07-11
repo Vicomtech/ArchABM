@@ -1,21 +1,51 @@
 import math
+from typing import Tuple
 
 from .aerosol_model import AerosolModel
-
+from .parameters import Parameters
 
 class AerosolModelColorado(AerosolModel):
-    """Aerosol transmission estimator"""
+    """Aerosol transmission estimator
+                    
+    COVID-19 Airborne Transmission Estimator :cite:`doi:10.1021/acs.estlett.1c00183,https://doi.org/10.1111/ina.12751,Peng2021.04.21.21255898`
+    
+    The model combines two submodels: 
+
+    #. A standard atmospheric box model, which assumes that the emissions are completely mixed across a control volume quickly \
+        (such as an indoor room or other space). \
+        See for example Chapter 3 of the Jacob Atmos. Chem. textbook :cite:`10.2307/j.ctt7t8hg`, and Chapter 21 of the Cooper and \
+        Alley Air Pollution Control Engineering Textbook :cite:`cooper2010air` for indoor applications. \
+        This is an approximation that allows easy calculation, is approximately correct as long as near-field effects \
+        are avoided by social distancing, and is commonly used in air quality modeling.
+
+    #. A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 :cite:`https://doi.org/10.1111/ina.12751`,\
+        and references therein :cite:`10.1093/oxfordjournals.aje.a112560,BUONANNO2020105794,BUONANNO2020106112`.		
+
+    .. warning::
+        The propagation of COVID-19 is only by aerosol transmission. 
+
+        The model is based on a standard model of aerosol disease transmission, the Wells-Riley model. 
+        It is calibrated to COVID-19 per recent literature on quanta emission rate.
+
+        This is not an epidemiological model, and does not include droplet or contact / fomite transmission, and assumes that 6 ft / 2 m social distancing is respected. Otherwise higher transmission will result.
+
+    """
+
+    name: str = "Colorado"
 
     def __init__(self, params):
         super().__init__(params)
         self.params = params
 
-    def get_risk(self, inputs):
-        """Calculate the transmission risk of an individual in a room 
-        and the dosis thrown into the air.
+    def get_risk(self, inputs: Parameters) -> Tuple[float, float]:
+        """Calculate the infection risk of an individual in a room 
+        and the CO\ :sub:`2` thrown into the air.
 
         Args:
-            inputs (Parameters): dictionary of model inputs
+            inputs (Parameters): model parameters 
+
+        Returns:
+            Tuple[float, float]: CO\ :sub:`2` concentration (ppm), and infection risk probability
         """
 
         params = self.params

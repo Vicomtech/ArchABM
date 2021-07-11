@@ -1,19 +1,23 @@
+from typing import Tuple
+from .parameters import Parameters
+
 class AerosolModel:
     """Aerosol transmission estimator"""
 
-    name: None
+    name: str
+    params: Parameters
 
-    def __init__(self, params):
+    def __init__(self, params: Parameters):
         self.params = params
 
-    def get_risk(self, inputs):
-        """Calculate the transmission risk of an individual in a room 
-        and the dosis thrown into the air.
+    def get_risk(self, inputs: Parameters) -> Tuple[float, float]:
+        """Calculate the infection risk of an individual in a room 
+        and the CO\ :sub:`2` thrown into the air.
 
         Args:
-            inputs (Parameters): dictionary of model inputs
+            inputs (Parameters): model parameters 
 
         Returns:
-            place air contamination, person infection risk
+            Tuple[float, float]: CO\ :sub:`2` concentration (ppm), and infection risk probability
         """
-        pass
+        return None, None
