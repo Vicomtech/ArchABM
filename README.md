@@ -82,8 +82,8 @@ config = {
     }
 }
 
+from archABM.engine import Engine
 
-from archABM.Engine import Engine
 simulation = Engine(config)
 results = simulation.run(until=192)
 print(results)
