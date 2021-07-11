@@ -9,6 +9,13 @@ from .schema import schema
 
 
 class Engine:
+    """Core class of the archABM package
+    
+    Launches the agent-based simulation with the specified configuration.
+    """
+    config: dict
+    db: Database
+    env: Environment
 
     def __init__(self, config: dict) -> None:
         validate(instance=config, schema=schema)
@@ -20,6 +27,11 @@ class Engine:
         self.db.results = Results(self.config)
 
     def preprocess(self) -> None:
+        """Processes the configuration dictionary to generate people.
+
+        Based on the specified configuration of number of people per group,
+        this method generates an array of people, and assignes a incremental name to each person.
+        """
         num_people = 0
         for person in self.config["people"]:
             num_people += person["num_people"]
@@ -39,6 +51,16 @@ class Engine:
         self.config["people"] = people
 
     def setup(self) -> None:
+        """Setup for a simulation run.
+
+        Creates the environment and the required assets to run a simulation, that is:
+        :class:`~archABM.options.Options`, 
+        :class:`~archABM.aerosol_model.AerosolModel`,
+        :class:`~archABM.event.Event`, 
+        :class:`~archABM.place.Place`, 
+        :class:`~archABM.actions.Actions`, 
+        :class:`~archABM.person.Person`.
+        """
         self.env = Environment()
         self.db.next()
 
@@ -50,7 +72,16 @@ class Engine:
         self.db.actions = god.create_actions()
         self.db.people = god.create_people()
 
-    def run(self, until: int = None, number_runs: int = None):
+    def run(self, until: int = None, number_runs: int = None) -> dict:
+        """Launches a batch of simulations
+
+        Args:
+            until (int, optional): duration of each simulation, in minutes. Defaults to None.
+            number_runs (int, optional): number of simulation runs. Defaults to None.
+
+        Returns:
+            dict: simulation history and configuration
+        """
         if until is None:
             until = 1440
         if number_runs is None:
