@@ -38,6 +38,7 @@ extensions = [
     "sphinx.ext.autosummary",
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
+    'sphinxcontrib.bibtex',
     'sphinx.ext.viewcode',
     "sphinx_rtd_theme",
     'sphinxcontrib.tikz'
@@ -68,6 +69,11 @@ intersphinx_mapping = {
 # Autodoc
 autosummary_generate = True
 autodoc_member_order = 'bysource'
+
+# Bibtex
+bibtex_bibfiles = ['references.bib']
+bibtex_encoding = 'latin'
+# bibtex_default_style = 'plain'
 
 # -- Options for HTML output -------------------------------------------------
 
