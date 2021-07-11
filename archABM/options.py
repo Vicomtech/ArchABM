@@ -5,8 +5,7 @@ from .parameters import Parameters
 
 
 class Options:
-    """Saves general options for the simulation
-    """
+    """Stores general options for the simulation"""
     env: Environment
     db: Database
     params: Parameters

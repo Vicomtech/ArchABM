@@ -67,8 +67,6 @@ class EventModel:
         :xscale: 80
         :align: left
      
-
-    Each person is given a copy of all the events, so that each one 
     """
 
     id: int = -1
@@ -86,12 +84,12 @@ class EventModel:
 
     @classmethod
     def reset(cls) -> None:
-        """Resets EventModel ID"""
+        """Resets :class:`~archABM.event_model.EventModel` ID."""
         EventModel.id = -1
 
     @staticmethod
     def next() -> None:
-        """Increments one unit the EventModel ID"""
+        """Increments one unit the :class:`~archABM.event_model.EventModel` ID."""
         EventModel.id += 1
 
     def get_noise(self) -> int:
@@ -109,7 +107,7 @@ class EventModel:
         return self.noise
 
     def new(self):
-        """Generates a EventModel copy, with reset count and noise
+        """Generates a :class:`~archABM.event_model.EventModel` copy, with reset count and noise
 
         Returns:
             EventModel: cloned instance
@@ -121,11 +119,13 @@ class EventModel:
     def duration(self, now) -> int:
         """Generates a random duration between :attr:`duration_min` and :attr:`duration_max`.
 
-        If the generated duration, together with the current timestamp, 
-        exceeds the allowed schedule, the duration is limited to finish 
-        at the scheduled time interval.
+        .. note::
+            If the generated duration, together with the current timestamp, 
+            exceeds the allowed schedule, the duration is limited to finish 
+            at the scheduled time interval.
         
-        The :attr:noise attribute is used to model the schedule's time tolerance.
+
+        The :attr:`noise` attribute is used to model the schedule's time tolerance.
 
         Args:
             now (int): current timestamp in minutes
@@ -144,7 +144,7 @@ class EventModel:
         return duration
 
     def priority(self) -> float:
-        """Computes the priority of a certain event
+        """Computes the priority of a certain event.
 
         The priority function follows a piecewise linear function, parametrized by:
 

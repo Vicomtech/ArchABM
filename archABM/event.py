@@ -5,8 +5,8 @@ from .place import Place
 class Event:
     """Event primitive
     
-    An event is defined by an activity :obj:`EventModel`, that happens at a given
-    :obj:`Place`, for a finite period of time, in minutes (duration).
+    An event is defined by an activity :class:`~archABM.event_model.EventModel`, that happens at a given physical location 
+    :class:`~archABM.place.Place``, for a finite period of time, in minutes (duration).
     """
     model: EventModel
     place: Place

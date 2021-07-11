@@ -53,7 +53,7 @@ class Engine:
     def setup(self) -> None:
         """Setup for a simulation run.
 
-        Creates the environment and the required assets to run a simulation, that is:
+        Creates the environment and the required assets to run a simulation:
         :class:`~archABM.options.Options`, 
         :class:`~archABM.aerosol_model.AerosolModel`,
         :class:`~archABM.event.Event`, 
