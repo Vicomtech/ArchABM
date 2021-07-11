@@ -1,15 +1,18 @@
 import logging
 
-from simpy import Environment, Interrupt
+from simpy import Environment, Interrupt, Process, Timeout
 
 from .database import Database
+from .place import Place
 from .event import Event
 from .event_generator import EventGenerator
+from .event_model import EventModel
 from .parameters import Parameters
 from .snapshot_person import SnapshotPerson
 
 
 class Person:
+    """Person primitive"""
     id = -1
 
     def __init__(self, env: Environment, db: Database, params: Parameters) -> None:
@@ -37,17 +40,37 @@ class Person:
 
     @classmethod
     def reset(cls) -> None:
+        """Resets :class:`~archABM.person.Person` ID."""
         Person.id = -1
 
     @staticmethod
     def next() -> None:
+        """Increments one unit the :class:`~archABM.person.Person` ID."""
         Person.id += 1
 
     def start(self) -> None:
+        """Initiates the event queue processing"""
         logging.info("[%.2f] Person %d starting up" % (self.env.now, self.id))
         self.env.process(self.process())
 
     def process(self) -> None:
+        """Processes the chain of discrete events
+
+        The person is moved from the current :class:`~archABM.place.Place` to the new one based on the generated :class:`~archABM.event.Event`, 
+        and stays there for a defined duration (in minutes).
+
+        Once an event or task get fulfilled, the :class:`~archABM.event_generator.EventGenerator` produces a new :class:`~archABM.event.Event`.
+        If, after a limited number of trials, the :class:`~archABM.event_generator.EventGenerator` is not able to correctly generate an event,
+        a random one is created.
+
+        If a person gets interrupted while carrying out (waiting) its current task, the assigned event happens to be the new one. 
+
+        .. note::
+            State snapshots are taken after each event if fulfilled.
+
+        Yields:
+            Process: an event yielding generator
+        """
         cont_event = 0
         cont_event_max = 1000  # TODO: review maximum allowed number of events per person
         while True:
@@ -97,6 +120,11 @@ class Person:
                 break
 
     def wait(self) -> None:
+        """Wait for a certain amount of time
+
+        Yields:
+            Timeout: event triggered after a delay has passed 
+        """
         try:
             yield self.env.timeout(self.duration)
         except Interrupt:
@@ -105,6 +133,11 @@ class Person:
             pass
 
     def assign_event(self, event: Event) -> None:
+        """Interrupt current task and assign new event
+
+        Args:
+            event (Event): new assigned event
+        """
         if self.current_process is not None and not self.current_process.triggered:
             self.current_process.interrupt("Need to go!")
             logging.info("[%.2f] Person %d interrupted current event" % (self.env.now, self.id))
@@ -114,12 +147,20 @@ class Person:
     # TODO: review if we need to update the risk of infected people as well
     # TODO: review infection risk metric: average vs cumulative
     def update(self, elapsed: float, infection_risk: float, CO2_level: float) -> None:
+        """Update the infection risk probability and the CO\ :sub:`2` concentration (ppm).
+
+        Args:
+            elapsed (float): event elapsed time (in minutes)
+            infection_risk (float): infection risk probability 
+            CO2_level (float): CO\ :sub:`2` concentration (ppm) 
+        """
         self.elapsed += elapsed
         # self.infection_risk += elapsed * (infection_risk - self.infection_risk) / self.elapsed
         self.infection_risk += infection_risk
         self.CO2_level += elapsed * (CO2_level - self.CO2_level) / self.elapsed
 
     def save_snapshot(self) -> None:
+        """Saves state snapshot on :class:`~archABM.snapshot_person.SnapshotPerson`"""
         self.snapshot.set("run", self.db.run)
         self.snapshot.set("time", self.env.now, 0)
         self.snapshot.set("person", self.id)
