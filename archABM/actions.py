@@ -12,12 +12,35 @@ from .place import Place
 
 
 class Actions:
+    """Actions applied to any asset in :class:`~archABM.database.Database`"""
+
+    env: Environment
+    db: Database
+
     def __init__(self, env: Environment, db: Database) -> None:
         self.env = env
         self.db = db
         # self.flag = None
 
     def find_place(self, model: EventModel, person: Person) -> None:
+        """Find a place to carry out a certain :class:`~archABM.event_model.EventModel`.
+
+        The selected place must share the same activity as the indicated :class:`~archABM.event_model.EventModel`.
+        Places that are open (``allow = True``) and not full (``num_people < capacity``) are only considered as valid.
+        
+        .. note::
+            Movement restrictions (between buildings and between departments) are also considered.
+
+        .. note::
+            The list of places is shuffled after each search procedure.
+
+        Args:
+            model (EventModel): activity model to which find a place
+            person (Person): person invoking the place search
+
+        Returns:
+            Place: selected place
+        """
         places = self.db.places
         random.shuffle(places)
         # if self.flag is None:
@@ -53,14 +76,48 @@ class Actions:
 
     @staticmethod
     def create_event(model: EventModel, place: Place, duration: int) -> Event:
+        """Wrapper to create an :class:`~archABM.event.Event`
+
+        Args:
+            model (EventModel): type of event or activity
+            place (Place): physical location of the event
+            duration (int): time duration in minutes
+
+        Returns:
+            Event: created :class:`~archABM.event.Event` instance
+        """
         return Event(model, place, duration)
 
     @staticmethod
     def assign_event(event: Event, people: List[Person]) -> None:
+        """Assign an event to certain people
+
+        Args:
+            event (Event): :class:`~archABM.event.Event` instance to be assigned
+            people (List[Person]): list of people to be interrupted from their current events
+        """
         for person in people:
             person.assign_event(event)
 
     def create_collective_event(self, model: EventModel, place: Place, duration: int, person: Person) -> None:
+        """Creates a collective event of certain type :class:`~archABM.event_model.EventModel` at a physical location :class:`~archABM.place.Place` and for a time duration in minutes.
+
+        .. note::
+            The number of people called into the collective event is a random integer between
+            the current number of people at that place and the total place capacity.
+
+        .. note::
+            Movement restrictions (between buildings and between departments) are also considered to select the people called into the collective event.
+
+        Args:
+            model (EventModel): type of event or activity
+            place (Place): physical location of the event
+            duration (int): time duration in minutes
+            person (Person): person invoking the collective event
+
+        Returns:
+            Event: generated collective event
+        """
         # create event
         event = self.create_event(model, place, duration)
 
