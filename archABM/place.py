@@ -163,5 +163,5 @@ class Place:
         self.snapshot.set("place", self.id)
         self.snapshot.set("num_people", self.num_people)
         self.snapshot.set("CO2_level", self.CO2_level, 2)
-        self.snapshot.set("infection_risk", self.infection_risk, 4)
+        self.snapshot.set("infection_risk", self.infection_risk, 6)
         self.db.results.write_place(self.snapshot)
