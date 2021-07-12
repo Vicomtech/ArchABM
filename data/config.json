@@ -38,7 +38,7 @@
             "duration_min": 15,
             "duration_max": 60,
             "mask_efficiency": 0.8,
-            "collective": true,
+            "collective": false,
             "shared": true,
             "allow": true
         },
@@ -95,6 +95,7 @@
             "height": null,
             "capacity": null,
             "ventilation": null,
+            "recirculated_flow_rate": null,
             "allow": true
         },
         {
@@ -102,10 +103,11 @@
             "activity": "work",
             "building": "building1",
             "department": ["department1"],
-            "area": 300.0,
+            "area": 200.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -117,6 +119,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -128,6 +131,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -139,6 +143,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -150,6 +155,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -161,6 +167,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -172,6 +179,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -183,6 +191,7 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -194,6 +203,7 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -205,6 +215,7 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -216,6 +227,7 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -227,6 +239,7 @@
             "height": 3.0,
             "capacity": 8,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -238,6 +251,7 @@
             "height": 3.0,
             "capacity": 80,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -249,6 +263,7 @@
             "height": 3.0,
             "capacity": 80,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -260,6 +275,7 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -271,6 +287,7 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -282,6 +299,7 @@
             "height": 3.0,
             "capacity": 4,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -293,6 +311,7 @@
             "height": 3.0,
             "capacity": 4,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         },
         {
@@ -304,6 +323,7 @@
             "height": 3.0,
             "capacity": 4,
             "ventilation": 3,
+            "recirculated_flow_rate": 300,
             "allow": true
         }
     ],
@@ -345,8 +365,8 @@
     ],
     "options": {
         "movement_buildings": true,
-        "movement_department": false,
-        "number_runs": 2,
+        "movement_department": true,
+        "number_runs": 1,
         "number_infected": 0.05,
         "directory": null,
         "model": "Colorado",
