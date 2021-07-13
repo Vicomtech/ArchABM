@@ -1,6 +1,5 @@
 """Schema
 """
-# TODO: review schema
 schema = {
     "type": "object",
     "properties": {
@@ -116,12 +115,15 @@ schema = {
                     "ventilation": {
                         "type": ["number", "null"]
                     },
+                    "recirculated_flow_rate": {
+                        "type": ["number", "null"]
+                    },
                     "allow": {
                         "type": "boolean"
                     }
                 }
             },
-            "required": ["name", "activity", "building", "department", "area", "height", "capacity", "ventilation", "allow"]
+            "required": ["name", "activity", "building", "department", "area", "height", "capacity", "ventilation","recirculated_flow_rate","allow"]
         },
         "options": {
             "type": "object",
@@ -136,6 +138,11 @@ schema = {
                     "type": "integer",
                     "minimum": 1
                 },
+                "ratio_infected": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
                 "directory": {
                     "type": ["string", "null"]
                 },
@@ -147,7 +154,7 @@ schema = {
                 }
 
             },
-            "required": ["movement_buildings", "movement_department", "number_runs", "model", "model_parameters"]
+            "required": ["movement_buildings", "movement_department", "number_runs", "ratio_infected", "model", "model_parameters"]
 
         }
     },
