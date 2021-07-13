@@ -41,7 +41,9 @@ extensions = [
     'sphinxcontrib.bibtex',
     'sphinx.ext.viewcode',
     "sphinx_rtd_theme",
-    'sphinxcontrib.tikz'
+    'sphinxcontrib.tikz',
+    'sphinx-jsonschema',
+    "sphinx.ext.autosectionlabel"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -91,12 +93,20 @@ html_favicon = "_static/favicon.png"
 html_logo = "_static/logo_3.png"
 html_show_sourcelink = True
 
+html_context = {
+  'display_github': True,
+  'github_user': 'VicomtechV3',
+  'github_repo': 'ArchABM',
+  'github_version': 'develop/docs/source/',
+}
+
 html_theme_options = {
     'logo_only': True,
     'display_version': True,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
     'style_nav_header_background': '#2980B9',
+    'vcs_pageview_mode': 'blob',
     # Toc options
     'collapse_navigation': False,
     'sticky_navigation': True,
@@ -105,3 +115,5 @@ html_theme_options = {
     'titles_only': False
 }
 
+def setup(app):
+    app.add_css_file('my_theme.css')
