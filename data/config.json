@@ -86,6 +86,42 @@
             "allow": true
         }
     ],
+    "people": [{
+            "department": "department1",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department2",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department3",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department4",
+            "building": "building2",
+            "num_people": 20
+        },
+        {
+            "department": "department5",
+            "building": "building2",
+            "num_people": 20
+        },
+        {
+            "department": "department6",
+            "building": "building2",
+            "num_people": 20
+        },
+        {
+            "department": "department7",
+            "building": "building2",
+            "num_people": 20
+        }
+    ],
     "places": [{
             "name": "home",
             "activity": "home",
@@ -325,42 +361,6 @@
             "ventilation": 3,
             "recirculated_flow_rate": 300,
             "allow": true
-        }
-    ],
-    "people": [{
-            "department": "department1",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department2",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department3",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department4",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department5",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department6",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department7",
-            "building": "building2",
-            "num_people": 20
         }
     ],
     "options": {
