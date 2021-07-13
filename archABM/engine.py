@@ -5,7 +5,10 @@ from tqdm import tqdm
 from .creator import Creator
 from .database import Database
 from .results import Results
-from .schema import schema
+
+import json
+import os
+
 
 
 class Engine:
@@ -17,7 +20,8 @@ class Engine:
     db: Database
     env: Environment
 
-    def __init__(self, config: dict) -> None:
+    def __init__(self, config: dict) -> None:        
+        schema = self.retrieve_schema()
         validate(instance=config, schema=schema)
 
         self.config = config
@@ -25,6 +29,17 @@ class Engine:
 
         self.db = Database()
         self.db.results = Results(self.config)
+
+    def retrieve_schema(self):
+        """Get configuration file JSON schema
+
+        Returns:
+            dict: json-schema
+        """
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        with open(dir_path + "/schema.json", "r") as f:
+            schema = json.load(f)
+        return schema
 
     def preprocess(self) -> None:
         """Processes the configuration dictionary to generate people.

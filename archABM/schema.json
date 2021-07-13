@@ -1,12 +1,12 @@
-"""Schema
-"""
-schema = {
+{
+    "title": "Configuration Schema",
     "type": "object",
     "properties": {
         "events": {
+            "title": "Events",
             "type": "array",
             "minItems": 1,
-            "uniqueItems": True,
+            "uniqueItems": true,
             "items": {
                 "type": "object",
                 "properties": {
@@ -16,7 +16,7 @@ schema = {
                     "schedule": {
                         "type": "array",
                         "minItems": 1,
-                        "uniqueItems": True,
+                        "uniqueItems": true,
                         "items": {
                             "type": "array",
                             "minItems": 2,
@@ -60,9 +60,10 @@ schema = {
             }
         },
         "people": {
+            "title": "People",
             "type": "array",
             "minItems": 1,
-            "uniqueItems": True,
+            "uniqueItems": true,
             "items": {
                 "type": "object",
                 "properties": {
@@ -76,14 +77,15 @@ schema = {
                         "type": "integer",
                         "minimum": 0
                     }
-                }
-            },
-            "required": ["department", "building", "num_people"]
+                },
+                "required": ["department", "building", "num_people"]
+            }
         },
         "places": {
+            "title": "Places",
             "type": "array",
             "minItems": 1,
-            "uniqueItems": True,
+            "uniqueItems": true,
             "items": {
                 "type": "object",
                 "properties": {
@@ -121,11 +123,12 @@ schema = {
                     "allow": {
                         "type": "boolean"
                     }
-                }
-            },
-            "required": ["name", "activity", "building", "department", "area", "height", "capacity", "ventilation","recirculated_flow_rate","allow"]
+                },
+                "required": ["name", "activity", "building", "department", "area", "height", "capacity", "ventilation", "recirculated_flow_rate", "allow"]
+            }
         },
         "options": {
+            "title": "Options",
             "type": "object",
             "properties": {
                 "movement_buildings": {
@@ -155,7 +158,6 @@ schema = {
 
             },
             "required": ["movement_buildings", "movement_department", "number_runs", "ratio_infected", "model", "model_parameters"]
-
         }
     },
     "required": ["events", "people", "places", "options"]
