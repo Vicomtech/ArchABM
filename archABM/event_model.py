@@ -173,12 +173,6 @@ class EventModel:
             return alpha
         return alpha * (self.params.repeat_max - self.count) / (self.params.repeat_max - self.params.repeat_min)
 
-        # if self.target == 0:
-        #     return 0.0
-        # if self.count < self.params.repeat_min:
-        #     return 1.0
-        # return (self.target - self.count) / self.target
-
     def probability(self, now: int) -> float:
         """Wrapper to call the priority function
 
@@ -193,11 +187,8 @@ class EventModel:
             float: event probability [0-1]
         """
         p = 0.0
-        # if self.count == self.target:
-        #     return p
-        # if self.params.repeat_max is not None:
         if self.count == self.params.repeat_max:
-            return 0.0
+            return p
 
         noise = self.get_noise()  # minutes
         for interval in self.params.schedule:
@@ -226,8 +217,7 @@ class EventModel:
     def consume(self) -> None:
         """Increments one unit the event count"""
         self.count += 1
-        # logging.info("Event %s repeated %d out of %d" %
-        # (self.name, self.count, self.target))
+        # logging.info("Event %s repeated %d out of %d" % (self.name, self.count, self.target))
 
     def supply(self) -> None:
         """Decrements one unit the event count"""

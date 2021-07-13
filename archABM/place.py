@@ -18,7 +18,6 @@ class Place:
         self.env = env
         self.db = db
         self.params = params
-        # self.convert_params()
 
         self.people = []
         self.num_people = 0

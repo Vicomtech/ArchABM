@@ -90,9 +90,8 @@ class Person:
             self.duration = self.event.duration
             activity = self.model.params.activity
 
+            # TODO: review if we want to save only new places or all of them => self.place != self.event.place
             # move from current place to new one
-            # TODO: review if we want to save only new places or all of them
-            # if self.event is not None and self.event.place is not None and self.place != self.event.place and not self.event.place.full():
             if self.event is not None and self.event.place is not None and not self.event.place.full():
                 # remove from current place
                 if self.place is not None:
@@ -129,7 +128,6 @@ class Person:
         try:
             yield self.env.timeout(self.duration)
         except Interrupt:
-            # TODO: review this exception
             # print("interrupted")
             pass
 
