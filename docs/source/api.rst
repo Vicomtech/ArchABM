@@ -1,5 +1,11 @@
+.. _api-reference:
+
 API Reference
 =============
+
+This part of the documentation covers all the interfaces of ``archABM``. 
+For parts where ``archABM`` depends on external libraries, we document the 
+most important right here and provide links to the canonical documentation.
 
 .. toctree::
     :maxdepth: 4

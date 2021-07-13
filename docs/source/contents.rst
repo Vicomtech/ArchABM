@@ -8,7 +8,12 @@ Documentation for archABM
     :maxdepth: 4
 
     index
+    examples
     api
+    authors
+    citing
+    changelog
+    license
 
 
 
