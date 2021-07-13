@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     README = fh.read()
 
 NAME = "archABM"
-DESCRIPTION = "Agent based model for architectural spaces"
+DESCRIPTION = "Agent based simulation for architectural spaces"
 URL = "https://github.com/VicomtechV3/ArchABM"
 AUTHOR = "VicomtechV3"
 AUTHOR_EMAIL = "imartinez@vicomtech.org"
@@ -38,7 +38,7 @@ EXTRAS_REQUIRE = {}
 KEYWORDS = ["agent simulation", "architecture", "building", "workplace", "discrete-event"]
 LICENSE = "MIT license"
 TEST_SUITE = "tests"
-REQUIREMENTS = ["simpy", "tqdm"]
+REQUIREMENTS = ["simpy", "tqdm", "jsonschema"]
 SETUP_REQUIREMENTS = []
 TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
 VERSION = "0.0.1"
