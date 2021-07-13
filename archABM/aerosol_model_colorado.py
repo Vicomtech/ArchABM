@@ -70,7 +70,7 @@ class AerosolModelColorado(AerosolModel):
         hepa_flow_rate = params.hepa_flow_rate
         hepa_removal = hepa_flow_rate * volume
 
-        recirculated_flow_rate = inputs.recirculated_flow_rate  # TODO: move per place DONE
+        recirculated_flow_rate = inputs.recirculated_flow_rate
         filter_efficiency = params.filter_efficiency
         ducts_removal = params.ducts_removal
         other_removal = params.other_removal

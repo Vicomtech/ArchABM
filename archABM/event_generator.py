@@ -24,15 +24,8 @@ class EventGenerator:
         self.env = env
         self.db = db
 
-        # get only allowed events
-        # self.models = [m for m in self.db.events if m.params.allow]
-        # generate new if not collective
-        # self.models = [m.new() if not m.params.collective else m for m in self.models]
-
-        # generate new in allowed events
+        # generate new for allowed events
         self.models = [m.new() for m in self.db.events if m.params.allow]
-        # TODO: careful with available models => infinite loop
-
         self.activities = [m.params.activity for m in self.models]
 
     def generate(self, now: int, person):

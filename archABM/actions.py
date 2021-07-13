@@ -20,7 +20,6 @@ class Actions:
     def __init__(self, env: Environment, db: Database) -> None:
         self.env = env
         self.db = db
-        # self.flag = None
 
     def find_place(self, model: EventModel, person: Person) -> None:
         """Find a place to carry out a certain :class:`~archABM.event_model.EventModel`.
@@ -43,9 +42,6 @@ class Actions:
         """
         places = self.db.places
         random.shuffle(places)
-        # if self.flag is None:
-        #     random.shuffle(places)
-        #     self.flag = 0
         for place in places:
             if place.params.activity == model.params.activity:
                 # check if place is allowed and not full
