@@ -32,7 +32,8 @@ class Person:
 
         self.status = 0  # 0: susceptible, 1: infective
         self.elapsed = 0.0
-        self.infection_risk = 0.0
+        self.infection_risk_cum = 0.0
+        self.infection_risk_avg = 0.0
         self.CO2_level = 0.0
         self.last_updated = 0
 
@@ -155,8 +156,8 @@ class Person:
             CO2_level (float): CO\ :sub:`2` concentration (ppm) 
         """
         self.elapsed += elapsed
-        # self.infection_risk += elapsed * (infection_risk - self.infection_risk) / self.elapsed
-        self.infection_risk += infection_risk
+        self.infection_risk_avg += elapsed * (infection_risk - self.infection_risk_avg) / self.elapsed
+        self.infection_risk_cum += infection_risk
         self.CO2_level += elapsed * (CO2_level - self.CO2_level) / self.elapsed
 
     def save_snapshot(self) -> None:
@@ -168,5 +169,6 @@ class Person:
         self.snapshot.set("place", self.place.id)
         self.snapshot.set("event", self.model.id)
         self.snapshot.set("CO2_level", self.CO2_level, 2)
-        self.snapshot.set("infection_risk", self.infection_risk, 6)
+        self.snapshot.set("infection_risk_cum", self.infection_risk_cum, 6)
+        self.snapshot.set("infection_risk_avg", self.infection_risk_avg, 6)
         self.db.results.write_person(self.snapshot)

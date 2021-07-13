@@ -28,7 +28,8 @@ class Place:
         self.CO2_level = self.CO2_baseline
         
         self.elapsed = 0.0
-        self.infection_risk = 0.0
+        self.infection_risk_cum = 0.0
+        self.infection_risk_avg = 0.0
         self.last_updated = 0.0
 
         self.event = self.get_event()
@@ -128,7 +129,8 @@ class Place:
             # update place
             self.CO2_level = CO2_level
             self.elapsed += elapsed
-            self.infection_risk += elapsed * (infection_risk - self.infection_risk) / self.elapsed
+            self.infection_risk_avg += elapsed * (infection_risk - self.infection_risk_avg) / self.elapsed
+            self.infection_risk_cum += infection_risk
 
             # update people # TODO: review if we need to update the risk of infected people as well
             for p in self.people:
@@ -163,5 +165,6 @@ class Place:
         self.snapshot.set("place", self.id)
         self.snapshot.set("num_people", self.num_people)
         self.snapshot.set("CO2_level", self.CO2_level, 2)
-        self.snapshot.set("infection_risk", self.infection_risk, 6)
+        self.snapshot.set("infection_risk_cum", self.infection_risk_cum, 6)
+        self.snapshot.set("infection_risk_avg", self.infection_risk_avg, 6)
         self.db.results.write_place(self.snapshot)
