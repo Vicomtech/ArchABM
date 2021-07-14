@@ -40,8 +40,8 @@ Basic Example
 
    python main.py
 
-Configuration parameters - JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuration parameters
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. literalinclude:: ../../data/config_basic.json
     :language: JSON
