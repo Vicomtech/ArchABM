@@ -61,13 +61,13 @@ To install ``archABM``, run this command in your terminal of choice:
 
 .. code:: shell
 
-    $ python -m pip install archABM
+    $ pip install archABM
 
 or, alternatively:
 
 .. code:: shell
 
-    $ pip install archABM
+    $ python -m pip install archABM
 
 
 Using latest github-hosted version
