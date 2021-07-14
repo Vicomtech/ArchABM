@@ -1,6 +1,6 @@
 # ArchABM
 
-Agent-based model for pandemic risk assessment in architectural spaces.
+Agent-based model for air quality and pandemic risk assessment in architectural spaces.
 
 ## Installation
 
@@ -82,8 +82,8 @@ config = {
     }
 }
 
+from archABM.engine import Engine
 
-from archABM.Engine import Engine
 simulation = Engine(config)
 results = simulation.run(until=192)
 print(results)

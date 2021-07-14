@@ -95,31 +95,6 @@
             "department": "department2",
             "building": "building1",
             "num_people": 20
-        },
-        {
-            "department": "department3",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department4",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department5",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department6",
-            "building": "building2",
-            "num_people": 20
-        },
-        {
-            "department": "department7",
-            "building": "building2",
-            "num_people": 20
         }
     ],
     "places": [{
@@ -143,7 +118,7 @@
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
@@ -151,71 +126,11 @@
             "activity": "work",
             "building": "building1",
             "department": ["department2"],
-            "area": 300.0,
+            "area": 200.0,
             "height": 3.0,
             "capacity": 50,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "office3",
-            "activity": "work",
-            "building": "building1",
-            "department": ["department3"],
-            "area": 300.0,
-            "height": 3.0,
-            "capacity": 50,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "office4",
-            "activity": "work",
-            "building": "building2",
-            "department": ["department4"],
-            "area": 300.0,
-            "height": 3.0,
-            "capacity": 50,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "office5",
-            "activity": "work",
-            "building": "building2",
-            "department": ["department5"],
-            "area": 300.0,
-            "height": 3.0,
-            "capacity": 50,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "office6",
-            "activity": "work",
-            "building": "building2",
-            "department": ["department6"],
-            "area": 300.0,
-            "height": 3.0,
-            "capacity": 50,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "office7",
-            "activity": "work",
-            "building": "building2",
-            "department": ["department7"],
-            "area": 300.0,
-            "height": 3.0,
-            "capacity": 50,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
@@ -223,11 +138,11 @@
             "activity": "meeting",
             "building": "building1",
             "department": ["department1"],
-            "area": 30.0,
+            "area": 40.0,
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
@@ -239,91 +154,31 @@
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "meeting3",
-            "activity": "meeting",
-            "building": "building2",
-            "department": null,
-            "area": 30.0,
-            "height": 3.0,
-            "capacity": 10,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "meeting4",
-            "activity": "meeting",
-            "building": "building2",
-            "department": null,
-            "area": 20.0,
-            "height": 3.0,
-            "capacity": 10,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "meeting5",
-            "activity": "meeting",
-            "building": "building2",
-            "department": null,
-            "area": 20.0,
-            "height": 3.0,
-            "capacity": 8,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
             "name": "lunch1",
             "activity": "lunch",
             "building": "building1",
-            "department": ["department1", "department2", "department7"],
-            "area": 400.0,
+            "department": ["department1", "department2"],
+            "area": 200.0,
             "height": 3.0,
-            "capacity": 80,
+            "capacity": 50,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "lunch2",
-            "activity": "lunch",
-            "building": "building2",
-            "department": ["department3", "department4", "department5", "department6"],
-            "area": 400.0,
-            "height": 3.0,
-            "capacity": 80,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
             "name": "coffee1",
             "activity": "coffee",
             "building": "building1",
-            "department": ["department1", "department2", "department7"],
+            "department": ["department1", "department2"],
             "area": 25.0,
             "height": 3.0,
             "capacity": 10,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "coffee2",
-            "activity": "coffee",
-            "building": "building2",
-            "department": ["department3", "department4", "department5", "department6"],
-            "area": 25.0,
-            "height": 3.0,
-            "capacity": 10,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
@@ -335,31 +190,19 @@
             "height": 3.0,
             "capacity": 4,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         },
         {
             "name": "restroom2",
             "activity": "restroom",
             "building": "building2",
-            "department": ["department3", "department4", "department5"],
-            "area": 10.0,
+            "department": null,
+            "area": 15.0,
             "height": 3.0,
             "capacity": 4,
             "ventilation": 3,
-            "recirculated_flow_rate": 300,
-            "allow": true
-        },
-        {
-            "name": "restroom3",
-            "activity": "restroom",
-            "building": "building2",
-            "department": ["department6", "department7"],
-            "area": 20.0,
-            "height": 3.0,
-            "capacity": 4,
-            "ventilation": 3,
-            "recirculated_flow_rate": 300,
+            "recirculated_flow_rate": 0,
             "allow": true
         }
     ],

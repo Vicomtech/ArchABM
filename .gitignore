@@ -1,3 +1,5 @@
 __pycache__
-results
 .Rproj.user
+results
+docs/build
+.idea

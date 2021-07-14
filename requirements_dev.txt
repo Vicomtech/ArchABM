@@ -1,4 +1,6 @@
 simpy
+tqdm
+jsonschema
 numpy
 matplotlib
 pandas
@@ -6,4 +8,4 @@ seaborn
 networkx
 igraph
 odfpy
-tqdm
+licenseheaders
