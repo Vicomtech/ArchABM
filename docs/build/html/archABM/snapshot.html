@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Snapshot &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Authors" href="../authors.html" />
+    <link rel="prev" title="Schema" href="schema.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../contents.html">
+          
+
+          
+            
+            <img src="../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+        
+      <li>Snapshot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/snapshot.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-archABM.snapshot">
+<span id="snapshot"></span><h1>Snapshot<a class="headerlink" href="#module-archABM.snapshot" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.snapshot.</span></span><span class="sig-name descname"><span class="pre">Snapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores the state of an agent at a given time</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.snapshot.Snapshot.header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot.store">
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot.Snapshot.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes dictionary <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> with <a class="reference internal" href="#archABM.snapshot.Snapshot.header" title="archABM.snapshot.Snapshot.header"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header</span></code></a> as keys.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot.get_header">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes all items in <a class="reference internal" href="#archABM.snapshot.Snapshot.header" title="archABM.snapshot.Snapshot.header"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header</span></code></a> and joins them into one string.</p>
+<p>A string must be specified as the separator, by default “,”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sep</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – separator. Defaults to “,”.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a string created by joining the elements of <a class="reference internal" href="#archABM.snapshot.Snapshot.header" title="archABM.snapshot.Snapshot.header"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header</span></code></a> by string separator</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes all items in <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> and joins them into one string.</p>
+<p>A string must be specified as the separator, by default “,”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sep</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – separator. Defaults to “,”.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a string created by joining the elements of <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> by string separator</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.snapshot.Snapshot.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a key:value pair to the <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> dictionary</p>
+<ul class="simple">
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, it is casted to <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>, the elements are joined into one <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, separated by “;”.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, it is rounded to the specified number <code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code>.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code> is <code class="xref py py-const docutils literal notranslate"><span class="pre">0</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is casted to <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – item key</p></li>
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>]</em>) – item value</p></li>
+<li><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><em>optional</em>) – number of digits to store. Defaults to 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#BaseException" title="(in Python v3.9)"><strong>BaseException</strong></a> – raises if the specified <code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code> is not a key in <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-archABM.snapshot_person">
+<span id="snapshot-person"></span><h2>Snapshot Person<a class="headerlink" href="#module-archABM.snapshot_person" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.snapshot_person.SnapshotPerson">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.snapshot_person.</span></span><span class="sig-name descname"><span class="pre">SnapshotPerson</span></span><a class="reference internal" href="../_modules/archABM/snapshot_person.html#SnapshotPerson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores the state of a person at a given time</p>
+<p>It saves the following attributes:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“run”</p></td>
+<td><p>Simulation run</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“time”</p></td>
+<td><p>Simulation time (minutes)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“person”</p></td>
+<td><p>Person ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“status”</p></td>
+<td><p>Person status (0: susceptible, 1: infective)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“place”</p></td>
+<td><p>Place ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“event”</p></td>
+<td><p>Event ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“CO2_level”</p></td>
+<td><p>Average CO<sub>2</sub> level (ppm)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“infection_risk_cum”</p></td>
+<td><p>Probability of infection (cumulative)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“infection_risk_avg”</p></td>
+<td><p>Probability of infection (average)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.snapshot_person.SnapshotPerson.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'person',</span> <span class="pre">'status',</span> <span class="pre">'place',</span> <span class="pre">'event',</span> <span class="pre">'CO2_level',</span> <span class="pre">'infection_risk_cum',</span> <span class="pre">'infection_risk_avg']</span></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.snapshot_person.SnapshotPerson.store">
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-archABM.snapshot_place">
+<span id="snapshot-place"></span><h2>Snapshot Place<a class="headerlink" href="#module-archABM.snapshot_place" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.snapshot_place.SnapshotPlace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.snapshot_place.</span></span><span class="sig-name descname"><span class="pre">SnapshotPlace</span></span><a class="reference internal" href="../_modules/archABM/snapshot_place.html#SnapshotPlace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores the state of a place at a given time</p>
+<p>It saves the following attributes:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“run”</p></td>
+<td><p>Simulation run</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“time”</p></td>
+<td><p>Simulation time (minutes)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“place”</p></td>
+<td><p>Place ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“num_people”</p></td>
+<td><p>Number of people</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“CO2_level”</p></td>
+<td><p>CO<sub>2</sub> level (ppm)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>“infection_risk_cum”</p></td>
+<td><p>Probability of infection (cumulative)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>“infection_risk_avg”</p></td>
+<td><p>Probability of infection (average)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.snapshot_place.SnapshotPlace.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'place',</span> <span class="pre">'num_people',</span> <span class="pre">'CO2_level',</span> <span class="pre">'infection_risk_cum',</span> <span class="pre">'infection_risk_avg']</span></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.snapshot_place.SnapshotPlace.store">
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../authors.html" class="btn btn-neutral float-right" title="Authors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="schema.html" class="btn btn-neutral float-left" title="Schema" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

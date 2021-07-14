@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>API Reference &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Actions" href="archABM/actions.html" />
+    <link rel="prev" title="Examples" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="contents.html">
+          
+
+          
+            
+            <img src="_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="archABM/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>API Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/api.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-reference">
+<span id="id1"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<p>This part of the documentation covers all the interfaces of <code class="docutils literal notranslate"><span class="pre">archABM</span></code>.
+For parts where <code class="docutils literal notranslate"><span class="pre">archABM</span></code> depends on external libraries, we document the
+most important right here and provide links to the canonical documentation.</p>
+<div class="toctree-wrapper compound">
+</div>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="archABM/actions.html#archABM.actions.Actions" title="archABM.actions.Actions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Actions</span></code></a>(env, db)</p></td>
+<td><p>Actions applied to any asset in <a class="reference internal" href="archABM/database.html#archABM.database.Database" title="archABM.database.Database"><code class="xref py py-class docutils literal notranslate"><span class="pre">Database</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="archABM/aerosol_model.html#archABM.aerosol_model.AerosolModel" title="archABM.aerosol_model.AerosolModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AerosolModel</span></code></a>(params)</p></td>
+<td><p>Aerosol transmission estimator</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="archABM/creator.html#archABM.creator.Creator" title="archABM.creator.Creator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Creator</span></code></a>(env, config, db)</p></td>
+<td><p>Initializes the required assets to run a simulation: <a class="reference internal" href="archABM/options.html#archABM.options.Options" title="archABM.options.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a>, <a class="reference internal" href="archABM/aerosol_model.html#archABM.aerosol_model.AerosolModel" title="archABM.aerosol_model.AerosolModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModel</span></code></a>, <a class="reference internal" href="archABM/event.html#archABM.event.Event" title="archABM.event.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a>, <a class="reference internal" href="archABM/place.html#archABM.place.Place" title="archABM.place.Place"><code class="xref py py-class docutils literal notranslate"><span class="pre">Place</span></code></a>, <a class="reference internal" href="archABM/actions.html#archABM.actions.Actions" title="archABM.actions.Actions"><code class="xref py py-class docutils literal notranslate"><span class="pre">Actions</span></code></a>, <a class="reference internal" href="archABM/person.html#archABM.person.Person" title="archABM.person.Person"><code class="xref py py-class docutils literal notranslate"><span class="pre">Person</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="archABM/database.html#archABM.database.Database" title="archABM.database.Database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Database</span></code></a>()</p></td>
+<td><p>In-memory database of the simulation components</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="archABM/engine.html#archABM.engine.Engine" title="archABM.engine.Engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Engine</span></code></a>(config)</p></td>
+<td><p>Core class of the archABM package</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="archABM/event.html#archABM.event.Event" title="archABM.event.Event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Event</span></code></a>(model, place, duration)</p></td>
+<td><p>Event primitive</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="archABM/options.html#archABM.options.Options" title="archABM.options.Options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Options</span></code></a>(env, db, params)</p></td>
+<td><p>Stores general options for the simulation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="archABM/parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameters</span></code></a>(__dict__)</p></td>
+<td><p>Helper to access dictionary elements as class attributes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="archABM/person.html#archABM.person.Person" title="archABM.person.Person"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Person</span></code></a>(env, db, params)</p></td>
+<td><p>Person primitive</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="archABM/place.html#archABM.place.Place" title="archABM.place.Place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Place</span></code></a>(env, db, params)</p></td>
+<td><p>Place primitive</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="archABM/results.html#archABM.results.Results" title="archABM.results.Results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Results</span></code></a>(config)</p></td>
+<td><p>Simulation history processing and export</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="archABM/snapshot.html#archABM.snapshot.Snapshot" title="archABM.snapshot.Snapshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Snapshot</span></code></a>(header)</p></td>
+<td><p>Stores the state of an agent at a given time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="archABM/actions.html" class="btn btn-neutral float-right" title="Actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

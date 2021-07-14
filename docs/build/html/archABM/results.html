@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Results &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Schema" href="schema.html" />
+    <link rel="prev" title="Place" href="place.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../contents.html">
+          
+
+          
+            
+            <img src="../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="place.html">Place</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+        
+      <li>Results</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/results.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-archABM.results">
+<span id="results"></span><h1>Results<a class="headerlink" href="#module-archABM.results" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.results.Results">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.results.</span></span><span class="sig-name descname"><span class="pre">Results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/results.html#Results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulation history processing and export</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.results.Results.output">
+<span class="sig-name descname"><span class="pre">output</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.results.Results.output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.mkpath">
+<span class="sig-name descname"><span class="pre">mkpath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.mkpath"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.mkpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the path where the simulation results should be saved.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">directory</span></code> option is specified, another folder level is added to the path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.mkdir">
+<span class="sig-name descname"><span class="pre">mkdir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.mkdir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.mkdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the directory where the simulation results should be saved.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.setup_log">
+<span class="sig-name descname"><span class="pre">setup_log</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.setup_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.setup_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logging setup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.open_people_csv">
+<span class="sig-name descname"><span class="pre">open_people_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.open_people_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.open_people_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and opens the <em>csv</em> file to save people state history</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.close_people_csv">
+<span class="sig-name descname"><span class="pre">close_people_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.close_people_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.close_people_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the people <em>csv</em> file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.open_places_csv">
+<span class="sig-name descname"><span class="pre">open_places_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.open_places_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.open_places_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and opens the <em>csv</em> file to save places state history</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.close_places_csv">
+<span class="sig-name descname"><span class="pre">close_places_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.close_places_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.close_places_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the places <em>csv</em> file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.open_json">
+<span class="sig-name descname"><span class="pre">open_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.open_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.open_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and opens the <em>json</em> file to save all results</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.write_json">
+<span class="sig-name descname"><span class="pre">write_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.write_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.write_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the <a class="reference internal" href="#archABM.results.Results.output" title="archABM.results.Results.output"><code class="xref py py-attr docutils literal notranslate"><span class="pre">output</span></code></a> dictionary to the <em>json</em> file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.close_json">
+<span class="sig-name descname"><span class="pre">close_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.close_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.close_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the <em>json</em> file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.init_results">
+<span class="sig-name descname"><span class="pre">init_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.init_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.init_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the results dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.write_person">
+<span class="sig-name descname"><span class="pre">write_person</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">person</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="person.html#archABM.person.Person" title="archABM.person.Person"><span class="pre">archABM.person.Person</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.write_person"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.write_person" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a new row to the person state history.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>person</strong> (<a class="reference internal" href="person.html#archABM.person.Person" title="archABM.person.Person"><em>Person</em></a>) – person state to be saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.write_place">
+<span class="sig-name descname"><span class="pre">write_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="place.html#archABM.place.Place" title="archABM.place.Place"><span class="pre">archABM.place.Place</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.write_place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.write_place" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a new row to the place state history.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>place</strong> (<a class="reference internal" href="place.html#archABM.place.Place" title="archABM.place.Place"><em>Place</em></a>) – place state to be saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.write_config">
+<span class="sig-name descname"><span class="pre">write_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.write_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.write_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the configuration dictionary into a <em>json</em> file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.results.Results.done">
+<span class="sig-name descname"><span class="pre">done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/results.html#Results.done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.results.Results.done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all file connections and returns a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> with the complete simulation history.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>complete simulation history</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="schema.html" class="btn btn-neutral float-right" title="Schema" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="place.html" class="btn btn-neutral float-left" title="Place" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

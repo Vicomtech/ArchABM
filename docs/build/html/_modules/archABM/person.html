@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>archABM.person &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../../contents.html">
+          
+
+          
+            
+            <img src="../../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>archABM.person</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for archABM.person</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">simpy</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">Interrupt</span><span class="p">,</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Timeout</span>
+
+<span class="kn">from</span> <span class="nn">.database</span> <span class="kn">import</span> <span class="n">Database</span>
+<span class="kn">from</span> <span class="nn">.place</span> <span class="kn">import</span> <span class="n">Place</span>
+<span class="kn">from</span> <span class="nn">.event</span> <span class="kn">import</span> <span class="n">Event</span>
+<span class="kn">from</span> <span class="nn">.event_generator</span> <span class="kn">import</span> <span class="n">EventGenerator</span>
+<span class="kn">from</span> <span class="nn">.event_model</span> <span class="kn">import</span> <span class="n">EventModel</span>
+<span class="kn">from</span> <span class="nn">.parameters</span> <span class="kn">import</span> <span class="n">Parameters</span>
+<span class="kn">from</span> <span class="nn">.snapshot_person</span> <span class="kn">import</span> <span class="n">SnapshotPerson</span>
+
+
+<div class="viewcode-block" id="Person"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person">[docs]</a><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Person primitive&quot;&quot;&quot;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Database</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">id</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">generator</span> <span class="o">=</span> <span class="n">EventGenerator</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">place</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># 0: susceptible, 1: infective</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_cum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_avg</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span> <span class="o">=</span> <span class="n">SnapshotPerson</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Person.reset"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.reset">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Resets :class:`~archABM.person.Person` ID.&quot;&quot;&quot;</span>
+        <span class="n">Person</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span></div>
+
+<div class="viewcode-block" id="Person.next"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.next">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">next</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Increments one unit the :class:`~archABM.person.Person` ID.&quot;&quot;&quot;</span>
+        <span class="n">Person</span><span class="o">.</span><span class="n">id</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="Person.start"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Initiates the event queue processing&quot;&quot;&quot;</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%.2f</span><span class="s2">] Person </span><span class="si">%d</span><span class="s2"> starting up&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Person.process"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.process">[docs]</a>    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Processes the chain of discrete events</span>
+
+<span class="sd">        The person is moved from the current :class:`~archABM.place.Place` to the new one based on the generated :class:`~archABM.event.Event`, </span>
+<span class="sd">        and stays there for a defined duration (in minutes).</span>
+
+<span class="sd">        Once an event or task get fulfilled, the :class:`~archABM.event_generator.EventGenerator` produces a new :class:`~archABM.event.Event`.</span>
+<span class="sd">        If, after a limited number of trials, the :class:`~archABM.event_generator.EventGenerator` is not able to correctly generate an event,</span>
+<span class="sd">        a random one is created.</span>
+
+<span class="sd">        If a person gets interrupted while carrying out (waiting) its current task, the assigned event happens to be the new one. </span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            State snapshots are taken after each event if fulfilled.</span>
+
+<span class="sd">        Yields:</span>
+<span class="sd">            Process: an event yielding generator</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cont_event</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">cont_event_max</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># TODO: review maximum allowed number of events per person</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="c1"># generate event</span>
+            <span class="n">cont_generator</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">cont_generator_max</span> <span class="o">=</span> <span class="mi">3</span>
+            <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># TODO: review maximum allowed number of events per person</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+                <span class="n">cont_generator</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="c1"># if exceeded, generate random event</span>
+                <span class="k">if</span> <span class="n">cont_generator</span> <span class="o">&gt;</span> <span class="n">cont_generator_max</span><span class="p">:</span>
+                    <span class="n">duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">duration</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">place</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+                    <span class="k">break</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">model</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">duration</span>
+            <span class="n">activity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span>
+
+            <span class="c1"># TODO: review if we want to save only new places or all of them =&gt; self.place != self.event.place</span>
+            <span class="c1"># move from current place to new one</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">place</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">full</span><span class="p">():</span>
+                <span class="c1"># remove from current place</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">place</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">remove_person</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+                <span class="c1"># add to new place</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">place</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">place</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">add_person</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+                <span class="c1"># save snapshot (if first event or elapsed time &gt; 0)</span>
+                <span class="n">elapsed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span>
+                <span class="k">if</span> <span class="n">elapsed</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">cont_event</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">save_snapshot</span><span class="p">()</span>
+                    <span class="k">pass</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%.2f</span><span class="s2">] Person </span><span class="si">%d</span><span class="s2"> event </span><span class="si">%s</span><span class="s2"> at place </span><span class="si">%s</span><span class="s2"> for </span><span class="si">%d</span><span class="s2"> minutes&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span><span class="p">,))</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">())</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span>
+
+            <span class="n">cont_event</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">cont_event</span> <span class="o">&gt;</span> <span class="n">cont_event_max</span><span class="p">:</span>
+                <span class="k">break</span></div>
+
+<div class="viewcode-block" id="Person.wait"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.wait">[docs]</a>    <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Wait for a certain amount of time</span>
+
+<span class="sd">        Yields:</span>
+<span class="sd">            Timeout: event triggered after a delay has passed </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">duration</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">Interrupt</span><span class="p">:</span>
+            <span class="c1"># print(&quot;interrupted&quot;)</span>
+            <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Person.assign_event"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.assign_event">[docs]</a>    <span class="k">def</span> <span class="nf">assign_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Interrupt current task and assign new event</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            event (Event): new assigned event</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span><span class="o">.</span><span class="n">triggered</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_process</span><span class="o">.</span><span class="n">interrupt</span><span class="p">(</span><span class="s2">&quot;Need to go!&quot;</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%.2f</span><span class="s2">] Person </span><span class="si">%d</span><span class="s2"> interrupted current event&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="n">event</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generator</span><span class="o">.</span><span class="n">consume_activity</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">model</span><span class="p">)</span></div>
+
+    <span class="c1"># TODO: review if we need to update the risk of infected people as well</span>
+    <span class="c1"># TODO: review infection risk metric: average vs cumulative</span>
+<div class="viewcode-block" id="Person.update"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elapsed</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">infection_risk</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">CO2_level</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Update the infection risk probability and the CO\ :sub:`2` concentration (ppm).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            elapsed (float): event elapsed time (in minutes)</span>
+<span class="sd">            infection_risk (float): infection risk probability </span>
+<span class="sd">            CO2_level (float): CO\ :sub:`2` concentration (ppm) </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">+=</span> <span class="n">elapsed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_avg</span> <span class="o">+=</span> <span class="n">elapsed</span> <span class="o">*</span> <span class="p">(</span><span class="n">infection_risk</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_avg</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_cum</span> <span class="o">+=</span> <span class="n">infection_risk</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span> <span class="o">+=</span> <span class="n">elapsed</span> <span class="o">*</span> <span class="p">(</span><span class="n">CO2_level</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span></div>
+
+<div class="viewcode-block" id="Person.save_snapshot"><a class="viewcode-back" href="../../archABM/person.html#archABM.person.Person.save_snapshot">[docs]</a>    <span class="k">def</span> <span class="nf">save_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Saves state snapshot on :class:`~archABM.snapshot_person.SnapshotPerson`&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">run</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;place&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2_level&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;infection_risk_cum&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_cum</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;infection_risk_avg&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">infection_risk_avg</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">write_person</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

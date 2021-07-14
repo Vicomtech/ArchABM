@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>archABM.event_model &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../../contents.html">
+          
+
+          
+            
+            <img src="../../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>archABM.event_model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for archABM.event_model</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">.parameters</span> <span class="kn">import</span> <span class="n">Parameters</span>
+
+<div class="viewcode-block" id="EventModel"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel">[docs]</a><span class="k">class</span> <span class="nc">EventModel</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Defines an event model, also called &quot;activity&quot;</span>
+
+<span class="sd">    An event model is defined by these parameters:</span>
+<span class="sd">    </span>
+<span class="sd">    * Activity name: :obj:`str`</span>
+<span class="sd">    * Schedule: :obj:`list` of :obj:`tuple` (in minutes :obj:`int`)</span>
+<span class="sd">    * Repetitions range: minimum (:obj:`int`) and maximum (:obj:`int`)</span>
+<span class="sd">    * Duration range: minimum (:obj:`int`) and maximum (:obj:`int`) in minutes</span>
+<span class="sd">    * Other parameters: </span>
+
+<span class="sd">        * mask efficiency ratio: :obj:`float`</span>
+<span class="sd">        * collective event: :obj:`bool`</span>
+<span class="sd">        * shared event: :obj:`bool`</span>
+
+<span class="sd">    The schedule defines the allowed periods of time in which an activity can happen.</span>
+<span class="sd">    For example, ``schedule=[(120,180),(240,300)]`` allows people to carry out this activity from</span>
+<span class="sd">    the time ``120`` to ``180`` and also from time ``240`` until ``300``. </span>
+<span class="sd">    Notice that the schedule units are in minutes.</span>
+
+<span class="sd">    Each activity is limited to a certain duration, and its priority follows</span>
+<span class="sd">    a piecewise linear function, parametrized by:</span>
+
+<span class="sd">    * ``r``: repeat\ :sub:`min` </span>
+<span class="sd">    * ``R``: repeat\ :sub:`max`</span>
+<span class="sd">    * ``e``: event count</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">        Priority(e) = </span>
+<span class="sd">        \\left\{\\begin{matrix}</span>
+<span class="sd">        1-(1-\\alpha)\\cfrac{e}{r}\,,\quad 0 \leq  e &lt; r \\\\</span>
+<span class="sd">        \\alpha\\cfrac{R-e}{R-r}\,,\quad r \leq  e &lt; R \\ </span>
+<span class="sd">        \end{matrix}\\right.</span>
+
+
+
+<span class="sd">    .. tikz:: Priority piecewise linear function</span>
+<span class="sd">        \pgfmathsetmacro{\\N}{10};</span>
+<span class="sd">        \pgfmathsetmacro{\\M}{6};</span>
+<span class="sd">        \pgfmathsetmacro{\\NN}{\\N-1};</span>
+<span class="sd">        \pgfmathsetmacro{\\MM}{\\M-1};</span>
+<span class="sd">        \pgfmathsetmacro{\\repmin}{2.25};</span>
+<span class="sd">        \pgfmathsetmacro{\\repmax}{8.5};</span>
+<span class="sd">        \pgfmathsetmacro{\\a}{2};</span>
+<span class="sd">        \coordinate (A) at (0,\\MM);</span>
+<span class="sd">        \coordinate (B) at (\\NN,0);</span>
+<span class="sd">        \coordinate (C) at (\\repmin, \\a);</span>
+<span class="sd">        \coordinate (D) at (\\repmax, 0);</span>
+<span class="sd">        \coordinate (E) at (\\repmin, 0);</span>
+<span class="sd">        \coordinate (F) at (0, \\a);</span>
+<span class="sd">        \draw[stepx=1,thin, black!20] (0,0) grid (\\N,\\M);</span>
+<span class="sd">        \draw[-&gt;, very thick] (0,0) to (\\N,0) node[right] {Event count};</span>
+<span class="sd">        \draw[-&gt;, very thick] (0,0) to (0,\\M)  node[above] {Priority};</span>
+<span class="sd">        \draw (0.1,0) -- (-0.1, 0) node[anchor=east] {0};</span>
+<span class="sd">        \draw (0, 0.1) -- (0, -0.1);</span>
+<span class="sd">        \draw (\\repmin,0.1) -- (\\repmin,-0.1) node[anchor=north] {$repeat_{min}$};</span>
+<span class="sd">        \draw (\\repmax,0.1) -- (\\repmax,-0.1) node[anchor=north] {$repeat_{max}$};</span>
+<span class="sd">        \draw[ultra thick] (0.1, \\MM) -- (-0.1, \\MM) node[left] {1};</span>
+<span class="sd">        \draw[very thick, black!50, dashed] (C) -- (F) node[left] {$\\alpha$};</span>
+<span class="sd">        \draw[very thick, black!50, dashed] (C) -- (E);</span>
+<span class="sd">        \draw[ultra thick, red] (A) -- (C);</span>
+<span class="sd">        \draw[ultra thick, red] (C) -- (D);</span>
+<span class="sd">        :xscale: 80</span>
+<span class="sd">        :align: left</span>
+<span class="sd">     </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span>
+    <span class="n">count</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">noise</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">EventModel</span><span class="o">.</span><span class="n">id</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noise</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="EventModel.reset"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.reset">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Resets :class:`~archABM.event_model.EventModel` ID.&quot;&quot;&quot;</span>
+        <span class="n">EventModel</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span></div>
+
+<div class="viewcode-block" id="EventModel.next"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.next">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">next</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Increments one unit the :class:`~archABM.event_model.EventModel` ID.&quot;&quot;&quot;</span>
+        <span class="n">EventModel</span><span class="o">.</span><span class="n">id</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="EventModel.get_noise"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.get_noise">[docs]</a>    <span class="k">def</span> <span class="nf">get_noise</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generates random noise</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: noise amount in minutes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noise</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># minutes # TODO: review hardcoded value</span>
+            <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noise</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noise</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>  <span class="c1"># minutes</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">noise</span></div>
+
+<div class="viewcode-block" id="EventModel.new"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.new">[docs]</a>    <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generates a :class:`~archABM.event_model.EventModel` copy, with reset count and noise</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            EventModel: cloned instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noise</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EventModel.duration"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.duration">[docs]</a>    <span class="k">def</span> <span class="nf">duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generates a random duration between :attr:`duration_min` and :attr:`duration_max`.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            If the generated duration, together with the current timestamp, </span>
+<span class="sd">            exceeds the allowed schedule, the duration is limited to finish </span>
+<span class="sd">            at the scheduled time interval.</span>
+<span class="sd">        </span>
+
+<span class="sd">        The :attr:`noise` attribute is used to model the schedule&#39;s time tolerance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            now (int): current timestamp in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: event duration in minutes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">duration_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">duration_max</span><span class="p">)</span>
+        <span class="n">estimated</span> <span class="o">=</span> <span class="n">now</span> <span class="o">+</span> <span class="n">duration</span>
+        <span class="n">noise</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_noise</span><span class="p">()</span>  <span class="c1"># minutes</span>
+        <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">schedule</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">interval</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="o">-</span> <span class="n">noise</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">noise</span> <span class="o">&lt;</span> <span class="n">estimated</span><span class="p">:</span>
+                <span class="n">duration</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">noise</span> <span class="o">-</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">duration</span></div>
+
+<div class="viewcode-block" id="EventModel.priority"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.priority">[docs]</a>    <span class="k">def</span> <span class="nf">priority</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Computes the priority of a certain event.</span>
+
+<span class="sd">        The priority function follows a piecewise linear function, parametrized by:</span>
+
+<span class="sd">        * ``r``: repeat\ :sub:`min` </span>
+<span class="sd">        * ``R``: repeat\ :sub:`max`</span>
+<span class="sd">        * ``e``: event count</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            Priority(e) = </span>
+<span class="sd">            \\left\{\\begin{matrix}</span>
+<span class="sd">            1-(1-\\alpha)\\cfrac{e}{r}\,,\quad 0 \leq  e &lt; r \\\\</span>
+<span class="sd">            \\alpha\\cfrac{R-e}{R-r}\,,\quad r \leq  e &lt; R \\ </span>
+<span class="sd">            \end{matrix}\\right.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: priority value [0-1]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># TODO: review hardcoded value</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_min</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_min</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_min</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">alpha</span>
+        <span class="k">return</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_min</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EventModel.probability"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.probability">[docs]</a>    <span class="k">def</span> <span class="nf">probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">now</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Wrapper to call the priority function</span>
+
+<span class="sd">        If the event :attr:`count` is equal to the :attr:`repeat_max` parameters,</span>
+<span class="sd">        it yields a ``0`` probability. Otherwise, it computes the :meth:`priority` function</span>
+<span class="sd">        described above.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            now (int): current timestamp in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: event probability [0-1]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">p</span>
+
+        <span class="n">noise</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_noise</span><span class="p">()</span>  <span class="c1"># minutes</span>
+        <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">schedule</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">interval</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="o">-</span> <span class="n">noise</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">noise</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">priority</span><span class="p">()</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="n">p</span></div>
+
+<div class="viewcode-block" id="EventModel.valid"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.valid">[docs]</a>    <span class="k">def</span> <span class="nf">valid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Computes whether the event count has reached the :attr:`repeat_max` limit.</span>
+
+<span class="sd">        It yields ``True``</span>
+<span class="sd">        if :attr:`repeat_max` is ``undefined`` or </span>
+<span class="sd">        if the event :attr:`count` is less than :attr:`repeat_max`. </span>
+<span class="sd">        Otherwise, it yields ``False``.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: valid event</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">repeat_max</span></div>
+
+<div class="viewcode-block" id="EventModel.consume"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.consume">[docs]</a>    <span class="k">def</span> <span class="nf">consume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Increments one unit the event count&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
+        <span class="c1"># logging.info(&quot;Event %s repeated %d out of %d&quot; % (self.name, self.count, self.target))</span>
+
+<div class="viewcode-block" id="EventModel.supply"><a class="viewcode-back" href="../../archABM/event.html#archABM.event_model.EventModel.supply">[docs]</a>    <span class="k">def</span> <span class="nf">supply</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Decrements one unit the event count&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

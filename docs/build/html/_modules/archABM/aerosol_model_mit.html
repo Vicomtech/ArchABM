@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>archABM.aerosol_model_mit &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../../contents.html">
+          
+
+          
+            
+            <img src="../../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>archABM.aerosol_model_mit</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for archABM.aerosol_model_mit</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">.parameters</span> <span class="kn">import</span> <span class="n">Parameters</span>
+<span class="kn">from</span> <span class="nn">.aerosol_model</span> <span class="kn">import</span> <span class="n">AerosolModel</span>
+
+<div class="viewcode-block" id="AerosolModelMIT"><a class="viewcode-back" href="../../archABM/aerosol_model.html#archABM.aerosol_model_mit.AerosolModelMIT">[docs]</a><span class="k">class</span> <span class="nc">AerosolModelMIT</span><span class="p">(</span><span class="n">AerosolModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Aerosol transmission estimator</span>
+<span class="sd">    </span>
+<span class="sd">    MIT COVID-19 Indoor Safety Guideline :cite:`Bazante2018995118,Bazant2021.04.04.21254903,Risbeck2021.06.21.21259287`</span>
+
+<span class="sd">    Theoretical model that quantifies the extent to which transmission risk is reduced in large rooms</span>
+<span class="sd">    with high air exchange rates, increased for more vigorous respiratory activities, and dramatically reduced by the use of face masks. </span>
+<span class="sd">    Consideration of a number of outbreaks yields self-consistent estimates for the infectiousness of the new coronavirus.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;MIT&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+
+<div class="viewcode-block" id="AerosolModelMIT.get_risk"><a class="viewcode-back" href="../../archABM/aerosol_model.html#archABM.aerosol_model_mit.AerosolModelMIT.get_risk">[docs]</a>    <span class="k">def</span> <span class="nf">get_risk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Calculate the infection risk of an individual in a room </span>
+<span class="sd">        and the CO\ :sub:`2` thrown into the air.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            inputs (Parameters): model parameters </span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple[float, float]: CO\ :sub:`2` concentration (ppm), and infection risk probability</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+
+        <span class="n">area</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">room_area</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">room_height</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="n">area</span> <span class="o">*</span> <span class="n">height</span>
+
+        <span class="n">ventilation</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">room_ventilation_rate</span>
+        <span class="n">ventilation_flow</span> <span class="o">=</span> <span class="n">ventilation</span> <span class="o">*</span> <span class="n">volume</span>
+
+        <span class="n">recirculation</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">recirculation_flow</span> <span class="o">=</span> <span class="n">recirculation</span> <span class="o">*</span> <span class="n">volume</span>
+
+        <span class="n">air_flow</span> <span class="o">=</span> <span class="n">ventilation_flow</span> <span class="o">+</span> <span class="n">recirculation_flow</span>
+        <span class="n">air_outdoor_fraction</span> <span class="o">=</span> <span class="n">ventilation_flow</span> <span class="o">/</span> <span class="n">air_flow</span>
+
+        <span class="n">filtration_efficiency</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">filtration_efficiency</span>  <span class="c1"># 0.01</span>
+        <span class="n">filtration_rate</span> <span class="o">=</span> <span class="n">filtration_efficiency</span> <span class="o">*</span> <span class="n">recirculation_flow</span> <span class="o">/</span> <span class="n">volume</span>
+        <span class="n">relative_humidity</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">relative_humidity</span> <span class="o">/</span> <span class="mi">100</span>  <span class="c1"># 60 / 100</span>
+
+        <span class="n">breathing_rate</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">breathing_rate</span>  <span class="c1"># 0.49</span>
+        <span class="n">aerosol_radius</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">aerosol_radius</span>  <span class="c1"># 2</span>
+        <span class="n">aerosol_radius_humidity</span> <span class="o">=</span> <span class="n">aerosol_radius</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">relative_humidity</span><span class="p">))</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">infectiousness</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">infectiousness</span>  <span class="c1"># 72</span>
+        <span class="n">deactivation_rate</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">deactivation_rate</span>  <span class="c1"># 0.3</span>
+        <span class="n">deactivation_rate_humidity</span> <span class="o">=</span> <span class="n">deactivation_rate</span> <span class="o">*</span> <span class="n">relative_humidity</span> <span class="o">/</span> <span class="mi">50</span>
+        <span class="n">transmissibility</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">transmissibility</span>  <span class="c1"># 1</span>
+
+        <span class="n">settling_speed</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1100</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.86</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span> <span class="o">*</span> <span class="mf">9.8</span> <span class="o">/</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="n">aerosol_radius_humidity</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># * 60 * 60 / 1000</span>
+        <span class="n">relaxation_rate</span> <span class="o">=</span> <span class="n">ventilation</span> <span class="o">+</span> <span class="n">deactivation_rate_humidity</span> <span class="o">+</span> <span class="n">filtration_rate</span> <span class="o">+</span> <span class="n">settling_speed</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">ventilation</span>
+        <span class="n">dillution_factor</span> <span class="o">=</span> <span class="n">breathing_rate</span> <span class="o">/</span> <span class="p">(</span><span class="n">relaxation_rate</span> <span class="o">*</span> <span class="n">volume</span><span class="p">)</span>
+        <span class="n">infectiousness_room</span> <span class="o">=</span> <span class="n">infectiousness</span> <span class="o">*</span> <span class="n">dillution_factor</span>
+
+        <span class="n">mask_passage_probability</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">inputs</span><span class="o">.</span><span class="n">mask_efficiency</span>  <span class="c1"># 0.145</span>
+        <span class="n">transmission_rate</span> <span class="o">=</span> <span class="p">(</span><span class="n">breathing_rate</span> <span class="o">*</span> <span class="n">mask_passage_probability</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">infectiousness</span> <span class="o">*</span> <span class="n">transmissibility</span> <span class="o">/</span> <span class="p">(</span><span class="n">volume</span> <span class="o">*</span> <span class="n">relaxation_rate</span><span class="p">)</span>
+
+        <span class="c1"># if risk tolerance is fixed</span>
+        <span class="c1"># risk_tolerance = 0.1</span>
+        <span class="c1"># exposure_time = inputs.time_in_room_h # 10</span>
+        <span class="c1"># maximum_occupancy_transient = 1 + risk_tolerance * (1 + 1/(relaxation_rate*exposure_time)) / (transmission_rate * exposure_time)</span>
+        <span class="c1"># maximum_occupancy_steady = 1 + risk_tolerance / (transmission_rate * exposure_time)</span>
+
+        <span class="c1"># occupancy = inputs.num_people</span>
+        <span class="c1"># maximum_exposure_time_steady = risk_tolerance / (occupancy - 1) / transmission_rate</span>
+        <span class="c1"># maximum_exposure_time_transient = maximum_exposure_time_steady * (1 + math.sqrt(1 + 4/(relaxation_rate*maximum_exposure_time_steady) )) / 2</span>
+
+        <span class="c1"># background_co2 = params.background_co2 # 410</span>
+        <span class="c1"># average_co2 = params.average_co2 # 700</span>
+        <span class="c1"># maximum_exposure_time_co2 = risk_tolerance * 38000 * relaxation_rate / \</span>
+        <span class="c1">#     ((average_co2 - background_co2) * breathing_rate * infectiousness * \</span>
+        <span class="c1">#     transmissibility * mask_passage_probability * mask_passage_probability * ventilation )</span>
+
+        <span class="c1"># co2_concentration = background_co2 + risk_tolerance * 38000 * relaxation_rate / (exposure_time * breathing_rate * infectiousness * transmissibility * mask_passage_probability * mask_passage_probability * ventilation)</span>
+
+        <span class="c1"># if exposure time and occupancy is fixed</span>
+        <span class="n">exposure_time</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">time_in_room_h</span>  <span class="c1"># 10</span>
+        <span class="n">occupancy</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">num_people</span>
+        <span class="n">risk_tolerance_steady</span> <span class="o">=</span> <span class="p">(</span><span class="n">occupancy</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">transmission_rate</span> <span class="o">*</span> <span class="n">exposure_time</span>
+        <span class="n">risk_tolerance_transient</span> <span class="o">=</span> <span class="n">risk_tolerance_steady</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">relaxation_rate</span> <span class="o">*</span> <span class="n">exposure_time</span><span class="p">))</span>
+
+        <span class="n">background_co2</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">background_co2</span>  <span class="c1"># 410</span>
+        <span class="n">co2_concentration</span> <span class="o">=</span> <span class="n">background_co2</span> <span class="o">+</span> <span class="n">risk_tolerance_steady</span> <span class="o">*</span> <span class="mi">38000</span> <span class="o">*</span> <span class="n">relaxation_rate</span> <span class="o">/</span> <span class="p">(</span>
+            <span class="n">exposure_time</span> <span class="o">*</span> <span class="n">breathing_rate</span> <span class="o">*</span> <span class="n">infectiousness</span> <span class="o">*</span> <span class="n">transmissibility</span> <span class="o">*</span> <span class="n">mask_passage_probability</span> <span class="o">*</span> <span class="n">mask_passage_probability</span> <span class="o">*</span> <span class="n">ventilation</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Return results</span>
+        <span class="n">air_contamination</span> <span class="o">=</span> <span class="n">co2_concentration</span> <span class="o">-</span> <span class="n">background_co2</span>
+        <span class="n">infection_risk</span> <span class="o">=</span> <span class="n">risk_tolerance_steady</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="n">risk_tolerance_steady</span><span class="p">,</span> <span class="n">relaxation_rate</span><span class="p">,</span> <span class="n">exposure_time</span><span class="p">,</span> <span class="n">breathing_rate</span><span class="p">,</span> <span class="n">infectiousness</span><span class="p">,</span> <span class="n">transmissibility</span><span class="p">,</span> <span class="n">mask_passage_probability</span><span class="p">,</span> <span class="n">ventilation</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">air_contamination</span><span class="p">,</span> <span class="n">infection_risk</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

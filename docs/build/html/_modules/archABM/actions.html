@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>archABM.actions &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../../contents.html">
+          
+
+          
+            
+            <img src="../../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../archABM/snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../archABM/snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>archABM.actions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for archABM.actions</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">from</span> <span class="nn">simpy</span> <span class="kn">import</span> <span class="n">Environment</span>
+
+<span class="kn">from</span> <span class="nn">.database</span> <span class="kn">import</span> <span class="n">Database</span>
+<span class="kn">from</span> <span class="nn">.event</span> <span class="kn">import</span> <span class="n">Event</span>
+<span class="kn">from</span> <span class="nn">.event_model</span> <span class="kn">import</span> <span class="n">EventModel</span>
+<span class="kn">from</span> <span class="nn">.person</span> <span class="kn">import</span> <span class="n">Person</span>
+<span class="kn">from</span> <span class="nn">.place</span> <span class="kn">import</span> <span class="n">Place</span>
+
+
+<div class="viewcode-block" id="Actions"><a class="viewcode-back" href="../../archABM/actions.html#archABM.actions.Actions">[docs]</a><span class="k">class</span> <span class="nc">Actions</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Actions applied to any asset in :class:`~archABM.database.Database`&quot;&quot;&quot;</span>
+
+    <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">Database</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Database</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+
+<div class="viewcode-block" id="Actions.find_place"><a class="viewcode-back" href="../../archABM/actions.html#archABM.actions.Actions.find_place">[docs]</a>    <span class="k">def</span> <span class="nf">find_place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">EventModel</span><span class="p">,</span> <span class="n">person</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Find a place to carry out a certain :class:`~archABM.event_model.EventModel`.</span>
+
+<span class="sd">        The selected place must share the same activity as the indicated :class:`~archABM.event_model.EventModel`.</span>
+<span class="sd">        Places that are open (``allow = True``) and not full (``num_people &lt; capacity``) are only considered as valid.</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            Movement restrictions (between buildings and between departments) are also considered.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            The list of places is shuffled after each search procedure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model (EventModel): activity model to which find a place</span>
+<span class="sd">            person (Person): person invoking the place search</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Place: selected place</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">places</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">places</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">places</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span> <span class="o">==</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">:</span>
+                <span class="c1"># check if place is allowed and not full</span>
+                <span class="k">if</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">allow</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">place</span><span class="o">.</span><span class="n">full</span><span class="p">():</span>
+                    <span class="c1"># check if movement between buildings is not allowed</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">movement_buildings</span><span class="p">:</span>
+                        <span class="c1"># check if person has a place (initial condition)</span>
+                        <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">place</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="c1"># check if person has building defined</span>
+                            <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="c1"># check if place has building defined</span>
+                                <span class="k">if</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span> <span class="o">!=</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span><span class="p">:</span>
+                                        <span class="k">continue</span>
+
+                    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">movement_department</span><span class="p">:</span>
+                        <span class="c1"># check if person has a place (initial condition)</span>
+                        <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">place</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="c1"># check if person has department defined</span>
+                            <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="c1"># check if place has department defined</span>
+                                <span class="k">if</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span><span class="p">:</span>
+                                        <span class="k">continue</span>
+
+                    <span class="k">return</span> <span class="n">place</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Actions.create_event"><a class="viewcode-back" href="../../archABM/actions.html#archABM.actions.Actions.create_event">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_event</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">EventModel</span><span class="p">,</span> <span class="n">place</span><span class="p">:</span> <span class="n">Place</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Wrapper to create an :class:`~archABM.event.Event`</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model (EventModel): type of event or activity</span>
+<span class="sd">            place (Place): physical location of the event</span>
+<span class="sd">            duration (int): time duration in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Event: created :class:`~archABM.event.Event` instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Event</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">place</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Actions.assign_event"><a class="viewcode-back" href="../../archABM/actions.html#archABM.actions.Actions.assign_event">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">assign_event</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">people</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Person</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Assign an event to certain people</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            event (Event): :class:`~archABM.event.Event` instance to be assigned</span>
+<span class="sd">            people (List[Person]): list of people to be interrupted from their current events</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+            <span class="n">person</span><span class="o">.</span><span class="n">assign_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Actions.create_collective_event"><a class="viewcode-back" href="../../archABM/actions.html#archABM.actions.Actions.create_collective_event">[docs]</a>    <span class="k">def</span> <span class="nf">create_collective_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">EventModel</span><span class="p">,</span> <span class="n">place</span><span class="p">:</span> <span class="n">Place</span><span class="p">,</span> <span class="n">duration</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">person</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Creates a collective event of certain type :class:`~archABM.event_model.EventModel` at a physical location :class:`~archABM.place.Place` and for a time duration in minutes.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            The number of people called into the collective event is a random integer between</span>
+<span class="sd">            the current number of people at that place and the total place capacity.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Movement restrictions (between buildings and between departments) are also considered to select the people called into the collective event.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model (EventModel): type of event or activity</span>
+<span class="sd">            place (Place): physical location of the event</span>
+<span class="sd">            duration (int): time duration in minutes</span>
+<span class="sd">            person (Person): person invoking the collective event</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Event: generated collective event</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># create event</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_event</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">place</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+
+        <span class="c1"># select people</span>
+        <span class="n">people</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">people</span>
+        <span class="c1"># from the same building if option applied</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">movement_buildings</span><span class="p">:</span>
+            <span class="n">building</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span>
+            <span class="k">if</span> <span class="n">building</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">people_filter</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">place</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">building</span> <span class="o">==</span> <span class="n">building</span><span class="p">:</span>
+                            <span class="n">people_filter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                <span class="n">people</span> <span class="o">=</span> <span class="n">people_filter</span>
+
+        <span class="c1"># from the same department if option applied</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">movement_department</span><span class="p">:</span>
+            <span class="n">department</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span>
+            <span class="k">if</span> <span class="n">department</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">people_filter</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">department</span> <span class="ow">in</span> <span class="n">department</span><span class="p">:</span>
+                        <span class="n">people_filter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                <span class="n">people</span> <span class="o">=</span> <span class="n">people_filter</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">num_people</span> <span class="o">=</span> <span class="n">place</span><span class="o">.</span><span class="n">people_attending</span><span class="p">()</span>
+            <span class="n">num_people</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">),</span> <span class="n">num_people</span><span class="p">)</span>
+            <span class="n">people</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">people</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">num_people</span><span class="p">)</span>
+            <span class="n">people</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">generator</span><span class="o">.</span><span class="n">valid_activity</span><span class="p">(</span><span class="n">model</span><span class="p">)</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">model</span> <span class="o">!=</span> <span class="n">model</span><span class="p">]</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;[</span><span class="si">%.2f</span><span class="s2">] Person </span><span class="si">%d</span><span class="s2"> invoked collective event </span><span class="si">%s</span><span class="s2"> at place </span><span class="si">%s</span><span class="s2"> for </span><span class="si">%d</span><span class="s2"> minutes for </span><span class="si">%d</span><span class="s2"> people&quot;</span>
+            <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">,</span> <span class="n">place</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">),)</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assign_event</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">people</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">event</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Aerosol Model &mdash; archABM 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creator" href="creator.html" />
+    <link rel="prev" title="Actions" href="actions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../contents.html">
+          
+
+          
+            
+            <img src="../_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+        
+      <li>Aerosol Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/aerosol_model.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-archABM.aerosol_model">
+<span id="aerosol-model"></span><h1>Aerosol Model<a class="headerlink" href="#module-archABM.aerosol_model" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.aerosol_model.AerosolModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model.</span></span><span class="sig-name descname"><span class="pre">AerosolModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model.html#AerosolModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model.AerosolModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aerosol transmission estimator</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.aerosol_model.AerosolModel.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></em><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.aerosol_model.AerosolModel.params">
+<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></em><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.aerosol_model.AerosolModel.get_risk">
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model.html#AerosolModel.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.get_risk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the infection risk of an individual in a room
+and the CO<sub>2</sub> thrown into the air.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><em>Parameters</em></a>) – model parameters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-archABM.aerosol_model_colorado">
+<span id="colorado-model"></span><h2>Colorado Model<a class="headerlink" href="#module-archABM.aerosol_model_colorado" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.aerosol_model_colorado.AerosolModelColorado">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model_colorado.</span></span><span class="sig-name descname"><span class="pre">AerosolModelColorado</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model_colorado.html#AerosolModelColorado"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aerosol transmission estimator</p>
+<p>COVID-19 Airborne Transmission Estimator <span id="id1">[<a class="reference internal" href="creator.html#id10" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>, <a class="reference internal" href="creator.html#id11" title="Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. medRxiv, 2021. doi:10.1101/2021.04.21.21255898.">PBB+21</a>, <a class="reference internal" href="creator.html#id9" title="Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. Environmental Science &amp; Technology Letters, 8(5):392-397, 2021. doi:10.1021/acs.estlett.1c00183.">PJ21</a>]</span></p>
+<p>The model combines two submodels:</p>
+<ol class="arabic simple">
+<li><p>A standard atmospheric box model, which assumes that the emissions are completely mixed across a control volume quickly         (such as an indoor room or other space).         See for example Chapter 3 of the Jacob Atmos. Chem. textbook <span id="id2">[<a class="reference internal" href="#id16" title="Daniel J. Jacob. Introduction to Atmospheric Chemistry. Princeton University Press, 1999. ISBN 9780691001852. URL: http://www.jstor.org/stable/j.ctt7t8hg.">Jac99</a>]</span>, and Chapter 21 of the Cooper and         Alley Air Pollution Control Engineering Textbook <span id="id3">[<a class="reference internal" href="#id17" title="C David Cooper and Forrest Christopher Alley. Air pollution control: A design approach. Waveland press, 2010.">CA10</a>]</span> for indoor applications.         This is an approximation that allows easy calculation, is approximately correct as long as near-field effects         are avoided by social distancing, and is commonly used in air quality modeling.</p></li>
+<li><p>A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 <span id="id4">[<a class="reference internal" href="creator.html#id10" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>]</span>,        and references therein <span id="id5">[<a class="reference internal" href="#id20" title="G. Buonanno, L. Morawska, and L. Stabile. Quantitative assessment of the risk of airborne transmission of sars-cov-2 infection: prospective and retrospective applications. Environment International, 145:106112, 2020. doi:https://doi.org/10.1016/j.envint.2020.106112.">BMS20</a>, <a class="reference internal" href="#id19" title="G. Buonanno, L. Stabile, and L. Morawska. Estimation of airborne viral emission: quanta emission rate of sars-cov-2 for infection risk assessment. Environment International, 141:105794, 2020. doi:https://doi.org/10.1016/j.envint.2020.105794.">BSM20</a>, <a class="reference internal" href="#id18" title="E. C. RILEY, G. MURPHY, and R. L. RILEY. AIRBORNE SPREAD OF MEASLES IN A SUBURBAN ELEMENTARY SCHOOL. American Journal of Epidemiology, 107(5):421-432, 05 1978. doi:10.1093/oxfordjournals.aje.a112560.">RMR78</a>]</span>.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The propagation of COVID-19 is only by aerosol transmission.</p>
+<p>The model is based on a standard model of aerosol disease transmission, the Wells-Riley model.
+It is calibrated to COVID-19 per recent literature on quanta emission rate.</p>
+<p>This is not an epidemiological model, and does not include droplet or contact / fomite transmission, and assumes that 6 ft / 2 m social distancing is respected. Otherwise higher transmission will result.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.aerosol_model_colorado.AerosolModelColorado.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'Colorado'</span></em><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.aerosol_model_colorado.AerosolModelColorado.get_risk">
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_colorado.html#AerosolModelColorado.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado.get_risk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the infection risk of an individual in a room
+and the CO<sub>2</sub> thrown into the air.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><em>Parameters</em></a>) – model parameters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-archABM.aerosol_model_mit">
+<span id="mit-model"></span><h2>MIT Model<a class="headerlink" href="#module-archABM.aerosol_model_mit" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.aerosol_model_mit.AerosolModelMIT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model_mit.</span></span><span class="sig-name descname"><span class="pre">AerosolModelMIT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model_mit.html#AerosolModelMIT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aerosol transmission estimator</p>
+<p>MIT COVID-19 Indoor Safety Guideline <span id="id6">[<a class="reference internal" href="creator.html#id5" title="Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. Proceedings of the National Academy of Sciences, 2021. doi:10.1073/pnas.2018995118.">BB21</a>, <a class="reference internal" href="creator.html#id6" title="Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. medRxiv, 2021. doi:10.1101/2021.04.04.21254903.">BKC+21</a>, <a class="reference internal" href="creator.html#id7" title="Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. medRxiv, 2021. doi:10.1101/2021.06.21.21259287.">RBJ+21</a>]</span></p>
+<p>Theoretical model that quantifies the extent to which transmission risk is reduced in large rooms
+with high air exchange rates, increased for more vigorous respiratory activities, and dramatically reduced by the use of face masks.
+Consideration of a number of outbreaks yields self-consistent estimates for the infectiousness of the new coronavirus.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.aerosol_model_mit.AerosolModelMIT.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'MIT'</span></em><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.aerosol_model_mit.AerosolModelMIT.get_risk">
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_mit.html#AerosolModelMIT.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT.get_risk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the infection risk of an individual in a room
+and the CO<sub>2</sub> thrown into the air.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><em>Parameters</em></a>) – model parameters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-archABM.aerosol_model_maxplanck">
+<span id="max-planck-model"></span><h2>Max-Planck Model<a class="headerlink" href="#module-archABM.aerosol_model_maxplanck" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model_maxplanck.</span></span><span class="sig-name descname"><span class="pre">AerosolModelMaxPlanck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model_maxplanck.html#AerosolModelMaxPlanck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aerosol transmission estimator</p>
+<p>Model Calculations of Aerosol Transmission and Infection Risk of COVID-19 in Indoor Environments <span id="id7">[<a class="reference internal" href="creator.html#id8" title="Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. International Journal of Environmental Research and Public Health, 2020. doi:10.3390/ijerph17218114.">LHB+20</a>]</span></p>
+<p>An adjustable algorithm to estimate the infection risk for different indoor environments,
+constrained by published data of human aerosol emissions, SARS-CoV-2 viral loads, infective dose and other parameters.
+Evaluates typical indoor settings such as an office, a classroom, choir practice, and a reception/party.</p>
+<p>The model includes a number of modifiable environmental factors that represent relevant physiological parameters and environmental conditions.
+For simplicity, all subjects are assumed to be equal in terms of breathing, speaking and susceptibility to infection.
+The model parameters can be easily adjusted to account for different environmental conditions and activities.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'MaxPlanck'</span></em><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.get_risk">
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_maxplanck.html#AerosolModelMaxPlanck.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.get_risk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the infection risk of an individual in a room
+and the CO<sub>2</sub> thrown into the air.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> (<a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><em>Parameters</em></a>) – model parameters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p id="id8"><dl class="citation">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id6">BB21</a></span></dt>
+<dd><p>Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. <em>Proceedings of the National Academy of Sciences</em>, 2021. <a class="reference external" href="https://doi.org/10.1073/pnas.2018995118">doi:10.1073/pnas.2018995118</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id6">BKC+21</a></span></dt>
+<dd><p>Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. <em>medRxiv</em>, 2021. <a class="reference external" href="https://doi.org/10.1101/2021.04.04.21254903">doi:10.1101/2021.04.04.21254903</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id5">BMS20</a></span></dt>
+<dd><p>G. Buonanno, L. Morawska, and L. Stabile. Quantitative assessment of the risk of airborne transmission of sars-cov-2 infection: prospective and retrospective applications. <em>Environment International</em>, 145:106112, 2020. <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.envint.2020.106112">doi:https://doi.org/10.1016/j.envint.2020.106112</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id5">BSM20</a></span></dt>
+<dd><p>G. Buonanno, L. Stabile, and L. Morawska. Estimation of airborne viral emission: quanta emission rate of sars-cov-2 for infection risk assessment. <em>Environment International</em>, 141:105794, 2020. <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.envint.2020.105794">doi:https://doi.org/10.1016/j.envint.2020.105794</a>.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id3">CA10</a></span></dt>
+<dd><p>C David Cooper and Forrest Christopher Alley. <em>Air pollution control: A design approach</em>. Waveland press, 2010.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id2">Jac99</a></span></dt>
+<dd><p>Daniel J. Jacob. <em>Introduction to Atmospheric Chemistry</em>. Princeton University Press, 1999. ISBN 9780691001852. URL: <a class="reference external" href="http://www.jstor.org/stable/j.ctt7t8hg">http://www.jstor.org/stable/j.ctt7t8hg</a>.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id7">LHB+20</a></span></dt>
+<dd><p>Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. <em>International Journal of Environmental Research and Public Health</em>, 2020. <a class="reference external" href="https://doi.org/10.3390/ijerph17218114">doi:10.3390/ijerph17218114</a>.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">MNJ+21</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id4">2</a>)</span></dt>
+<dd><p>Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. <em>Indoor Air</em>, 31(2):314–323, 2021. <a class="reference external" href="https://doi.org/https://doi.org/10.1111/ina.12751">doi:https://doi.org/10.1111/ina.12751</a>.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id1">PBB+21</a></span></dt>
+<dd><p>Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. <em>medRxiv</em>, 2021. <a class="reference external" href="https://doi.org/10.1101/2021.04.21.21255898">doi:10.1101/2021.04.21.21255898</a>.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">PJ21</a></span></dt>
+<dd><p>Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. <em>Environmental Science &amp; Technology Letters</em>, 8(5):392–397, 2021. <a class="reference external" href="https://doi.org/10.1021/acs.estlett.1c00183">doi:10.1021/acs.estlett.1c00183</a>.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id5">RMR78</a></span></dt>
+<dd><p>E. C. RILEY, G. MURPHY, and R. L. RILEY. AIRBORNE SPREAD OF MEASLES IN A SUBURBAN ELEMENTARY SCHOOL. <em>American Journal of Epidemiology</em>, 107(5):421–432, 05 1978. <a class="reference external" href="https://doi.org/10.1093/oxfordjournals.aje.a112560">doi:10.1093/oxfordjournals.aje.a112560</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id6">RBJ+21</a></span></dt>
+<dd><p>Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. <em>medRxiv</em>, 2021. <a class="reference external" href="https://doi.org/10.1101/2021.06.21.21259287">doi:10.1101/2021.06.21.21259287</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="creator.html" class="btn btn-neutral float-right" title="Creator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="actions.html" class="btn btn-neutral float-left" title="Actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
