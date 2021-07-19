@@ -30,7 +30,7 @@ ENTRY_POINTS = {
 }
 PROJECT_URLS = {
     "Bug Reports": URL + "/issues",
-    "Documentation": "https://archABM.readthedocs.io",
+    "Documentation": "https://vicomtech.github.io/ArchABM/",
     "Source Code": URL,
 }
 REQUIRES_PYTHON = ">=3.5, <4"
