@@ -55,6 +55,7 @@ setuptools.setup(
     keywords=KEYWORDS,
     license=LICENSE,
     long_description=README,
+    long_description_content_type='text/markdown',
     name=NAME,
     package_data={},
     packages=setuptools.find_packages(),
