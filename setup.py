@@ -30,7 +30,7 @@ ENTRY_POINTS = {
 }
 PROJECT_URLS = {
     "Bug Reports": URL + "/issues",
-    "Documentation": "https://archABM.readthedocs.io",
+    "Documentation": "https://vicomtech.github.io/ArchABM/",
     "Source Code": URL,
 }
 REQUIRES_PYTHON = ">=3.5, <4"
@@ -55,6 +55,7 @@ setuptools.setup(
     keywords=KEYWORDS,
     license=LICENSE,
     long_description=README,
+    long_description_content_type='text/markdown',
     name=NAME,
     package_data={},
     packages=setuptools.find_packages(),
