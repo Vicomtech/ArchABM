@@ -34,7 +34,7 @@ class SnapshotPlace(Snapshot):
           - Probability of infection (average)
           - :obj:`float`
     """
-    header = ["run", "time", "place", "num_people", "CO2_level", "infection_risk_cum", "infection_risk_avg"]
+    header = ["run", "time", "place", "num_people", "infective_people", "CO2_level", "quanta_level"]
 
     def __init__(self) -> None:
         super(SnapshotPlace, self).__init__(SnapshotPlace.header)

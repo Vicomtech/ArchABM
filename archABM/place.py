@@ -25,10 +25,9 @@ class Place:
 
         self.CO2_baseline = self.db.model.params.CO2_background
         self.CO2_level = self.CO2_baseline
+        self.quanta_level = 0.0
         
         self.elapsed = 0.0
-        self.infection_risk_cum = 0.0
-        self.infection_risk_avg = 0.0
         self.last_updated = 0.0
 
         self.event = self.get_event()
@@ -121,19 +120,22 @@ class Place:
                     "num_people": self.num_people,
                     "infective_people": self.infective_people,
                     "CO2_level": self.CO2_level,
+                    "quanta_level": self.quanta_level
                 }
             )
-            CO2_level, infection_risk = self.db.model.get_risk(inputs)
+            CO2_level, quanta_inhaled, quanta_level = self.db.model.get_risk(inputs)
 
             # update place
             self.CO2_level = CO2_level
-            self.elapsed += elapsed
-            self.infection_risk_avg += elapsed * (infection_risk - self.infection_risk_avg) / self.elapsed
-            self.infection_risk_cum += infection_risk
+            self.quanta_level = quanta_level
+
+            # self.elapsed += elapsed
+            # self.infection_risk_avg += elapsed * (infection_risk - self.infection_risk_avg) / self.elapsed
+            # self.infection_risk_cum += infection_risk
 
             # update people # TODO: review if we need to update the risk of infected people as well
             for p in self.people:
-                p.update(elapsed, infection_risk, CO2_level)
+                p.update(elapsed, quanta_inhaled, CO2_level)
         self.last_updated = self.env.now
 
     def people_attending(self) -> int:
@@ -163,7 +165,7 @@ class Place:
         self.snapshot.set("time", self.env.now, 0)
         self.snapshot.set("place", self.id)
         self.snapshot.set("num_people", self.num_people)
+        self.snapshot.set("infective_people", self.infective_people)
         self.snapshot.set("CO2_level", self.CO2_level, 2)
-        self.snapshot.set("infection_risk_cum", self.infection_risk_cum, 6)
-        self.snapshot.set("infection_risk_avg", self.infection_risk_avg, 6)
+        self.snapshot.set("quanta_level", self.quanta_level, 6)
         self.db.results.write_place(self.snapshot)
