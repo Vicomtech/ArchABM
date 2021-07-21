@@ -24,7 +24,7 @@ copyright = "2021, Vicomtech"
 author = "Vicomtech"
 
 # The full version, including alpha/beta/rc tags
-release = "0.0.1"
+release = "0.1.0"
 
 
 # -- General configuration ---------------------------------------------------
@@ -95,7 +95,7 @@ html_show_sourcelink = True
 
 html_context = {
   'display_github': True,
-  'github_user': 'VicomtechV3',
+  'github_user': 'Vicomtech',
   'github_repo': 'ArchABM',
   'github_version': 'develop/docs/source/',
 }

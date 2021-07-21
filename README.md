@@ -5,7 +5,7 @@ Agent-based model for air quality and pandemic risk assessment in architectural 
 ## Installation
 
 ```
-pip install -e git+ssh://git@github.com/VicomtechV3/ArchABM.git@deploy#egg=ArchABM
+pip install -e git+ssh://git@github.com/Vicomtech/ArchABM.git@deploy#egg=ArchABM
 ```
 
 

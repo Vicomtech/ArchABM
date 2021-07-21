@@ -11,8 +11,8 @@
    Agent-based model simulation for air quality and pandemic risk assessment in architectural spaces.
 
    `PyPI <https://pypi.python.org/pypi/simpy>`_ |
-   `GitHub <https://github.com/VicomtechV3/ArchABM>`_ |
-   `Issues <https://github.com/VicomtechV3/ArchABM/issues>`_
+   `GitHub <https://github.com/Vicomtech/ArchABM>`_ |
+   `Issues <https://github.com/Vicomtech/ArchABM/issues>`_
 
 .. _user-guide:
 
@@ -61,13 +61,13 @@ To install ``archABM``, run this command in your terminal of choice:
 
 .. code:: shell
 
-    $ python -m pip install archABM
+    $ pip install archABM
 
 or, alternatively:
 
 .. code:: shell
 
-    $ pip install archABM
+    $ python -m pip install archABM
 
 
 Using latest github-hosted version
@@ -78,7 +78,7 @@ repository hosted at github:
 
 .. code-block:: bash
 
-    python -m pip install https://github.com/VicomtechV3/ArchABM/archive/main.zip
+    python -m pip install https://github.com/Vicomtech/ArchABM/archive/main.zip
 
 
 Requirements
@@ -93,15 +93,15 @@ Source Code
 -----------
 
 archABM is developed on GitHub, where the code is
-`always available <https://github.com/VicomtechV3/ArchABM>`_.
+`always available <https://github.com/Vicomtech/ArchABM>`_.
 
 You can either clone the public repository::
 
-    $ git clone git://github.com/VicomtechV3/ArchABM.git
+    $ git clone git://github.com/Vicomtech/ArchABM.git
 
-Or, download the `tarball <https://github.com/VicomtechV3/ArchABM/tarball/main>`_::
+Or, download the `tarball <https://github.com/Vicomtech/ArchABM/tarball/main>`_::
 
-    $ curl -OL https://github.com/VicomtechV3/ArchABM/tarball/main
+    $ curl -OL https://github.com/Vicomtech/ArchABM/tarball/main
     # optionally, zipball is also available (for Windows users).
 
 Once you have a copy of the source, you can embed it in your own Python

@@ -1,0 +1,83 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build & publish to Pypi
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches: [ main ]
+    tags:
+      - 'v*.*.*'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-n-publish:
+    name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
+    runs-on: ubuntu-latest
+    
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     python-version: [3.7, 3.8, 3.9]
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install dependencies
+        run: |
+          # Upgrade pip
+          python -m pip install --upgrade pip
+          # Install build deps
+          python -m pip install flake8 pytest build
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      
+      # - name: Lint with flake8
+      #   run: |
+      #     pip install flake8
+      #     # stop the build if there are Python syntax errors or undefined names
+      #     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      #     # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+      #     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+      # - name: Test with pytest
+      #   run: |
+      #     pip install pytest pytest-cov
+      #     pytest tests.py --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml --cov=com --cov-report=xml --cov-report=html
+
+      # - name: Upload pytest test results
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: pytest-results-${{ matrix.python-version }}
+      #     path: junit/test-results-${{ matrix.python-version }}.xml
+      #   # Use always() to always run this step to publish test results when there are test failures
+      #   if: ${{ always() }}
+      
+      - name: Build a binary wheel and a source tarball
+        run: python -m build --sdist --wheel --outdir dist/ .
+      
+      # - name: Create a Release
+      #   uses: softprops/action-gh-release@v1
+      #    with:
+      #      name: ArchABM-${{ github.ref }}
+      #    env:
+      #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Publish distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
