@@ -7,4 +7,3 @@ from archABM.engine import Engine
 
 simulation = Engine(config)
 results = simulation.run()
-# print(results)
