@@ -1,0 +1,190 @@
+{
+    "events": [{
+            "activity": "home",
+            "schedule": [
+                [0, 450],
+                [1020, 1440]
+            ],
+            "repeat_min": 0,
+            "repeat_max": null,
+            "duration_min": 5,
+            "duration_max": 5,
+            "mask_efficiency": null,
+            "collective": false,
+            "shared": false,
+            "allow": true
+        },
+        {
+            "activity": "work",
+            "schedule": [
+                [450, 1020]
+            ],
+            "repeat_min": 0,
+            "repeat_max": null,
+            "duration_min": 3,
+            "duration_max": 8,
+            "mask_efficiency": 0.0,
+            "collective": false,
+            "shared": true,
+            "allow": true
+        },
+        {
+            "activity": "restroom",
+            "schedule": [
+                [500, 1020]
+            ],
+            "repeat_min": 0,
+            "repeat_max": 4,
+            "duration_min": 3,
+            "duration_max": 6,
+            "mask_efficiency": 0.0,
+            "collective": false,
+            "shared": true,
+            "allow": true
+        },
+        {
+            "activity": "coffee",
+            "schedule": [
+                [680, 720]
+            ],
+            "repeat_min": 0,
+            "repeat_max": 1,
+            "duration_min": 15,
+            "duration_max": 45,
+            "mask_efficiency": 0.0,
+            "collective": true,
+            "shared": true,
+            "allow": true
+        },
+        {
+            "activity": "lunch",
+            "schedule": [
+                [700, 810]
+            ],
+            "repeat_min": 1,
+            "repeat_max": 1,
+            "duration_min": 110,
+            "duration_max": 120,
+            "mask_efficiency": 0.0,
+            "collective": true,
+            "shared": true,
+            "allow": true
+        }
+    ],
+    "places": [{
+            "name": "home",
+            "activity": "home",
+            "building": null,
+            "department": null,
+            "area": null,
+            "height": null,
+            "capacity": null,
+            "ventilation": null,
+            "recirculated_flow_rate": null,
+            "allow": true
+        },
+        {
+            "name": "office",
+            "activity": "work",
+            "building": "building1",
+            "department": null,
+            "area": 20.475,
+            "height": 3.53,
+            "capacity": 3,
+            "ventilation": 0.25,
+            "recirculated_flow_rate": 0,
+            "allow": true
+        },
+        {
+            "name": "restroom",
+            "activity": "restroom",
+            "building": "building1",
+            "department": null,
+            "area": 20.0,
+            "height": 2.7,
+            "capacity": 4,
+            "ventilation": 1.0,
+            "recirculated_flow_rate": 0,
+            "allow": true
+        },
+        {
+            "name": "coffee",
+            "activity": "coffee",
+            "building": "building1",
+            "department": null,
+            "area": 25.0,
+            "height": 2.7,
+            "capacity": 10,
+            "ventilation": 1.5,
+            "recirculated_flow_rate": 0,
+            "allow": true
+        },
+        {
+            "name": "lunch",
+            "activity": "lunch",
+            "building": "building1",
+            "department": null,
+            "area": 150.0,
+            "height": 2.7,
+            "capacity": 60,
+            "ventilation": 1.5,
+            "recirculated_flow_rate": 0,
+            "allow": true
+        }
+    ],
+    "people": [{
+        "department": "department1",
+        "building": "building1",
+        "num_people": 2
+    }],
+    "options": {
+        "movement_buildings": true,
+        "movement_department": false,
+        "number_runs": 30,
+        "ratio_infected": 0,
+        "directory": "validation",
+        "model": "Colorado",
+        "model_parameters": {
+            "MaxPlanck": {
+                "RNA_D50": 316,
+                "deposition_rate": 0.5,
+                "emission_breathing": 0.06,
+                "emission_speaking": 0.6,
+                "speaking_breathing_ratio": 0.1,
+                "respiratory_rate": 10,
+                "RNA_concentration": 5e8,
+                "aerosol_diameter": 5,
+                "virus_lifetime": 1.7,
+                "CO2_background": 410
+            },
+            "MIT": {
+                "filtration_efficiency": 0.01,
+                "relative_humidity": 60,
+                "breathing_rate": 0.49,
+                "aerosol_radius": 2,
+                "infectiousness": 72,
+                "deactivation_rate": 0.3,
+                "transmissibility": 1,
+                "CO2_background": 410
+            },
+            "Colorado": {
+                "pressure": 0.95,
+                "temperature": 22,
+                "CO2_background": 440,
+                "decay_rate": 0.62,
+                "deposition_rate": 0.3,
+                "hepa_flow_rate": 0.0,
+                "recirculated_flow_rate": 300,
+                "filter_efficiency": 0.20,
+                "ducts_removal": 0.10,
+                "other_removal": 0.00,
+                "fraction_immune": 0,
+                "breathing_rate": 0.52,
+                "CO2_emission_person": 0.006,
+                "quanta_exhalation": 25,
+                "quanta_enhancement": 1,
+                "people_with_masks": 1.00
+            }
+        }
+    }
+}
