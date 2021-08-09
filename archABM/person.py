@@ -91,16 +91,20 @@ class Person:
             self.duration = self.event.duration
             activity = self.model.params.activity
 
-            # TODO: review if we want to save only new places or all of them => self.place != self.event.place
+            # TODO: review if we want to save only new places or all of them => self.place != self.event.place and not self.event.place.full()
             # move from current place to new one
-            if self.event is not None and self.event.place is not None and not self.event.place.full():
-                # remove from current place
-                if self.place is not None:
-                    self.place.remove_person(self)
+            if self.event is not None and self.event.place is not None:
 
-                # add to new place
-                self.place = self.event.place
-                self.place.add_person(self)
+                if self.place != self.event.place and not self.event.place.full():
+                    # remove from current place
+                    if self.place is not None:
+                        self.place.remove_person(self)
+
+                    # add to new place
+                    self.place = self.event.place
+                    self.place.add_person(self)
+                else:
+                    self.place.update_place()
 
                 # save snapshot (if first event or elapsed time > 0)
                 elapsed = self.env.now - self.last_updated
