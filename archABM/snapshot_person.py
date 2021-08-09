@@ -37,6 +37,7 @@ class SnapshotPerson(Snapshot):
           - Quanta inhaled (quanta)
           - :obj:`float`
     """
+
     header = ["run", "time", "person", "status", "place", "event", "CO2_level", "quanta_inhaled"]
 
     def __init__(self) -> None:

@@ -1,6 +1,7 @@
 class Snapshot:
     """Stores the state of an agent at a given time
     """
+
     header: list
     store: dict
 

@@ -4,7 +4,9 @@ from typing import Generator
 class Parameters:
     """Helper to access dictionary elements as class attributes 
     """
+
     __dict__: dict
+
     def __init__(self, __dict__: dict = None) -> None:
         if __dict__ is not None:
             self.__dict__ = __dict__

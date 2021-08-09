@@ -2,6 +2,7 @@ from typing import Tuple
 from .parameters import Parameters
 from .aerosol_model import AerosolModel
 
+
 class AerosolModelMIT(AerosolModel):
     """Aerosol transmission estimator
     

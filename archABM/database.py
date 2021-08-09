@@ -10,6 +10,7 @@ class Database:
     :class:`~archABM.person.Person` list, 
     simulation run ID.
     """
+
     model: None
     actions: None
     options: None
@@ -17,7 +18,7 @@ class Database:
     places: list
     people: list
     run: int
-    
+
     def __init__(self) -> None:
         self.options = None
         self.model = None

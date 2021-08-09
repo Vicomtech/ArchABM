@@ -9,7 +9,7 @@ from .snapshot_place import SnapshotPlace
 class Place:
     """Place primitive"""
 
-    id: int = -1 
+    id: int = -1
 
     def __init__(self, env: Environment, db: Database, params: Parameters) -> None:
         self.next()
@@ -26,7 +26,7 @@ class Place:
         self.CO2_baseline = self.db.model.params.CO2_background
         self.CO2_level = self.CO2_baseline
         self.quanta_level = 0.0
-        
+
         self.elapsed = 0.0
         self.last_updated = 0.0
 
@@ -131,7 +131,7 @@ class Place:
                     "num_people": self.num_people,
                     "infective_people": self.infective_people,
                     "CO2_level": self.CO2_level,
-                    "quanta_level": self.quanta_level
+                    "quanta_level": self.quanta_level,
                 }
             )
             CO2_level, quanta_inhaled, quanta_level = self.db.model.get_risk(inputs)

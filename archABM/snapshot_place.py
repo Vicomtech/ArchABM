@@ -34,6 +34,7 @@ class SnapshotPlace(Snapshot):
           - quanta level (ppm)
           - :obj:`float`
     """
+
     header = ["run", "time", "place", "num_people", "infective_people", "CO2_level", "quanta_level"]
 
     def __init__(self) -> None:

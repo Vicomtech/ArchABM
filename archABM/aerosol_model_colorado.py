@@ -4,6 +4,7 @@ from typing import Tuple
 from .aerosol_model import AerosolModel
 from .parameters import Parameters
 
+
 class AerosolModelColorado(AerosolModel):
     """Aerosol transmission estimator
                     
@@ -114,7 +115,7 @@ class AerosolModelColorado(AerosolModel):
         # TODO: infection risk dynamic
         quanta_concentration = (
             net_emission_rate / loss_rate / volume * (1 - (1 / loss_rate / event_duration) * (1 - math.exp(-loss_rate * event_duration)))
-            + math.exp(-loss_rate * event_duration) * (inputs.quanta_level - 0) 
+            + math.exp(-loss_rate * event_duration) * (inputs.quanta_level - 0)
             + 0
         )
         quanta_inhaled_per_person = quanta_concentration * breathing_rate * event_duration * (1 - mask_efficiency_inhalation * people_with_masks)
@@ -136,11 +137,10 @@ class AerosolModelColorado(AerosolModel):
         #     * event_duration
         #     * susceptible_people
         #     / (loss_rate * volume)
-        #     * (1 - (1 - math.exp(-loss_rate * event_duration)) / (loss_rate * event_duration)) 
-        #     + math.exp(-loss_rate * event_duration) * (inputs.infection_risk - 0) 
+        #     * (1 - (1 - math.exp(-loss_rate * event_duration)) / (loss_rate * event_duration))
+        #     + math.exp(-loss_rate * event_duration) * (inputs.infection_risk - 0)
         #     + 0
         # )
-
 
         # infection_risk_relative = infection_risk / susceptible_people
         # infection_risk = (1 - math.exp(-infection_risk_relative))*susceptible_people # TODO: review Taylor approximation

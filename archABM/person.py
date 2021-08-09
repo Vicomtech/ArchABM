@@ -13,6 +13,7 @@ from .snapshot_person import SnapshotPerson
 
 class Person:
     """Person primitive"""
+
     id = -1
 
     def __init__(self, env: Environment, db: Database, params: Parameters) -> None:

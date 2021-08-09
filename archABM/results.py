@@ -13,6 +13,7 @@ class Results:
     """Simulation history processing and export"""
 
     output: dict
+
     def __init__(self, config: dict) -> None:
         # TODO: review hardcoded names
         self.people_name = "people"

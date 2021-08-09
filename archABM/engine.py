@@ -16,11 +16,12 @@ class Engine:
     
     Launches the agent-based simulation with the specified configuration.
     """
+
     config: dict
     db: Database
     env: Environment
 
-    def __init__(self, config: dict) -> None:    
+    def __init__(self, config: dict) -> None:
         schema = self.retrieve_schema()
         validate(instance=config, schema=schema)
 

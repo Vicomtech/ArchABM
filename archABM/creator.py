@@ -21,7 +21,7 @@ class Creator:
         :class:`~archABM.actions.Actions`, 
         :class:`~archABM.person.Person`.
     """
-    
+
     env: Environment
     config: dict
     db: Database
