@@ -33,11 +33,8 @@ class SnapshotPerson(Snapshot):
         * - "CO2_level"
           - Average CO\ :sub:`2` level (ppm)
           - :obj:`float`
-        * - "infection_risk_cum"
-          - Probability of infection (cumulative)
-          - :obj:`float`
-        * - "infection_risk_avg"
-          - Probability of infection (average)
+        * - "quanta_inhaled"
+          - Quanta inhaled (quanta)
           - :obj:`float`
     """
     header = ["run", "time", "person", "status", "place", "event", "CO2_level", "quanta_inhaled"]
