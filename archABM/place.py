@@ -98,6 +98,17 @@ class Place:
         # save snapshot
         self.save_snapshot()
 
+    def update_place(self):
+        """Update place air quality
+
+        Updates the ``air quality`` of the place and saves a ``snapshot`` into the simulation history.
+        """
+        # update air quality
+        self.update_air()
+
+        # save snapshot
+        self.save_snapshot()
+
     def update_air(self) -> None:
         """Air quality update
 
