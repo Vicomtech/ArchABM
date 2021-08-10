@@ -59,28 +59,6 @@
                 "required": ["activity", "schedule", "repeat_min", "repeat_max", "duration_min", "duration_max", "mask_efficiency", "collective", "shared", "allow"]
             }
         },
-        "people": {
-            "title": "People",
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "department": {
-                        "type": "string"
-                    },
-                    "building": {
-                        "type": "string"
-                    },
-                    "num_people": {
-                        "type": "integer",
-                        "minimum": 0
-                    }
-                },
-                "required": ["department", "building", "num_people"]
-            }
-        },
         "places": {
             "title": "Places",
             "type": "array",
@@ -127,6 +105,28 @@
                 "required": ["name", "activity", "building", "department", "area", "height", "capacity", "ventilation", "recirculated_flow_rate", "allow"]
             }
         },
+        "people": {
+            "title": "People",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "department": {
+                        "type": "string"
+                    },
+                    "building": {
+                        "type": "string"
+                    },
+                    "num_people": {
+                        "type": "integer",
+                        "minimum": 0
+                    }
+                },
+                "required": ["department", "building", "num_people"]
+            }
+        },
         "options": {
             "title": "Options",
             "type": "object",
@@ -141,13 +141,28 @@
                     "type": "integer",
                     "minimum": 1
                 },
+                "save_log": {
+                    "type": "boolean"
+                },
+                "save_config": {
+                    "type": "boolean"
+                },
+                "save_csv": {
+                    "type": "boolean"
+                },
+                "save_json": {
+                    "type": "boolean"
+                },
+                "return_output": {
+                    "type": "boolean"
+                },
+                "directory": {
+                    "type": ["string", "null"]
+                },
                 "ratio_infected": {
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1
-                },
-                "directory": {
-                    "type": ["string", "null"]
                 },
                 "model": {
                     "type": "string"
@@ -157,8 +172,8 @@
                 }
 
             },
-            "required": ["movement_buildings", "movement_department", "number_runs", "ratio_infected", "model", "model_parameters"]
+            "required": ["movement_buildings", "movement_department", "number_runs", "save_log", "save_config", "save_csv", "save_json", "return_output", "directory", "ratio_infected", "model", "model_parameters"]
         }
     },
-    "required": ["events", "people", "places", "options"]
+    "required": ["events", "places", "people", "options"]
 }
