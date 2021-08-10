@@ -26,11 +26,11 @@ class Results:
         self.config = config
 
         self.log = False
-        self.save_log = True
-        self.save_config = True
-        self.save_csv = True
-        self.save_json = True
-        self.return_output = True
+        self.save_log = self.config["options"]["save_log"]
+        self.save_config = self.config["options"]["save_config"]
+        self.save_csv = self.config["options"]["save_csv"]
+        self.save_json = self.config["options"]["save_json"]
+        self.return_output = self.config["options"]["return_output"]
 
         self.output = None
 
@@ -166,3 +166,4 @@ class Results:
             self.close_json()
         if self.return_output:
             return self.output
+        return None
