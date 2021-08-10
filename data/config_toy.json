@@ -210,8 +210,13 @@
         "movement_buildings": true,
         "movement_department": true,
         "number_runs": 1,
-        "ratio_infected": 0.05,
+        "save_log": true,
+        "save_config": true,
+        "save_csv": false,
+        "save_json": false,
+        "return_output": false,
         "directory": null,
+        "ratio_infected": 0.05,
         "model": "Colorado",
         "model_parameters": {
             "MaxPlanck": {
