@@ -43,7 +43,8 @@ extensions = [
     "sphinx_rtd_theme",
     'sphinxcontrib.tikz',
     'sphinx-jsonschema',
-    "sphinx.ext.autosectionlabel"
+    "sphinx.ext.autosectionlabel",
+    "sphinx_copybutton"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -114,6 +115,7 @@ html_theme_options = {
     'includehidden': True,
     'titles_only': False
 }
+
 
 def setup(app):
     app.add_css_file('my_theme.css')
