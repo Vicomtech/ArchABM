@@ -1,1 +1,0 @@
-.. literalinclude:: docs/source/README.rst
