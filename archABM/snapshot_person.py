@@ -12,28 +12,28 @@ class SnapshotPerson(Snapshot):
         * - Attribute
           - Description
           - Type
-        * - "run"
+        * - *run*
           - Simulation run
           - :obj:`int`
-        * - "time"
+        * - *time*
           - Simulation time (minutes)
           - :obj:`int`
-        * - "person"
+        * - *person*
           - Person ID
           - :obj:`int`
-        * - "status"
+        * - *status*
           - Person status (0: susceptible, 1: infective)
           - :obj:`bool`
-        * - "place"
+        * - *place*
           -  Place ID
           - :obj:`int`
-        * - "event"
+        * - *event*
           - Event ID
           - :obj:`int`
-        * - "CO2_level"
+        * - *CO2_level*
           - Average CO\ :sub:`2` level (ppm)
           - :obj:`float`
-        * - "quanta_inhaled"
+        * - *quanta_inhaled*
           - Quanta inhaled (quanta)
           - :obj:`float`
     """

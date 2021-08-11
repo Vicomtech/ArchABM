@@ -12,25 +12,25 @@ class SnapshotPlace(Snapshot):
         * - Attribute
           - Description
           - Type
-        * - "run"
+        * - *run*
           - Simulation run
           - :obj:`int`
-        * - "time"
+        * - *time*
           - Simulation time (minutes)
           - :obj:`int`
-        * - "place"
+        * - *place*
           -  Place ID
           - :obj:`int`
-        * - "num_people"
+        * - *num_people*
           - Number of people
           - :obj:`int`
-        * - "infective_people"
+        * - *infective_people*
           - Number of infective people
           - :obj:`int`
-        * - "CO2_level"
+        * - *CO2_level*
           - CO\ :sub:`2` level (ppm)
           - :obj:`float`
-        * - "quanta_level"
+        * - *quanta_level*
           - quanta level (ppm)
           - :obj:`float`
     """
