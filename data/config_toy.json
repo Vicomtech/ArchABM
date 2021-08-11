@@ -86,17 +86,6 @@
             "allow": true
         }
     ],
-    "people": [{
-            "department": "department1",
-            "building": "building1",
-            "num_people": 20
-        },
-        {
-            "department": "department2",
-            "building": "building1",
-            "num_people": 20
-        }
-    ],
     "places": [{
             "name": "home",
             "activity": "home",
@@ -204,6 +193,17 @@
             "ventilation": 3,
             "recirculated_flow_rate": 0,
             "allow": true
+        }
+    ],
+    "people": [{
+            "department": "department1",
+            "building": "building1",
+            "num_people": 20
+        },
+        {
+            "department": "department2",
+            "building": "building1",
+            "num_people": 20
         }
     ],
     "options": {

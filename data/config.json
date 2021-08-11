@@ -316,28 +316,6 @@
         "ratio_infected": 0.05,
         "model": "Colorado",
         "model_parameters": {
-            "MaxPlanck": {
-                "RNA_D50": 316,
-                "deposition_rate": 0.5,
-                "emission_breathing": 0.06,
-                "emission_speaking": 0.6,
-                "speaking_breathing_ratio": 0.1,
-                "respiratory_rate": 10,
-                "RNA_concentration": 5e8,
-                "aerosol_diameter": 5,
-                "virus_lifetime": 1.7,
-                "CO2_background": 410
-            },
-            "MIT": {
-                "filtration_efficiency": 0.01,
-                "relative_humidity": 60,
-                "breathing_rate": 0.49,
-                "aerosol_radius": 2,
-                "infectiousness": 72,
-                "deactivation_rate": 0.3,
-                "transmissibility": 1,
-                "CO2_background": 410
-            },
             "Colorado": {
                 "pressure": 0.95,
                 "temperature": 20,
