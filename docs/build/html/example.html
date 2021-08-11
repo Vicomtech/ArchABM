@@ -1,0 +1,903 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Example &mdash; archABM 0.2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Framework" href="framework.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="contents.html">
+          
+
+          
+            
+            <img src="_static/logo_3.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#environment-setup">Environment Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#virtual-environment">Virtual Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="archABM/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/aerosol_model.html">Aerosol Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/aerosol_model.html#module-archABM.aerosol_model_colorado">Colorado Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/aerosol_model.html#module-archABM.aerosol_model_mit">MIT Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/aerosol_model.html#module-archABM.aerosol_model_maxplanck">Max-Planck Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/creator.html">Creator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/engine.html">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/event.html">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/event.html#module-archABM.event_model">Event Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/event.html#module-archABM.event_generator">Event Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/parameters.html">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/person.html">Person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/place.html">Place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/results.html">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/schema.html">Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/schema.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="archABM/snapshot.html">Snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="archABM/snapshot.html#module-archABM.snapshot_person">Snapshot Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="archABM/snapshot.html#module-archABM.snapshot_place">Snapshot Place</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authors.html#lead-development-team">Lead Development Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing archABM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1-0">Version 0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-1">Version 0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="contents.html">archABM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Example</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Vicomtech/ArchABM/blob/develop/docs/source/example.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="input-configuration">
+<h2>Input Configuration<a class="headerlink" href="#input-configuration" title="Permalink to this headline">¶</a></h2>
+<p>In this example, the simulated configuration is based on the real floor plan of a research center. The floor plan is only shown for illustration purposes and is not required to run the simulator. As explained in the <a class="reference internal" href="framework.html#components"><span class="std std-ref">Components</span></a> section, the simulator only requires information about the types of <em>events</em> that can occur, <em>places</em>’ spatial parameters (area &amp; capacity), the number of <em>people</em> initially present and the <em>aerosol model</em> physical parameters.</p>
+<div class="figure align-center" id="floorplan">
+<a class="reference internal image-reference" href="_images/floorplan.png"><img alt="_images/floorplan.png" src="_images/floorplan.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Building floor plan used in the example</span><a class="headerlink" href="#floorplan" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<p>The events’ parameters are summarized in <a class="reference internal" href="#table-3"><span class="std std-ref">Table 1: Events parameters</span></a>. There are five types of events: <em>work, meeting, coffee, restroom</em>, and <em>lunch</em>. Meetings and lunch activities are regarded as collective events. Each event model is limited to a certain schedule, duration <span class="math notranslate nohighlight">\(\tau\)</span>, and a number of repetitions. For each event model, the mask efficiency <span class="math notranslate nohighlight">\(m_e\)</span> is also defined (not used anywhere <span class="math notranslate nohighlight">\(m_e=0\)</span>).</p>
+<div class="figure align-center" id="table-3">
+<a class="reference internal image-reference" href="_images/table_3.png"><img alt="_images/table_3.png" src="_images/table_3.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Table 1: Events parameters</span><a class="headerlink" href="#table-3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="places">
+<h3>Places<a class="headerlink" href="#places" title="Permalink to this headline">¶</a></h3>
+<p>Places’ parameters are summarized in <a class="reference internal" href="#table-4"><span class="std std-ref">Table 2: Places parameters</span></a>. The floor area of each location is measured, and the volume <span class="math notranslate nohighlight">\(V\)</span> is estimated assuming a height of 2.7 m. The initial number of people present <span class="math notranslate nohighlight">\(N\)</span>, the maximum number of people that can fit in the room, and the ventilation rates (both active <span class="math notranslate nohighlight">\(\lambda_r\)</span> and passive <span class="math notranslate nohighlight">\(\lambda_a\)</span>) are also defined. Meeting rooms A, B, C, and restrooms A and B are subject to poor passive ventilation, as they are oriented towards the interior of the building and do not have direct access to a window. A low passive ventilation rate is established (<span class="math notranslate nohighlight">\(\lambda_a=1.5\)</span>, and <span class="math notranslate nohighlight">\(\lambda_a=0.5\)</span> for poor ventilated rooms) and there is no active ventilation (:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>lambda_r=0$).</p>
+<div class="figure align-center" id="table-4">
+<a class="reference internal image-reference" href="_images/table_4.png"><img alt="_images/table_4.png" src="_images/table_4.png" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-text">Table 2: Places parameters</span><a class="headerlink" href="#table-4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="people">
+<h3>People<a class="headerlink" href="#people" title="Permalink to this headline">¶</a></h3>
+<p>There are 60 people distributed in 7 different departments: D1, D2, and D3 have 16 people each; D4 refers to 7 IT workers, and D5, D6, D7 hold the head of departments, with 2, 2, and 1 people respectively. The number of infected people <span class="math notranslate nohighlight">\(N_i\)</span> is set to 3 in all the proposed scenarios.</p>
+</div>
+<div class="section" id="aerosol-model">
+<h3>Aerosol Model<a class="headerlink" href="#aerosol-model" title="Permalink to this headline">¶</a></h3>
+<p>The aerosol model presented by Peng and Jimenez <span id="id3">[<a class="reference internal" href="archABM/aerosol_model.html#id14" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>, <a class="reference internal" href="archABM/aerosol_model.html#id15" title="Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. medRxiv, 2021. doi:10.1101/2021.04.21.21255898.">PBB+21</a>, <a class="reference internal" href="archABM/aerosol_model.html#id13" title="Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. Environmental Science &amp; Technology Letters, 8(5):392-397, 2021. doi:10.1021/acs.estlett.1c00183.">PJ21</a>]</span>. derives analytical expressions of CO<sub>2</sub> based risk proxies, assuming the social distance is maintained. The relative infection risk in a given environment scales with excess CO<sub>2</sub> level, and thus, keeping CO<sub>2</sub> as low as possible is essential to reducing the likelihood of infection. This model calculates both the virus quanta concentration and the CO<sub>2</sub> mixing ratio present in a specific place. These two metrics provide an overall picture of indoor air quality, which is why this model was selected for ArchABM.</p>
+<p>The aerosol model considers some parameters to be constant across the entire building, as shown in <a class="reference internal" href="#table-1"><span class="std std-ref">Table 3: Aerosol model constant parameters</span></a>. These constant values, breathing or virus related, are based on the study undertaken by Peng and Jimenez. On the contrary, certain parameters are specified for each place, such as volume, ventilation, or the number of people present, as shown in <a class="reference internal" href="#table-2"><span class="std std-ref">Table 4: Aerosol model variable parameters</span></a>.</p>
+<div class="figure align-center" id="table-1">
+<a class="reference internal image-reference" href="_images/table_1.png"><img alt="_images/table_1.png" src="_images/table_1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Table 3: Aerosol model constant parameters</span><a class="headerlink" href="#table-1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="table-2">
+<a class="reference internal image-reference" href="_images/table_2.png"><img alt="_images/table_2.png" src="_images/table_2.png" style="width: 375px;" /></a>
+<p class="caption"><span class="caption-text">Table 4: Aerosol model variable parameters</span><a class="headerlink" href="#table-2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="generated-config-json">
+<h3>Generated config.json<a class="headerlink" href="#generated-config-json" title="Permalink to this headline">¶</a></h3>
+<details>
+<summary><a>config.json</a></summary><div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;events&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">480</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1440</span><span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;repeat_min&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;repeat_max&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;duration_min&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+            <span class="nt">&quot;duration_max&quot;</span><span class="p">:</span> <span class="mi">360</span><span class="p">,</span>
+            <span class="nt">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="mi">480</span><span class="p">,</span> <span class="mi">1020</span><span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;repeat_min&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;repeat_max&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;duration_min&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="nt">&quot;duration_max&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+            <span class="nt">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="mi">540</span><span class="p">,</span> <span class="mi">960</span><span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;repeat_min&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;repeat_max&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;duration_min&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;duration_max&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+            <span class="nt">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;lunch&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="mi">780</span><span class="p">,</span> <span class="mi">900</span><span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;repeat_min&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;repeat_max&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;duration_min&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;duration_max&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="nt">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="mi">600</span><span class="p">,</span> <span class="mi">660</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">900</span><span class="p">,</span> <span class="mi">960</span><span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;repeat_min&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;repeat_max&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;duration_min&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;duration_max&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+            <span class="nt">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="mi">480</span><span class="p">,</span> <span class="mi">1020</span><span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;repeat_min&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;repeat_max&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;duration_min&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;duration_max&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;places&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;open_office&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department4&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">330.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;it_office&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department4&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">52.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chief_office_A&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">21.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chief_office_B&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">21.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chief_office_C&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">24.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_A&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">16.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_B&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">16.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_C&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">11.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_D&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">66.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee_A&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee_B&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom_A&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom_B&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department4&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;lunch&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;lunch&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">150.0</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span>
+            <span class="nt">&quot;capacity&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+            <span class="nt">&quot;ventilation&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+            <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;people&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">16</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">16</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">16</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department4&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">7</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department7&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;movement_buildings&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;movement_department&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;number_runs&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;save_log&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;save_config&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;save_csv&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;save_json&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;return_output&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;directory&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;ratio_infected&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+        <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Colorado&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;model_parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Colorado&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;pressure&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+                <span class="nt">&quot;temperature&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                <span class="nt">&quot;CO2_background&quot;</span><span class="p">:</span> <span class="mi">415</span><span class="p">,</span>
+                <span class="nt">&quot;decay_rate&quot;</span><span class="p">:</span> <span class="mf">0.62</span><span class="p">,</span>
+                <span class="nt">&quot;deposition_rate&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+                <span class="nt">&quot;hepa_flow_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+                <span class="nt">&quot;filter_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span>
+                <span class="nt">&quot;ducts_removal&quot;</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">,</span>
+                <span class="nt">&quot;other_removal&quot;</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span>
+                <span class="nt">&quot;fraction_immune&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;breathing_rate&quot;</span><span class="p">:</span> <span class="mf">0.52</span><span class="p">,</span>
+                <span class="nt">&quot;CO2_emission_person&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span>
+                <span class="nt">&quot;quanta_exhalation&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+                <span class="nt">&quot;quanta_enhancement&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;people_with_masks&quot;</span><span class="p">:</span> <span class="mf">1.00</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="output-results">
+<h2>Output Results<a class="headerlink" href="#output-results" title="Permalink to this headline">¶</a></h2>
+<p>Regarding ArchABM’s output, whenever a new event occurs, the simulator saves the state of each person and each place in the simulation history data structure.</p>
+<div class="section" id="raw-results">
+<h3>Raw results<a class="headerlink" href="#raw-results" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">people.csv</span></code> stores every person’s state along time.</p></li>
+</ul>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>run</p></th>
+<th class="head"><p>time</p></th>
+<th class="head"><p>person</p></th>
+<th class="head"><p>status</p></th>
+<th class="head"><p>place</p></th>
+<th class="head"><p>event</p></th>
+<th class="head"><p>CO2_level</p></th>
+<th class="head"><p>quanta_inhaled</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1018</p></td>
+<td><p>21</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>739.71</p></td>
+<td><p>0.064069</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1018</p></td>
+<td><p>38</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>570.36</p></td>
+<td><p>0.071002</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1019</p></td>
+<td><p>52</p></td>
+<td><p>0</p></td>
+<td><p>13</p></td>
+<td><p>5</p></td>
+<td><p>531.06</p></td>
+<td><p>0.019066</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">places.csv</span></code> stores every places’s state along time.</p></li>
+</ul>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>run</p></th>
+<th class="head"><p>time</p></th>
+<th class="head"><p>place</p></th>
+<th class="head"><p>num_people</p></th>
+<th class="head"><p>infective_people</p></th>
+<th class="head"><p>CO2_level</p></th>
+<th class="head"><p>quanta_level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1018</p></td>
+<td><p>1</p></td>
+<td><p>47</p></td>
+<td><p>3</p></td>
+<td><p>739.71</p></td>
+<td><p>0.016215</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1018</p></td>
+<td><p>1</p></td>
+<td><p>48</p></td>
+<td><p>3</p></td>
+<td><p>739.71</p></td>
+<td><p>0.016215</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1019</p></td>
+<td><p>13</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>573.08</p></td>
+<td><p>0.003908</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="people-metrics">
+<h4>People metrics<a class="headerlink" href="#people-metrics" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference internal" href="#fig-8a"><span class="std std-ref">Figure 2: Activity density distribution</span></a> summarizes the types of events (coffee, lunch, meetings, go to the restroom, do office work) performed by all occupants throughout the day, while <a class="reference internal" href="#fig-8b"><span class="std std-ref">Figure 3: Activities performed by each person</span></a> shows a detailed breakdown of the activities performed by each person throughout the day.</p>
+<div class="figure align-center" id="fig-8a">
+<a class="reference internal image-reference" href="_images/timeline_activity_density.png"><img alt="_images/timeline_activity_density.png" src="_images/timeline_activity_density.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Activity density distribution</span><a class="headerlink" href="#fig-8a" title="Permalink to this image">¶</a></p>
+</div>
+<p>Agents are strictly adhering to the specified schedule, with two coffee breaks, one main lunch event, and meetings, restrooms, and work events spread throughout the day. The three randomly infected people are also highlighted in <a class="reference internal" href="#fig-8b"><span class="std std-ref">Figure 3: Activities performed by each person</span></a>.</p>
+<div class="figure align-center" id="fig-8b">
+<a class="reference internal image-reference" href="_images/timeline_activity_person.png"><img alt="_images/timeline_activity_person.png" src="_images/timeline_activity_person.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 3: Activities performed by each person</span><a class="headerlink" href="#fig-8b" title="Permalink to this image">¶</a></p>
+</div>
+<p>The amount of quanta inhaled per person is depicted in <a class="reference internal" href="#fig-8c"><span class="std std-ref">Figure 4: Quanta inhaled per person</span></a>. Each line represents a person, and the red dotted lines indicate the three infected people. The color of the line represents the activity that each agent is performing. For instance, meetings and lunch activities primarily contribute to quanta inhalation between the agents.</p>
+<div class="figure align-center" id="fig-8c">
+<a class="reference internal image-reference" href="_images/timeline_person_quanta.png"><img alt="_images/timeline_person_quanta.png" src="_images/timeline_person_quanta.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 4: Quanta inhaled per person</span><a class="headerlink" href="#fig-8c" title="Permalink to this image">¶</a></p>
+</div>
+<p>The total quanta inhaled by each person at the end of the day is shown in <a class="reference internal" href="#fig-8d"><span class="std std-ref">Figure 5: Quanta inhaled by each person at the end of the day</span></a>, and the three infected people are highlighted with red dots.</p>
+<div class="figure align-center" id="fig-8d">
+<a class="reference internal image-reference" href="_images/distribution_person_quanta.png"><img alt="_images/distribution_person_quanta.png" src="_images/distribution_person_quanta.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 5: Quanta inhaled by each person at the end of the day</span><a class="headerlink" href="#fig-8d" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="places-metrics">
+<h4>Places metrics<a class="headerlink" href="#places-metrics" title="Permalink to this headline">¶</a></h4>
+<p>From the places perspective, archABM also offers the possibility of tracking the CO<sub>2</sub> and <em>quanta</em> concentration levels.
+Examining the CO<sub>2</sub> level at each place throughout the day (<a class="reference internal" href="#fig-9a"><span class="std std-ref">Figure 6: CO2 level at each place</span></a>), it can be observed that the meeting rooms accumulate the highest CO<sub>2</sub> concentration throughout the day. The coffee places rapidly accumulate CO<sub>2</sub> during the coffee events, but the air quality is restored between the coffee breaks. Other rooms, for example, restrooms and office places show a more constant CO<sub>2</sub> level.</p>
+<div class="figure align-center" id="fig-9a">
+<a class="reference internal image-reference" href="_images/timeline_place_CO2.png"><img alt="_images/timeline_place_CO2.png" src="_images/timeline_place_CO2.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 6: CO<sub>2</sub> level at each place</span><a class="headerlink" href="#fig-9a" title="Permalink to this image">¶</a></p>
+</div>
+<p>The distribution of CO<sub>2</sub> concentration can directly be observed in <a class="reference internal" href="#fig-9b"><span class="std std-ref">Figure 7: CO2 level distribution at each place</span></a>, where a box-plot is overlaid on top of a violin plot.</p>
+<div class="figure align-center" id="fig-9b">
+<a class="reference internal image-reference" href="_static/figures/boxplot_place_CO2.png"><img alt="_static/figures/boxplot_place_CO2.png" src="_static/figures/boxplot_place_CO2.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">Figure 7: CO<sub>2</sub> level distribution at each place</span><a class="headerlink" href="#fig-9b" title="Permalink to this image">¶</a></p>
+</div>
+<p>A similar interpretation can be concluded with the <em>quanta</em> concentration for this simulation run, as shown in <a class="reference internal" href="#fig-9c"><span class="std std-ref">Figure 8: quanta level at each place</span></a> and <a class="reference internal" href="#fig-9d"><span class="std std-ref">Figure 9: quanta level distribution at each place</span></a>.</p>
+<div class="figure align-center" id="fig-9c">
+<a class="reference internal image-reference" href="_images/timeline_place_quanta.png"><img alt="_images/timeline_place_quanta.png" src="_images/timeline_place_quanta.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 8: quanta level at each place</span><a class="headerlink" href="#fig-9c" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="fig-9d">
+<a class="reference internal image-reference" href="_images/boxplot_place_quanta.png"><img alt="_images/boxplot_place_quanta.png" src="_images/boxplot_place_quanta.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">Figure 9: quanta level distribution at each place</span><a class="headerlink" href="#fig-9d" title="Permalink to this image">¶</a></p>
+</div>
+<p>Metrics related to indoor air quality at the place level have been overlaid on the floor plan, as shown in <a class="reference internal" href="#floorplan-co2"><span class="std std-ref">Figure 10: Maximum CO2 level at each place</span></a> and <a class="reference internal" href="#floorplan-quanta"><span class="std std-ref">Figure 11: Maximum quanta level at each place</span></a>. Concerning the CO<sub>2</sub> level, meeting rooms are highlighted as the worst locations. With regard to the <em>quanta</em> level, meeting rooms B and C come out worst in this case.
+These results demonstrate archABM’s capabilities of detecting “hotspots” in terms of high CO<sub>2</sub> and virus quanta concentrations (in our case meeting rooms and the coffee place) across the entire building.</p>
+<div class="figure align-center" id="floorplan-co2">
+<a class="reference internal image-reference" href="_images/floorplan_CO2.png"><img alt="_images/floorplan_CO2.png" src="_images/floorplan_CO2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 10: Maximum CO<sub>2</sub> level at each place</span><a class="headerlink" href="#floorplan-co2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="floorplan-quanta">
+<a class="reference internal image-reference" href="_images/floorplan_quanta.png"><img alt="_images/floorplan_quanta.png" src="_images/floorplan_quanta.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Figure 11: Maximum quanta level at each place</span><a class="headerlink" href="#floorplan-quanta" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It should be noted that the results in this section refer to a single simulation run and that the <em>quanta</em>-related metrics are very dependent on the randomly selected infected people. However, the high computational performance of archABM allows running multiple simulations and carry out robust statistical analysis.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="framework.html" class="btn btn-neutral float-left" title="Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Vicomtech.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>archABM.engine &mdash; archABM 0.0.1 documentation</title>
+  <title>archABM.engine &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,6 +40,9 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/tabs.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -93,21 +98,57 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../index.html#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../archABM/actions.html">Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../archABM/aerosol_model.html">Aerosol Model</a><ul>
@@ -149,6 +190,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -229,7 +272,7 @@
 
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">os</span>
-
+<span class="kn">import</span> <span class="nn">copy</span>
 
 
 <div class="viewcode-block" id="Engine"><a class="viewcode-back" href="../../archABM/engine.html#archABM.engine.Engine">[docs]</a><span class="k">class</span> <span class="nc">Engine</span><span class="p">:</span>
@@ -237,19 +280,16 @@
 <span class="sd">    </span>
 <span class="sd">    Launches the agent-based simulation with the specified configuration.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span>
     <span class="n">db</span><span class="p">:</span> <span class="n">Database</span>
     <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>        
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_schema</span><span class="p">()</span>
         <span class="n">validate</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">preprocess</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">Results</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Engine.retrieve_schema"><a class="viewcode-back" href="../../archABM/engine.html#archABM.engine.Engine.retrieve_schema">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get configuration file JSON schema</span>
@@ -262,29 +302,32 @@
             <span class="n">schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">schema</span></div>
 
-<div class="viewcode-block" id="Engine.preprocess"><a class="viewcode-back" href="../../archABM/engine.html#archABM.engine.Engine.preprocess">[docs]</a>    <span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Engine.preprocess"><a class="viewcode-back" href="../../archABM/engine.html#archABM.engine.Engine.preprocess">[docs]</a>    <span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Processes the configuration dictionary to generate people.</span>
 
 <span class="sd">        Based on the specified configuration of number of people per group,</span>
 <span class="sd">        this method generates an array of people, and assignes a incremental name to each person.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
         <span class="n">num_people</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;people&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;people&quot;</span><span class="p">]:</span>
             <span class="n">num_people</span> <span class="o">+=</span> <span class="n">person</span><span class="p">[</span><span class="s2">&quot;num_people&quot;</span><span class="p">]</span>
 
-        <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;places&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;places&quot;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">place</span><span class="p">[</span><span class="s2">&quot;capacity&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">place</span><span class="p">[</span><span class="s2">&quot;capacity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_people</span> <span class="o">+</span> <span class="mi">1</span>
 
         <span class="n">people</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">cont</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;people&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;people&quot;</span><span class="p">]:</span>
             <span class="n">num_people</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;num_people&quot;</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_people</span><span class="p">):</span>
                 <span class="n">person</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;person&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cont</span><span class="p">)</span>
                 <span class="n">people</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
                 <span class="n">cont</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;people&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">people</span></div>
+        <span class="n">config</span><span class="p">[</span><span class="s2">&quot;people&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">people</span>
+        <span class="k">return</span> <span class="n">config</span></div>
 
 <div class="viewcode-block" id="Engine.setup"><a class="viewcode-back" href="../../archABM/engine.html#archABM.engine.Engine.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Setup for a simulation run.</span>
@@ -318,6 +361,9 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            dict: simulation history and configuration</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">Results</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">until</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">until</span> <span class="o">=</span> <span class="mi">1440</span>
         <span class="k">if</span> <span class="n">number_runs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Snapshot &mdash; archABM 0.0.1 documentation</title>
+  <title>Snapshot &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,6 +40,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -95,21 +99,57 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aerosol_model.html">Aerosol Model</a><ul>
@@ -151,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -212,7 +254,7 @@
         
           
             
-              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/snapshot.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Vicomtech/ArchABM/blob/develop/docs/source/archABM/snapshot.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -330,47 +372,43 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>“run”</p></td>
+<tr class="row-even"><td><p><em>run</em></p></td>
 <td><p>Simulation run</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“time”</p></td>
+<tr class="row-odd"><td><p><em>time</em></p></td>
 <td><p>Simulation time (minutes)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p>“person”</p></td>
+<tr class="row-even"><td><p><em>person</em></p></td>
 <td><p>Person ID</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“status”</p></td>
+<tr class="row-odd"><td><p><em>status</em></p></td>
 <td><p>Person status (0: susceptible, 1: infective)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p>“place”</p></td>
+<tr class="row-even"><td><p><em>place</em></p></td>
 <td><p>Place ID</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“event”</p></td>
+<tr class="row-odd"><td><p><em>event</em></p></td>
 <td><p>Event ID</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p>“CO2_level”</p></td>
+<tr class="row-even"><td><p><em>CO2_level</em></p></td>
 <td><p>Average CO<sub>2</sub> level (ppm)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“infection_risk_cum”</p></td>
-<td><p>Probability of infection (cumulative)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
-</tr>
-<tr class="row-even"><td><p>“infection_risk_avg”</p></td>
-<td><p>Probability of infection (average)</p></td>
+<tr class="row-odd"><td><p><em>quanta_inhaled</em></p></td>
+<td><p>Quanta inhaled (quanta)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot_person.SnapshotPerson.header">
-<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'person',</span> <span class="pre">'status',</span> <span class="pre">'place',</span> <span class="pre">'event',</span> <span class="pre">'CO2_level',</span> <span class="pre">'infection_risk_cum',</span> <span class="pre">'infection_risk_avg']</span></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'person',</span> <span class="pre">'status',</span> <span class="pre">'place',</span> <span class="pre">'event',</span> <span class="pre">'CO2_level',</span> <span class="pre">'quanta_inhaled']</span></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -401,39 +439,39 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>“run”</p></td>
+<tr class="row-even"><td><p><em>run</em></p></td>
 <td><p>Simulation run</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“time”</p></td>
+<tr class="row-odd"><td><p><em>time</em></p></td>
 <td><p>Simulation time (minutes)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p>“place”</p></td>
+<tr class="row-even"><td><p><em>place</em></p></td>
 <td><p>Place ID</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“num_people”</p></td>
+<tr class="row-odd"><td><p><em>num_people</em></p></td>
 <td><p>Number of people</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p>“CO2_level”</p></td>
+<tr class="row-even"><td><p><em>infective_people</em></p></td>
+<td><p>Number of infective people</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>CO2_level</em></p></td>
 <td><p>CO<sub>2</sub> level (ppm)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>“infection_risk_cum”</p></td>
-<td><p>Probability of infection (cumulative)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
-</tr>
-<tr class="row-even"><td><p>“infection_risk_avg”</p></td>
-<td><p>Probability of infection (average)</p></td>
+<tr class="row-even"><td><p><em>quanta_level</em></p></td>
+<td><p>quanta level (ppm)</p></td>
 <td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot_place.SnapshotPlace.header">
-<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'place',</span> <span class="pre">'num_people',</span> <span class="pre">'CO2_level',</span> <span class="pre">'infection_risk_cum',</span> <span class="pre">'infection_risk_avg']</span></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'place',</span> <span class="pre">'num_people',</span> <span class="pre">'infective_people',</span> <span class="pre">'CO2_level',</span> <span class="pre">'quanta_level']</span></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

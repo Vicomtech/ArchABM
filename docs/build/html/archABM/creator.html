@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Creator &mdash; archABM 0.0.1 documentation</title>
+  <title>Creator &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,6 +40,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -95,21 +99,57 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aerosol_model.html">Aerosol Model</a><ul>
@@ -151,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -212,7 +254,7 @@
         
           
             
-              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/creator.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Vicomtech/ArchABM/blob/develop/docs/source/archABM/creator.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -331,9 +373,9 @@ This is controlled by the <code class="docutils literal notranslate"><span class
 <dd><p>Initializes the selected COVID19 aerosol model.</p>
 <p>At the moment, there are three models available:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="aerosol_model.html#archABM.aerosol_model_colorado.AerosolModelColorado" title="archABM.aerosol_model_colorado.AerosolModelColorado"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModelColorado</span></code></a>: COVID-19 Airborne Transmission Estimator             <span id="id1">[<a class="reference internal" href="#id10" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>, <a class="reference internal" href="#id11" title="Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. medRxiv, 2021. doi:10.1101/2021.04.21.21255898.">PBB+21</a>, <a class="reference internal" href="#id9" title="Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. Environmental Science &amp; Technology Letters, 8(5):392-397, 2021. doi:10.1021/acs.estlett.1c00183.">PJ21</a>]</span></p></li>
-<li><p><a class="reference internal" href="aerosol_model.html#archABM.aerosol_model_mit.AerosolModelMIT" title="archABM.aerosol_model_mit.AerosolModelMIT"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModelMIT</span></code></a>: MIT COVID-19 Indoor Safety Guideline             <span id="id2">[<a class="reference internal" href="#id5" title="Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. Proceedings of the National Academy of Sciences, 2021. doi:10.1073/pnas.2018995118.">BB21</a>, <a class="reference internal" href="#id6" title="Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. medRxiv, 2021. doi:10.1101/2021.04.04.21254903.">BKC+21</a>, <a class="reference internal" href="#id7" title="Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. medRxiv, 2021. doi:10.1101/2021.06.21.21259287.">RBJ+21</a>]</span></p></li>
-<li><p><a class="reference internal" href="aerosol_model.html#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck" title="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModelMaxPlanck</span></code></a>: Model Calculations of Aerosol Transmission and             Infection Risk of COVID-19 in Indoor Environments <span id="id3">[<a class="reference internal" href="#id8" title="Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. International Journal of Environmental Research and Public Health, 2020. doi:10.3390/ijerph17218114.">LHB+20</a>]</span></p></li>
+<li><p><a class="reference internal" href="aerosol_model.html#archABM.aerosol_model_colorado.AerosolModelColorado" title="archABM.aerosol_model_colorado.AerosolModelColorado"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModelColorado</span></code></a>: COVID-19 Airborne Transmission Estimator             <span id="id1">[<a class="reference internal" href="aerosol_model.html#id14" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>, <a class="reference internal" href="aerosol_model.html#id15" title="Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. medRxiv, 2021. doi:10.1101/2021.04.21.21255898.">PBB+21</a>, <a class="reference internal" href="aerosol_model.html#id13" title="Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. Environmental Science &amp; Technology Letters, 8(5):392-397, 2021. doi:10.1021/acs.estlett.1c00183.">PJ21</a>]</span></p></li>
+<li><p><a class="reference internal" href="aerosol_model.html#archABM.aerosol_model_mit.AerosolModelMIT" title="archABM.aerosol_model_mit.AerosolModelMIT"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModelMIT</span></code></a>: MIT COVID-19 Indoor Safety Guideline             <span id="id2">[<a class="reference internal" href="aerosol_model.html#id9" title="Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. Proceedings of the National Academy of Sciences, 2021. doi:10.1073/pnas.2018995118.">BB21</a>, <a class="reference internal" href="aerosol_model.html#id10" title="Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. medRxiv, 2021. doi:10.1101/2021.04.04.21254903.">BKC+21</a>, <a class="reference internal" href="aerosol_model.html#id11" title="Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. medRxiv, 2021. doi:10.1101/2021.06.21.21259287.">RBJ+21</a>]</span></p></li>
+<li><p><a class="reference internal" href="aerosol_model.html#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck" title="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck"><code class="xref py py-class docutils literal notranslate"><span class="pre">AerosolModelMaxPlanck</span></code></a>: Model Calculations of Aerosol Transmission and             Infection Risk of COVID-19 in Indoor Environments <span id="id3">[<a class="reference internal" href="aerosol_model.html#id12" title="Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. International Journal of Environmental Research and Public Health, 2020. doi:10.3390/ijerph17218114.">LHB+20</a>]</span></p></li>
 </ol>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -347,30 +389,6 @@ This is controlled by the <code class="docutils literal notranslate"><span class
 
 </dd></dl>
 
-<p id="id4"><dl class="citation">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">BB21</a></span></dt>
-<dd><p>Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. <em>Proceedings of the National Academy of Sciences</em>, 2021. <a class="reference external" href="https://doi.org/10.1073/pnas.2018995118">doi:10.1073/pnas.2018995118</a>.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">BKC+21</a></span></dt>
-<dd><p>Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. <em>medRxiv</em>, 2021. <a class="reference external" href="https://doi.org/10.1101/2021.04.04.21254903">doi:10.1101/2021.04.04.21254903</a>.</p>
-</dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">LHB+20</a></span></dt>
-<dd><p>Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. <em>International Journal of Environmental Research and Public Health</em>, 2020. <a class="reference external" href="https://doi.org/10.3390/ijerph17218114">doi:10.3390/ijerph17218114</a>.</p>
-</dd>
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">MNJ+21</a></span></dt>
-<dd><p>Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. <em>Indoor Air</em>, 31(2):314–323, 2021. <a class="reference external" href="https://doi.org/https://doi.org/10.1111/ina.12751">doi:https://doi.org/10.1111/ina.12751</a>.</p>
-</dd>
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id1">PBB+21</a></span></dt>
-<dd><p>Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. <em>medRxiv</em>, 2021. <a class="reference external" href="https://doi.org/10.1101/2021.04.21.21255898">doi:10.1101/2021.04.21.21255898</a>.</p>
-</dd>
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">PJ21</a></span></dt>
-<dd><p>Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. <em>Environmental Science &amp; Technology Letters</em>, 8(5):392–397, 2021. <a class="reference external" href="https://doi.org/10.1021/acs.estlett.1c00183">doi:10.1021/acs.estlett.1c00183</a>.</p>
-</dd>
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">RBJ+21</a></span></dt>
-<dd><p>Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. <em>medRxiv</em>, 2021. <a class="reference external" href="https://doi.org/10.1101/2021.06.21.21259287">doi:10.1101/2021.06.21.21259287</a>.</p>
-</dd>
-</dl>
-</p>
 </div>
 
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Actions &mdash; archABM 0.0.1 documentation</title>
+  <title>Actions &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,6 +40,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -95,21 +99,57 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aerosol_model.html">Aerosol Model</a><ul>
@@ -151,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -212,7 +254,7 @@
         
           
             
-              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/actions.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Vicomtech/ArchABM/blob/develop/docs/source/archABM/actions.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -252,8 +294,8 @@ Places that are open (<code class="docutils literal notranslate"><span class="pr
 <p class="admonition-title">Note</p>
 <p>Movement restrictions (between buildings and between departments) are also considered.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>The list of places is shuffled after each search procedure.</p>
 </div>
 <dl class="field-list simple">
@@ -311,8 +353,8 @@ Places that are open (<code class="docutils literal notranslate"><span class="pr
 <dt class="sig sig-object py" id="archABM.actions.Actions.create_collective_event">
 <span class="sig-name descname"><span class="pre">create_collective_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="event.html#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><span class="pre">archABM.event_model.EventModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="place.html#archABM.place.Place" title="archABM.place.Place"><span class="pre">archABM.place.Place</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">person</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="person.html#archABM.person.Person" title="archABM.person.Person"><span class="pre">archABM.person.Person</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/actions.html#Actions.create_collective_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.actions.Actions.create_collective_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a collective event of certain type <a class="reference internal" href="event.html#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventModel</span></code></a> at a physical location <a class="reference internal" href="place.html#archABM.place.Place" title="archABM.place.Place"><code class="xref py py-class docutils literal notranslate"><span class="pre">Place</span></code></a> and for a time duration in minutes.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>The number of people called into the collective event is a random integer between
 the current number of people at that place and the total place capacity.</p>
 </div>

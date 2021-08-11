@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>archABM.aerosol_model_colorado &mdash; archABM 0.0.1 documentation</title>
+  <title>archABM.aerosol_model_colorado &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,6 +40,9 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/tabs.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -93,21 +98,57 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../index.html#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../archABM/actions.html">Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../archABM/aerosol_model.html">Aerosol Model</a><ul>
@@ -149,6 +190,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -225,6 +268,7 @@
 <span class="kn">from</span> <span class="nn">.aerosol_model</span> <span class="kn">import</span> <span class="n">AerosolModel</span>
 <span class="kn">from</span> <span class="nn">.parameters</span> <span class="kn">import</span> <span class="n">Parameters</span>
 
+
 <div class="viewcode-block" id="AerosolModelColorado"><a class="viewcode-back" href="../../archABM/aerosol_model.html#archABM.aerosol_model_colorado.AerosolModelColorado">[docs]</a><span class="k">class</span> <span class="nc">AerosolModelColorado</span><span class="p">(</span><span class="n">AerosolModel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Aerosol transmission estimator</span>
 <span class="sd">                    </span>
@@ -242,7 +286,7 @@
 <span class="sd">    #. A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 :cite:`https://doi.org/10.1111/ina.12751`,\</span>
 <span class="sd">        and references therein :cite:`10.1093/oxfordjournals.aje.a112560,BUONANNO2020105794,BUONANNO2020106112`.		</span>
 
-<span class="sd">    .. warning::</span>
+<span class="sd">    .. important::</span>
 <span class="sd">        The propagation of COVID-19 is only by aerosol transmission. </span>
 
 <span class="sd">        The model is based on a standard model of aerosol disease transmission, the Wells-Riley model. </span>
@@ -331,28 +375,39 @@
 
         <span class="n">net_emission_rate</span> <span class="o">=</span> <span class="n">quanta_exhalation</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mask_efficiency_exhalation</span> <span class="o">*</span> <span class="n">people_with_masks</span><span class="p">)</span> <span class="o">*</span> <span class="n">infective_people</span> <span class="o">*</span> <span class="n">quanta_enhancement</span>
         <span class="n">quanta_concentration</span> <span class="o">=</span> <span class="n">net_emission_rate</span> <span class="o">/</span> <span class="n">loss_rate</span> <span class="o">/</span> <span class="n">volume</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">loss_rate</span> <span class="o">/</span> <span class="n">event_duration</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">loss_rate</span> <span class="o">*</span> <span class="n">event_duration</span><span class="p">)))</span>
+        <span class="c1"># TODO: NEW FORMULA</span>
+        <span class="c1"># TODO: infection risk dynamic</span>
+        <span class="n">quanta_concentration</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">net_emission_rate</span> <span class="o">/</span> <span class="n">loss_rate</span> <span class="o">/</span> <span class="n">volume</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">loss_rate</span> <span class="o">/</span> <span class="n">event_duration</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">loss_rate</span> <span class="o">*</span> <span class="n">event_duration</span><span class="p">)))</span>
+            <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">loss_rate</span> <span class="o">*</span> <span class="n">event_duration</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">quanta_level</span> <span class="o">-</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="o">+</span> <span class="mi">0</span>
+        <span class="p">)</span>
         <span class="n">quanta_inhaled_per_person</span> <span class="o">=</span> <span class="n">quanta_concentration</span> <span class="o">*</span> <span class="n">breathing_rate</span> <span class="o">*</span> <span class="n">event_duration</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mask_efficiency_inhalation</span> <span class="o">*</span> <span class="n">people_with_masks</span><span class="p">)</span>
 
-        <span class="c1"># probability_infection = 1- math.exp(-quanta_inhaled_per_person)</span>
+        <span class="c1"># probability_infection = 1 - math.exp(-quanta_inhaled_per_person)</span>
+        <span class="c1"># probability_infection = probability_infection * susceptible_people</span>
         <span class="c1"># probability_hospitalization = probability_infection * hospitalization_rate</span>
         <span class="c1"># probability_death = probability_infection * death_rate</span>
 
-        <span class="k">if</span> <span class="n">susceptible_people</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">infective_people</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">infection_risk</span> <span class="o">=</span> <span class="mf">0.0</span>
-            <span class="n">infection_risk_relative</span> <span class="o">=</span> <span class="mf">0.0</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">infection_risk</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">breathing_rate_relative</span>
-                <span class="o">*</span> <span class="n">quanta_exhalation_relative</span>
-                <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mask_efficiency_exhalation</span> <span class="o">*</span> <span class="n">people_with_masks</span><span class="p">)</span>
-                <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mask_efficiency_inhalation</span> <span class="o">*</span> <span class="n">people_with_masks</span><span class="p">)</span>
-                <span class="o">*</span> <span class="n">event_duration</span>
-                <span class="o">*</span> <span class="n">susceptible_people</span>
-                <span class="o">/</span> <span class="p">(</span><span class="n">loss_rate</span> <span class="o">*</span> <span class="n">volume</span><span class="p">)</span>
-                <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">loss_rate</span> <span class="o">*</span> <span class="n">event_duration</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">loss_rate</span> <span class="o">*</span> <span class="n">event_duration</span><span class="p">))</span>
-            <span class="p">)</span>
-            <span class="n">infection_risk_relative</span> <span class="o">=</span> <span class="n">infection_risk</span> <span class="o">/</span> <span class="n">susceptible_people</span>
-            <span class="c1">#infection_risk = (1 - math.exp(-infection_risk_relative))*susceptible_people # TODO: review Taylor approximation</span>
+        <span class="c1"># if susceptible_people == 0 or infective_people == 0:</span>
+        <span class="c1">#     infection_risk = 0.0</span>
+        <span class="c1">#     infection_risk_relative = 0.0</span>
+        <span class="c1"># else:</span>
+        <span class="c1"># infection_risk = (</span>
+        <span class="c1">#     breathing_rate_relative</span>
+        <span class="c1">#     * quanta_exhalation_relative</span>
+        <span class="c1">#     * (1 - mask_efficiency_exhalation * people_with_masks)</span>
+        <span class="c1">#     * (1 - mask_efficiency_inhalation * people_with_masks)</span>
+        <span class="c1">#     * event_duration</span>
+        <span class="c1">#     * susceptible_people</span>
+        <span class="c1">#     / (loss_rate * volume)</span>
+        <span class="c1">#     * (1 - (1 - math.exp(-loss_rate * event_duration)) / (loss_rate * event_duration))</span>
+        <span class="c1">#     + math.exp(-loss_rate * event_duration) * (inputs.infection_risk - 0)</span>
+        <span class="c1">#     + 0</span>
+        <span class="c1"># )</span>
+
+        <span class="c1"># infection_risk_relative = infection_risk / susceptible_people</span>
+        <span class="c1"># infection_risk = (1 - math.exp(-infection_risk_relative))*susceptible_people # TODO: review Taylor approximation</span>
 
         <span class="n">CO2_mixing_ratio</span> <span class="o">=</span> <span class="p">(</span>
             <span class="p">(</span><span class="n">CO2_emission</span> <span class="o">*</span> <span class="mf">3.6</span> <span class="o">/</span> <span class="n">ventilation</span> <span class="o">/</span> <span class="n">volume</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">ventilation</span> <span class="o">/</span> <span class="n">event_duration</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">ventilation</span> <span class="o">*</span> <span class="n">event_duration</span><span class="p">))))</span> <span class="o">*</span> <span class="mf">1e6</span>
@@ -366,7 +421,7 @@
         <span class="c1"># CO2_probability_infection_=  CO2_reinhaled_ppm / 1e4 / probability_infection</span>
         <span class="c1"># CO2_inhale_ppm = CO2_mixing_ratio_delta * event_duration * 0.01 / probability_infection + CO2_background</span>
 
-        <span class="k">return</span> <span class="n">CO2_mixing_ratio</span><span class="p">,</span> <span class="n">infection_risk</span></div></div>
+        <span class="k">return</span> <span class="n">CO2_mixing_ratio</span><span class="p">,</span> <span class="n">quanta_inhaled_per_person</span><span class="p">,</span> <span class="n">quanta_concentration</span></div></div>
 </pre></div>
 
            </div>

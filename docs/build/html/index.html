@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>User Guide &mdash; archABM 0.0.1 documentation</title>
+  <title>User Guide &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
 
   
   
@@ -38,13 +40,16 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/tabs.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="next" title="Framework" href="framework.html" />
     <link rel="prev" title="Documentation for archABM" href="contents.html" /> 
 </head>
 
@@ -95,21 +100,57 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="archABM/actions.html">Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="archABM/aerosol_model.html">Aerosol Model</a><ul>
@@ -151,6 +192,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -210,7 +253,7 @@
         
           
             
-              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Vicomtech/ArchABM/blob/develop/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -224,32 +267,332 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="figure align-center" id="id3">
+  <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="_images/logo_4.png"><img alt="_images/logo_4.png" src="_images/logo_4.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Agent-based model simulation for air quality and pandemic risk assessment in architectural spaces.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-<div class="legend">
-<p><a class="reference external" href="https://pypi.python.org/pypi/simpy">PyPI</a> |
-<a class="reference external" href="https://github.com/VicomtechV3/ArchABM">GitHub</a> |
-<a class="reference external" href="https://github.com/VicomtechV3/ArchABM/issues">Issues</a></p>
+<p class="caption"><span class="caption-text">Agent-based model simulation for air quality and pandemic risk assessment in architectural spaces.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-</div>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/archABM"><img alt="PyPI Status" src="https://img.shields.io/pypi/status/archABM?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/archABM"><img alt="PyPI Version" src="https://img.shields.io/pypi/v/archABM?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Vicomtech/ArchABM?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM/actions"><img alt="Actions" src="https://img.shields.io/github/workflow/status/Vicomtech/ArchABM/Build%20&amp;%20publish%20to%20Pypi?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://pepy.tech/project/archABM"><img alt="https://img.shields.io/pypi/dd/archABM?style=flat-square" src="https://img.shields.io/pypi/dd/archABM?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM"><img alt="Top Language" src="https://img.shields.io/github/languages/top/Vicomtech/ArchABM?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM"><img alt="Github Issues" src="https://img.shields.io/github/issues/Vicomtech/ArchABM?style=flat-square" /></a>
+<hr class="docutils" />
 <div class="section" id="user-guide">
-<span id="id1"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">archABM</span></code> is an agent-based model simulator for air quality and pandemic risk assessment in architectural spaces.</p>
-<p>This documentation contains <a class="reference internal" href="#user-guide"><span class="std std-ref">a quick-start guide</span></a> (including
-<a class="reference internal" href="#installation"><span class="std std-ref">installation</span></a> procedure and
-<a class="reference internal" href="#basic-example"><span class="std std-ref">basic usage</span></a> of the simulator),
-a complete <a class="reference internal" href="api.html#api-reference"><span class="std std-ref">API Reference</span></a>, as well as a
-gallery of <a class="reference internal" href="examples.html#examples"><span class="std std-ref">examples</span></a>.</p>
-<p>Finally, if you use <code class="docutils literal notranslate"><span class="pre">archABM</span></code> in a scientific publication, we would appreciate <a class="reference internal" href="citing.html#citing"><span class="std std-ref">citations</span></a>.</p>
-<div class="section" id="basic-example">
-<span id="id2"></span><h2>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+<span id="quick-start-guide"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<p><strong>archABM</strong> is a fast and open source agent-based modelling framework that simulates complex human-building-interaction patterns and estimates indoor air quality across an entire building, while taking into account potential airborne virus concentrations.</p>
+<p>This documentation contains a <a class="reference internal" href="#quick-start-guide">quick-start guide</a> (including
+<a class="reference internal" href="#installation">installation</a> procedure and
+<a class="reference internal" href="#basic-usage">basic usage</a> of the simulator),
+a complete <a class="reference internal" href="api.html#api"><span class="std std-ref">API Reference</span></a>, as well as a detailed <a class="reference internal" href="example.html#example"><span class="std std-ref">example</span></a>.
+<strong>archABM</strong> is released under the MIT License.</p>
+<p>Finally, if you use <strong>archABM</strong> in a scientific publication, we would appreciate <a class="reference internal" href="citing.html#citing"><span class="std std-ref">citations</span></a>.</p>
+<hr class="docutils" />
+<div class="section" id="getting-started">
+<span id="basic-usage"></span><h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>ArchABM is executed with the following command:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/command.png"><img alt="_images/command.png" src="_images/command.png" style="width: 450px;" /></a>
+</div>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python main.py config.json
 </pre></div>
 </div>
-<div class="section" id="configuration-parameters">
-<h3>Configuration parameters<a class="headerlink" href="#configuration-parameters" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<p>To run an example, use the <a class="reference download internal" download="" href="_downloads/3e9ba1b323259c9889bc3128cd567def/config.json"><code class="xref download docutils literal notranslate"><span class="pre">config.json</span></code></a> found at the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory of <strong>archABM</strong> repository.</p>
+<p>Check the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option to get more information about the optional parameters:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python main.py --help
+Usage: main.py [OPTIONS] CONFIG_FILE
+
+  ArchABM simulation helper
+
+Arguments:
+  CONFIG_FILE  The name of the configuration file  [required]
+
+Options:
+  -i, --interactive     Interactive CLI mode  [default: False]
+  -l, --save-log        Save events logs  [default: False]
+  -c, --save-config     Save configuration file  [default: True]
+  -t, --save-csv        Export results to csv format  [default: True]
+  -j, --save-json       Export results to json format  [default: False]
+  -o, --return-output   Return results dictionary  [default: False]
+  --install-completion  Install completion for the current shell.
+  --show-completion     Show completion for the current shell, to copy it or
+                        customize the installation.
+
+  --help                Show this message and exit.
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="inputs">
+<h3>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h3>
+<p>In order to run a simulation, information about the <code class="docutils literal notranslate"><span class="pre">event</span></code> types, <code class="docutils literal notranslate"><span class="pre">people</span></code>, <code class="docutils literal notranslate"><span class="pre">places</span></code>, and the <code class="docutils literal notranslate"><span class="pre">aerosol</span> <span class="pre">model</span></code> must be provided to the ArchABM framework.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Events</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Places</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">People</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">Aerosol Model</button><button aria-controls="panel-0-0-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-4" name="0-4" role="tab" tabindex="-1">Options</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>name</em></p></td>
+<td><p>Event name</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>schedule</em></p></td>
+<td><p>When an event is permitted to happen, in minutes</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">tuples</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>duration</em></p></td>
+<td><p>Event duration lower and upper bounds, in minutes</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">integer,integer</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>number of repetitions</em></p></td>
+<td><p>Number of repetitions lower and upper bounds</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">integer,integer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>mask efficiency</em></p></td>
+<td><p>Mask efficiency during an event [0-1]</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>collective</em></p></td>
+<td><p>Event is invoked by one person but involves many</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>allow</em></p></td>
+<td><p>Whether such event is allowed in the simulation</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>name</em></p></td>
+<td><p>Place name</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>activity</em></p></td>
+<td><p>Activity or event occurring at that place</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>department</em></p></td>
+<td><p>Department name</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>building</em></p></td>
+<td><p>Building name</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>area</em></p></td>
+<td><p>Room floor area in square meters</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>height</em></p></td>
+<td><p>Room height in meters.</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>capacity</em></p></td>
+<td><p>Room people capacity.</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">integer</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>height</em></p></td>
+<td><p>Room height in meters.</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>ventilation</em></p></td>
+<td><p>Passive ventilation in hours<sup>-1</sup></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>recirculated_flow_rate</em></p></td>
+<td><p>Active ventilation in cubic meters per hour</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>allow</em></p></td>
+<td><p>Whether such place is allowed in the simulation</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>department</em></p></td>
+<td><p>Department name</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>building</em></p></td>
+<td><p>Building name</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>num_people</em></p></td>
+<td><p>Number of people</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">integer</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>pressure</em></p></td>
+<td><p>Ambient pressure in atm</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>temperature</em></p></td>
+<td><p>Ambient temperature in Celsius degrees</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>CO2_background</em></p></td>
+<td><p>Background CO<sub>2</sub> concentration in ppm</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>decay_rate</em></p></td>
+<td><p>Decay rate of virus in hours<sup>-1</sup></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>deposition_rate</em></p></td>
+<td><p>Deposition to surfaces in hours<sup>-1</sup></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>hepa_flow_rate</em></p></td>
+<td><p>Hepa filter flow rate in cubic meters per hour</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>filter_efficiency</em></p></td>
+<td><p>Air conditioning filter efficiency</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>ducts_removal</em></p></td>
+<td><p>Air ducts removal loss</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>other_removal</em></p></td>
+<td><p>Extraordinary air removal</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>fraction_immune</em></p></td>
+<td><p>Fraction of people immune to the virus</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>breathing_rate</em></p></td>
+<td><p>Mean breathing flow rate in cubic meters per hour</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>CO2_emission_person</em></p></td>
+<td><p>CO<sub>2</sub> emission rate at 273K and 1atm</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>quanta_exhalation</em></p></td>
+<td><p>Quanta exhalation rate in quanta per hour</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>quanta_enhancement</em></p></td>
+<td><p>Quanta enhancement due to variants</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>people_with_masks</em></p></td>
+<td><p>Fraction of people using mask</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-0-0-4" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-4" name="0-4" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>movement_buildings</em></p></td>
+<td><p>Allow people enter to other buildings</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>movement_department</em></p></td>
+<td><p>Allow people enter to other departments</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>number_runs</em></p></td>
+<td><p>Number of simulations runs to execute</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">integer</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>save_log</em></p></td>
+<td><p>Save events logs</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>save_config</em></p></td>
+<td><p>Save configuration file</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>save_csv</em></p></td>
+<td><p>Export the results to csv format</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>save_json</em></p></td>
+<td><p>Export the results to json format</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>return_output</em></p></td>
+<td><p>Return a dictionary with the results</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>directory</em></p></td>
+<td><p>Directory name to save results</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>ratio_infected</em></p></td>
+<td><p>Ratio of infected to total number of people</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>model</em></p></td>
+<td><p>Aerosol model to be used in the simulation</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<details>
+<summary><a>Example config.json</a></summary><div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;events&quot;</span><span class="p">:</span> <span class="p">[{</span>
             <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span>
             <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -278,17 +621,6 @@ gallery of <a class="reference internal" href="examples.html#examples"><span cla
             <span class="nt">&quot;collective&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
             <span class="nt">&quot;shared&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;people&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">20</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">20</span>
         <span class="p">}</span>
     <span class="p">],</span>
     <span class="nt">&quot;places&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -328,12 +660,28 @@ gallery of <a class="reference internal" href="examples.html#examples"><span cla
             <span class="nt">&quot;allow&quot;</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">}</span>
     <span class="p">],</span>
+    <span class="nt">&quot;people&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">20</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;num_people&quot;</span><span class="p">:</span> <span class="mi">20</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
     <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;movement_buildings&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="nt">&quot;movement_department&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="nt">&quot;number_runs&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;ratio_infected&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+        <span class="nt">&quot;save_log&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;save_config&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;save_csv&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;save_json&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;return_output&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="nt">&quot;directory&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;ratio_infected&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
         <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;Colorado&quot;</span><span class="p">,</span>
         <span class="nt">&quot;model_parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;Colorado&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -343,7 +691,6 @@ gallery of <a class="reference internal" href="examples.html#examples"><span cla
                 <span class="nt">&quot;decay_rate&quot;</span><span class="p">:</span> <span class="mf">0.62</span><span class="p">,</span>
                 <span class="nt">&quot;deposition_rate&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
                 <span class="nt">&quot;hepa_flow_rate&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-                <span class="nt">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
                 <span class="nt">&quot;filter_efficiency&quot;</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span>
                 <span class="nt">&quot;ducts_removal&quot;</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">,</span>
                 <span class="nt">&quot;other_removal&quot;</span><span class="p">:</span> <span class="mf">0.00</span><span class="p">,</span>
@@ -359,81 +706,181 @@ gallery of <a class="reference internal" href="examples.html#examples"><span cla
 <span class="p">}</span>
 </pre></div>
 </div>
+</details></div>
+<hr class="docutils" />
+<div class="section" id="outputs">
+<h3>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h3>
+<p>Simulation outputs are stored by default in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory. The subfolder with the results of an specific simulation have the date and time of the moment when it was launched as a name in <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d_%H-%M-%S-%f</span></code> format.</p>
+<p>By default, three files are saved after a simulation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config.json</span></code> stores a copy of the input configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">people.csv</span></code> stores every person’s state along time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">places.csv</span></code> stores every places’s state along time.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">people.csv</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">places.csv</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>run</em></p></td>
+<td><p>Simulation run</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>time</em></p></td>
+<td><p>Simulation time (minutes)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>person</em></p></td>
+<td><p>Person ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>status</em></p></td>
+<td><p>Person status (0: susceptible, 1: infective)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>place</em></p></td>
+<td><p>Place ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>event</em></p></td>
+<td><p>Event ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>CO2_level</em></p></td>
+<td><p>Average CO<sub>2</sub> level (ppm)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>quanta_inhaled</em></p></td>
+<td><p>Quanta inhaled (quanta)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>run</em></p></td>
+<td><p>Simulation run</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>time</em></p></td>
+<td><p>Simulation time (minutes)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>place</em></p></td>
+<td><p>Place ID</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>num_people</em></p></td>
+<td><p>Number of people</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>infective_people</em></p></td>
+<td><p>Number of infective people</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>CO2_level</em></p></td>
+<td><p>CO<sub>2</sub> level (ppm)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><em>quanta_level</em></p></td>
+<td><p>quanta level (ppm)</p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<p><strong>archABM</strong> offers the possibility of exporting the results in <em>JSON</em> and <em>CSV</em> format. To export in <em>JSON</em> format, use the <code class="docutils literal notranslate"><span class="pre">--save-json</span></code> parameter when running archABM. By default, the <code class="docutils literal notranslate"><span class="pre">--save-csv</span></code> parameter is set to <cite>true</cite>.</p>
+<p>Alternatively, <strong>archABM</strong> can also be configured to yield more detailed information. The <code class="docutils literal notranslate"><span class="pre">app.log</span></code> file saves the log of the actions and events occurred during the simulation. To export this file, use the <code class="docutils literal notranslate"><span class="pre">--save-log</span></code> parameter when running archABM.</p>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>The first step to using any software package is getting it properly installed.
-This part of the documentation covers the installation of <code class="docutils literal notranslate"><span class="pre">archABM</span></code>.</p>
-<div class="section" id="using-pypi">
-<h3>Using PyPI<a class="headerlink" href="#using-pypi" title="Permalink to this headline">¶</a></h3>
-<p>As the compiled <code class="docutils literal notranslate"><span class="pre">archABM</span></code> package is hosted on the Python Package Index (PyPI) you can easily install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
-To install <code class="docutils literal notranslate"><span class="pre">archABM</span></code>, run this command in your terminal of choice:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pip install archABM
+<p>As the compiled <strong>archABM</strong> package is hosted on the Python Package Index (PyPI) you can easily install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
+To install <strong>archABM</strong>, run this command in your terminal of choice:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install archABM
 </pre></div>
 </div>
 <p>or, alternatively:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python -m pip install archABM
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install archABM
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-latest-github-hosted-version">
-<h3>Using latest github-hosted version<a class="headerlink" href="#using-latest-github-hosted-version" title="Permalink to this headline">¶</a></h3>
-<p>If you want to get <code class="docutils literal notranslate"><span class="pre">archABM</span></code>’s latest version, you can refer to the
+<p>If you want to get <strong>archABM</strong>’s latest version, you can refer to the
 repository hosted at github:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install https://github.com/VicomtechV3/ArchABM/archive/main.zip
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install https://github.com/Vicomtech/ArchABM/archive/main.zip</span>
 </pre></div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="environment-setup">
+<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">archABM</span></code> builds on (and hence depends on) <code class="docutils literal notranslate"><span class="pre">simpy</span></code>, <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> and
-<code class="docutils literal notranslate"><span class="pre">jsonschema</span></code> libraries.</p>
+<p><strong>archABM</strong> builds on <code class="docutils literal notranslate"><span class="pre">simpy</span></code>, <code class="docutils literal notranslate"><span class="pre">tqdm</span></code>, <code class="docutils literal notranslate"><span class="pre">jsonschema</span></code> and <code class="docutils literal notranslate"><span class="pre">typer</span></code> libraries.</p>
+</div>
+<div class="section" id="python-3">
+<h3>Python 3<a class="headerlink" href="#python-3" title="Permalink to this headline">¶</a></h3>
+<p>To find out which version of <code class="docutils literal notranslate"><span class="pre">python</span></code> you have, open a terminal window and try the following command:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 --version
+<span class="go">Python 3.6.9</span>
+</pre></div>
+</div>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">python3</span></code> on your machine, then this command should respond with a version number. If you do not have <code class="docutils literal notranslate"><span class="pre">python3</span></code> installed, follow these <a class="reference external" href="https://realpython.com/installing-python">instructions</a>.</p>
+</div>
+<div class="section" id="pip">
+<h3>Pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> is the reference Python package manager. It’s used to install and update packages. In case <code class="docutils literal notranslate"><span class="pre">pip</span></code> is not installed in your OS, follow these <a class="reference external" href="https://pip.pypa.io/en/stable/installation/">instructions</a>.</p>
+</div>
+<div class="section" id="virtual-environment">
+<h3>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">venv</span></code> creates a “virtual” isolated Python installation and installs packages into that virtual installation. It is always recommended to use a virtual environment while developing Python applications. To create a virtual environment, go to your project’s directory and run venv.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m venv env
+</pre></div>
+</div>
+<p>Before you can start installing or using packages in your virtual environment you’ll need to activate it.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span> env/bin/activate
+</pre></div>
 </div>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="source-code">
 <h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
 <p>archABM is developed on GitHub, where the code is
-<a class="reference external" href="https://github.com/VicomtechV3/ArchABM">always available</a>.</p>
+<a class="reference external" href="https://github.com/Vicomtech/ArchABM">always available</a>.</p>
 <p>You can either clone the public repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git://github.com/VicomtechV3/ArchABM.git
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone git://github.com/Vicomtech/ArchABM.git
 </pre></div>
 </div>
-<p>Or, download the <a class="reference external" href="https://github.com/VicomtechV3/ArchABM/tarball/main">tarball</a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -OL https://github.com/VicomtechV3/ArchABM/tarball/main
-# optionally, zipball is also available (for Windows users).
+<p>Or, download the <a class="reference external" href="https://github.com/Vicomtech/ArchABM/tarball/main">tarball</a>:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl -OL https://github.com/Vicomtech/ArchABM/tarball/main
+<span class="gp"># </span>optionally, zipball is also available <span class="o">(</span><span class="k">for</span> Windows users<span class="o">)</span>.
 </pre></div>
 </div>
 <p>Once you have a copy of the source, you can embed it in your own Python
 package, or install it into your site-packages easily:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ArchABM
-$ python -m pip install .
-</pre></div>
-</div>
-</div>
-<div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MIT</span> <span class="n">License</span>
-
-<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2021</span> <span class="n">Vicomtech</span> <span class="o">-</span> <span class="n">Data</span> <span class="n">Intelligence</span> <span class="k">for</span> <span class="n">Energy</span> <span class="o">&amp;</span> <span class="n">Industrial</span> <span class="n">Processes</span>
-
-<span class="n">Permission</span> <span class="ow">is</span> <span class="n">hereby</span> <span class="n">granted</span><span class="p">,</span> <span class="n">free</span> <span class="n">of</span> <span class="n">charge</span><span class="p">,</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">person</span> <span class="n">obtaining</span> <span class="n">a</span> <span class="n">copy</span>
-<span class="n">of</span> <span class="n">this</span> <span class="n">software</span> <span class="ow">and</span> <span class="n">associated</span> <span class="n">documentation</span> <span class="n">files</span> <span class="p">(</span><span class="n">the</span> <span class="s2">&quot;Software&quot;</span><span class="p">),</span> <span class="n">to</span> <span class="n">deal</span>
-<span class="ow">in</span> <span class="n">the</span> <span class="n">Software</span> <span class="n">without</span> <span class="n">restriction</span><span class="p">,</span> <span class="n">including</span> <span class="n">without</span> <span class="n">limitation</span> <span class="n">the</span> <span class="n">rights</span>
-<span class="n">to</span> <span class="n">use</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">modify</span><span class="p">,</span> <span class="n">merge</span><span class="p">,</span> <span class="n">publish</span><span class="p">,</span> <span class="n">distribute</span><span class="p">,</span> <span class="n">sublicense</span><span class="p">,</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">sell</span>
-<span class="n">copies</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Software</span><span class="p">,</span> <span class="ow">and</span> <span class="n">to</span> <span class="n">permit</span> <span class="n">persons</span> <span class="n">to</span> <span class="n">whom</span> <span class="n">the</span> <span class="n">Software</span> <span class="ow">is</span>
-<span class="n">furnished</span> <span class="n">to</span> <span class="n">do</span> <span class="n">so</span><span class="p">,</span> <span class="n">subject</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">conditions</span><span class="p">:</span>
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">copyright</span> <span class="n">notice</span> <span class="ow">and</span> <span class="n">this</span> <span class="n">permission</span> <span class="n">notice</span> <span class="n">shall</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span> <span class="nb">all</span>
-<span class="n">copies</span> <span class="ow">or</span> <span class="n">substantial</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Software</span><span class="o">.</span>
-
-<span class="n">THE</span> <span class="n">SOFTWARE</span> <span class="n">IS</span> <span class="n">PROVIDED</span> <span class="s2">&quot;AS IS&quot;</span><span class="p">,</span> <span class="n">WITHOUT</span> <span class="n">WARRANTY</span> <span class="n">OF</span> <span class="n">ANY</span> <span class="n">KIND</span><span class="p">,</span> <span class="n">EXPRESS</span> <span class="n">OR</span>
-<span class="n">IMPLIED</span><span class="p">,</span> <span class="n">INCLUDING</span> <span class="n">BUT</span> <span class="n">NOT</span> <span class="n">LIMITED</span> <span class="n">TO</span> <span class="n">THE</span> <span class="n">WARRANTIES</span> <span class="n">OF</span> <span class="n">MERCHANTABILITY</span><span class="p">,</span>
-<span class="n">FITNESS</span> <span class="n">FOR</span> <span class="n">A</span> <span class="n">PARTICULAR</span> <span class="n">PURPOSE</span> <span class="n">AND</span> <span class="n">NONINFRINGEMENT</span><span class="o">.</span> <span class="n">IN</span> <span class="n">NO</span> <span class="n">EVENT</span> <span class="n">SHALL</span> <span class="n">THE</span>
-<span class="n">AUTHORS</span> <span class="n">OR</span> <span class="n">COPYRIGHT</span> <span class="n">HOLDERS</span> <span class="n">BE</span> <span class="n">LIABLE</span> <span class="n">FOR</span> <span class="n">ANY</span> <span class="n">CLAIM</span><span class="p">,</span> <span class="n">DAMAGES</span> <span class="n">OR</span> <span class="n">OTHER</span>
-<span class="n">LIABILITY</span><span class="p">,</span> <span class="n">WHETHER</span> <span class="n">IN</span> <span class="n">AN</span> <span class="n">ACTION</span> <span class="n">OF</span> <span class="n">CONTRACT</span><span class="p">,</span> <span class="n">TORT</span> <span class="n">OR</span> <span class="n">OTHERWISE</span><span class="p">,</span> <span class="n">ARISING</span> <span class="n">FROM</span><span class="p">,</span>
-<span class="n">OUT</span> <span class="n">OF</span> <span class="n">OR</span> <span class="n">IN</span> <span class="n">CONNECTION</span> <span class="n">WITH</span> <span class="n">THE</span> <span class="n">SOFTWARE</span> <span class="n">OR</span> <span class="n">THE</span> <span class="n">USE</span> <span class="n">OR</span> <span class="n">OTHER</span> <span class="n">DEALINGS</span> <span class="n">IN</span> <span class="n">THE</span>
-<span class="n">SOFTWARE</span><span class="o">.</span>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ArchABM
+<span class="gp">$ </span>python -m pip install .
 </pre></div>
 </div>
 </div>
@@ -445,7 +892,7 @@ $ python -m pip install .
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="framework.html" class="btn btn-neutral float-right" title="Framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="contents.html" class="btn btn-neutral float-left" title="Documentation for archABM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

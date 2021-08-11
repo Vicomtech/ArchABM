@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Aerosol Model &mdash; archABM 0.0.1 documentation</title>
+  <title>Aerosol Model &mdash; archABM 0.2.1 documentation</title>
   
 
   
@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,6 +40,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -95,21 +99,57 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-example">Basic Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#configuration-parameters">Configuration parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#inputs">Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#outputs">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-pypi">Using PyPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#using-latest-github-hosted-version">Using latest github-hosted version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#environment-setup">Environment Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#python-3">Python 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#pip">Pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#virtual-environment">Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#source-code">Source Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../framework.html">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#engine">Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../framework.html#event-selection">Event selection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../framework.html#aerosol-model">Aerosol Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../framework.html#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#input-configuration">Input Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#places">Places</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#people">People</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#aerosol-model">Aerosol Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#generated-config-json">Generated config.json</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../example.html#output-results">Output Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#raw-results">Raw results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#people-metrics">People metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../example.html#places-metrics">Places metrics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Aerosol Model</a><ul>
@@ -151,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
 </li>
@@ -212,7 +254,7 @@
         
           
             
-              <a href="https://github.com/VicomtechV3/ArchABM/blob/develop/docs/source/archABM/aerosol_model.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/Vicomtech/ArchABM/blob/develop/docs/source/archABM/aerosol_model.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -268,14 +310,14 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dt class="sig sig-object py" id="archABM.aerosol_model_colorado.AerosolModelColorado">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model_colorado.</span></span><span class="sig-name descname"><span class="pre">AerosolModelColorado</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model_colorado.html#AerosolModelColorado"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aerosol transmission estimator</p>
-<p>COVID-19 Airborne Transmission Estimator <span id="id1">[<a class="reference internal" href="creator.html#id10" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>, <a class="reference internal" href="creator.html#id11" title="Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. medRxiv, 2021. doi:10.1101/2021.04.21.21255898.">PBB+21</a>, <a class="reference internal" href="creator.html#id9" title="Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. Environmental Science &amp; Technology Letters, 8(5):392-397, 2021. doi:10.1021/acs.estlett.1c00183.">PJ21</a>]</span></p>
+<p>COVID-19 Airborne Transmission Estimator <span id="id1">[<a class="reference internal" href="#id14" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>, <a class="reference internal" href="#id15" title="Z. Peng, W. Bahnfleth, G. Buonanno, S. J. Dancer, J. Kurnitski, Y. Li, M.G.L.C. Loomans, L.C. Marr, L. Morawska, W. Nazaroff, C. Noakes, X. Querol, C. Sekhar, R. Tellier, T. Greenhalgh, L. Bourouiba, A. Boerstra, J. Tang, S. Miller, and J.L. Jimenez. Indicators for risk of airborne transmission in shared indoor environments and their application to covid-19 outbreaks. medRxiv, 2021. doi:10.1101/2021.04.21.21255898.">PBB+21</a>, <a class="reference internal" href="#id13" title="Zhe Peng and Jose L. Jimenez. Exhaled co2 as a covid-19 infection risk proxy for different indoor environments and activities. Environmental Science &amp; Technology Letters, 8(5):392-397, 2021. doi:10.1021/acs.estlett.1c00183.">PJ21</a>]</span></p>
 <p>The model combines two submodels:</p>
 <ol class="arabic simple">
 <li><p>A standard atmospheric box model, which assumes that the emissions are completely mixed across a control volume quickly         (such as an indoor room or other space).         See for example Chapter 3 of the Jacob Atmos. Chem. textbook <span id="id2">[<a class="reference internal" href="#id16" title="Daniel J. Jacob. Introduction to Atmospheric Chemistry. Princeton University Press, 1999. ISBN 9780691001852. URL: http://www.jstor.org/stable/j.ctt7t8hg.">Jac99</a>]</span>, and Chapter 21 of the Cooper and         Alley Air Pollution Control Engineering Textbook <span id="id3">[<a class="reference internal" href="#id17" title="C David Cooper and Forrest Christopher Alley. Air pollution control: A design approach. Waveland press, 2010.">CA10</a>]</span> for indoor applications.         This is an approximation that allows easy calculation, is approximately correct as long as near-field effects         are avoided by social distancing, and is commonly used in air quality modeling.</p></li>
-<li><p>A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 <span id="id4">[<a class="reference internal" href="creator.html#id10" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>]</span>,        and references therein <span id="id5">[<a class="reference internal" href="#id20" title="G. Buonanno, L. Morawska, and L. Stabile. Quantitative assessment of the risk of airborne transmission of sars-cov-2 infection: prospective and retrospective applications. Environment International, 145:106112, 2020. doi:https://doi.org/10.1016/j.envint.2020.106112.">BMS20</a>, <a class="reference internal" href="#id19" title="G. Buonanno, L. Stabile, and L. Morawska. Estimation of airborne viral emission: quanta emission rate of sars-cov-2 for infection risk assessment. Environment International, 141:105794, 2020. doi:https://doi.org/10.1016/j.envint.2020.105794.">BSM20</a>, <a class="reference internal" href="#id18" title="E. C. RILEY, G. MURPHY, and R. L. RILEY. AIRBORNE SPREAD OF MEASLES IN A SUBURBAN ELEMENTARY SCHOOL. American Journal of Epidemiology, 107(5):421-432, 05 1978. doi:10.1093/oxfordjournals.aje.a112560.">RMR78</a>]</span>.</p></li>
+<li><p>A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 <span id="id4">[<a class="reference internal" href="#id14" title="Shelly L. Miller, William W Nazaroff, Jose L. Jimenez, Atze Boerstra, Giorgio Buonanno, Stephanie J. Dancer, Jarek Kurnitski, Linsey C. Marr, Lidia Morawska, and Catherine Noakes. Transmission of sars-cov-2 by inhalation of respiratory aerosol in the skagit valley chorale superspreading event. Indoor Air, 31(2):314-323, 2021. doi:https://doi.org/10.1111/ina.12751.">MNJ+21</a>]</span>,        and references therein <span id="id5">[<a class="reference internal" href="#id20" title="G. Buonanno, L. Morawska, and L. Stabile. Quantitative assessment of the risk of airborne transmission of sars-cov-2 infection: prospective and retrospective applications. Environment International, 145:106112, 2020. doi:https://doi.org/10.1016/j.envint.2020.106112.">BMS20</a>, <a class="reference internal" href="#id19" title="G. Buonanno, L. Stabile, and L. Morawska. Estimation of airborne viral emission: quanta emission rate of sars-cov-2 for infection risk assessment. Environment International, 141:105794, 2020. doi:https://doi.org/10.1016/j.envint.2020.105794.">BSM20</a>, <a class="reference internal" href="#id18" title="E. C. RILEY, G. MURPHY, and R. L. RILEY. AIRBORNE SPREAD OF MEASLES IN A SUBURBAN ELEMENTARY SCHOOL. American Journal of Epidemiology, 107(5):421-432, 05 1978. doi:10.1093/oxfordjournals.aje.a112560.">RMR78</a>]</span>.</p></li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>The propagation of COVID-19 is only by aerosol transmission.</p>
 <p>The model is based on a standard model of aerosol disease transmission, the Wells-Riley model.
 It is calibrated to COVID-19 per recent literature on quanta emission rate.</p>
@@ -313,7 +355,7 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dt class="sig sig-object py" id="archABM.aerosol_model_mit.AerosolModelMIT">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model_mit.</span></span><span class="sig-name descname"><span class="pre">AerosolModelMIT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model_mit.html#AerosolModelMIT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aerosol transmission estimator</p>
-<p>MIT COVID-19 Indoor Safety Guideline <span id="id6">[<a class="reference internal" href="creator.html#id5" title="Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. Proceedings of the National Academy of Sciences, 2021. doi:10.1073/pnas.2018995118.">BB21</a>, <a class="reference internal" href="creator.html#id6" title="Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. medRxiv, 2021. doi:10.1101/2021.04.04.21254903.">BKC+21</a>, <a class="reference internal" href="creator.html#id7" title="Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. medRxiv, 2021. doi:10.1101/2021.06.21.21259287.">RBJ+21</a>]</span></p>
+<p>MIT COVID-19 Indoor Safety Guideline <span id="id6">[<a class="reference internal" href="#id9" title="Martin Z. Bazant and John W. M. Bush. A guideline to limit indoor airborne transmission of covid-19. Proceedings of the National Academy of Sciences, 2021. doi:10.1073/pnas.2018995118.">BB21</a>, <a class="reference internal" href="#id10" title="Martin Z. Bazant, Ousmane Kodio, Alexander E. Cohen, Kasim Khan, Zongyu Gu, and John W. M. Bush. Monitoring carbon dioxide to quantify the risk of indoor airborne transmission of covid-19. medRxiv, 2021. doi:10.1101/2021.04.04.21254903.">BKC+21</a>, <a class="reference internal" href="#id11" title="Michael J. Risbeck, Martin Z. Bazant, Zhanhong Jiang, Young M. Lee, Kirk H. Drees, and Jonathan D. Douglas. Quantifying the tradeoff between energy consumption and the risk of airborne disease transmission for building hvac systems. medRxiv, 2021. doi:10.1101/2021.06.21.21259287.">RBJ+21</a>]</span></p>
 <p>Theoretical model that quantifies the extent to which transmission risk is reduced in large rooms
 with high air exchange rates, increased for more vigorous respiratory activities, and dramatically reduced by the use of face masks.
 Consideration of a number of outbreaks yields self-consistent estimates for the infectiousness of the new coronavirus.</p>
@@ -349,7 +391,7 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dt class="sig sig-object py" id="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.aerosol_model_maxplanck.</span></span><span class="sig-name descname"><span class="pre">AerosolModelMaxPlanck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/aerosol_model_maxplanck.html#AerosolModelMaxPlanck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aerosol transmission estimator</p>
-<p>Model Calculations of Aerosol Transmission and Infection Risk of COVID-19 in Indoor Environments <span id="id7">[<a class="reference internal" href="creator.html#id8" title="Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. International Journal of Environmental Research and Public Health, 2020. doi:10.3390/ijerph17218114.">LHB+20</a>]</span></p>
+<p>Model Calculations of Aerosol Transmission and Infection Risk of COVID-19 in Indoor Environments <span id="id7">[<a class="reference internal" href="#id12" title="Jos Lelieveld, Frank Helleis, Stephan Borrmann, Yafang Cheng, Frank Drewnick, Gerald Haug, Thomas Klimach, Jean Sciare, Hang Su, and Ulrich Poschl. Model calculations of aerosol transmission and infection risk of covid-19 in indoor environments. International Journal of Environmental Research and Public Health, 2020. doi:10.3390/ijerph17218114.">LHB+20</a>]</span></p>
 <p>An adjustable algorithm to estimate the infection risk for different indoor environments,
 constrained by published data of human aerosol emissions, SARS-CoV-2 viral loads, infective dose and other parameters.
 Evaluates typical indoor settings such as an office, a classroom, choir practice, and a reception/party.</p>
