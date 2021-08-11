@@ -24,9 +24,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.9",
 ]
 ENTRY_POINTS = {
-    "console_scripts": [
-        #'tsclust=tsclust:main',
-    ],
+    "console_scripts": [],
 }
 PROJECT_URLS = {
     "Bug Reports": URL + "/issues",
@@ -41,7 +39,7 @@ TEST_SUITE = "tests"
 REQUIREMENTS = ["simpy", "tqdm", "jsonschema"]
 SETUP_REQUIREMENTS = []
 TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 setuptools.setup(
     author=AUTHOR,
