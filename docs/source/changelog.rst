@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 0.2.1
+Version 0.2.2
 -------------
 
 - Command-line-interface for archABM execution

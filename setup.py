@@ -39,7 +39,7 @@ TEST_SUITE = "tests"
 REQUIREMENTS = ["simpy", "tqdm", "jsonschema"]
 SETUP_REQUIREMENTS = []
 TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 
 setuptools.setup(
     author=AUTHOR,
