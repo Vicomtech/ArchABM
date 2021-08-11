@@ -1,4 +1,4 @@
-<img src="docs/source/_static/logo_4.png" width="450"/>
+<img src="docs/source/_static/logo_4.png" width="550"/>
 
 Agent-based model simulation for air quality and pandemic risk assessment in architectural spaces.
 
@@ -44,7 +44,7 @@ Getting Started
 
 ArchABM is executed with the following command:
 
-<img src="docs/source/_static/command.png" width="450" align="center"/>
+<img src="docs/source/_static/command.png" width="500" align="center"/>
 
 ```console
 $ python main.py config.json
