@@ -24,7 +24,7 @@ copyright = "2021, Vicomtech"
 author = "Vicomtech"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.0"
+release = "0.2.0"
 
 
 # -- General configuration ---------------------------------------------------
@@ -44,7 +44,9 @@ extensions = [
     'sphinxcontrib.tikz',
     'sphinx-jsonschema',
     "sphinx.ext.autosectionlabel",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    'sphinxcontrib.programoutput',
+    'sphinx_tabs.tabs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,7 +59,11 @@ gettext_compact = False
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-pygments_style = "default"
+pygments_style = "sphinx"
+
+# Copy button
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
 
 # The master toctree document.
 master_doc = "contents"
