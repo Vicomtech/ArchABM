@@ -2,6 +2,7 @@ import copy
 import random
 from .parameters import Parameters
 
+
 class EventModel:
     """Defines an event model, also called "activity"
 

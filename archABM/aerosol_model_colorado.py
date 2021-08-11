@@ -4,6 +4,7 @@ from typing import Tuple
 from .aerosol_model import AerosolModel
 from .parameters import Parameters
 
+
 class AerosolModelColorado(AerosolModel):
     """Aerosol transmission estimator
                     
@@ -21,7 +22,7 @@ class AerosolModelColorado(AerosolModel):
     #. A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 :cite:`https://doi.org/10.1111/ina.12751`,\
         and references therein :cite:`10.1093/oxfordjournals.aje.a112560,BUONANNO2020105794,BUONANNO2020106112`.		
 
-    .. warning::
+    .. important::
         The propagation of COVID-19 is only by aerosol transmission. 
 
         The model is based on a standard model of aerosol disease transmission, the Wells-Riley model. 
@@ -110,28 +111,39 @@ class AerosolModelColorado(AerosolModel):
 
         net_emission_rate = quanta_exhalation * (1 - mask_efficiency_exhalation * people_with_masks) * infective_people * quanta_enhancement
         quanta_concentration = net_emission_rate / loss_rate / volume * (1 - (1 / loss_rate / event_duration) * (1 - math.exp(-loss_rate * event_duration)))
+        # TODO: NEW FORMULA
+        # TODO: infection risk dynamic
+        quanta_concentration = (
+            net_emission_rate / loss_rate / volume * (1 - (1 / loss_rate / event_duration) * (1 - math.exp(-loss_rate * event_duration)))
+            + math.exp(-loss_rate * event_duration) * (inputs.quanta_level - 0)
+            + 0
+        )
         quanta_inhaled_per_person = quanta_concentration * breathing_rate * event_duration * (1 - mask_efficiency_inhalation * people_with_masks)
 
-        # probability_infection = 1- math.exp(-quanta_inhaled_per_person)
+        # probability_infection = 1 - math.exp(-quanta_inhaled_per_person)
+        # probability_infection = probability_infection * susceptible_people
         # probability_hospitalization = probability_infection * hospitalization_rate
         # probability_death = probability_infection * death_rate
 
-        if susceptible_people == 0 or infective_people == 0:
-            infection_risk = 0.0
-            infection_risk_relative = 0.0
-        else:
-            infection_risk = (
-                breathing_rate_relative
-                * quanta_exhalation_relative
-                * (1 - mask_efficiency_exhalation * people_with_masks)
-                * (1 - mask_efficiency_inhalation * people_with_masks)
-                * event_duration
-                * susceptible_people
-                / (loss_rate * volume)
-                * (1 - (1 - math.exp(-loss_rate * event_duration)) / (loss_rate * event_duration))
-            )
-            infection_risk_relative = infection_risk / susceptible_people
-            #infection_risk = (1 - math.exp(-infection_risk_relative))*susceptible_people # TODO: review Taylor approximation
+        # if susceptible_people == 0 or infective_people == 0:
+        #     infection_risk = 0.0
+        #     infection_risk_relative = 0.0
+        # else:
+        # infection_risk = (
+        #     breathing_rate_relative
+        #     * quanta_exhalation_relative
+        #     * (1 - mask_efficiency_exhalation * people_with_masks)
+        #     * (1 - mask_efficiency_inhalation * people_with_masks)
+        #     * event_duration
+        #     * susceptible_people
+        #     / (loss_rate * volume)
+        #     * (1 - (1 - math.exp(-loss_rate * event_duration)) / (loss_rate * event_duration))
+        #     + math.exp(-loss_rate * event_duration) * (inputs.infection_risk - 0)
+        #     + 0
+        # )
+
+        # infection_risk_relative = infection_risk / susceptible_people
+        # infection_risk = (1 - math.exp(-infection_risk_relative))*susceptible_people # TODO: review Taylor approximation
 
         CO2_mixing_ratio = (
             (CO2_emission * 3.6 / ventilation / volume * (1 - (1 / ventilation / event_duration) * (1 - math.exp(-ventilation * event_duration)))) * 1e6
@@ -145,4 +157,4 @@ class AerosolModelColorado(AerosolModel):
         # CO2_probability_infection_=  CO2_reinhaled_ppm / 1e4 / probability_infection
         # CO2_inhale_ppm = CO2_mixing_ratio_delta * event_duration * 0.01 / probability_infection + CO2_background
 
-        return CO2_mixing_ratio, infection_risk
+        return CO2_mixing_ratio, quanta_inhaled_per_person, quanta_concentration

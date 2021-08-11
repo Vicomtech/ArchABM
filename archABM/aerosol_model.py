@@ -1,6 +1,7 @@
 from typing import Tuple
 from .parameters import Parameters
 
+
 class AerosolModel:
     """Aerosol transmission estimator"""
 

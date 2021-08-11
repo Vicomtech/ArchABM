@@ -12,29 +12,30 @@ class SnapshotPlace(Snapshot):
         * - Attribute
           - Description
           - Type
-        * - "run"
+        * - *run*
           - Simulation run
           - :obj:`int`
-        * - "time"
+        * - *time*
           - Simulation time (minutes)
           - :obj:`int`
-        * - "place"
+        * - *place*
           -  Place ID
           - :obj:`int`
-        * - "num_people"
+        * - *num_people*
           - Number of people
           - :obj:`int`
-        * - "CO2_level"
+        * - *infective_people*
+          - Number of infective people
+          - :obj:`int`
+        * - *CO2_level*
           - CO\ :sub:`2` level (ppm)
           - :obj:`float`
-        * - "infection_risk_cum"
-          - Probability of infection (cumulative)
-          - :obj:`float`
-        * - "infection_risk_avg"
-          - Probability of infection (average)
+        * - *quanta_level*
+          - quanta level (ppm)
           - :obj:`float`
     """
-    header = ["run", "time", "place", "num_people", "CO2_level", "infection_risk_cum", "infection_risk_avg"]
+
+    header = ["run", "time", "place", "num_people", "infective_people", "CO2_level", "quanta_level"]
 
     def __init__(self) -> None:
         super(SnapshotPlace, self).__init__(SnapshotPlace.header)

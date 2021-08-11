@@ -12,35 +12,33 @@ class SnapshotPerson(Snapshot):
         * - Attribute
           - Description
           - Type
-        * - "run"
+        * - *run*
           - Simulation run
           - :obj:`int`
-        * - "time"
+        * - *time*
           - Simulation time (minutes)
           - :obj:`int`
-        * - "person"
+        * - *person*
           - Person ID
           - :obj:`int`
-        * - "status"
+        * - *status*
           - Person status (0: susceptible, 1: infective)
           - :obj:`bool`
-        * - "place"
+        * - *place*
           -  Place ID
           - :obj:`int`
-        * - "event"
+        * - *event*
           - Event ID
           - :obj:`int`
-        * - "CO2_level"
+        * - *CO2_level*
           - Average CO\ :sub:`2` level (ppm)
           - :obj:`float`
-        * - "infection_risk_cum"
-          - Probability of infection (cumulative)
-          - :obj:`float`
-        * - "infection_risk_avg"
-          - Probability of infection (average)
+        * - *quanta_inhaled*
+          - Quanta inhaled (quanta)
           - :obj:`float`
     """
-    header = ["run", "time", "person", "status", "place", "event", "CO2_level", "infection_risk_cum", "infection_risk_avg"]
+
+    header = ["run", "time", "person", "status", "place", "event", "CO2_level", "quanta_inhaled"]
 
     def __init__(self) -> None:
         super(SnapshotPerson, self).__init__(SnapshotPerson.header)

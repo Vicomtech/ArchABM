@@ -4,3 +4,6 @@ sphinx-autobuild
 sphinxcontrib-bibtex
 sphinxcontrib-tikz
 sphinx-jsonschema
+sphinx-copybutton
+sphinxcontrib-programoutput
+sphinx-tabs

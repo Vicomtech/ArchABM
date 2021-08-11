@@ -34,7 +34,7 @@
                 [540, 960]
             ],
             "repeat_min": 0,
-            "repeat_max": null,
+            "repeat_max": 5,
             "duration_min": 20,
             "duration_max": 90,
             "mask_efficiency": 0.0,
@@ -166,7 +166,7 @@
             "area": 16.0,
             "height": 2.7,
             "capacity": 6,
-            "ventilation": 0.5,
+            "ventilation": 1.0,
             "recirculated_flow_rate": 0,
             "allow": true
         },
@@ -178,7 +178,7 @@
             "area": 16.0,
             "height": 2.7,
             "capacity": 6,
-            "ventilation": 0.5,
+            "ventilation": 1.0,
             "recirculated_flow_rate": 0,
             "allow": true
         },
@@ -190,7 +190,7 @@
             "area": 11.0,
             "height": 2.7,
             "capacity": 4,
-            "ventilation": 0.5,
+            "ventilation": 1.0,
             "recirculated_flow_rate": 0,
             "allow": true
         },
@@ -238,7 +238,7 @@
             "area": 20.0,
             "height": 2.7,
             "capacity": 4,
-            "ventilation": 0.5,
+            "ventilation": 1.0,
             "recirculated_flow_rate": 0,
             "allow": true
         },
@@ -250,7 +250,7 @@
             "area": 20.0,
             "height": 2.7,
             "capacity": 4,
-            "ventilation": 0.5,
+            "ventilation": 1.0,
             "recirculated_flow_rate": 0,
             "allow": true
         },
@@ -306,9 +306,14 @@
     "options": {
         "movement_buildings": true,
         "movement_department": false,
-        "number_runs": 1000,
-        "ratio_infected": 0.05,
+        "number_runs": 1,
+        "save_log": true,
+        "save_config": true,
+        "save_csv": false,
+        "save_json": false,
+        "return_output": false,
         "directory": null,
+        "ratio_infected": 0.05,
         "model": "Colorado",
         "model_parameters": {
             "MaxPlanck": {

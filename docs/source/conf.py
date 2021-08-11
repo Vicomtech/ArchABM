@@ -24,7 +24,7 @@ copyright = "2021, Vicomtech"
 author = "Vicomtech"
 
 # The full version, including alpha/beta/rc tags
-release = "0.0.1"
+release = "0.2.1"
 
 
 # -- General configuration ---------------------------------------------------
@@ -43,7 +43,10 @@ extensions = [
     "sphinx_rtd_theme",
     'sphinxcontrib.tikz',
     'sphinx-jsonschema',
-    "sphinx.ext.autosectionlabel"
+    "sphinx.ext.autosectionlabel",
+    "sphinx_copybutton",
+    'sphinxcontrib.programoutput',
+    'sphinx_tabs.tabs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -56,7 +59,11 @@ gettext_compact = False
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-pygments_style = "default"
+pygments_style = "sphinx"
+
+# Copy button
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
 
 # The master toctree document.
 master_doc = "contents"
@@ -95,7 +102,7 @@ html_show_sourcelink = True
 
 html_context = {
   'display_github': True,
-  'github_user': 'VicomtechV3',
+  'github_user': 'Vicomtech',
   'github_repo': 'ArchABM',
   'github_version': 'develop/docs/source/',
 }
@@ -114,6 +121,7 @@ html_theme_options = {
     'includehidden': True,
     'titles_only': False
 }
+
 
 def setup(app):
     app.add_css_file('my_theme.css')

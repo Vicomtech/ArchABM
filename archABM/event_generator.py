@@ -5,6 +5,7 @@ from simpy import Environment
 from .database import Database
 from .event_model import EventModel
 
+
 class EventGenerator:
     """Generates events
 
@@ -15,6 +16,7 @@ class EventGenerator:
     each one related to an activity.
 
     """
+
     env: Environment
     db: Database
     models: list

@@ -4,6 +4,7 @@ from typing import Tuple
 from .parameters import Parameters
 from .aerosol_model import AerosolModel
 
+
 class AerosolModelMaxPlanck(AerosolModel):
     """Aerosol transmission estimator
     

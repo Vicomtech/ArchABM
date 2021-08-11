@@ -8,7 +8,7 @@ from .results import Results
 
 import json
 import os
-
+import copy
 
 
 class Engine:
@@ -16,19 +16,16 @@ class Engine:
     
     Launches the agent-based simulation with the specified configuration.
     """
+
     config: dict
     db: Database
     env: Environment
 
-    def __init__(self, config: dict) -> None:        
+    def __init__(self, config: dict) -> None:
         schema = self.retrieve_schema()
         validate(instance=config, schema=schema)
 
-        self.config = config
-        self.preprocess()
-
-        self.db = Database()
-        self.db.results = Results(self.config)
+        self.config = self.preprocess(config)
 
     def retrieve_schema(self):
         """Get configuration file JSON schema
@@ -41,29 +38,32 @@ class Engine:
             schema = json.load(f)
         return schema
 
-    def preprocess(self) -> None:
+    def preprocess(self, config) -> None:
         """Processes the configuration dictionary to generate people.
 
         Based on the specified configuration of number of people per group,
         this method generates an array of people, and assignes a incremental name to each person.
         """
+        config = copy.deepcopy(config)
+
         num_people = 0
-        for person in self.config["people"]:
+        for person in config["people"]:
             num_people += person["num_people"]
 
-        for place in self.config["places"]:
+        for place in config["places"]:
             if place["capacity"] is None:
                 place["capacity"] = num_people + 1
 
         people = []
         cont = 0
-        for person in self.config["people"]:
+        for person in config["people"]:
             num_people = person.pop("num_people")
             for i in range(num_people):
                 person["name"] = "person" + str(cont)
                 people.append(person.copy())
                 cont += 1
-        self.config["people"] = people
+        config["people"] = people
+        return config
 
     def setup(self) -> None:
         """Setup for a simulation run.
@@ -97,6 +97,9 @@ class Engine:
         Returns:
             dict: simulation history and configuration
         """
+        self.db = Database()
+        self.db.results = Results(self.config)
+
         if until is None:
             until = 1440
         if number_runs is None:

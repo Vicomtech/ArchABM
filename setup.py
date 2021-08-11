@@ -8,9 +8,9 @@ with open("README.md", "r") as fh:
 
 NAME = "archABM"
 DESCRIPTION = "Agent based simulation for architectural spaces"
-URL = "https://github.com/VicomtechV3/ArchABM"
-AUTHOR = "VicomtechV3"
-AUTHOR_EMAIL = "imartinez@vicomtech.org"
+URL = "https://github.com/Vicomtech/ArchABM"
+AUTHOR = "Vicomtech"
+AUTHOR_EMAIL = "info@vicomtech.org"
 CLASSIFIERS = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -24,13 +24,11 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.9",
 ]
 ENTRY_POINTS = {
-    "console_scripts": [
-        #'tsclust=tsclust:main',
-    ],
+    "console_scripts": [],
 }
 PROJECT_URLS = {
     "Bug Reports": URL + "/issues",
-    "Documentation": "https://archABM.readthedocs.io",
+    "Documentation": "https://vicomtech.github.io/ArchABM/",
     "Source Code": URL,
 }
 REQUIRES_PYTHON = ">=3.5, <4"
@@ -41,7 +39,7 @@ TEST_SUITE = "tests"
 REQUIREMENTS = ["simpy", "tqdm", "jsonschema"]
 SETUP_REQUIREMENTS = []
 TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
-VERSION = "0.0.1"
+VERSION = "0.2.1"
 
 setuptools.setup(
     author=AUTHOR,
@@ -55,6 +53,7 @@ setuptools.setup(
     keywords=KEYWORDS,
     license=LICENSE,
     long_description=README,
+    long_description_content_type='text/markdown',
     name=NAME,
     package_data={},
     packages=setuptools.find_packages(),

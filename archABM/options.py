@@ -6,6 +6,7 @@ from .parameters import Parameters
 
 class Options:
     """Stores general options for the simulation"""
+
     env: Environment
     db: Database
     params: Parameters
