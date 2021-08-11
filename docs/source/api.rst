@@ -1,4 +1,4 @@
-.. _api-reference:
+.. _API:
 
 API Reference
 =============
