@@ -30,7 +30,7 @@ class Actions:
         .. note::
             Movement restrictions (between buildings and between departments) are also considered.
 
-        .. note::
+        .. attention::
             The list of places is shuffled after each search procedure.
 
         Args:
@@ -98,7 +98,7 @@ class Actions:
     def create_collective_event(self, model: EventModel, place: Place, duration: int, person: Person) -> None:
         """Creates a collective event of certain type :class:`~archABM.event_model.EventModel` at a physical location :class:`~archABM.place.Place` and for a time duration in minutes.
 
-        .. note::
+        .. important::
             The number of people called into the collective event is a random integer between
             the current number of people at that place and the total place capacity.
 

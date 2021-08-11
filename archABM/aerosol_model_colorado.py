@@ -22,7 +22,7 @@ class AerosolModelColorado(AerosolModel):
     #. A standard aerosol infection model (Wells-Riley model), as formulated in Miller et al. 2020 :cite:`https://doi.org/10.1111/ina.12751`,\
         and references therein :cite:`10.1093/oxfordjournals.aje.a112560,BUONANNO2020105794,BUONANNO2020106112`.		
 
-    .. warning::
+    .. important::
         The propagation of COVID-19 is only by aerosol transmission. 
 
         The model is based on a standard model of aerosol disease transmission, the Wells-Riley model. 
