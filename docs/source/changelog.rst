@@ -1,6 +1,13 @@
 Changelog
 =========
 
+
+Version 0.2.3
+-------------
+
+- Updated requirements for python packages: typer[all]
+- Included package data and MANIFEST
+
 Version 0.2.2
 -------------
 

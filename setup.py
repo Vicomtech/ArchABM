@@ -36,10 +36,10 @@ EXTRAS_REQUIRE = {}
 KEYWORDS = ["agent simulation", "architecture", "building", "workplace", "discrete-event"]
 LICENSE = "MIT license"
 TEST_SUITE = "tests"
-REQUIREMENTS = ["simpy", "tqdm", "jsonschema"]
+REQUIREMENTS = ["simpy", "tqdm", "jsonschema", "typer[all]"]
 SETUP_REQUIREMENTS = []
 TEST_REQUIREMENTS = ["pytest", "pytest-cov"]
-VERSION = "0.2.2"
+VERSION = "0.2.3"
 
 setuptools.setup(
     author=AUTHOR,
@@ -48,7 +48,7 @@ setuptools.setup(
     description=DESCRIPTION,
     entry_points=ENTRY_POINTS,
     extras_require=EXTRAS_REQUIRE,
-    include_package_data=False,
+    include_package_data=True,
     install_requires=REQUIREMENTS,
     keywords=KEYWORDS,
     license=LICENSE,
