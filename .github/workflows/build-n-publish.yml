@@ -4,25 +4,35 @@ name: Build & publish to Pypi
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on pushing a tag to the main branch
   push:
-    branches: [ main ]
     tags:
       - 'v*'
-  pull_request:
-    branches: [ main ]
-    tags:
-      - 'v*'
-    types: [ closed ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0 # Fetch all history to be able to obtain branch of tag
+      
+      - id: branch
+        name: Get branch of tag
+        run: echo "::set-output name=BRANCH::$(git branch -a --contains ${{ github.ref }} | grep -v HEAD | cut -d '/' -f3)"
+        
+    outputs:
+      branch_name: ${{ steps.branch.outputs.BRANCH }}
+        
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
     runs-on: ubuntu-latest
-    if: (github.event_name == 'pull_request' && github.event.pull_request.merged == true) || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
+    needs: prepare
+    if: ${{ needs.prepare.outputs.branch_name }} == 'main'
     
     # strategy:
     #   fail-fast: false
