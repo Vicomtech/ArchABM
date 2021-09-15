@@ -62,7 +62,37 @@ Finally, if you use **archABM** in a scientific publication, we would appreciate
 Getting Started
 ---------------
 
-ArchABM is executed with the following command:
+Use the following template to run a simulation with archABM:
+
+.. code-block:: python
+
+    from archABM.engine import Engine
+    import json
+    import pandas as pd
+
+    # Read config data from JSON
+    def read_json(file_path):
+        with open(str(file_path)) as json_file:
+            result = json.load(json_file)
+        return result
+
+    config_data = read_json("config.json")
+    # WARNING - for further processing ->
+    # config_data["options"]["return_output"] = True
+
+    # Create ArchABM simulation engine
+    simulation = Engine(config_data)
+
+    # Run simulation
+    results = simulation.run()
+
+    # Create dataframes based on the results
+    df_people = pd.DataFrame(results["results"]["people"])
+    df_places = pd.DataFrame(results["results"]["places"])
+
+----
+
+Developers can also use the command-line interface with the `main.py <https://github.com/Vicomtech/ArchABM>`_ file from the source code repository.
 
 .. figure:: _static/command.png
    :width: 450

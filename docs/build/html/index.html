@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>User Guide &mdash; archABM 0.2.1 documentation</title>
+  <title>User Guide &mdash; archABM 0.2.3 documentation</title>
   
 
   
@@ -192,7 +192,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-3">Version 0.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-2">Version 0.2.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1-0">Version 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-1">Version 0.0.1</a></li>
 </ul>
@@ -291,7 +292,34 @@ a complete <a class="reference internal" href="api.html#api"><span class="std st
 <hr class="docutils" />
 <div class="section" id="getting-started">
 <span id="basic-usage"></span><h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>ArchABM is executed with the following command:</p>
+<p>Use the following template to run a simulation with archABM:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">archABM.engine</span> <span class="kn">import</span> <span class="n">Engine</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read config data from JSON</span>
+<span class="k">def</span> <span class="nf">read_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">config_data</span> <span class="o">=</span> <span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;config.json&quot;</span><span class="p">)</span>
+<span class="c1"># WARNING - for further processing -&gt;</span>
+<span class="c1"># config_data[&quot;options&quot;][&quot;return_output&quot;] = True</span>
+
+<span class="c1"># Create ArchABM simulation engine</span>
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">(</span><span class="n">config_data</span><span class="p">)</span>
+
+<span class="c1"># Run simulation</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Create dataframes based on the results</span>
+<span class="n">df_people</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="s2">&quot;people&quot;</span><span class="p">])</span>
+<span class="n">df_places</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="s2">&quot;places&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Developers can also use the command-line interface with the <a class="reference external" href="https://github.com/Vicomtech/ArchABM">main.py</a> file from the source code repository.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/command.png"><img alt="_images/command.png" src="_images/command.png" style="width: 450px;" /></a>
 </div>
