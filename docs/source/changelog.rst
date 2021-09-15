@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Version 0.2.4
+-------------
+
+- Updated README and getting-started section in the documentation
 
 Version 0.2.3
 -------------
