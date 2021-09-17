@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 0.2.5
+-------------
+
+- Included ArchABM disclaimer at README and documentation
+
 Version 0.2.4
 -------------
 
