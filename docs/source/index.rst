@@ -54,6 +54,18 @@ a complete :ref:`API Reference<API>`, as well as a detailed :ref:`example<exampl
 
 Finally, if you use **archABM** in a scientific publication, we would appreciate :ref:`citations<citing>`. 
 
+----
+
+.. admonition:: Disclaimer
+  :class: caution
+
+  archABM is an evolving research tool designed to familiarize the interested user with factors influencing the potential indoor airborne transmission of viruses (such as SARS-CoV-2) and the generation of carbon-dioxide (CO2) indoors. 
+  Calculations of virus and CO2 levels within ArchABM are based on recently published aerosol models [1,2], which however have not been validated in the context of agent-based modeling (ABM) yet. We note that uncertainty in and intrinsic variability of model parameters as well as underlying assumptions concerning model parameters may lead to errors regarding the simulated results.
+  Use of archABM is the sole responsibility of the user. It is being made available without guarantee or warranty of any kind. The authors do not accept any liability from its use.
+
+  [1] *Peng, Zhe, and Jose L. Jimenez. "Exhaled CO2 as a COVID-19 infection risk proxy for different indoor environments and activities." Environmental Science & Technology Letters 8.5 (2021): 392-397.*
+  
+  [2] *Lelieveld, Jos, et al. "Model calculations of aerosol transmission and infection risk of COVID-19 in indoor environments." International journal of environmental research and public health 17.21 (2020): 8114.*
 
 ----
 
