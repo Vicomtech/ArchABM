@@ -595,9 +595,7 @@ occurred during the simulation. To export this file, use the
 
 ## Citing archABM
 
-archABM was published in ...
-
-If you used archABM in your scientific publication, we would appreciate citation:
+If you use ArchABM in your work or project, please cite the following article, published in Building and Environment (DOI...): [Full REF]
 
 ```bibtex
 @article{
