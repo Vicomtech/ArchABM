@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Snapshot &mdash; archABM 0.2.5 documentation</title>
+  <title>Snapshot &mdash; archABM 0.2.7 documentation</title>
   
 
   
@@ -191,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-7">Version 0.2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-6">Version 0.2.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-5">Version 0.2.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-4">Version 0.2.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-3">Version 0.2.3</a></li>
@@ -279,76 +281,76 @@
 <dd><p>Stores the state of an agent at a given time</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot.Snapshot.header">
-<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.snapshot.Snapshot.header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.snapshot.Snapshot.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot.Snapshot.store">
-<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot.Snapshot.store" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot.Snapshot.store" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.snapshot.Snapshot.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes dictionary <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> with <a class="reference internal" href="#archABM.snapshot.Snapshot.header" title="archABM.snapshot.Snapshot.header"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header</span></code></a> as keys.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.snapshot.Snapshot.get_header">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.get_header" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.get_header" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes all items in <a class="reference internal" href="#archABM.snapshot.Snapshot.header" title="archABM.snapshot.Snapshot.header"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header</span></code></a> and joins them into one string.</p>
 <p>A string must be specified as the separator, by default “,”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sep</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – separator. Defaults to “,”.</p>
+<dd class="field-odd"><p><strong>sep</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – separator. Defaults to “,”.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>a string created by joining the elements of <a class="reference internal" href="#archABM.snapshot.Snapshot.header" title="archABM.snapshot.Snapshot.header"><code class="xref py py-attr docutils literal notranslate"><span class="pre">header</span></code></a> by string separator</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.snapshot.Snapshot.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.get_data" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.get_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes all items in <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> and joins them into one string.</p>
 <p>A string must be specified as the separator, by default “,”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sep</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – separator. Defaults to “,”.</p>
+<dd class="field-odd"><p><strong>sep</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – separator. Defaults to “,”.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>a string created by joining the elements of <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> by string separator</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.snapshot.Snapshot.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.set" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/snapshot.html#Snapshot.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.snapshot.Snapshot.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a key:value pair to the <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a> dictionary</p>
 <ul class="simple">
-<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, it is casted to <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p></li>
-<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>, the elements are joined into one <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, separated by “;”.</p></li>
-<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, it is rounded to the specified number <code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code>.</p></li>
-<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code> is <code class="xref py py-const docutils literal notranslate"><span class="pre">0</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is casted to <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, it is casted to <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>, the elements are joined into one <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, separated by “;”.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, it is rounded to the specified number <code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code>.</p></li>
+<li><p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code> is <code class="xref py py-const docutils literal notranslate"><span class="pre">0</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> is casted to <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – item key</p></li>
-<li><p><strong>value</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>]</em>) – item value</p></li>
-<li><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><em>optional</em>) – number of digits to store. Defaults to 2.</p></li>
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – item key</p></li>
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>]</em>) – item value</p></li>
+<li><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – number of digits to store. Defaults to 2.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#BaseException" title="(in Python v3.9)"><strong>BaseException</strong></a> – raises if the specified <code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code> is not a key in <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#BaseException" title="(in Python v3.10)"><strong>BaseException</strong></a> – raises if the specified <code class="xref py py-attr docutils literal notranslate"><span class="pre">key</span></code> is not a key in <a class="reference internal" href="#archABM.snapshot.Snapshot.store" title="archABM.snapshot.Snapshot.store"><code class="xref py py-attr docutils literal notranslate"><span class="pre">store</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -377,46 +379,46 @@
 <tbody>
 <tr class="row-even"><td><p><em>run</em></p></td>
 <td><p>Simulation run</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>time</em></p></td>
 <td><p>Simulation time (minutes)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>person</em></p></td>
 <td><p>Person ID</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>status</em></p></td>
 <td><p>Person status (0: susceptible, 1: infective)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>place</em></p></td>
 <td><p>Place ID</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>event</em></p></td>
 <td><p>Event ID</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>CO2_level</em></p></td>
 <td><p>Average CO<sub>2</sub> level (ppm)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>quanta_inhaled</em></p></td>
 <td><p>Quanta inhaled (quanta)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot_person.SnapshotPerson.header">
-<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'person',</span> <span class="pre">'status',</span> <span class="pre">'place',</span> <span class="pre">'event',</span> <span class="pre">'CO2_level',</span> <span class="pre">'quanta_inhaled']</span></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'person',</span> <span class="pre">'status',</span> <span class="pre">'place',</span> <span class="pre">'event',</span> <span class="pre">'CO2_level',</span> <span class="pre">'quanta_inhaled']</span></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot_person.SnapshotPerson.store">
-<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.store" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot_person.SnapshotPerson.store" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -444,42 +446,42 @@
 <tbody>
 <tr class="row-even"><td><p><em>run</em></p></td>
 <td><p>Simulation run</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>time</em></p></td>
 <td><p>Simulation time (minutes)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>place</em></p></td>
 <td><p>Place ID</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>num_people</em></p></td>
 <td><p>Number of people</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>infective_people</em></p></td>
 <td><p>Number of infective people</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><em>CO2_level</em></p></td>
 <td><p>CO<sub>2</sub> level (ppm)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>quanta_level</em></p></td>
 <td><p>quanta level (ppm)</p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot_place.SnapshotPlace.header">
-<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'place',</span> <span class="pre">'num_people',</span> <span class="pre">'infective_people',</span> <span class="pre">'CO2_level',</span> <span class="pre">'quanta_level']</span></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">['run',</span> <span class="pre">'time',</span> <span class="pre">'place',</span> <span class="pre">'num_people',</span> <span class="pre">'infective_people',</span> <span class="pre">'CO2_level',</span> <span class="pre">'quanta_level']</span></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.snapshot_place.SnapshotPlace.store">
-<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.store" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">store</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><span class="pre">dict</span></a></em><a class="headerlink" href="#archABM.snapshot_place.SnapshotPlace.store" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
