@@ -1,6 +1,16 @@
 Changelog
 =========
 
+Version 0.2.7
+-------------
+
+- Included bibtex entry and DOI information
+
+Version 0.2.6
+-------------
+
+- Updated article citation information
+
 Version 0.2.5
 -------------
 
