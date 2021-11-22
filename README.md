@@ -8,7 +8,7 @@ Agent-based model simulation for air quality and pandemic risk assessment in arc
 [![PyPI Version](https://img.shields.io/pypi/v/archABM?style=flat-square)](https://pypi.python.org/pypi/archABM)
 [![License](https://img.shields.io/github/license/Vicomtech/ArchABM?style=flat-square)](https://github.com/Vicomtech/ArchABM/blob/master/LICENSE)
 [![Actions](https://img.shields.io/github/workflow/status/Vicomtech/ArchABM/Build%20&%20publish%20to%20Pypi?style=flat-square)](https://github.com/Vicomtech/ArchABM/actions)
-[![](https://img.shields.io/pypi/dd/archABM?style=flat-square)](https://pepy.tech/project/archABM)
+[![](https://img.shields.io/pypi/dm/archABM?style=flat-square)](https://pepy.tech/project/archABM)
 [![Top Language](https://img.shields.io/github/languages/top/Vicomtech/ArchABM?style=flat-square)](https://github.com/Vicomtech/ArchABM)
 [![Github Issues](https://img.shields.io/github/issues/Vicomtech/ArchABM?style=flat-square)](https://github.com/Vicomtech/ArchABM)
 
@@ -60,22 +60,17 @@ Getting Started
 Use the following template to run a simulation with archABM:
 
 ```python
-from archABM.engine import Engine
+# Import modules
 import json
 import pandas as pd
+from archABM.engine import Engine
 
-# Read config data from JSON
-def read_json(file_path):
-    with open(str(file_path)) as json_file:
-        result = json.load(json_file)
-    return result
-
-config_data = read_json("config.json")
-# WARNING - for further processing ->
-# config_data["options"]["return_output"] = True
+# Read configuration example
+from archABM.config import config
+# Alternatively, get configuration from "config.json" example
 
 # Create ArchABM simulation engine
-simulation = Engine(config_data)
+simulation = Engine(config)
 
 # Run simulation
 results = simulation.run()
@@ -84,6 +79,10 @@ results = simulation.run()
 df_people = pd.DataFrame(results["results"]["people"])
 df_places = pd.DataFrame(results["results"]["places"])
 ```
+
+
+This example uses the default configuration file built-in the library.
+Alternatively, you can download and modify the [config.json](data/config.json) file found at the ``data`` directory of **archABM** repository.
 
 ----
 
@@ -95,8 +94,6 @@ Developers can also use the command-line interface with the [main.py](https://gi
 ```console
 $ python main.py config.json
 ```
-
-To run an example, use the [config.json]("data/config.json") found at the ``data`` directory of **archABM** repository.
 
 Check the ``--help`` option to get more information about the optional parameters:
 
@@ -122,6 +119,8 @@ Options:
 
   --help                Show this message and exit.
 ```
+
+To run an example with the CLI, download the [config.json](data/config.json) file found at the ``data`` directory of **archABM** repository.
 
 ----
 

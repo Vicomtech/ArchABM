@@ -1,1 +1,2 @@
 include archABM/schema.json
+include archABM/config.json
