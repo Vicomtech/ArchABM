@@ -80,8 +80,10 @@ df_people = pd.DataFrame(results["results"]["people"])
 df_places = pd.DataFrame(results["results"]["places"])
 ```
 
+
 This example uses the default configuration file built-in the library.
 Alternatively, you can download and modify the [config.json](data/config.json) file found at the ``data`` directory of **archABM** repository.
+
 ----
 
 Developers can also use the command-line interface with the [main.py](https://github.com/Vicomtech/ArchABM) file from the source code repository.
