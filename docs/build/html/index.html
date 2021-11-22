@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>User Guide &mdash; archABM 0.2.7 documentation</title>
+  <title>User Guide &mdash; archABM 0.2.8 documentation</title>
   
 
   
@@ -192,6 +192,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-8">Version 0.2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-7">Version 0.2.7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-6">Version 0.2.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-5">Version 0.2.5</a></li>
@@ -280,7 +281,7 @@
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/archABM"><img alt="PyPI Version" src="https://img.shields.io/pypi/v/archABM?style=flat-square" /></a>
 <a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Vicomtech/ArchABM?style=flat-square" /></a>
 <a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM/actions"><img alt="Actions" src="https://img.shields.io/github/workflow/status/Vicomtech/ArchABM/Build%20&amp;%20publish%20to%20Pypi?style=flat-square" /></a>
-<a class="reference external image-reference" href="https://pepy.tech/project/archABM"><img alt="https://img.shields.io/pypi/dd/archABM?style=flat-square" src="https://img.shields.io/pypi/dd/archABM?style=flat-square" /></a>
+<a class="reference external image-reference" href="https://pepy.tech/project/archABM"><img alt="https://img.shields.io/pypi/dm/archABM?style=flat-square" src="https://img.shields.io/pypi/dm/archABM?style=flat-square" /></a>
 <a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM"><img alt="Top Language" src="https://img.shields.io/github/languages/top/Vicomtech/ArchABM?style=flat-square" /></a>
 <a class="reference external image-reference" href="https://github.com/Vicomtech/ArchABM"><img alt="Github Issues" src="https://img.shields.io/github/issues/Vicomtech/ArchABM?style=flat-square" /></a>
 <hr class="docutils" />
@@ -306,22 +307,17 @@ Use of archABM is the sole responsibility of the user. It is being made availabl
 <div class="section" id="getting-started">
 <span id="basic-usage"></span><h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>Use the following template to run a simulation with archABM:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">archABM.engine</span> <span class="kn">import</span> <span class="n">Engine</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">archABM.engine</span> <span class="kn">import</span> <span class="n">Engine</span>
 
-<span class="c1"># Read config data from JSON</span>
-<span class="k">def</span> <span class="nf">read_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="n">config_data</span> <span class="o">=</span> <span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;config.json&quot;</span><span class="p">)</span>
-<span class="c1"># WARNING - for further processing -&gt;</span>
-<span class="c1"># config_data[&quot;options&quot;][&quot;return_output&quot;] = True</span>
+<span class="c1"># Read configuration example</span>
+<span class="kn">from</span> <span class="nn">archABM.config</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="c1"># Alternatively, get configuration from &quot;config.json&quot; example</span>
 
 <span class="c1"># Create ArchABM simulation engine</span>
-<span class="n">simulation</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">(</span><span class="n">config_data</span><span class="p">)</span>
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
 <span class="c1"># Run simulation</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -331,6 +327,8 @@ Use of archABM is the sole responsibility of the user. It is being made availabl
 <span class="n">df_places</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">][</span><span class="s2">&quot;places&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>This example uses the default configuration file built-in the library.
+Alternatively, you can download and modify the [config.json](data/config.json) file found at the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory of <strong>archABM</strong> repository.</p>
 <hr class="docutils" />
 <p>Developers can also use the command-line interface with the <a class="reference external" href="https://github.com/Vicomtech/ArchABM">main.py</a> file from the source code repository.</p>
 <div class="figure align-center">

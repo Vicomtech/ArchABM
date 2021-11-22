@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Version 0.2.8
+-------------
+
+- Updated README
+- Added pandas to requirements
+- Included basic configuration JSON on package files
+
+
 Version 0.2.7
 -------------
 
@@ -19,7 +27,8 @@ Version 0.2.5
 Version 0.2.4
 -------------
 
-- Updated README and getting-started section in the documentation
+- Updated README
+- Updated getting-started section in the documentation
 
 Version 0.2.3
 -------------

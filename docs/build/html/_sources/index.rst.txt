@@ -26,7 +26,7 @@
     :target: https://github.com/Vicomtech/ArchABM/actions
     :alt: Actions
 
-.. image:: https://img.shields.io/pypi/dd/archABM?style=flat-square
+.. image:: https://img.shields.io/pypi/dm/archABM?style=flat-square
     :target: https://pepy.tech/project/archABM
 
 .. image:: https://img.shields.io/github/languages/top/Vicomtech/ArchABM?style=flat-square
@@ -78,22 +78,17 @@ Use the following template to run a simulation with archABM:
 
 .. code-block:: python
 
-    from archABM.engine import Engine
+    # Import modules
     import json
     import pandas as pd
+    from archABM.engine import Engine
 
-    # Read config data from JSON
-    def read_json(file_path):
-        with open(str(file_path)) as json_file:
-            result = json.load(json_file)
-        return result
-
-    config_data = read_json("config.json")
-    # WARNING - for further processing ->
-    # config_data["options"]["return_output"] = True
+    # Read configuration example
+    from archABM.config import config
+    # Alternatively, get configuration from "config.json" example
 
     # Create ArchABM simulation engine
-    simulation = Engine(config_data)
+    simulation = Engine(config)
 
     # Run simulation
     results = simulation.run()
@@ -101,6 +96,9 @@ Use the following template to run a simulation with archABM:
     # Create dataframes based on the results
     df_people = pd.DataFrame(results["results"]["people"])
     df_places = pd.DataFrame(results["results"]["places"])
+
+This example uses the default configuration file built-in the library.
+Alternatively, you can download and modify the [config.json](data/config.json) file found at the ``data`` directory of **archABM** repository.
 
 ----
 
