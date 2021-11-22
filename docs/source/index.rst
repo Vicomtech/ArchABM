@@ -98,7 +98,7 @@ Use the following template to run a simulation with archABM:
     df_places = pd.DataFrame(results["results"]["places"])
 
 This example uses the default configuration file built-in the library.
-Alternatively, you can download and modify the [config.json](data/config.json) file found at the ``data`` directory of **archABM** repository.
+Alternatively, you can download and modify the :download:`config.json <../../data/config.json>` file found at the ``data`` directory of **archABM** repository.
 
 ----
 
