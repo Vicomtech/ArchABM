@@ -9,6 +9,7 @@ Documentation for archABM
 
     index
     framework
+    designer
     example
     api
     authors

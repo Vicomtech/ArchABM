@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Version 0.3.0
+-------------
+
+- Added interactive configuration designer
+
+
 Version 0.2.8
 -------------
 
