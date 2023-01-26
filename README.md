@@ -7,7 +7,7 @@ Agent-based model simulation for air quality and pandemic risk assessment in arc
 [![PyPI Status](https://img.shields.io/pypi/status/archABM?style=flat-square)](https://pypi.python.org/pypi/archABM)
 [![PyPI Version](https://img.shields.io/pypi/v/archABM?style=flat-square)](https://pypi.python.org/pypi/archABM)
 [![License](https://img.shields.io/github/license/Vicomtech/ArchABM?style=flat-square)](https://github.com/Vicomtech/ArchABM/blob/master/LICENSE)
-[![Actions](https://img.shields.io/github/workflow/status/Vicomtech/ArchABM/Build%20&%20publish%20to%20Pypi?style=flat-square)](https://github.com/Vicomtech/ArchABM/actions)
+[![Actions](https://img.shields.io/github/actions/workflow/status/Vicomtech/ArchABM/build-n-publish.yml?style=flat-square)](https://github.com/Vicomtech/ArchABM/actions)
 [![](https://img.shields.io/pypi/dm/archABM?style=flat-square)](https://pepy.tech/project/archABM)
 [![Top Language](https://img.shields.io/github/languages/top/Vicomtech/ArchABM?style=flat-square)](https://github.com/Vicomtech/ArchABM)
 [![Github Issues](https://img.shields.io/github/issues/Vicomtech/ArchABM?style=flat-square)](https://github.com/Vicomtech/ArchABM)
