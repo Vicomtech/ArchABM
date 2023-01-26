@@ -57,9 +57,30 @@ class AerosolModelColorado(AerosolModel):
         area = inputs.room_area  # width * length
         volume = area * height
 
+        # PRESSURE
         pressure = params.pressure  # 0.95
-        temperature = params.temperature  # 20
-        # relative_humidity = params.relative_humidity # 50
+
+        # TEMPERATURE
+        temperature_ext = params.temperature
+        temperature_int = inputs.temperature
+        area_transfer = 2*math.sqrt(area)*height # suppose half of the room is exposed
+        k = 0.92 # W / m K
+        h = 0 # W / m2 K
+        s = 5.6703e-8 # W/ m2 K4
+        thickness = 1
+        q_conduction = k * area_transfer * (temperature_ext - temperature_int) / thickness
+        q_convection = h * area_transfer * (temperature_ext - temperature_int)
+        q_radiation = s * area_transfer * (temperature_ext - temperature_int)
+        q_people = 10*inputs.num_people # https://www.researchgate.net/publication/271444362_Predicting_Energy_Requirement_for_Cooling_the_Building_Using_Artificial_Neural_Network/figures?lo=1
+        q_total = (q_conduction + q_convection + q_radiation + q_people)*inputs.event_duration*3600/1000
+        density_air = 1 # kg/m3
+        specific_heat = 1 # kJ/Kg K
+        mass = density_air * volume # kg
+        temperature = temperature_int + (q_total / mass / specific_heat)
+
+        # temperature = params.temperature  # 20 # TODO: include formula
+        relative_humidity = params.relative_humidity # 50 # TODO: include formula
+
         CO2_background = params.CO2_background  # 415
 
         event_duration = inputs.event_duration  # 50 / 60 # h
@@ -157,4 +178,5 @@ class AerosolModelColorado(AerosolModel):
         # CO2_probability_infection_=  CO2_reinhaled_ppm / 1e4 / probability_infection
         # CO2_inhale_ppm = CO2_mixing_ratio_delta * event_duration * 0.01 / probability_infection + CO2_background
 
-        return CO2_mixing_ratio, quanta_inhaled_per_person, quanta_concentration
+        # return CO2_mixing_ratio, quanta_inhaled_per_person, quanta_concentration
+        return CO2_mixing_ratio, quanta_inhaled_per_person, quanta_concentration, temperature, relative_humidity
