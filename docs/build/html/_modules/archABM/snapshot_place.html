@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>archABM.snapshot_place &mdash; archABM 0.2.8 documentation</title>
+  <title>archABM.snapshot_place &mdash; archABM 0.4.1 documentation</title>
   
 
   
@@ -129,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../framework.html#performance">Performance</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../designer.html">Designer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../example.html">Example</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../example.html#input-configuration">Input Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../example.html#events">Events</a></li>
@@ -190,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-4-0">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-3-0">Version 0.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-8">Version 0.2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-7">Version 0.2.7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-6">Version 0.2.6</a></li>
@@ -291,6 +294,9 @@
 <span class="sd">        * - *place*</span>
 <span class="sd">          -  Place ID</span>
 <span class="sd">          - :obj:`int`</span>
+<span class="sd">        * - *activity*</span>
+<span class="sd">          -  Activity</span>
+<span class="sd">          - :obj:`str`</span>
 <span class="sd">        * - *num_people*</span>
 <span class="sd">          - Number of people</span>
 <span class="sd">          - :obj:`int`</span>
@@ -303,9 +309,15 @@
 <span class="sd">        * - *quanta_level*</span>
 <span class="sd">          - quanta level (ppm)</span>
 <span class="sd">          - :obj:`float`</span>
+<span class="sd">        * - *temperature*</span>
+<span class="sd">          - Room temperature</span>
+<span class="sd">          - :obj:`float`</span>
+<span class="sd">        * - *relative_humidity*</span>
+<span class="sd">          - Room relative humidity</span>
+<span class="sd">          - :obj:`float`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">,</span> <span class="s2">&quot;num_people&quot;</span><span class="p">,</span> <span class="s2">&quot;infective_people&quot;</span><span class="p">,</span> <span class="s2">&quot;CO2_level&quot;</span><span class="p">,</span> <span class="s2">&quot;quanta_level&quot;</span><span class="p">]</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">,</span> <span class="s2">&quot;activity&quot;</span><span class="p">,</span> <span class="s2">&quot;num_people&quot;</span><span class="p">,</span> <span class="s2">&quot;infective_people&quot;</span><span class="p">,</span> <span class="s2">&quot;CO2_level&quot;</span><span class="p">,</span> <span class="s2">&quot;quanta_level&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;relative_humidity&quot;</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">SnapshotPlace</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">SnapshotPlace</span><span class="o">.</span><span class="n">header</span><span class="p">)</span></div>

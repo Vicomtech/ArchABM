@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Aerosol Model &mdash; archABM 0.3.0 documentation</title>
+  <title>Aerosol Model &mdash; archABM 0.4.1 documentation</title>
   
 
   
@@ -192,6 +192,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-3-0">Version 0.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-8">Version 0.2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-7">Version 0.2.7</a></li>
@@ -284,7 +285,7 @@
 <dd><p>Aerosol transmission estimator</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.aerosol_model.AerosolModel.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -294,7 +295,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.aerosol_model.AerosolModel.get_risk">
-<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model.html#AerosolModel.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.get_risk" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model.html#AerosolModel.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model.AerosolModel.get_risk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the infection risk of an individual in a room
 and the CO<sub>2</sub> thrown into the air.</p>
 <dl class="field-list simple">
@@ -305,7 +306,7 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>]</p>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -333,12 +334,12 @@ It is calibrated to COVID-19 per recent literature on quanta emission rate.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.aerosol_model_colorado.AerosolModelColorado.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'Colorado'</span></em><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado.name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'Colorado'</span></em><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.aerosol_model_colorado.AerosolModelColorado.get_risk">
-<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_colorado.html#AerosolModelColorado.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado.get_risk" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_colorado.html#AerosolModelColorado.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_colorado.AerosolModelColorado.get_risk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the infection risk of an individual in a room
 and the CO<sub>2</sub> thrown into the air.</p>
 <dl class="field-list simple">
@@ -349,7 +350,7 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>]</p>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -369,12 +370,12 @@ with high air exchange rates, increased for more vigorous respiratory activities
 Consideration of a number of outbreaks yields self-consistent estimates for the infectiousness of the new coronavirus.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.aerosol_model_mit.AerosolModelMIT.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'MIT'</span></em><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT.name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'MIT'</span></em><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.aerosol_model_mit.AerosolModelMIT.get_risk">
-<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_mit.html#AerosolModelMIT.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT.get_risk" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_mit.html#AerosolModelMIT.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_mit.AerosolModelMIT.get_risk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the infection risk of an individual in a room
 and the CO<sub>2</sub> thrown into the air.</p>
 <dl class="field-list simple">
@@ -385,7 +386,7 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>]</p>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -408,12 +409,12 @@ For simplicity, all subjects are assumed to be equal in terms of breathing, spea
 The model parameters can be easily adjusted to account for different environmental conditions and activities.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'MaxPlanck'</span></em><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">'MaxPlanck'</span></em><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.get_risk">
-<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_maxplanck.html#AerosolModelMaxPlanck.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.get_risk" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="parameters.html#archABM.parameters.Parameters" title="archABM.parameters.Parameters"><span class="pre">archABM.parameters.Parameters</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/archABM/aerosol_model_maxplanck.html#AerosolModelMaxPlanck.get_risk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.aerosol_model_maxplanck.AerosolModelMaxPlanck.get_risk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the infection risk of an individual in a room
 and the CO<sub>2</sub> thrown into the air.</p>
 <dl class="field-list simple">
@@ -424,7 +425,7 @@ and the CO<sub>2</sub> thrown into the air.</p>
 <dd class="field-even"><p>CO<sub>2</sub> concentration (ppm), and infection risk probability</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>]</p>
+<dd class="field-odd"><p>Tuple[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>]</p>
 </dd>
 </dl>
 </dd></dl>

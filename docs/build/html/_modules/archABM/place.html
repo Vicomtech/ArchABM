@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>archABM.place &mdash; archABM 0.2.8 documentation</title>
+  <title>archABM.place &mdash; archABM 0.4.1 documentation</title>
   
 
   
@@ -129,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../framework.html#performance">Performance</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../designer.html">Designer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../example.html">Example</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../example.html#input-configuration">Input Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../example.html#events">Events</a></li>
@@ -190,6 +191,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-4-0">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-3-0">Version 0.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-8">Version 0.2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-7">Version 0.2.7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-0-2-6">Version 0.2.6</a></li>
@@ -296,11 +299,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">CO2_baseline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">CO2_background</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">CO2_baseline</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">quanta_level</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">temperature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relative_humidity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">relative_humidity</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span> <span class="o">=</span> <span class="mf">0.0</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_event</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">events</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_events</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span> <span class="o">=</span> <span class="n">SnapshotPlace</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Place.reset"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.reset">[docs]</a>    <span class="nd">@classmethod</span>
@@ -313,18 +319,19 @@
         <span class="sd">&quot;&quot;&quot;Increments one unit the :class:`~archABM.place.Place` ID.&quot;&quot;&quot;</span>
         <span class="n">Place</span><span class="o">.</span><span class="n">id</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="Place.get_event"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.get_event">[docs]</a>    <span class="k">def</span> <span class="nf">get_event</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Place.get_events"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.get_events">[docs]</a>    <span class="k">def</span> <span class="nf">get_events</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Yields the corresponding :class:`~archABM.event_model.EventModel`</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            EventModel: place&#39;s type of activity</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">events</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">events</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">e</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">:</span>
+                <span class="n">events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">events</span></div>
 
-<div class="viewcode-block" id="Place.add_person"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.add_person">[docs]</a>    <span class="k">def</span> <span class="nf">add_person</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person</span><span class="p">):</span>
+<div class="viewcode-block" id="Place.add_person"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.add_person">[docs]</a>    <span class="k">def</span> <span class="nf">add_person</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add person to place</span>
 
 <span class="sd">        Prior to the inclusion of the person, the ``air quality`` of the place is updated. </span>
@@ -336,7 +343,7 @@
 <span class="sd">            person (Person): person to be added</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># update air quality</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_air</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_air</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 
         <span class="c1"># add to list</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
@@ -379,7 +386,7 @@
         <span class="c1"># save snapshot</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save_snapshot</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Place.update_air"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.update_air">[docs]</a>    <span class="k">def</span> <span class="nf">update_air</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Place.update_air"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.update_air">[docs]</a>    <span class="k">def</span> <span class="nf">update_air</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Air quality update</span>
 
 <span class="sd">        This method updates the air quality based on the selected :class:`~archABM.aerosol_model.AerosolModel`.</span>
@@ -389,26 +396,37 @@
 <span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">elapsed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">shared</span> <span class="ow">and</span> <span class="n">elapsed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span>
+        <span class="n">good</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span> <span class="o">==</span> <span class="n">e</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">good</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">,</span> <span class="n">good</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">BaseException</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">shared</span> <span class="ow">and</span> <span class="n">elapsed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">inputs</span> <span class="o">=</span> <span class="n">Parameters</span><span class="p">(</span>
                 <span class="p">{</span>
                     <span class="s2">&quot;room_area&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">area</span><span class="p">,</span>
                     <span class="s2">&quot;room_height&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
                     <span class="s2">&quot;room_ventilation_rate&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">ventilation</span><span class="p">,</span>
                     <span class="s2">&quot;recirculated_flow_rate&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">recirculated_flow_rate</span><span class="p">,</span>
-                    <span class="s2">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">mask_efficiency</span><span class="p">,</span>
+                    <span class="s2">&quot;mask_efficiency&quot;</span><span class="p">:</span> <span class="n">event</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">mask_efficiency</span><span class="p">,</span>
                     <span class="s2">&quot;event_duration&quot;</span><span class="p">:</span> <span class="n">elapsed</span> <span class="o">/</span> <span class="mi">60</span><span class="p">,</span>
                     <span class="s2">&quot;num_people&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_people</span><span class="p">,</span>
                     <span class="s2">&quot;infective_people&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">infective_people</span><span class="p">,</span>
                     <span class="s2">&quot;CO2_level&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span><span class="p">,</span>
                     <span class="s2">&quot;quanta_level&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">quanta_level</span><span class="p">,</span>
+                    <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span>
+                    <span class="s2">&quot;relative_humidity&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">relative_humidity</span>
                 <span class="p">}</span>
             <span class="p">)</span>
-            <span class="n">CO2_level</span><span class="p">,</span> <span class="n">quanta_inhaled</span><span class="p">,</span> <span class="n">quanta_level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_risk</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">CO2_level</span><span class="p">,</span> <span class="n">quanta_inhaled</span><span class="p">,</span> <span class="n">quanta_level</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">relative_humidity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_risk</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
 
             <span class="c1"># update place</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span> <span class="o">=</span> <span class="n">CO2_level</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">quanta_level</span> <span class="o">=</span> <span class="n">quanta_level</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relative_humidity</span> <span class="o">=</span> <span class="n">relative_humidity</span>
 
             <span class="c1"># self.elapsed += elapsed</span>
             <span class="c1"># self.infection_risk_avg += elapsed * (infection_risk - self.infection_risk_avg) / self.elapsed</span>
@@ -417,7 +435,8 @@
             <span class="c1"># update people # TODO: review if we need to update the risk of infected people as well</span>
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">people</span><span class="p">:</span>
                 <span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">elapsed</span><span class="p">,</span> <span class="n">quanta_inhaled</span><span class="p">,</span> <span class="n">CO2_level</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span> <span class="o">=</span> <span class="n">event</span></div>
 
 <div class="viewcode-block" id="Place.people_attending"><a class="viewcode-back" href="../../archABM/place.html#archABM.place.Place.people_attending">[docs]</a>    <span class="k">def</span> <span class="nf">people_attending</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Number of people attending a collective event</span>
@@ -445,10 +464,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">run</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">now</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;place&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;activity&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">activity</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;num_people&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_people</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;infective_people&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">infective_people</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2_level&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">CO2_level</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;quanta_level&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quanta_level</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;relative_humidity&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">relative_humidity</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">write_place</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="p">)</span></div></div>
 </pre></div>
 

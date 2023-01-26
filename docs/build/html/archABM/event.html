@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Event &mdash; archABM 0.3.0 documentation</title>
+  <title>Event &mdash; archABM 0.4.1 documentation</title>
   
 
   
@@ -193,6 +193,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-3-0">Version 0.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-8">Version 0.2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html#version-0-2-7">Version 0.2.7</a></li>
@@ -281,9 +282,9 @@
 <span id="event"></span><h1>Event<a class="headerlink" href="#module-archABM.event" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="archABM.event.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.event.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><span class="pre">archABM.event_model.EventModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="place.html#archABM.place.Place" title="archABM.place.Place"><span class="pre">archABM.place.Place</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/event.html#Event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event.Event" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">archABM.event.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><span class="pre">archABM.event_model.EventModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">place</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="place.html#archABM.place.Place" title="archABM.place.Place"><span class="pre">archABM.place.Place</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/event.html#Event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Event primitive</p>
-<p>An event is defined by an activity <a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventModel</span></code></a>, that happens at a given physical location
+<p>An event is defined by an activity <a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventModel</span></code></a>, that happens at some physical location
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Place`</span></code>, for a finite period of time, in minutes (duration).</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event.Event.model">
@@ -297,7 +298,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event.Event.duration">
-<span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></em><a class="headerlink" href="#archABM.event.Event.duration" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></em><a class="headerlink" href="#archABM.event.Event.duration" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -310,16 +311,16 @@
 <dd><p>Defines an event model, also called “activity”</p>
 <p>An event model is defined by these parameters:</p>
 <ul>
-<li><p>Activity name: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p></li>
-<li><p>Schedule: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></a> (in minutes <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>Repetitions range: minimum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>) and maximum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
-<li><p>Duration range: minimum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>) and maximum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>) in minutes</p></li>
+<li><p>Activity name: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p></li>
+<li><p>Schedule: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></a> (in minutes <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>Repetitions range: minimum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>) and maximum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>)</p></li>
+<li><p>Duration range: minimum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>) and maximum (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>) in minutes</p></li>
 <li><p>Other parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>mask efficiency ratio: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></li>
-<li><p>collective event: <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></li>
-<li><p>shared event: <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></li>
+<li><p>mask efficiency ratio: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p></li>
+<li><p>collective event: <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></li>
+<li><p>shared event: <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -345,7 +346,7 @@ a piecewise linear function, parametrized by:</p>
 <p><img width="80%" src="../_images/tikz-b53455d7f42d723cccf114b5e541382f88629221.png" alt="Figure made with TikZ" /></p>
 </div><dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.id">
-<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">-1</span></em><a class="headerlink" href="#archABM.event_model.EventModel.id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></em><em class="property"> <span class="pre">=</span> <span class="pre">-1</span></em><a class="headerlink" href="#archABM.event_model.EventModel.id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -355,36 +356,36 @@ a piecewise linear function, parametrized by:</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.count">
-<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></em><a class="headerlink" href="#archABM.event_model.EventModel.count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></em><a class="headerlink" href="#archABM.event_model.EventModel.count" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.noise">
-<span class="sig-name descname"><span class="pre">noise</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></em><a class="headerlink" href="#archABM.event_model.EventModel.noise" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">noise</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></em><a class="headerlink" href="#archABM.event_model.EventModel.noise" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.reset">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.reset" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets <a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventModel</span></code></a> ID.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.next">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.next"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.next" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.next"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.next" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increments one unit the <a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventModel</span></code></a> ID.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.get_noise">
-<span class="sig-name descname"><span class="pre">get_noise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.get_noise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.get_noise" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_noise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.get_noise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.get_noise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates random noise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>noise amount in minutes</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -405,7 +406,7 @@ a piecewise linear function, parametrized by:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.duration">
-<span class="sig-name descname"><span class="pre">duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.duration" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.duration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a random duration between <code class="xref py py-attr docutils literal notranslate"><span class="pre">duration_min</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">duration_max</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -416,20 +417,20 @@ at the scheduled time interval.</p>
 <p>The <a class="reference internal" href="#archABM.event_model.EventModel.noise" title="archABM.event_model.EventModel.noise"><code class="xref py py-attr docutils literal notranslate"><span class="pre">noise</span></code></a> attribute is used to model the schedule’s time tolerance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>now</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – current timestamp in minutes</p>
+<dd class="field-odd"><p><strong>now</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – current timestamp in minutes</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>event duration in minutes</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.priority">
-<span class="sig-name descname"><span class="pre">priority</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.priority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.priority" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">priority</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.priority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.priority" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the priority of a certain event.</p>
 <p>The priority function follows a piecewise linear function, parametrized by:</p>
 <ul class="simple">
@@ -448,34 +449,34 @@ at the scheduled time interval.</p>
 <dd class="field-odd"><p>priority value [0-1]</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.probability">
-<span class="sig-name descname"><span class="pre">probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.probability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.probability" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.probability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.probability" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper to call the priority function</p>
 <p>If the event <a class="reference internal" href="#archABM.event_model.EventModel.count" title="archABM.event_model.EventModel.count"><code class="xref py py-attr docutils literal notranslate"><span class="pre">count</span></code></a> is equal to the <code class="xref py py-attr docutils literal notranslate"><span class="pre">repeat_max</span></code> parameters,
 it yields a <code class="docutils literal notranslate"><span class="pre">0</span></code> probability. Otherwise, it computes the <a class="reference internal" href="#archABM.event_model.EventModel.priority" title="archABM.event_model.EventModel.priority"><code class="xref py py-meth docutils literal notranslate"><span class="pre">priority()</span></code></a> function
 described above.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>now</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – current timestamp in minutes</p>
+<dd class="field-odd"><p><strong>now</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – current timestamp in minutes</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>event probability [0-1]</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.valid">
-<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.valid" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes whether the event count has reached the <code class="xref py py-attr docutils literal notranslate"><span class="pre">repeat_max</span></code> limit.</p>
 <p>It yields <code class="docutils literal notranslate"><span class="pre">True</span></code>
 if <code class="xref py py-attr docutils literal notranslate"><span class="pre">repeat_max</span></code> is <code class="docutils literal notranslate"><span class="pre">undefined</span></code> or
@@ -486,20 +487,20 @@ Otherwise, it yields <code class="docutils literal notranslate"><span class="pre
 <dd class="field-odd"><p>valid event</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.consume">
-<span class="sig-name descname"><span class="pre">consume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.consume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.consume" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">consume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.consume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.consume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increments one unit the event count</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_model.EventModel.supply">
-<span class="sig-name descname"><span class="pre">supply</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.supply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.supply" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">supply</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/archABM/event_model.html#EventModel.supply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_model.EventModel.supply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decrements one unit the event count</p>
 </dd></dl>
 
@@ -528,17 +529,17 @@ each one related to an activity.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event_generator.EventGenerator.models">
-<span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.event_generator.EventGenerator.models" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.event_generator.EventGenerator.models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="archABM.event_generator.EventGenerator.activities">
-<span class="sig-name descname"><span class="pre">activities</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.event_generator.EventGenerator.activities" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">activities</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a></em><a class="headerlink" href="#archABM.event_generator.EventGenerator.activities" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="archABM.event_generator.EventGenerator.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">person</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/event_generator.html#EventGenerator.generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_generator.EventGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">now</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">person</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/archABM/event_generator.html#EventGenerator.generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#archABM.event_generator.EventGenerator.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates events</p>
 <p>First, it computes the probabilities and the validity
 of each <a class="reference internal" href="#archABM.event_model.EventModel" title="archABM.event_model.EventModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventModel</span></code></a> at the current timestamp.
@@ -558,7 +559,7 @@ the event duration can computed and the physical location <code class="xref py p
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>now</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – current timestamp in minutes</p></li>
+<li><p><strong>now</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – current timestamp in minutes</p></li>
 <li><p><strong>person</strong> (<a class="reference internal" href="person.html#archABM.person.Person" title="archABM.person.Person"><em>Person</em></a>) – person that invokes the event generation</p></li>
 </ul>
 </dd>
@@ -597,7 +598,7 @@ c) time duration.</p>
 <dd class="field-even"><p>whether the event model is valid</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a>]</p>
+<dd class="field-odd"><p>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a>]</p>
 </dd>
 </dl>
 </dd></dl>

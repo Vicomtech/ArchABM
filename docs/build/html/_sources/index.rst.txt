@@ -22,7 +22,7 @@
     :target: https://github.com/Vicomtech/ArchABM/blob/master/LICENSE
     :alt: License
 
-.. image:: https://img.shields.io/github/workflow/status/Vicomtech/ArchABM/Build%20&%20publish%20to%20Pypi?style=flat-square
+.. image:: https://img.shields.io/github/actions/workflow/status/Vicomtech/ArchABM/build-n-publish.yml?style=flat-square
     :target: https://github.com/Vicomtech/ArchABM/actions
     :alt: Actions
 

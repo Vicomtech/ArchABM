@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Example &mdash; archABM 0.3.0 documentation</title>
+  <title>Example &mdash; archABM 0.4.1 documentation</title>
   
 
   
@@ -193,6 +193,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing archABM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-3-0">Version 0.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-8">Version 0.2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-7">Version 0.2.7</a></li>
@@ -410,7 +411,7 @@
     <span class="p">],</span>
     <span class="nt">&quot;places&quot;</span><span class="p">:</span> <span class="p">[{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -422,7 +423,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;open_office&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;work&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department4&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">330.0</span><span class="p">,</span>
@@ -434,7 +435,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;it_office&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;work&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department4&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">52.0</span><span class="p">,</span>
@@ -446,7 +447,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chief_office_A&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;work&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">21.0</span><span class="p">,</span>
@@ -458,7 +459,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chief_office_B&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;work&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">21.0</span><span class="p">,</span>
@@ -470,7 +471,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chief_office_C&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;work&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;work&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">24.0</span><span class="p">,</span>
@@ -482,7 +483,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_A&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;meeting&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">16.0</span><span class="p">,</span>
@@ -494,7 +495,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_B&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;meeting&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">16.0</span><span class="p">,</span>
@@ -506,7 +507,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_C&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;meeting&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">,</span> <span class="s2">&quot;department7&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">11.0</span><span class="p">,</span>
@@ -518,7 +519,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting_D&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;meeting&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;meeting&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">66.0</span><span class="p">,</span>
@@ -530,7 +531,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee_A&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;coffee&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
@@ -542,7 +543,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee_B&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;coffee&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;coffee&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
@@ -554,7 +555,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom_A&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;restroom&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
@@ -566,7 +567,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom_B&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;restroom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;restroom&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;department1&quot;</span><span class="p">,</span> <span class="s2">&quot;department2&quot;</span><span class="p">,</span> <span class="s2">&quot;department3&quot;</span><span class="p">,</span> <span class="s2">&quot;department4&quot;</span><span class="p">,</span> <span class="s2">&quot;department5&quot;</span><span class="p">,</span> <span class="s2">&quot;department6&quot;</span><span class="p">],</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
@@ -578,7 +579,7 @@
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;lunch&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;lunch&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;lunch&quot;</span><span class="p">],</span>
             <span class="nt">&quot;building&quot;</span><span class="p">:</span> <span class="s2">&quot;building1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;department&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="mf">150.0</span><span class="p">,</span>

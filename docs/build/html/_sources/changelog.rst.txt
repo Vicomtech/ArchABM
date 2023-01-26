@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Version 0.4.0
+-------------
+
+- Added temperature model based on person heat generation and heat transfer with outdoor ambient temperature.
+- Included functionality to run multiple events at the same place.
+
+
 Version 0.3.0
 -------------
 
