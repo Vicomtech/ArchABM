@@ -56,6 +56,7 @@ class AerosolModelColorado(AerosolModel):
         height = inputs.room_height
         area = inputs.room_area  # width * length
         volume = area * height
+        event_duration = inputs.event_duration  # 50 / 60 # hours
 
         # PRESSURE
         pressure = params.pressure  # 0.95
@@ -64,27 +65,21 @@ class AerosolModelColorado(AerosolModel):
         temperature_ext = params.temperature
         temperature_int = inputs.temperature
         area_transfer = 2*math.sqrt(area)*height # suppose half of the room is exposed
-        k = 0.92 # W / m K
-        h = 0 # W / m2 K
-        s = 5.6703e-8 # W/ m2 K4
-        thickness = 1
-        q_conduction = k * area_transfer * (temperature_ext - temperature_int) / thickness
-        q_convection = h * area_transfer * (temperature_ext - temperature_int)
-        q_radiation = s * area_transfer * (temperature_ext - temperature_int)
-        q_people = 10*inputs.num_people # https://www.researchgate.net/publication/271444362_Predicting_Energy_Requirement_for_Cooling_the_Building_Using_Artificial_Neural_Network/figures?lo=1
-        q_total = (q_conduction + q_convection + q_radiation + q_people)*inputs.event_duration*3600/1000
-        density_air = 1 # kg/m3
-        specific_heat = 1 # kJ/Kg K
-        mass = density_air * volume # kg
-        temperature = temperature_int + (q_total / mass / specific_heat)
+        
+        heat_transfer_coefficient = 1.2 # W / m2 K # https://www.researchgate.net/publication/325614742_A_Dynamic_Model_for_Indoor_Temperature_Prediction_in_Buildings
+        heat_transfer = heat_transfer_coefficient*area_transfer # W/K
+        heat_capacity_coefficient = 144e3 # J/(m2 K) # https://www.researchgate.net/publication/325614742_A_Dynamic_Model_for_Indoor_Temperature_Prediction_in_Buildings
+        heat_capacity = heat_capacity_coefficient*area_transfer # J/K
+        heat_per_person = 150 # W # https://www.researchgate.net/publication/271444362_Predicting_Energy_Requirement_for_Cooling_the_Building_Using_Artificial_Neural_Network/figures?lo=1
+        P = heat_per_person*inputs.num_people  # W
+        Q = inputs.room_ventilation_rate * volume / 3600 # m3 / s  # https://www.ncbi.nlm.nih.gov/books/NBK143289/
+        delta_time = event_duration * 3600 # seconds
+        temperature = (temperature_int + delta_time*(P/heat_capacity + temperature_ext*heat_transfer/heat_capacity + temperature_ext*Q/volume))/(1 + delta_time*heat_transfer/heat_capacity + delta_time*Q/volume)
 
-        # temperature = params.temperature  # 20 # TODO: include formula
+
         relative_humidity = params.relative_humidity # 50 # TODO: include formula
 
         CO2_background = params.CO2_background  # 415
-
-        event_duration = inputs.event_duration  # 50 / 60 # h
-
         ventilation = inputs.room_ventilation_rate  # 3
         decay_rate = params.decay_rate  # 0.62
         deposition_rate = params.deposition_rate  # 0.3
@@ -116,7 +111,7 @@ class AerosolModelColorado(AerosolModel):
         breathing_rate = params.breathing_rate  # 0.52
         breathing_rate_relative = breathing_rate / (0.0048 * 60)
         CO2_emission_person = params.CO2_emission_person  # 0.005
-        CO2_emission = CO2_emission_person * num_people / pressure * (273.15 + temperature) / 273.15
+        CO2_emission = CO2_emission_person * num_people / pressure * (273.15 + temperature_int) / 273.15
 
         quanta_exhalation = params.quanta_exhalation  # 25
         quanta_enhancement = params.quanta_enhancement  # 1
