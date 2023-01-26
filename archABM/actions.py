@@ -43,7 +43,7 @@ class Actions:
         places = self.db.places
         random.shuffle(places)
         for place in places:
-            if place.params.activity == model.params.activity:
+            if model.params.activity in place.params.activity:
                 # check if place is allowed and not full
                 if place.params.allow and not place.full():
                     # check if movement between buildings is not allowed

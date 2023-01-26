@@ -103,7 +103,7 @@ class Person:
 
                     # add to new place
                     self.place = self.event.place
-                    self.place.add_person(self)
+                    self.place.add_person(self, self.event)
                 else:
                     self.place.update_place()
 

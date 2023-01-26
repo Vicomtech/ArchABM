@@ -26,11 +26,14 @@ class Place:
         self.CO2_baseline = self.db.model.params.CO2_background
         self.CO2_level = self.CO2_baseline
         self.quanta_level = 0.0
+        self.temperature = self.db.model.params.temperature
+        self.relative_humidity = self.db.model.params.relative_humidity
 
         self.elapsed = 0.0
         self.last_updated = 0.0
 
-        self.event = self.get_event()
+        self.events = self.get_events()
+        self.event = None
         self.snapshot = SnapshotPlace()
 
     @classmethod
@@ -43,18 +46,19 @@ class Place:
         """Increments one unit the :class:`~archABM.place.Place` ID."""
         Place.id += 1
 
-    def get_event(self) -> None:
+    def get_events(self) -> None:
         """Yields the corresponding :class:`~archABM.event_model.EventModel`
 
         Returns:
             EventModel: place's type of activity
         """
+        events = []
         for e in self.db.events:
-            if e.params.activity == self.params.activity:
-                return e
-        return None
+            if e.params.activity in self.params.activity:
+                events.append(e)
+        return events
 
-    def add_person(self, person):
+    def add_person(self, person, event):
         """Add person to place
 
         Prior to the inclusion of the person, the ``air quality`` of the place is updated. 
@@ -66,7 +70,7 @@ class Place:
             person (Person): person to be added
         """
         # update air quality
-        self.update_air()
+        self.update_air(event)
 
         # add to list
         self.people.append(person)
@@ -109,7 +113,7 @@ class Place:
         # save snapshot
         self.save_snapshot()
 
-    def update_air(self) -> None:
+    def update_air(self, event=None) -> None:
         """Air quality update
 
         This method updates the air quality based on the selected :class:`~archABM.aerosol_model.AerosolModel`.
@@ -119,26 +123,37 @@ class Place:
         
         """
         elapsed = self.env.now - self.last_updated
-        if self.event.params.shared and elapsed > 0:
+        if event is None:
+            event = self.event
+        good = any(event.model.params.activity == e.params.activity for e in self.events)
+        if not good:
+            for e in self.events:
+                print(f, event.model.params.activity, e.params.activity, good)
+            raise BaseException
+        if event.model.params.shared and elapsed > 0:
             inputs = Parameters(
                 {
                     "room_area": self.params.area,
                     "room_height": self.params.height,
                     "room_ventilation_rate": self.params.ventilation,
                     "recirculated_flow_rate": self.params.recirculated_flow_rate,
-                    "mask_efficiency": self.event.params.mask_efficiency,
+                    "mask_efficiency": event.model.params.mask_efficiency,
                     "event_duration": elapsed / 60,
                     "num_people": self.num_people,
                     "infective_people": self.infective_people,
                     "CO2_level": self.CO2_level,
                     "quanta_level": self.quanta_level,
+                    "temperature": self.temperature,
+                    "relative_humidity": self.relative_humidity
                 }
             )
-            CO2_level, quanta_inhaled, quanta_level = self.db.model.get_risk(inputs)
+            CO2_level, quanta_inhaled, quanta_level, temperature, relative_humidity = self.db.model.get_risk(inputs)
 
             # update place
             self.CO2_level = CO2_level
             self.quanta_level = quanta_level
+            self.temperature = temperature
+            self.relative_humidity = relative_humidity
 
             # self.elapsed += elapsed
             # self.infection_risk_avg += elapsed * (infection_risk - self.infection_risk_avg) / self.elapsed
@@ -148,6 +163,7 @@ class Place:
             for p in self.people:
                 p.update(elapsed, quanta_inhaled, CO2_level)
         self.last_updated = self.env.now
+        self.event = event
 
     def people_attending(self) -> int:
         """Number of people attending a collective event
@@ -175,8 +191,11 @@ class Place:
         self.snapshot.set("run", self.db.run)
         self.snapshot.set("time", self.env.now, 0)
         self.snapshot.set("place", self.id)
+        self.snapshot.set("activity", self.event.model.params.activity)
         self.snapshot.set("num_people", self.num_people)
         self.snapshot.set("infective_people", self.infective_people)
         self.snapshot.set("CO2_level", self.CO2_level, 2)
         self.snapshot.set("quanta_level", self.quanta_level, 6)
+        self.snapshot.set("temperature", self.temperature, 2)
+        self.snapshot.set("relative_humidity", self.relative_humidity, 2)
         self.db.results.write_place(self.snapshot)

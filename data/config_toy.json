@@ -88,7 +88,7 @@
     ],
     "places": [{
             "name": "home",
-            "activity": "home",
+            "activity": ["home"],
             "building": null,
             "department": null,
             "area": null,
@@ -100,7 +100,7 @@
         },
         {
             "name": "office1",
-            "activity": "work",
+            "activity": ["work"],
             "building": "building1",
             "department": ["department1"],
             "area": 200.0,
@@ -112,7 +112,7 @@
         },
         {
             "name": "office2",
-            "activity": "work",
+            "activity": ["work"],
             "building": "building1",
             "department": ["department2"],
             "area": 200.0,
@@ -124,7 +124,7 @@
         },
         {
             "name": "meeting1",
-            "activity": "meeting",
+            "activity": ["meeting"],
             "building": "building1",
             "department": ["department1"],
             "area": 40.0,
@@ -136,7 +136,7 @@
         },
         {
             "name": "meeting2",
-            "activity": "meeting",
+            "activity": ["meeting"],
             "building": "building1",
             "department": null,
             "area": 40.0,
@@ -148,7 +148,7 @@
         },
         {
             "name": "lunch1",
-            "activity": "lunch",
+            "activity": ["lunch"],
             "building": "building1",
             "department": ["department1", "department2"],
             "area": 200.0,
@@ -160,7 +160,7 @@
         },
         {
             "name": "coffee1",
-            "activity": "coffee",
+            "activity": ["coffee"],
             "building": "building1",
             "department": ["department1", "department2"],
             "area": 25.0,
@@ -172,7 +172,7 @@
         },
         {
             "name": "restroom1",
-            "activity": "restroom",
+            "activity": ["restroom"],
             "building": "building1",
             "department": null,
             "area": 20.0,
@@ -184,7 +184,7 @@
         },
         {
             "name": "restroom2",
-            "activity": "restroom",
+            "activity": ["restroom"],
             "building": "building2",
             "department": null,
             "area": 15.0,

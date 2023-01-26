@@ -71,7 +71,11 @@
                         "type": "string"
                     },
                     "activity": {
-                        "type": "string"
+                        "type": ["array", "null"],
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1
                     },
                     "building": {
                         "type": ["string", "null"]
