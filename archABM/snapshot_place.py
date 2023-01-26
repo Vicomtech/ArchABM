@@ -21,6 +21,9 @@ class SnapshotPlace(Snapshot):
         * - *place*
           -  Place ID
           - :obj:`int`
+        * - *activity*
+          -  Activity
+          - :obj:`str`
         * - *num_people*
           - Number of people
           - :obj:`int`
@@ -33,9 +36,15 @@ class SnapshotPlace(Snapshot):
         * - *quanta_level*
           - quanta level (ppm)
           - :obj:`float`
+        * - *temperature*
+          - Room temperature
+          - :obj:`float`
+        * - *relative_humidity*
+          - Room relative humidity
+          - :obj:`float`
     """
 
-    header = ["run", "time", "place", "num_people", "infective_people", "CO2_level", "quanta_level"]
+    header = ["run", "time", "place", "activity", "num_people", "infective_people", "CO2_level", "quanta_level", "temperature", "relative_humidity"]
 
     def __init__(self) -> None:
         super(SnapshotPlace, self).__init__(SnapshotPlace.header)

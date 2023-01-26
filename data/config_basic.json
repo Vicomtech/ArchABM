@@ -31,7 +31,7 @@
     ],
     "places": [{
             "name": "home",
-            "activity": "home",
+            "activity": ["home"],
             "building": null,
             "department": null,
             "area": null,
@@ -43,7 +43,7 @@
         },
         {
             "name": "office1",
-            "activity": "work",
+            "activity": ["work"],
             "building": "building1",
             "department": ["department1"],
             "area": 200.0,
@@ -55,7 +55,7 @@
         },
         {
             "name": "office2",
-            "activity": "work",
+            "activity": ["work"],
             "building": "building1",
             "department": ["department2"],
             "area": 200.0,
