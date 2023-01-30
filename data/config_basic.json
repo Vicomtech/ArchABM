@@ -93,6 +93,7 @@
             "Colorado": {
                 "pressure": 0.95,
                 "temperature": 20,
+                "relative_humidity": 50,
                 "CO2_background": 415,
                 "decay_rate": 0.62,
                 "deposition_rate": 0.3,
